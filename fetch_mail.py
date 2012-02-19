@@ -1,7 +1,7 @@
 import email.utils
 import json
-import os
 import re
+import subprocess
 import time
 
 import pymongo
@@ -10,6 +10,9 @@ import gmail
 import parse_gpx
 
 if __name__ == '__main__':
+	subprocess.call(['mkdir', '-p', 'static/gpx'])
+	subprocess.call(['mkdir', '-p', 'static/csv'])
+
 	db = pymongo.Connection().spoked
 	seen_mailids = set(m.get('mailid') for m in db.tracks.find(None))
 
@@ -50,7 +53,8 @@ if __name__ == '__main__':
 	yes.close()
 
 	if unseen_mailids:
-		os.system('tar cvfz everything.tar.gz static/csv; mv everything.tar.gz static/')
+		subprocess.call(['tar', 'cvfz', 'everything.tar.gz', 'static/csv'])
+		subprocess.call(['mv', 'everything.tar.gz', 'static/'])
 
 # if get_payload(decode=True) barfs on equal signs, it may be a CRLF issue. Look at
 # http://stackoverflow.com/questions/787739/python-email-get-payload-decode-fails-when-hitting-equal-sign

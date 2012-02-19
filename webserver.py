@@ -7,7 +7,7 @@ db = pymongo.Connection().spoked
 
 @bottle.route('/')
 def index():
-	return ('<div><a href="/static/everything.tar">everything!</div>'
+	return ('<div><a href="/static/everything.tar.gz">everything!</div>'
 		+ ''.join('<div><a href="/static/csv/%s.csv">%s - %s</a></div>' % (f['_id'], ' '.join(f['sender']), time.ctime(f['time'])) for f in db.tracks.find())
 	)
 
