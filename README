@@ -1,0 +1,5 @@
+To use fetch_mail.py, a credentials file named config.json must exist in the top-level directory, formatted as such:
+
+{"host": "imap.gmail.com", "username": "yes@iamspoked.com", "password": "12345"}
+
+Obviously 12345 is not the password.
