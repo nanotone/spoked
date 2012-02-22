@@ -47,6 +47,7 @@ if __name__ == '__main__':
 		#	f.write(kmz.get_payload(decode=True))
 
 		parse_gpx.gpx_to_csv(gpx_path, 'static/csv/%s.csv' % track_id)
+		parse_gpx.gpx_to_json(gpx_path, 'static/json/%s.json' % track_id)
 
 		db.tracks.update({'mailid': mailid}, {'$set': {'gpx_complete': True}})
 
