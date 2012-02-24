@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<style type="text/css">
+body{
+	background-color: #f8f7f2;
+	}
+h1 {
+	font-family:"Helvetica Neue";
+	font-size: 60px;
+	text-align: center;
+	}
+h2 {
+	font-family:"Helvetica Neue";
+	font-size: 16px;
+	font-weight: normal; 
+	text-align: center;
+	color:#3E3E3E;
+	}
+a {
+	color: #ED4A52;
+	}
+#centercontent {
+	margin: auto;
+	margin-top: 150px;
+	width: 500px;
+	height: 500px;
+	}
+</style>
+</head>
+<body>
+<div id="centercontent">
+	<h1><span style="color:#3E3E3E">PAINT</span><span style="color:#8D8E8F">YOUR</span><span style="color:#ED4A52">CITY</span></h1>
+<h2>A social tracking platform for bikers coming soon. <br />See behind the scenes at <a href="http://leatherducking.com">leatherducking.com</a>.</h2>
+</div>
+</body>

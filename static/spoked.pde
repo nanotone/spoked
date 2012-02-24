@@ -1,41 +1,76 @@
 
 //GlOBAl VARIABlES
-int latPos = 1;
-int longPos =0;
+int latPos = 0;
+int longPos = 1;
 
-float Nlat = 40.866383;
-float Slat = 40.60171;
-float Wlong = -74.30007;
-float Elong = -73.686325;
+float Nlat = 40.92;
+float Slat = 40.53; 
+float Wlong = -74.0854;
+float Elong = -73.777;
 
 //SETUP
 void setup() {
-  size(1040,592);
-  background(#FFFFEE);
+  size(1680, 2750);
+  background(0, 0, 0, 0);
   noLoop();
-  processingReady();
+  processingReady(); // tell JavaScript that Processing is done setting up
 }
 
+
 //DRAW
-void draw(myData) {
+// Because of noLoop, this only gets called once
+void draw() {
+   PImage baseMap;
+   baseMap = loadImage("map.png");
+   image(baseMap, 0, 0, width, height);
+}
+
+
+//
+// This function gets called by JavaScript whenever someone's name is clicked.
+// myData is a large array of ride samples, each represented as [lat, long]
+// index is just the index of the person so we can choose between 2 colors
+//
+void drawRide(myData, index) {
 
   // Map projection Translation
-  if (myData == null) { return; }
+  beginShape();
+  boolean penDown = true;
+
   for (int n=1; n<myData.length; n++){
-    float longStart = map(myData[n-1][latPos], Wlong, Elong, 0, width);
-    float latStart = map(myData[n-1][longPos], Nlat, Slat, 0, height);
-    float longStop = map(myData[n][latPos], Wlong, Elong, 0, width);
-    float latStop = map(myData[n][longPos], Nlat, Slat, 0, height);
+    float longStart = map(myData[n-1][longPos], Wlong, Elong, 0, width);
+    float latStart = map(myData[n-1][latPos], Nlat, Slat, 0, height);
+    float longStop = map(myData[n][longPos], Wlong, Elong, 0, width);
+    float latStop = map(myData[n][latPos], Nlat, Slat, 0, height);
     
     float wpDistLong = (longStop - longStart); 
     float wpDistLat = (latStop - latStart); 
+
+    smooth();
+    noFill();
+    if (index % 2 == 0) {
+      stroke(242,29,85, 70); // magenta for dave, erin, tom...
+    }
+    else {
+      stroke(244,203,28, 70); // orange for guri, allison, tash...
+    }
+    strokeWeight(3); 
     
     // Draw line between points
-    if(((wpDistLong >= -1) && (wpDistLong <= 1)) && ((wpDistLat >= -1) && (wpDistLat <= 1))) {
-      smooth();
-      stroke(255,0,0);
-      strokeWeight(.1); 
-      line(longStart, latStart, longStop, latStop);
-    } 
+    if(((wpDistLong >= -3) && (wpDistLong <= 3)) && ((wpDistLat >= -3) && (wpDistLat <= 3))) {
+      if (!penDown) { // Is pen down?
+        beginShape(); // If it is not, put it down
+        penDown = true;
+      }
+      vertex(longStop, latStop);
+
+    } else { // If it is NOT close...
+
+      endShape();
+      penDown = false;
+
+    }
   } 
+  endShape();
+
 }
