@@ -9,11 +9,20 @@ import pymongo
 import gmail
 import parse_gpx
 
+db = pymongo.Connection().spoked
+
+def userid_from_spec(spec):
+	user = db.users.find_one(spec)
+	return user['_id'] if user else None
+
+def userid_from_sender(sender):
+	return (sender[0] and userid_from_spec({'email': sender[0]})) or \
+	       (sender[1] and userid_from_spec({'name' : sender[1]})) or None
+
 if __name__ == '__main__':
 	subprocess.call(['mkdir', '-p', 'static/gpx'])
 	subprocess.call(['mkdir', '-p', 'static/csv'])
 
-	db = pymongo.Connection().spoked
 	seen_mailids = set(m.get('mailid') for m in db.tracks.find(None))
 
 	yes = gmail.MailClient(**json.load(open('config.json')))
@@ -33,9 +42,10 @@ if __name__ == '__main__':
 		gpx = gmail.get_attachment(msg, 'gpx')
 		mail_time = time.mktime(email.utils.parsedate(msg['Date']))
 
-		db.tracks.update({'mailid': mailid},
-		                 {'mailid': mailid, 'time': mail_time, 'sender': sender, 'gpx_complete': False},
-		                 upsert=True)
+		doc = {'mailid': mailid, 'time': mail_time, 'sender': sender, 'gpx_complete': False,
+		       'userid': userid_from_sender(sender)}
+		db.tracks.update({'mailid': mailid}, doc, upsert=True)
+
 		track_id = db.tracks.find_one({'mailid': mailid})['_id']
 		gpx_path = 'static/gpx/%s.gpx' % track_id
 

@@ -17,6 +17,7 @@ canvas {
 	z-index: 10;
 }
 */
+
 body {
 	font-size: 100%;
 	background: #f8f7f2 url(../img/map_1680x2750.png) top left no-repeat;  
@@ -73,7 +74,7 @@ h1 {
 	color: #ffffff;
 	font: 3.5em "atrament-web";
 	text-align: center;
-	}
+  		}
 #service-nav {
 	font: 1em Georgia, serif;
 	width: 100%;
@@ -111,9 +112,10 @@ h1 {
 	color: #ffffff;
 	right: 0;
 	background-color: #00ddff;
-	font: 1.2em "atrament-web";
+	font: 1.4em "atrament-web";
 	text-transform: uppercase;
-	}
+	/*-moz-border-radius-bottomright: 1em;
+  	-webkit-border-bottom-right-radius: 1em;*/	}
 ul#user-nav {
 	padding:0;
 	}
@@ -184,17 +186,34 @@ ul#user-nav li:first-child{
 	position: relative;
 	list-style-type: normal;
 	margin-right: auto;
+	padding-left:.5em;
+	margin-top:0;
+	margin-left: 0;
 }
 #portrait-nav ul li {
 	display: block;
 	float: left;
-	padding-right: 1em;
+	padding-right: .5em;
 	}
 #portrait-nav ul li a{
 	color: #ffffff; 
 	text-decoration: none;  
 	}
-	
+img.avatar {
+	position: relative;
+	display: block;
+	float:left;
+	margin:0;
+	padding:0;
+	height: 2.8em;
+	width: 2.8em;
+	/*-moz-border-radius-bottomright: 1em;
+  	-webkit-border-bottom-right-radius: 1em;*/
+  	/*-moz-border-radius: 0.5em;
+    -webkit-border-radius: .5em;*/
+	border-top: .5em solid #fff;
+  	}
+		
 			/*
 .blue #slatenav{position:relative;display:block;height:42px;font-size:11px;font-weight:bold;background:transparent url(images/blueslate_background.gif) repeat-x top left;font-family:Arial,Verdana,Helvitica,sans-serif;text-transform:uppercase;}
 
