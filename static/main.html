@@ -20,50 +20,68 @@
 <div id="service-nav">
 <div id="logo">SPOKED</div>
   <ul>
-    <li><a href="index.php">Home</a></li>
-    <li><a href="blog.php">Blog</a></li>
-    <li><a href="posterize.php">Posterize</a></li>
-    <li><a href="about.php">About</a></li>
-    <li><a href="invite.php">Invite friends</a></li>
+    <li><a href="main.html">All</a></li>
+    <li><a href="#">Friends</a></li>
+    <li><a href="#">You</a></li>
+    <li><a href="#">About</a></li>
   </ul>
   <ul id="user-nav">
   	<li id="user">
   		<img id="user-avatar" src="img/avatar/sarahadams.jpg">
   		<div id="user-name" class="dropdown">
-						<span class="username">Sarah Adams</span>
-						<!--<span class="icon">…</span>-->
-						<ul id="user-links" class="clearfix hidden" style="display: none; ">
-							<li class="user-profile"><a href="/profile/sarahadams">Your Profile</a></li>
-							<li class="user-logout"><a href="/logout">Log out</a></li>
-						</ul>
+			<span class="username">Sarah Adams</span>
+			<!--<span class="icon">…</span>-->
+			<ul id="user-links" class="clearfix hidden" style="display: none; ">
+				<li class="user-profile"><a href="/profile/sarahadams">Your Profile</a></li>
+				<li class="user-logout"><a href="/logout">Log out</a></li>
+			</ul>
 		</div>
 	</li><!-- end user-->
 </ul><!-- end user-nav-->
 </div> <!-- end service-nav -->
 </div> <!-- end nav -->
 
- 		<canvas id="processing" data-processing-sources="spoked.pde"></canvas>
-<div id="main-nav">
-  <ul>
-    <li><a href="you.php">You</a></li>
-    <li><a href="friends.php">Friends</a></li>
-    <li><a href="all.php">All</a></li>
-  </ul>
+<div id="commentary">
+	<div id="time-bar">
+		<a href="">THIS WEEK</a>, <a href="#">LAST WEEK</a>:
+	</div>
+Holy cow, you have been riding 290 miles lately! NYC - Philly next?
 </div>
+
+<canvas id="processing" data-processing-sources="spoked.pde"></canvas>
+
+
+<!--<div id="main-nav">
+  <ul>
+    <li><a href="profile.html">You</a></li>
+    <li><a href="friends.html">Friends</a></li>
+    <li><a href="main.html">All</a></li>
+  </ul>
+</div>-->
+<div id="bottom-nav">
+<div id="control-nav">
+  <ul>
+    <li><a href="#">MAP1</a></li>
+    <li><a href="#">MAP2</a></li>
+    <li><a href="#">MAP3</a></li>
+  </ul> 
+</div> <!-- end control nav -->
+
 <div id="portrait-nav">
   <ul>
-    <li><a href="profilex.php"><img class="avatar" style="border-color: #d2222d;" src="img/avatar/allisonshaw.jpg"></a></li>
-    <li><a href="profilex.php"><img class="avatar" style="border-color: #0bb7ab;" src="img/avatar/gurivenstad.jpg"></a></li>
-    <li><a href="profilex.php"><img class="avatar" style="border-color: #ef5476;" src="img/avatar/carriestiens.jpg"></a></li>
-    <li><a href="profilex.php"><img class="avatar" style="border-color: #9880ba;" src="img/avatar/michaelyap.jpg"></a></li>
-    <li><a href="profilex.php"><img class="avatar" style="border-color: #f0b50c;" src="img/avatar/kristinbreivik.jpg"></a></li>
-    <li><a href="profilex.php"><img class="avatar" style="border-color: #ef5476;" src="img/avatar/tashwong.jpg"></a></li>
-    <li><a href="profilex.php"><img class="avatar" style="border-color: #00ddff;" src="img/avatar/sarahadams.jpg"></a></li>
-    <li><a href="profilex.php"><img class="avatar" style="border-color: #f08e21;" src="img/avatar/tomharman.jpg"></a></li>
-    <li><a href="profilex.php"><img class="avatar" style="border-color: #0aa5bb;" src="img/avatar/coopersmith.jpg"></a></li>    
-    <li><a href="profilex.php"><img class="avatar" style="border-color: #f6917f;" src="img/avatar/serakoo.jpg"></a></li>
-    <li><a href="profilex.php"><img class="avatar" style="border-color: #8bb049;" src="img/avatar/frankbonomo.jpg"></a></li>
-    <li><a href="profilex.php"><img class="avatar" style="border-color: #d2222d;" src="img/avatar/lizdanzico.jpg"></a></li>
+    <li><a href="profile.html"><img class="avatar" style="border-color: #d2222d;" src="img/avatar/allisonshaw.jpg"></a></li>
+    <li><a href="profile.html"><img class="avatar" style="border-color: #0bb7ab;" src="img/avatar/gurivenstad.jpg"></a></li>
+    <li><a href="profile.html"><img class="avatar" style="border-color: #ef5476;" src="img/avatar/carriestiens.jpg"></a></li>
+    <li><a href="profile.html"><img class="avatar" style="border-color: #9880ba;" src="img/avatar/michaelyap.jpg"></a></li>
+    <li><a href="profile.html"><img class="avatar selected" style="border-color: #f0b50c;" src="img/avatar/kristinbreivik.jpg"></a></li>
+    <li><a href="profile.html"><img class="avatar" style="border-color: #ef5476;" src="img/avatar/tashwong.jpg"></a></li>
+    <li><a href="profile.html"><img class="avatar" style="border-color: #00ddff;" src="img/avatar/sarahadams.jpg"></a></li>
+    <li><a href="profile.html"><img class="avatar" style="border-color: #f08e21;" src="img/avatar/tomharman.jpg"></a></li>
+    <li><a href="profile.html"><img class="avatar" style="border-color: #0aa5bb;" src="img/avatar/coopersmith.jpg"></a></li>    
+    <li><a href="profile.html"><img class="avatar" style="border-color: #f6917f;" src="img/avatar/serakoo.jpg"></a></li>
+    <li><a href="profile.html"><img class="avatar" style="border-color: #8bb049;" src="img/avatar/frankbonomo.jpg"></a></li>
+    <li><a href="profile.html"><img class="avatar" style="border-color: #d2222d;" src="img/avatar/lizdanzico.jpg"></a></li>
   </ul>
-</div>
+</div> <!-- end portrait nav -->
+</div> <!-- end bottom-nav -->
 </body>

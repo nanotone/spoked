@@ -1,4 +1,4 @@
-/*
+/* OLD HUGE MAP DID NOT WORK ON IPAD
 body {
 	font-size: 100%;
 	background: #f8f7f2 url(../img/map_2200x3026.png) top left no-repeat;  
@@ -45,7 +45,7 @@ h1 {
 	}
 	
 /* NAVS */	
-#nav, #main-nav, #portrait-nav {
+#nav, #bottom-nav {
 	position: fixed;
 	width: 100%;
 	margin: 0;	
@@ -59,18 +59,18 @@ h1 {
 	opacity: 0.7;
 	margin: 1.5em 0 0 0;
 	position: absolute;
-	z-index: 20;
+	z-index: 200;
 	-moz-box-shadow: 3px 3px 7px #888;
   	-webkit-box-shadow: 3px 3px 7px #888;
   		}
- #logo {
+#logo {
 	display: block;
 	float: left;
 	position: relative;
-	z-index: 25;
+	z-index: 300;
 	margin: -0.5em 0.5em -0.5em 5%;
 	padding: 0.5em;
-	background-color: #00ddff;
+	background-color: #ef5476; /*blue #00ddff;*/
 	color: #ffffff;
 	font: 3.5em "atrament-web";
 	text-align: center;
@@ -80,12 +80,10 @@ h1 {
 	width: 100%;
 	heigth: 1em;
 	position: absolute;
-	z-index: 20;
+	z-index: 200;
 	margin: 1.3em 0 0 0;
 	padding: 0;
 	vertical-align: baseline;
-   /* -moz-border-radius-bottomright: 15px;
-  	-webkit-border-bottom-right-radius: 15px;*/
 	}
 #service-nav ul {
 	position: relative;
@@ -111,7 +109,7 @@ h1 {
 	margin: -0.8em 5% 0 0;
 	color: #ffffff;
 	right: 0;
-	background-color: #00ddff;
+	background-color: #ef5476; /*blue #00ddff;*/
 	font: 1.4em "atrament-web";
 	text-transform: uppercase;
 	/*-moz-border-radius-bottomright: 1em;
@@ -137,48 +135,55 @@ ul#user-nav li:first-child{
 	display:block;
 	padding: 0.5em;
 }	
-/*MAIN NAV*/
 
-#main-nav {
+/*CONTROL NAV*/
+
+#control-nav {
 	bottom: 0;
-	margin: 0 0 3.5em 0;	
-	padding: 0 0 0.3em 0;
-	background-color: #fff;
-	opacity: 0.7;
-	z-index: 15;
+	margin: 0 0 0 0;	
+	padding: 0 0 0 0;
+	z-index: 200;
+	position: relative;
+	height: 3.5em;
+	float:left;
 	}
-#main-nav ul li {
+#control-nav ul li {
 	display: block;
 	float: left;
 	font: 1.2em "atrament-web";
 	text-transform: uppercase;
 	padding: 0.2em 0;
 	}
-#main-nav ul li a{
-	color: #00ddff; 
+#control-nav ul li a{
+	color: #ef5476; 
 	text-decoration: none;  
 	padding: 0.2em 0.5em;
-	border-right: 1px solid #00ddff;
+	border-right: 1px solid #ef5476;
 	}
-#main-nav ul li:first-child {
+#control-nav ul li:first-child {
 	background:yellow;
-	border-left: 1px solid #00ddff;
+	border-left: 1px solid #ef5476;
 }
 
+/*BOTTOM NAV*/
+#bottom-nav{
+	bottom: 0;
+	height: 3.5em;
+	}
+	
 /*PORTRAIT NAV*/
 
 #portrait-nav {
 	bottom: 0;
-	-moz-box-shadow: 5px 5px 7px #888;
-  	-webkit-box-shadow: 5px 5px 7px #888;	}
-#portrait-nav {
 	height: 3.5em;
-	background-color: #000;
-	opacity: 0.7;
-	z-index: 20;
-	margin-top: 2.5em;
-	-moz-box-shadow: 3px -3px 7px #888;
-  	-webkit-box-shadow: 3px -3px 7px #888;
+	position: relative;
+	display: block;
+	float: left;
+	/*background-color: #000;
+	opacity: 0.7;*/
+	z-index: 200;
+	/*-moz-box-shadow: 3px -3px 7px #888;
+  	-webkit-box-shadow: 3px -3px 7px #888;*/
 /*  -moz-border-radius-bottomright: 15px;
   	-webkit-border-bottom-right-radius: 15px;*/
 	}
@@ -208,20 +213,39 @@ img.avatar {
 	height: 2.8em;
 	width: 2.8em;
 	/*-moz-border-radius-bottomright: 1em;
-  	-webkit-border-bottom-right-radius: 1em;*/
-  	/*-moz-border-radius: 0.5em;
+  	-webkit-border-bottom-right-radius: 1em;
+  	-moz-border-radius: .5em;
     -webkit-border-radius: .5em;*/
 	border-top: .5em solid #fff;
   	}
-		
-			/*
-.blue #slatenav{position:relative;display:block;height:42px;font-size:11px;font-weight:bold;background:transparent url(images/blueslate_background.gif) repeat-x top left;font-family:Arial,Verdana,Helvitica,sans-serif;text-transform:uppercase;}
-
-.blue #slatenav ul{margin:0px;padding:0;list-style-type:none;width:auto;}
-
-.blue #slatenav ul li{display:block;float:left;margin:0 1px 0 0;}
-
-.blue #slatenav ul li a{display:block;float:left;color:#D5F1FF;text-decoration:none;padding:14px 22px 0 22px;height:28px;}
-
-.blue #slatenav ul li a:hover,.blue #slatenav ul li a.current{color:#fff;background:transparent url(images/blueslate_backgroundOVER.gif) no-repeat top center;}*/
+img.selected
+{
+	border-top: 2em solid #fff; 
+	margin-top: -1.5em;
+	-moz-border-radius-topright: 1em;
+  	-webkit-border-top-right-radius: 1em;
+	}
 	
+/* COMMENTARY */
+#commentary {
+	/*background-color: #fff;*/
+	position: fixed;
+	width: 10em;
+	height: auto;
+	margin: 5em 0 0 5%;
+	z-index: 200;	
+	color: #ef5476;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.8em;
+	}
+#time-bar {
+	font: .6em "atrament-web", sans-serif;
+	font-style: normal;
+	margin-bottom: .6em;
+}
+#time-bar a {
+	color: #ef5476;
+	font-style: normal;
+}
+
