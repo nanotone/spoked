@@ -4,7 +4,6 @@
 <title>SPOKED</title>
 
 <meta charset=UTF-8" />
-<!-- <script type="text/javascript" src="js/js.js"></script> -->
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/processing-1.3.6.min.js"></script>
 <script type="text/javascript" src="http://use.typekit.com/prg6crm.js"></script>
@@ -24,16 +23,16 @@
     <li><a href="#">Friends</a></li>
     <li><a href="#">You</a></li>
     <li><a href="#">About</a></li>
+    <li><a href="#">Invite</a></li>
   </ul>
   <ul id="user-nav">
   	<li id="user">
   		<img id="user-avatar" src="img/avatar/sarahadams.jpg">
   		<div id="user-name" class="dropdown">
 			<span class="username">Sarah Adams</span>
-			<!--<span class="icon">…</span>-->
-			<ul id="user-links" class="clearfix hidden" style="display: none;">
-				<li class="user-profile"><a href="/profile/sarahadams">Your Profile</a></li>
-				<li class="user-logout"><a href="/logout">Log out</a></li>
+			<ul id="user-links" class="hidden" style="display: none;">
+				<li><a href="/profile/sarahadams">Your Profile</a></li>
+				<li><a href="/logout">Log out</a></li>
 			</ul>
 		</div>
 	</li><!-- end user-->
@@ -43,7 +42,7 @@
 
 <div id="commentary">
 	<div id="time-bar">
-		<a href="">THIS WEEK</a>, <a href="#">LAST WEEK</a>:
+		<a href="">THIS WEEK</a> | <a href="#">LAST WEEK</a>:
 	</div>
 Holy cow, you have been riding 290 miles lately! NYC - Philly next?
 </div>
@@ -51,14 +50,8 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
 <canvas id="processing" data-processing-sources="spoked.pde"></canvas>
 
 
-<!--<div id="main-nav">
-  <ul>
-    <li><a href="profile.html">You</a></li>
-    <li><a href="friends.html">Friends</a></li>
-    <li><a href="main.html">All</a></li>
-  </ul>
-</div>-->
 <div id="bottom-nav">
+<div id="bottom-bar"></div>
 <div id="control-nav">
   <ul>
     <li><a href="#">MAP1</a></li>
@@ -74,9 +67,9 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
     	<div class="pop" style="background-color: #d2222d;">
     		<a href="#ToUserProfile" id="name">Allison Shaw</a> is on two wheels! 
     		<div class="pop-nav">
-    		<a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours ></a> <br /><!-- On friends page: If we know who is logged in -->
-    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides ></a><br /> Only on profile page -->
-    		<a href="#ToProfile">To profile ></a>
+    		<a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours &raquo;</a> <br /><!-- On friends page: If we know who is logged in -->
+    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides &raquo;</a><br /> Only on profile page -->
+    		<a href="#ToProfile">To profile &raquo;</a>
 
     		</div>
     	</div>
@@ -85,9 +78,9 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
     	<img class="avatar" style="border-color: #0bb7ab;" src="img/avatar/gurivenstad.jpg"></a>
     	<div class="pop" style="background-color: #0bb7ab;">
     		<a href="#ToUserProfile" id="name">Guri Venstad</a> rode 3 hours ago 
-    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours ></a> <br />
-    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides ></a><br /> Only on profile page -->
-    		<a href="#ToProfile">To profile ></a>
+    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours &raquo;</a> <br />
+    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides &raquo;</a><br /> Only on profile page -->
+    		<a href="#ToProfile">To profile &raquo;</a>
     		</div>
     	</div>
     </li>
@@ -95,9 +88,9 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
     	<img class="avatar" style="border-color: #ef5476;" src="img/avatar/carriestiens.jpg"></a>
     	<div class="pop" style="background-color: #ef5476;">
     		<a href="#ToUserProfile" id="name">Carrie Stiens</a> rode 4 hours ago
-    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours ></a> <br />
-    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides ></a><br /> Only on profile page -->
-    		<a href="#ToProfile">To profile ></a>
+    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours &raquo;</a> <br />
+    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides &raquo;</a><br /> Only on profile page -->
+    		<a href="#ToProfile">To profile &raquo;</a>
     		</div>
     	</div>
     </li>
@@ -105,9 +98,9 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
     	<img class="avatar" style="border-color: #9880ba;" src="img/avatar/michaelyap.jpg"></a>
     	<div class="pop" style="background-color: #9880ba;">
     		<a href="#ToUserProfile" id="name">Michael Yap</a> rode 4 hours ago 
-    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours ></a> <br />
-    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides ></a><br /> Only on profile page -->
-    		<a href="#ToProfile">To profile ></a>
+    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours &raquo;</a> <br />
+    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides &raquo;</a><br /> Only on profile page -->
+    		<a href="#ToProfile">To profile &raquo;</a>
     		</div>
     	</div>
     </li>
@@ -115,9 +108,9 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
     	<img class="avatar" style="border-color: #f0b50c;" src="img/avatar/kristinbreivik.jpg"></a>
     	<div class="pop" style="background-color: #f0b50c;">
     		<a href="#ToUserProfile" id="name">Kristin Breivik</a> rode last night at 11pm
-    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours ></a> <br />
-    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides ></a><br /> Only on profile page -->
-    		<a href="#ToProfile">To profile ></a>
+    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours &raquo;</a> <br />
+    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides &raquo;</a><br /> Only on profile page -->
+    		<a href="#ToProfile">To profile &raquo;</a>
     		</div>
     	</div>
     </li>
@@ -125,9 +118,9 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
     	<img class="avatar" style="border-color: #ef5476;" src="img/avatar/tashwong.jpg"></a>
     	<div class="pop" style="background-color: #ef5476;">
     		<a href="#ToUserProfile" id="name">Tash Wong</a> rode last night at 9pm
-    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours ></a> <br />
-    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides ></a><br /> Only on profile page -->
-    		<a href="#ToProfile">To profile ></a>
+    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours &raquo;</a> <br />
+    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides &raquo;</a><br /> Only on profile page -->
+    		<a href="#ToProfile">To profile &raquo;</a>
     		</div>
     	</div>
     </li>
@@ -135,9 +128,9 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
     	<img class="avatar" style="border-color: #00ddff;" src="img/avatar/sarahadams.jpg"></a>
     	<div class="pop" style="background-color: #00ddff;">
     		<a href="#ToUserProfile" id="name">Sarah Adams</a> rode yesterday at 5pm
-    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours ></a> <br />
-    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides ></a><br /> Only on profile page -->
-    		<a href="#ToProfile">To profile ></a>
+    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours &raquo;</a> <br />
+    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides &raquo;</a><br /> Only on profile page -->
+    		<a href="#ToProfile">To profile &raquo;</a>
     		</div>
     	</div>
     </li>
@@ -145,9 +138,9 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
     	<img class="avatar" style="border-color: #f08e21;" src="img/avatar/tomharman.jpg"></a>
     	<div class="pop" style="background-color: #f08e21;">
     		<a href="#ToUserProfile" id="name">Tom Harman</a> rode Tuesday night 
-    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours ></a> <br />
-    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides ></a><br /> Only on profile page -->
-    		<a href="#ToProfile">To profile ></a>
+    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours &raquo;</a> <br />
+    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides &raquo;</a><br /> Only on profile page -->
+    		<a href="#ToProfile">To profile &raquo;</a>
     		</div>
     	</div>
     </li>
@@ -155,9 +148,9 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
     	<img class="avatar" style="border-color: #0aa5bb;" src="img/avatar/coopersmith.jpg"></a>
     	<div class="pop" style="background-color: #0aa5bb;">
     		<a href="#ToUserProfile" id="name">Cooper Smith</a> rode Tuesday morning 
-    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours ></a> <br />
-    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides ></a><br /> Only on profile page -->
-    		<a href="#ToProfile">To profile ></a>
+    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours &raquo;</a> <br />
+    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides &raquo;</a><br /> Only on profile page -->
+    		<a href="#ToProfile">To profile &raquo;</a>
     		</div>
     	</div>
     </li>
@@ -165,9 +158,9 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
     	<img class="avatar" style="border-color: #f6917f;" src="img/avatar/serakoo.jpg"></a>
     	<div class="pop" style="background-color: #f6917f;">
     		<a href="#ToUserProfile" id="name">Sera Koo</a> rode Monday morning
-    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours ></a> <br />
-    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides ></a><br /> Only on profile page -->
-    		<a href="#ToProfile">To profile ></a>
+    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours &raquo;</a> <br />
+    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides &raquo;</a><br /> Only on profile page -->
+    		<a href="#ToProfile">To profile &raquo;</a>
     		</div>
     	</div>
     </li>
@@ -175,9 +168,9 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
     	<img class="avatar" style="border-color: #8bb049;" src="img/avatar/frankbonomo.jpg"></a>
     	<div class="pop" style="background-color: #8bb049;">
     		<a href="#ToUserProfile" id="name">Frank Bonomo</a> rode Sunday morning
-    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours ></a> <br />
-    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides ></a><br /> Only on profile page -->
-    		<a href="#ToProfile">To profile ></a>
+    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours &raquo;</a> <br />
+    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides &raquo;</a><br /> Only on profile page -->
+    		<a href="#ToProfile">To profile &raquo;</a>
     		</div>
     	</div>
     </li>
@@ -185,9 +178,9 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
     	<img class="avatar" style="border-color: #d2222d;" src="img/avatar/lizdanzico.jpg"></a>
     	<div class="pop" style="background-color: #d2222d;">
     		<a href="#ToUserProfile" id="name">Liz Danzico</a> rode Friday night
-    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours ></a> <br />
-    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides ></a><br /> Only on profile page -->
-    		<a href="#ToProfile">To profile ></a>
+    		<div class="pop-nav"><a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours &raquo;</a> <br />
+    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides &raquo;</a><br /> Only on profile page -->
+    		<a href="#ToProfile">To profile &raquo;</a>
     		</div>
     	</div>
     </li>
