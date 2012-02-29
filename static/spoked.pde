@@ -55,6 +55,7 @@ void drawRide(myData, index) {
       stroke(139, 176, 73); 
     }
     strokeWeight(3); 
+    strokeJoin(ROUND);
     
     // Draw line between points
     if(((wpDistLong >= -3) && (wpDistLong <= 3)) && ((wpDistLat >= -3) && (wpDistLat <= 3))) {
