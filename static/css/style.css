@@ -40,7 +40,7 @@ h1 {
 /*SERVICE NAV (TOP)*/
 /* line 53, ../sass/style.scss */
 #service-bar {
-  background-color: black;
+  background-color: #322e10;
   width: 100%;
   height: 2.4em;
   opacity: 0.7;
@@ -60,7 +60,7 @@ h1 {
   margin: -0.5em 0.5em -0.5em 5%;
   padding: 0.5em;
   padding-bottom: .4em;
-  background-color: #8bb049;
+  background-color: #f6917f;
   color: #ffffff;
   font-family: "atrament-web", sans-serif;
   font-size: 3.5em;
@@ -112,7 +112,7 @@ h1 {
   margin: -0.8em 5% 0 0;
   color: #ffffff;
   right: 0;
-  background-color: #8bb049;
+  background-color: #f6917f;
   /*blue #00ddff;*/
   font-size: 1.4em;
   font-family: "atrament-web", sans-serif;
@@ -174,16 +174,16 @@ ul#user-nav li:first-child {
 
 /* line 159, ../sass/style.scss */
 #control-nav ul li a {
-  color: #8bb049;
+  color: #f6917f;
   text-decoration: none;
   padding: 0.2em 0.5em;
-  border-right: 1px solid #8bb049;
+  border-right: 1px solid #f6917f;
 }
 
 /* line 165, ../sass/style.scss */
 #control-nav ul li:first-child {
   background: yellow;
-  border-left: 1px solid #8bb049;
+  border-left: 1px solid #f6917f;
 }
 
 /*BOTTOM NAV*/
@@ -198,7 +198,7 @@ ul#user-nav li:first-child {
   height: 3.5em;
   bottom: 0;
   width: 100%;
-  background-color: black;
+  background-color: #322e10;
   opacity: 0.7;
   z-index: 180;
   position: absolute;
@@ -327,7 +327,7 @@ img.selected {
   height: auto;
   margin: 5em 0 0 5%;
   z-index: 200;
-  color: #8bb049;
+  color: #f6917f;
   font-style: normal;
   font-weight: 400;
   font-size: 1.8em;
@@ -343,6 +343,6 @@ img.selected {
 
 /* line 297, ../sass/style.scss */
 #time-bar a {
-  color: #8bb049;
+  color: #f6917f;
   font-style: normal;
 }
