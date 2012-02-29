@@ -5,3 +5,5 @@ config.json
 
 *.pyc
 *.swp
+.sass-cache
+.DS_Store
