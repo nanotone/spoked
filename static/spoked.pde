@@ -49,10 +49,10 @@ void drawRide(myData, index) {
     smooth();
     noFill();
     if (index % 2 == 0) {
-      stroke(242,29,85); // magenta for dave, erin, tom...
+      stroke(139, 176, 73); //green. magenta: 242,29,85 yellow: 244,203,28
     }
     else {
-      stroke(244,203,28); // orange for guri, allison, tash...
+      stroke(139, 176, 73); 
     }
     strokeWeight(3); 
     

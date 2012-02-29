@@ -60,7 +60,7 @@ h1 {
   margin: -0.5em 0.5em -0.5em 5%;
   padding: 0.5em;
   padding-bottom: .4em;
-  background-color: #f0b50c;
+  background-color: #8bb049;
   color: #ffffff;
   font-family: "atrament-web", sans-serif;
   font-size: 3.5em;
@@ -112,7 +112,7 @@ h1 {
   margin: -0.8em 5% 0 0;
   color: #ffffff;
   right: 0;
-  background-color: #f0b50c;
+  background-color: #8bb049;
   /*blue #00ddff;*/
   font-size: 1.4em;
   font-family: "atrament-web", sans-serif;
@@ -174,16 +174,16 @@ ul#user-nav li:first-child {
 
 /* line 159, ../sass/style.scss */
 #control-nav ul li a {
-  color: #f0b50c;
+  color: #8bb049;
   text-decoration: none;
   padding: 0.2em 0.5em;
-  border-right: 1px solid #f0b50c;
+  border-right: 1px solid #8bb049;
 }
 
 /* line 165, ../sass/style.scss */
 #control-nav ul li:first-child {
   background: yellow;
-  border-left: 1px solid #f0b50c;
+  border-left: 1px solid #8bb049;
 }
 
 /*BOTTOM NAV*/
@@ -327,7 +327,7 @@ img.selected {
   height: auto;
   margin: 5em 0 0 5%;
   z-index: 200;
-  color: #f0b50c;
+  color: #8bb049;
   font-style: normal;
   font-weight: 400;
   font-size: 1.8em;
@@ -343,6 +343,6 @@ img.selected {
 
 /* line 297, ../sass/style.scss */
 #time-bar a {
-  color: #f0b50c;
+  color: #8bb049;
   font-style: normal;
 }
