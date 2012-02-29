@@ -20,9 +20,9 @@ void setup() {
 //DRAW
 // Because of noLoop, this only gets called once
 void draw() {
-   PImage baseMap;
-   baseMap = loadImage("map.png");
-   image(baseMap, 0, 0, width, height);
+   //PImage baseMap; // we're not using this any more
+   //baseMap = loadImage("map.png");
+   //image(baseMap, 0, 0, width, height);
 }
 
 
