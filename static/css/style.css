@@ -163,37 +163,72 @@ ul#user-nav li:first-child {
 }
 
 /* line 151, ../sass/style.scss */
+#control-nav ul  {
+  list-style-type: normal;
+  margin-right: auto;
+  padding-left: .5em;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+/* line 158, ../sass/style.scss */
 #control-nav ul li {
   display: block;
   float: left;
-  font-size: 1.2em;
-  font-family: "atrament-web", sans-serif;
-  text-transform: uppercase;
-  padding: 0.2em 0;
+  position: relative;
+  padding-right: .5em;
 }
 
-/* line 159, ../sass/style.scss */
+/* line 164, ../sass/style.scss */
 #control-nav ul li a {
-  color: #f6917f;
+  color: #ffffff;
   text-decoration: none;
-  padding: 0.2em 0.5em;
-  border-right: 1px solid #f6917f;
 }
 
-/* line 165, ../sass/style.scss */
+/* line 168, ../sass/style.scss */
+img.mapbtn {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  height: 2.8em;
+  width: 2.8em;
+  	/*-moz-border-radius-bottomright: 1em;
+    	-webkit-border-bottom-right-radius: 1em;
+    	-moz-border-radius: .5em;
+      -webkit-border-radius: .5em;*/
+  border-top: .5em solid #fff;
+}
+
+/*
+#control-nav ul li {
+	display: block;
+	float: left;
+	font-size: 1.2em;
+	font-family: $sans;
+	text-transform: uppercase;
+	padding: 0.2em 0;
+	}
+#control-nav ul li a{
+	color: $yourColor; 
+	text-decoration: none;  
+	padding: 0.2em 0.5em;
+	border-right: 1px solid $yourColor;
+	}
 #control-nav ul li:first-child {
-  background: yellow;
-  border-left: 1px solid #f6917f;
+	background:yellow;
+	border-left: 1px solid $yourColor;
 }
-
+*/
 /*BOTTOM NAV*/
-/* line 171, ../sass/style.scss */
+/* line 205, ../sass/style.scss */
 #bottom-nav {
   bottom: 0;
   height: 3.5em;
 }
 
-/* line 175, ../sass/style.scss */
+/* line 209, ../sass/style.scss */
 #bottom-bar {
   height: 3.5em;
   bottom: 0;
@@ -207,15 +242,13 @@ ul#user-nav li:first-child {
 }
 
 /*PORTRAIT NAV*/
-/* line 188, ../sass/style.scss */
+/* line 222, ../sass/style.scss */
 #portrait-nav {
   bottom: 0;
   height: 3.5em;
   position: relative;
   display: block;
   float: left;
-  /*background-color: $black;
-  opacity: 0.7;*/
   z-index: 200;
   	/*-moz-box-shadow: 3px -3px 7px #888;
     	-webkit-box-shadow: 3px -3px 7px #888;*/
@@ -223,7 +256,7 @@ ul#user-nav li:first-child {
     	-webkit-border-bottom-right-radius: 15px;*/
 }
 
-/* line 202, ../sass/style.scss */
+/* line 234, ../sass/style.scss */
 #portrait-nav ul {
   position: relative;
   list-style-type: normal;
@@ -233,7 +266,7 @@ ul#user-nav li:first-child {
   margin-left: 0;
 }
 
-/* line 210, ../sass/style.scss */
+/* line 242, ../sass/style.scss */
 #portrait-nav ul li {
   display: block;
   float: left;
@@ -241,13 +274,13 @@ ul#user-nav li:first-child {
   padding-right: .5em;
 }
 
-/* line 217, ../sass/style.scss */
+/* line 249, ../sass/style.scss */
 #portrait-nav ul li a {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* line 221, ../sass/style.scss */
+/* line 253, ../sass/style.scss */
 img.avatar {
   position: relative;
   display: block;
@@ -263,13 +296,13 @@ img.avatar {
   border-top: .5em solid #fff;
 }
 
-/* line 237, ../sass/style.scss */
+/* line 269, ../sass/style.scss */
 img.selected {
   border-top: 2em solid #fff;
   margin-top: -1.5em;
 }
 
-/* line 241, ../sass/style.scss */
+/* line 273, ../sass/style.scss */
 .pop {
   display: none;
   position: absolute;
@@ -289,37 +322,37 @@ img.selected {
   -webkit-border-bottom-right-radius: .8em;
 }
 
-/* line 259, ../sass/style.scss */
+/* line 291, ../sass/style.scss */
 #portrait-nav ul li:hover .pop {
   display: block;
 }
 
-/* line 262, ../sass/style.scss */
+/* line 294, ../sass/style.scss */
 #portrait-nav ul li:hover img {
   border-top: 1em solid #fff;
   margin-top: -0.5em;
 }
 
-/* line 266, ../sass/style.scss */
+/* line 298, ../sass/style.scss */
 #portrait-nav ul li .pop a {
   color: #fff;
 }
 
-/* line 269, ../sass/style.scss */
+/* line 301, ../sass/style.scss */
 .pop a#name {
   font-family: "atrament-web", sans-serif;
   font-size: 1.4em;
   text-transform: uppercase;
 }
 
-/* line 274, ../sass/style.scss */
+/* line 306, ../sass/style.scss */
 .pop-nav {
   padding-top: .4em;
   font: .8em Georgia;
 }
 
 /* COMMENTARY */
-/* line 279, ../sass/style.scss */
+/* line 311, ../sass/style.scss */
 #commentary {
   /*background-color: #fff;*/
   position: fixed;
@@ -333,7 +366,7 @@ img.selected {
   font-size: 1.8em;
 }
 
-/* line 291, ../sass/style.scss */
+/* line 323, ../sass/style.scss */
 #time-bar {
   font-family: "atrament-web", sans-serif;
   font-size: .6em;
@@ -341,7 +374,7 @@ img.selected {
   margin-bottom: .6em;
 }
 
-/* line 297, ../sass/style.scss */
+/* line 329, ../sass/style.scss */
 #time-bar a {
   color: #f6917f;
   font-style: normal;

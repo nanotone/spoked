@@ -148,6 +148,39 @@ ul#user-nav li:first-child{
 	height: 3.5em;
 	float:left;
 	}
+#control-nav ul {
+	list-style-type: normal;
+	margin-right: auto;
+	padding-left:.5em;
+	margin-top:0;
+	margin-left: 0;
+	}
+#control-nav ul li {
+	display: block;
+	float: left;
+	position: relative;
+	padding-right: .5em;
+	}
+#control-nav ul li a{
+	color: #ffffff;
+	text-decoration: none;  
+	}
+img.mapbtn {
+	position: relative;
+	display: block;
+	float:left;
+	margin:0;
+	padding:0;
+	height: 2.8em;
+	width: 2.8em;
+	/*-moz-border-radius-bottomright: 1em;
+  	-webkit-border-bottom-right-radius: 1em;
+  	-moz-border-radius: .5em;
+    -webkit-border-radius: .5em;*/
+	border-top: .5em solid #fff;
+  	}
+
+/*
 #control-nav ul li {
 	display: block;
 	float: left;
@@ -166,6 +199,7 @@ ul#user-nav li:first-child{
 	background:yellow;
 	border-left: 1px solid $yourColor;
 }
+*/
 
 /*BOTTOM NAV*/
 #bottom-nav{
@@ -191,8 +225,6 @@ ul#user-nav li:first-child{
 	position: relative;
 	display: block;
 	float: left;
-	/*background-color: $black;
-	opacity: 0.7;*/
 	z-index: 200;
 	/*-moz-box-shadow: 3px -3px 7px #888;
   	-webkit-box-shadow: 3px -3px 7px #888;*/
