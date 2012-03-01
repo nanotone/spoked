@@ -1,5 +1,5 @@
 /*COLORS*/
-$yourColor: #f6917f;
+$yourColor: #0bb7ab;
 $bar: #322e10;
 $black: #000;
 $red: #d2222d;
@@ -154,6 +154,7 @@ ul#user-nav li:first-child{
 	padding-left:.5em;
 	margin-top:0;
 	margin-left: 0;
+	padding: 0;
 	}
 #control-nav ul li {
 	display: block;
@@ -162,10 +163,11 @@ ul#user-nav li:first-child{
 	padding-right: .5em;
 	}
 #control-nav ul li a{
-	color: #ffffff;
+	color: $yourColor;
 	text-decoration: none;  
 	}
 img.mapbtn {
+	background-color: $yourColor;
 	position: relative;
 	display: block;
 	float:left;
@@ -214,7 +216,7 @@ img.mapbtn {
 	opacity: 0.7;
 	z-index: 180;
 	position: absolute;	
--moz-box-shadow: 3px -3px 7px #888;
+	-moz-box-shadow: 3px -3px 7px #888;
   	-webkit-box-shadow: 3px -3px 7px #888;
 	}
 /*PORTRAIT NAV*/
@@ -288,7 +290,7 @@ img.selected
 	-moz-border-radius-bottomright: .8em;
   	-webkit-border-bottom-right-radius: .8em;
 	}
-#portrait-nav ul li:hover .pop {
+#portrait-nav ul li:hover .pop, #control-nav ul li:hover .pop {
 	display: block;
 	}
 #portrait-nav ul li:hover img {

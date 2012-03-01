@@ -60,7 +60,7 @@ h1 {
   margin: -0.5em 0.5em -0.5em 5%;
   padding: 0.5em;
   padding-bottom: .4em;
-  background-color: #f6917f;
+  background-color: #0bb7ab;
   color: #ffffff;
   font-family: "atrament-web", sans-serif;
   font-size: 3.5em;
@@ -112,7 +112,7 @@ h1 {
   margin: -0.8em 5% 0 0;
   color: #ffffff;
   right: 0;
-  background-color: #f6917f;
+  background-color: #0bb7ab;
   /*blue #00ddff;*/
   font-size: 1.4em;
   font-family: "atrament-web", sans-serif;
@@ -169,9 +169,10 @@ ul#user-nav li:first-child {
   padding-left: .5em;
   margin-top: 0;
   margin-left: 0;
+  padding: 0;
 }
 
-/* line 158, ../sass/style.scss */
+/* line 159, ../sass/style.scss */
 #control-nav ul li {
   display: block;
   float: left;
@@ -179,14 +180,15 @@ ul#user-nav li:first-child {
   padding-right: .5em;
 }
 
-/* line 164, ../sass/style.scss */
+/* line 165, ../sass/style.scss */
 #control-nav ul li a {
-  color: #ffffff;
+  color: #0bb7ab;
   text-decoration: none;
 }
 
-/* line 168, ../sass/style.scss */
+/* line 169, ../sass/style.scss */
 img.mapbtn {
+  background-color: #0bb7ab;
   position: relative;
   display: block;
   float: left;
@@ -222,13 +224,13 @@ img.mapbtn {
 }
 */
 /*BOTTOM NAV*/
-/* line 205, ../sass/style.scss */
+/* line 207, ../sass/style.scss */
 #bottom-nav {
   bottom: 0;
   height: 3.5em;
 }
 
-/* line 209, ../sass/style.scss */
+/* line 211, ../sass/style.scss */
 #bottom-bar {
   height: 3.5em;
   bottom: 0;
@@ -242,7 +244,7 @@ img.mapbtn {
 }
 
 /*PORTRAIT NAV*/
-/* line 222, ../sass/style.scss */
+/* line 224, ../sass/style.scss */
 #portrait-nav {
   bottom: 0;
   height: 3.5em;
@@ -256,7 +258,7 @@ img.mapbtn {
     	-webkit-border-bottom-right-radius: 15px;*/
 }
 
-/* line 234, ../sass/style.scss */
+/* line 236, ../sass/style.scss */
 #portrait-nav ul {
   position: relative;
   list-style-type: normal;
@@ -266,7 +268,7 @@ img.mapbtn {
   margin-left: 0;
 }
 
-/* line 242, ../sass/style.scss */
+/* line 244, ../sass/style.scss */
 #portrait-nav ul li {
   display: block;
   float: left;
@@ -274,13 +276,13 @@ img.mapbtn {
   padding-right: .5em;
 }
 
-/* line 249, ../sass/style.scss */
+/* line 251, ../sass/style.scss */
 #portrait-nav ul li a {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* line 253, ../sass/style.scss */
+/* line 255, ../sass/style.scss */
 img.avatar {
   position: relative;
   display: block;
@@ -296,13 +298,13 @@ img.avatar {
   border-top: .5em solid #fff;
 }
 
-/* line 269, ../sass/style.scss */
+/* line 271, ../sass/style.scss */
 img.selected {
   border-top: 2em solid #fff;
   margin-top: -1.5em;
 }
 
-/* line 273, ../sass/style.scss */
+/* line 275, ../sass/style.scss */
 .pop {
   display: none;
   position: absolute;
@@ -322,37 +324,37 @@ img.selected {
   -webkit-border-bottom-right-radius: .8em;
 }
 
-/* line 291, ../sass/style.scss */
-#portrait-nav ul li:hover .pop {
+/* line 293, ../sass/style.scss */
+#portrait-nav ul li:hover .pop, #control-nav ul li:hover .pop {
   display: block;
 }
 
-/* line 294, ../sass/style.scss */
+/* line 296, ../sass/style.scss */
 #portrait-nav ul li:hover img {
   border-top: 1em solid #fff;
   margin-top: -0.5em;
 }
 
-/* line 298, ../sass/style.scss */
+/* line 300, ../sass/style.scss */
 #portrait-nav ul li .pop a {
   color: #fff;
 }
 
-/* line 301, ../sass/style.scss */
+/* line 303, ../sass/style.scss */
 .pop a#name {
   font-family: "atrament-web", sans-serif;
   font-size: 1.4em;
   text-transform: uppercase;
 }
 
-/* line 306, ../sass/style.scss */
+/* line 308, ../sass/style.scss */
 .pop-nav {
   padding-top: .4em;
   font: .8em Georgia;
 }
 
 /* COMMENTARY */
-/* line 311, ../sass/style.scss */
+/* line 313, ../sass/style.scss */
 #commentary {
   /*background-color: #fff;*/
   position: fixed;
@@ -360,13 +362,13 @@ img.selected {
   height: auto;
   margin: 5em 0 0 5%;
   z-index: 200;
-  color: #f6917f;
+  color: #0bb7ab;
   font-style: normal;
   font-weight: 400;
   font-size: 1.8em;
 }
 
-/* line 323, ../sass/style.scss */
+/* line 325, ../sass/style.scss */
 #time-bar {
   font-family: "atrament-web", sans-serif;
   font-size: .6em;
@@ -374,8 +376,8 @@ img.selected {
   margin-bottom: .6em;
 }
 
-/* line 329, ../sass/style.scss */
+/* line 331, ../sass/style.scss */
 #time-bar a {
-  color: #f6917f;
+  color: #0bb7ab;
   font-style: normal;
 }
