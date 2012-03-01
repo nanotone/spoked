@@ -341,7 +341,7 @@ img.selected {
 }
 
 /* line 303, ../sass/style.scss */
-.pop a#name {
+.pop a.name {
   font-family: "atrament-web", sans-serif;
   font-size: 1.4em;
   text-transform: uppercase;
