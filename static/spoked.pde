@@ -8,7 +8,8 @@ float Slat = 40.53;
 float Wlong = -74.0854;
 float Elong = -73.777;
 
-float myRide[][];
+float myRide[][] = null;
+int riderIndex = 0;
 int n;
 
 //SETUP
@@ -22,8 +23,13 @@ void setup() {
 
 
 //DRAW
-// Because of noLoop, this only gets called once
+// This gets called once per frame when we're animating
 void draw() {
+    // setup calls draw() once at the beginning of time. myRide is empty now, so abort.
+    if (myRide == null) {
+        return;
+    }
+
     beginShape();
 
     float longStart = map(myRide[n-1][longPos], Wlong, Elong, 0, width);
@@ -33,7 +39,7 @@ void draw() {
 
     smooth();
     noFill();
-    if (index % 2 == 0) {
+    if (riderIndex % 2 == 0) {
       stroke(139, 176, 73); //green. magenta: 242,29,85 yellow: 244,203,28
     }
     else {
@@ -46,7 +52,7 @@ void draw() {
     endShape();
 	n++;
 	
-	if (n==myData.length) {
+	if (n==myRide.length) {
 		noLoop();
 	}
 	console.log("n = " + n);
@@ -62,25 +68,9 @@ void drawRide(myData, index) {
 
 	n = 1;
 	myRide = myData;
+	riderIndex = index;
 	loop();
 
 	console.log("n = " + n);
 	
-/*  for (int n=1; n<myData.length; n++){
-    float longStop = map(myData[n][longPos], Wlong, Elong, 0, width);
-    float latStop = map(myData[n][latPos], Nlat, Slat, 0, height);
-
-    smooth();
-    noFill();
-    if (index % 2 == 0) {
-      stroke(139, 176, 73); //green. magenta: 242,29,85 yellow: 244,203,28
-    }
-    else {
-      stroke(139, 176, 73); 
-    }
-    strokeWeight(3); 
-    strokeJoin(ROUND);
-    vertex(longStop, latStop);
-   
-  }*/
 }
