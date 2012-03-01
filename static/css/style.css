@@ -60,7 +60,7 @@ h1 {
   margin: -0.5em 0.5em -0.5em 5%;
   padding: 0.5em;
   padding-bottom: .4em;
-  background-color: #0bb7ab;
+  background-color: #00ddff;
   color: #ffffff;
   font-family: "atrament-web", sans-serif;
   font-size: 3.5em;
@@ -112,7 +112,7 @@ h1 {
   margin: -0.8em 5% 0 0;
   color: #ffffff;
   right: 0;
-  background-color: #0bb7ab;
+  background-color: #00ddff;
   /*blue #00ddff;*/
   font-size: 1.4em;
   font-family: "atrament-web", sans-serif;
@@ -182,13 +182,13 @@ ul#user-nav li:first-child {
 
 /* line 165, ../sass/style.scss */
 #control-nav ul li a {
-  color: #0bb7ab;
+  color: #00ddff;
   text-decoration: none;
 }
 
 /* line 169, ../sass/style.scss */
 img.mapbtn {
-  background-color: #0bb7ab;
+  background-color: #00ddff;
   position: relative;
   display: block;
   float: left;
@@ -362,7 +362,7 @@ img.selected {
   height: auto;
   margin: 5em 0 0 5%;
   z-index: 200;
-  color: #0bb7ab;
+  color: #00ddff;
   font-style: normal;
   font-weight: 400;
   font-size: 1.8em;
@@ -378,6 +378,6 @@ img.selected {
 
 /* line 331, ../sass/style.scss */
 #time-bar a {
-  color: #0bb7ab;
+  color: #00ddff;
   font-style: normal;
 }
