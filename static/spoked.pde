@@ -8,21 +8,54 @@ float Slat = 40.53;
 float Wlong = -74.0854;
 float Elong = -73.777;
 
+float myRide[][] = null;
+int riderIndex = 0;
+int n;
+
 //SETUP
 void setup() {
   size(1680, 2750);
   background(0, 0, 0, 0);
   noLoop();
+  frameRate(10);
   processingReady(); // tell JavaScript that Processing is done setting up
 }
 
 
 //DRAW
-// Because of noLoop, this only gets called once
+// This gets called once per frame when we're animating
 void draw() {
-   //PImage baseMap; // we're not using this any more
-   //baseMap = loadImage("map.png");
-   //image(baseMap, 0, 0, width, height);
+    // setup calls draw() once at the beginning of time. myRide is empty now, so abort.
+    if (myRide == null) {
+        return;
+    }
+
+    beginShape();
+
+    float longStart = map(myRide[n-1][longPos], Wlong, Elong, 0, width);
+    float latStart = map(myRide[n-1][latPos], Nlat, Slat, 0, height);
+    float longStop = map(myRide[n][longPos], Wlong, Elong, 0, width);
+    float latStop = map(myRide[n][latPos], Nlat, Slat, 0, height);
+
+    smooth();
+    noFill();
+    if (riderIndex % 2 == 0) {
+      stroke(139, 176, 73); //green. magenta: 242,29,85 yellow: 244,203,28
+    }
+    else {
+      stroke(139, 176, 73); 
+    }
+    strokeWeight(3); 
+    strokeJoin(ROUND);
+    vertex(longStart, latStart);
+    vertex(longStop, latStop);
+    endShape();
+	n++;
+	
+	if (n==myRide.length) {
+		noLoop();
+	}
+	console.log("n = " + n);
 }
 
 
@@ -33,45 +66,11 @@ void draw() {
 //
 void drawRide(myData, index) {
 
-  // Map projection Translation
-  beginShape();
-  boolean penDown = true;
+	n = 1;
+	myRide = myData;
+	riderIndex = index;
+	loop();
 
-  for (int n=1; n<myData.length; n++){
-    float longStart = map(myData[n-1][longPos], Wlong, Elong, 0, width);
-    float latStart = map(myData[n-1][latPos], Nlat, Slat, 0, height);
-    float longStop = map(myData[n][longPos], Wlong, Elong, 0, width);
-    float latStop = map(myData[n][latPos], Nlat, Slat, 0, height);
-    
-    float wpDistLong = (longStop - longStart); 
-    float wpDistLat = (latStop - latStart); 
-
-    smooth();
-    noFill();
-    if (index % 2 == 0) {
-      stroke(139, 176, 73); //green. magenta: 242,29,85 yellow: 244,203,28
-    }
-    else {
-      stroke(139, 176, 73); 
-    }
-    strokeWeight(3); 
-    strokeJoin(ROUND);
-    
-    // Draw line between points
-    if(((wpDistLong >= -3) && (wpDistLong <= 3)) && ((wpDistLat >= -3) && (wpDistLat <= 3))) {
-      if (!penDown) { // Is pen down?
-        beginShape(); // If it is not, put it down
-        penDown = true;
-      }
-      vertex(longStop, latStop);
-
-    } else { // If it is NOT close...
-
-      endShape();
-      penDown = false;
-
-    }
-  } 
-  endShape();
-
+	console.log("n = " + n);
+	
 }
