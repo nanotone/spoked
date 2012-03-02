@@ -17,7 +17,7 @@ void setup() {
   size(1680, 2750);
   background(0, 0, 0, 0);
   noLoop();
-  frameRate(10);
+  frameRate(300);
   processingReady(); // tell JavaScript that Processing is done setting up
 }
 
@@ -53,6 +53,9 @@ void draw() {
 	n++;
 	
 	if (n==myRide.length) {
+		fill(139, 176, 73, 150);
+		noStroke();
+		ellipse(longStop, latStop, 12, 12);
 		noLoop();
 	}
 	console.log("n = " + n);

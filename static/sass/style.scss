@@ -161,8 +161,10 @@ ul#user-nav li:first-child{
 	float: left;
 	position: relative;
 	padding-right: .5em;
+	padding-top: 0;
+	margin-top: 0;
 	}
-#control-nav ul li a{
+#control-nav ul li a {
 	color: $yourColor;
 	text-decoration: none;  
 	}
