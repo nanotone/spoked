@@ -1,6 +1,6 @@
 /*COLORS*/
-$yourColor: #00ddff;
-$bar: #322e10;
+$yourColor: #9880ba;
+$bar: #322e10; /*brown #322e10*/
 $black: #000;
 $red: #d2222d;
 $pink: #ef5476;
@@ -137,80 +137,12 @@ ul#user-nav li:first-child{
 	padding: 0.5em;
 }	
 
-/*CONTROL NAV*/
-
-#control-nav {
-	bottom: 0;
-	margin: 0 0 0 0;	
-	padding: 0 0 0 0;
-	z-index: 200;
-	position: relative;
-	height: 3.5em;
-	float:left;
-	}
-#control-nav ul {
-	list-style-type: normal;
-	margin-right: auto;
-	padding-left:.5em;
-	margin-top:0;
-	margin-left: 0;
-	padding: 0;
-	}
-#control-nav ul li {
-	display: block;
-	float: left;
-	position: relative;
-	padding-right: .5em;
-	padding-top: 0;
-	margin-top: 0;
-	}
-#control-nav ul li a {
-	color: $yourColor;
-	text-decoration: none;  
-	}
-img.mapbtn {
-	background-color: $yourColor;
-	position: relative;
-	display: block;
-	float:left;
-	margin:0;
-	padding:0;
-	height: 2.8em;
-	width: 2.8em;
-	/*-moz-border-radius-bottomright: 1em;
-  	-webkit-border-bottom-right-radius: 1em;
-  	-moz-border-radius: .5em;
-    -webkit-border-radius: .5em;*/
-	border-top: .5em solid #fff;
-  	}
-
-/*
-#control-nav ul li {
-	display: block;
-	float: left;
-	font-size: 1.2em;
-	font-family: $sans;
-	text-transform: uppercase;
-	padding: 0.2em 0;
-	}
-#control-nav ul li a{
-	color: $yourColor; 
-	text-decoration: none;  
-	padding: 0.2em 0.5em;
-	border-right: 1px solid $yourColor;
-	}
-#control-nav ul li:first-child {
-	background:yellow;
-	border-left: 1px solid $yourColor;
-}
-*/
-
 /*BOTTOM NAV*/
 #bottom-nav{
 	bottom: 0;
 	height: 3.5em;
 	}
-#bottom-bar{
+/*#bottom-bar{
 	height: 3.5em;
 	bottom: 0;
 	width: 100%;
@@ -220,7 +152,8 @@ img.mapbtn {
 	position: absolute;	
 	-moz-box-shadow: 3px -3px 7px #888;
   	-webkit-box-shadow: 3px -3px 7px #888;
-	}
+	}*/
+	
 /*PORTRAIT NAV*/
 
 #portrait-nav {
@@ -269,7 +202,7 @@ img.avatar {
 	border-top: .5em solid #fff;
   	}
   	
-img.selected
+#portrait-nav img.selected
 {
 	border-top: 2em solid #fff; 
 	margin-top: -1.5em;
@@ -278,8 +211,9 @@ img.selected
 	display: none;
 	position: absolute;
 	left: -.6em;
-	top: -5.2em;
-	width: 240px;
+	/*top: -5.2em;*/
+	bottom: 3.7em;
+	width: 230px;
 	background-color: #fff;
 	opacity: 0.8;
 	font-family: $sans;
@@ -311,6 +245,112 @@ img.selected
 	padding-top: .4em;
 	font: .8em Georgia;
 	}
+
+/*CONTROL NAV*/
+
+#control-nav {
+	bottom: 0;
+	display:block;
+	margin: -.5em 0 0 0;	
+	padding: 0 0 0 0;
+	z-index: 200;
+	position: relative;
+	height: 3.5em;
+	float:left;
+	}
+#control-nav ul li {
+	display: block;
+	float: left;
+	position: relative;
+	padding-right: .5em;
+	padding-top: 0;
+	margin-top: 0;
+	}
+img.mapbtn:hover {
+	background-color: $yourColor;
+
+	}
+#control-nav ul li a {
+	color: $yourColor;
+	text-decoration: none;  
+	}
+img.mapbtn {
+	background-color: $bar;
+	position: relative;
+	display: block;
+	float:left;
+	margin:0;
+	padding:0;
+	height: 2.8em;
+	width: 2.8em;
+	/*-moz-border-radius-bottomright: 1em;
+  	-webkit-border-bottom-right-radius: 1em;
+  	-moz-border-radius: .5em;
+    -webkit-border-radius: .5em;*/
+	border: none;
+  	}
+#control-nav .pop {
+	width: 100px;
+	}
+#control-nav .selected {
+	background-color: $yourColor;
+   -moz-box-shadow: inset 0 0 10px #aaa;
+   -webkit-box-shadow: inset 0 0 10px #aaa;
+   box-shadow: inset 0 0 10px #aaa;	
+	}
+
+/* MAIN-NAV */
+#main-nav {
+	bottom: 0;
+	display:block;
+	margin: 0 0 0 0;	
+	padding: 0 0 0 0;
+	z-index: 200;
+	position: relative;
+	height: 3.5em;
+	float:left;
+	}
+#main-nav ul li {
+display: block;
+float: left;
+font-size: 1.2em;
+font-family: "atrament-web", sans-serif;
+text-transform: uppercase;
+padding: 0.2em 0;
+
+}
+#main-nav ul li a {
+color: $yourColor;
+text-decoration: none;
+padding: 0.2em 0.5em;
+border-right: 1px solid $yourColor;
+}
+/* TIME-NAV */
+#time-nav {
+	bottom: 0;
+	display:block;
+	margin: 0 0 0 0;	
+	padding: 0 0 0 0;
+	z-index: 200;
+	position: relative;
+	height: 3.5em;
+	float:left;
+	}
+#time-nav ul li {
+display: block;
+float: left;
+font-size: 1.2em;
+font-family: "atrament-web", sans-serif;
+text-transform: uppercase;
+padding: 0.2em 0;
+
+}
+#time-nav ul li a {
+color: $yourColor;
+text-decoration: none;
+padding: 0.2em 0.5em;
+}
+
 /* COMMENTARY */
 #commentary {
 	/*background-color: #fff;*/

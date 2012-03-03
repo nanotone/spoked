@@ -49,9 +49,15 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
 
 <canvas id="processing" data-processing-sources="spoked.pde"></canvas>
 
-
 <div id="bottom-nav">
 <div id="bottom-bar"></div>
+<div id="main-nav">
+	<ul>
+	<li><a href="you.php">You</a></li>
+	<li><a href="friends.php">Friends</a></li>
+	<li><a href="all.php">All</a></li>
+	</ul>
+</div><!-- end main nav -->
 <div id="portrait-nav">
   <ul>
     <li id="portrait-template" class="template"><a href="profile.html" class="avatarLink">
@@ -59,8 +65,8 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
     	<div class="pop" style="background-color: #d2222d;">
     		<a href="#ToUserProfile" class="name">DISPLAY NAME</a> is on two wheels!
     		<div class="pop-nav">
-    			<a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours &raquo;</a><br /><!-- On friends page: If we know who is logged in -->
-	    		<!--<a href="#AddRidesOnTopOfProfile">Compare rides &raquo;</a><br /> Only on profile page -->
+    			<a href="#GoToMyProfileWithThisPersonsRidesCompared">Compare rides to yours &raquo;</a><br />
+    			<!--<a href="#AddRidesOnTopOfProfile">Compare rides &raquo;</a><br /> Only on profile page -->
 	    		<a href="#ToProfile">To profile &raquo;</a>
     		</div>
     	</div>
@@ -70,25 +76,38 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
 <div id="control-nav"> <!--To change map backgrounds-->
   <ul>
     <li><a href="#landseaBG">
-    	<img class="mapbtn" src="img/btn/landsea.png"></a>
+    	<img class="mapbtn selected" src="img/btn/landsea.png"></a>
     	<div class="pop">
-    		<a href="#">Land and sea</a> 
+    		<a href="#">Land and Sea</a> 
     	</div>
 	</li>
-    <li><a href="#landseaBG">
-    	<img class="mapbtn" src="img/btn/landsea.png"></a>
+    <li><a href="#beatenpathsTransparencyOnRidesChange">
+    	<img class="mapbtn" src="img/btn/beatenpaths.png"></a>
     	<div class="pop">
-    		<a href="#">Land and sea</a> 
+    		<a href="#">Beaten Paths</a> 
     	</div>
 	</li>
-    <li><a href="#landseaBG">
-    	<img class="mapbtn" src="img/btn/landsea.png"></a>
+    <li><a href="#blankBG">
+    	<img class="mapbtn" src="img/btn/blankcanvas.png"></a>
     	<div class="pop">
-    		<a href="#">Land and sea</a> 
+    		<a href="#">Blank Canvas</a> 
+    	</div>
+	</li>
+    <li><a href="#hoodsBG">
+    	<img class="mapbtn" src="img/btn/hoods.png"></a>
+    	<div class="pop">
+    		<a href="#">Neighborhoods</a> 
     	</div>
 	</li>
   </ul> 
 </div> <!-- end control nav -->
 
+<div id="time-nav"> 
+<!--http://ryanfait.com/resources/custom-checkboxes-and-radio-buttons/ to style buttons+js-->
+	<ul>
+	<li><a href="thisweek.php"><input type="checkbox" class="styled" />This week</a></li>
+	<li><a href="lastweek.php"><input type="checkbox" class="styled" />Last week</a></li>
+	</ul>
+</div><!-- end main nav -->
 </div> <!-- end bottom-nav -->
 </body>

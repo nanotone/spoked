@@ -1,4 +1,5 @@
 /*COLORS*/
+/*brown #322e10*/
 /*FONTS*/
 /* line 19, ../sass/style.scss */
 body {
@@ -60,7 +61,7 @@ h1 {
   margin: -0.5em 0.5em -0.5em 5%;
   padding: 0.5em;
   padding-bottom: .4em;
-  background-color: #00ddff;
+  background-color: #9880ba;
   color: #ffffff;
   font-family: "atrament-web", sans-serif;
   font-size: 3.5em;
@@ -112,7 +113,7 @@ h1 {
   margin: -0.8em 5% 0 0;
   color: #ffffff;
   right: 0;
-  background-color: #00ddff;
+  background-color: #9880ba;
   /*blue #00ddff;*/
   font-size: 1.4em;
   font-family: "atrament-web", sans-serif;
@@ -150,103 +151,26 @@ ul#user-nav li:first-child {
   padding: 0.5em;
 }
 
-/*CONTROL NAV*/
-/* line 142, ../sass/style.scss */
-#control-nav {
-  bottom: 0;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
-  z-index: 200;
-  position: relative;
-  height: 3.5em;
-  float: left;
-}
-
-/* line 151, ../sass/style.scss */
-#control-nav ul  {
-  list-style-type: normal;
-  margin-right: auto;
-  padding-left: .5em;
-  margin-top: 0;
-  margin-left: 0;
-  padding: 0;
-}
-
-/* line 159, ../sass/style.scss */
-#control-nav ul li {
-  display: block;
-  float: left;
-  position: relative;
-  padding-right: .5em;
-  padding-top: 0;
-  margin-top: 0;
-}
-
-/* line 167, ../sass/style.scss */
-#control-nav ul li a {
-  color: #00ddff;
-  text-decoration: none;
-}
-
-/* line 171, ../sass/style.scss */
-img.mapbtn {
-  background-color: #00ddff;
-  position: relative;
-  display: block;
-  float: left;
-  margin: 0;
-  padding: 0;
-  height: 2.8em;
-  width: 2.8em;
-  	/*-moz-border-radius-bottomright: 1em;
-    	-webkit-border-bottom-right-radius: 1em;
-    	-moz-border-radius: .5em;
-      -webkit-border-radius: .5em;*/
-  border-top: .5em solid #fff;
-}
-
-/*
-#control-nav ul li {
-	display: block;
-	float: left;
-	font-size: 1.2em;
-	font-family: $sans;
-	text-transform: uppercase;
-	padding: 0.2em 0;
-	}
-#control-nav ul li a{
-	color: $yourColor; 
-	text-decoration: none;  
-	padding: 0.2em 0.5em;
-	border-right: 1px solid $yourColor;
-	}
-#control-nav ul li:first-child {
-	background:yellow;
-	border-left: 1px solid $yourColor;
-}
-*/
 /*BOTTOM NAV*/
-/* line 209, ../sass/style.scss */
+/* line 141, ../sass/style.scss */
 #bottom-nav {
   bottom: 0;
   height: 3.5em;
 }
 
-/* line 213, ../sass/style.scss */
-#bottom-bar {
-  height: 3.5em;
-  bottom: 0;
-  width: 100%;
-  background-color: #322e10;
-  opacity: 0.7;
-  z-index: 180;
-  position: absolute;
-  -moz-box-shadow: 3px -3px 7px #888888;
-  -webkit-box-shadow: 3px -3px 7px #888888;
-}
-
+/*#bottom-bar{
+	height: 3.5em;
+	bottom: 0;
+	width: 100%;
+	background-color: $bar;
+	opacity: 0.7;
+	z-index: 180;
+	position: absolute;	
+	-moz-box-shadow: 3px -3px 7px #888;
+  	-webkit-box-shadow: 3px -3px 7px #888;
+	}*/
 /*PORTRAIT NAV*/
-/* line 226, ../sass/style.scss */
+/* line 159, ../sass/style.scss */
 #portrait-nav {
   bottom: 0;
   height: 3.5em;
@@ -260,7 +184,7 @@ img.mapbtn {
     	-webkit-border-bottom-right-radius: 15px;*/
 }
 
-/* line 238, ../sass/style.scss */
+/* line 171, ../sass/style.scss */
 #portrait-nav ul {
   position: relative;
   list-style-type: normal;
@@ -270,7 +194,7 @@ img.mapbtn {
   margin-left: 0;
 }
 
-/* line 246, ../sass/style.scss */
+/* line 179, ../sass/style.scss */
 #portrait-nav ul li {
   display: block;
   float: left;
@@ -278,13 +202,13 @@ img.mapbtn {
   padding-right: .5em;
 }
 
-/* line 253, ../sass/style.scss */
+/* line 186, ../sass/style.scss */
 #portrait-nav ul li a {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* line 257, ../sass/style.scss */
+/* line 190, ../sass/style.scss */
 img.avatar {
   position: relative;
   display: block;
@@ -300,19 +224,20 @@ img.avatar {
   border-top: .5em solid #fff;
 }
 
-/* line 273, ../sass/style.scss */
-img.selected {
+/* line 206, ../sass/style.scss */
+#portrait-nav img.selected {
   border-top: 2em solid #fff;
   margin-top: -1.5em;
 }
 
-/* line 277, ../sass/style.scss */
+/* line 210, ../sass/style.scss */
 .pop {
   display: none;
   position: absolute;
   left: -0.6em;
-  top: -5.2em;
-  width: 240px;
+  /*top: -5.2em;*/
+  bottom: 3.7em;
+  width: 230px;
   background-color: #fff;
   opacity: 0.8;
   font-family: "atrament-web", sans-serif;
@@ -326,37 +251,162 @@ img.selected {
   -webkit-border-bottom-right-radius: .8em;
 }
 
-/* line 295, ../sass/style.scss */
+/* line 229, ../sass/style.scss */
 #portrait-nav ul li:hover .pop, #control-nav ul li:hover .pop {
   display: block;
 }
 
-/* line 298, ../sass/style.scss */
+/* line 232, ../sass/style.scss */
 #portrait-nav ul li:hover img {
   border-top: 1em solid #fff;
   margin-top: -0.5em;
 }
 
-/* line 302, ../sass/style.scss */
+/* line 236, ../sass/style.scss */
 #portrait-nav ul li .pop a {
   color: #fff;
 }
 
-/* line 305, ../sass/style.scss */
+/* line 239, ../sass/style.scss */
 .pop a.name {
   font-family: "atrament-web", sans-serif;
   font-size: 1.4em;
   text-transform: uppercase;
 }
 
-/* line 310, ../sass/style.scss */
+/* line 244, ../sass/style.scss */
 .pop-nav {
   padding-top: .4em;
   font: .8em Georgia;
 }
 
+/*CONTROL NAV*/
+/* line 251, ../sass/style.scss */
+#control-nav {
+  bottom: 0;
+  display: block;
+  margin: -0.5em 0 0 0;
+  padding: 0 0 0 0;
+  z-index: 200;
+  position: relative;
+  height: 3.5em;
+  float: left;
+}
+
+/* line 261, ../sass/style.scss */
+#control-nav ul li {
+  display: block;
+  float: left;
+  position: relative;
+  padding-right: .5em;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* line 269, ../sass/style.scss */
+img.mapbtn:hover {
+  background-color: #9880ba;
+}
+
+/* line 273, ../sass/style.scss */
+#control-nav ul li a {
+  color: #9880ba;
+  text-decoration: none;
+}
+
+/* line 277, ../sass/style.scss */
+img.mapbtn {
+  background-color: #322e10;
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  height: 2.8em;
+  width: 2.8em;
+  	/*-moz-border-radius-bottomright: 1em;
+    	-webkit-border-bottom-right-radius: 1em;
+    	-moz-border-radius: .5em;
+      -webkit-border-radius: .5em;*/
+  border: none;
+}
+
+/* line 292, ../sass/style.scss */
+#control-nav .pop {
+  width: 100px;
+}
+
+/* line 295, ../sass/style.scss */
+#control-nav .selected {
+  background-color: #9880ba;
+  -moz-box-shadow: inset 0 0 10px #aaa;
+  -webkit-box-shadow: inset 0 0 10px #aaa;
+  box-shadow: inset 0 0 10px #aaa;
+}
+
+/* MAIN-NAV */
+/* line 303, ../sass/style.scss */
+#main-nav {
+  bottom: 0;
+  display: block;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  z-index: 200;
+  position: relative;
+  height: 3.5em;
+  float: left;
+}
+
+/* line 313, ../sass/style.scss */
+#main-nav ul li {
+  display: block;
+  float: left;
+  font-size: 1.2em;
+  font-family: "atrament-web", sans-serif;
+  text-transform: uppercase;
+  padding: 0.2em 0;
+}
+
+/* line 322, ../sass/style.scss */
+#main-nav ul li a {
+  color: #9880ba;
+  text-decoration: none;
+  padding: 0.2em 0.5em;
+  border-right: 1px solid #9880ba;
+}
+
+/* TIME-NAV */
+/* line 329, ../sass/style.scss */
+#time-nav {
+  bottom: 0;
+  display: block;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  z-index: 200;
+  position: relative;
+  height: 3.5em;
+  float: left;
+}
+
+/* line 339, ../sass/style.scss */
+#time-nav ul li {
+  display: block;
+  float: left;
+  font-size: 1.2em;
+  font-family: "atrament-web", sans-serif;
+  text-transform: uppercase;
+  padding: 0.2em 0;
+}
+
+/* line 348, ../sass/style.scss */
+#time-nav ul li a {
+  color: #9880ba;
+  text-decoration: none;
+  padding: 0.2em 0.5em;
+}
+
 /* COMMENTARY */
-/* line 315, ../sass/style.scss */
+/* line 355, ../sass/style.scss */
 #commentary {
   /*background-color: #fff;*/
   position: fixed;
@@ -364,13 +414,13 @@ img.selected {
   height: auto;
   margin: 5em 0 0 5%;
   z-index: 200;
-  color: #00ddff;
+  color: #9880ba;
   font-style: normal;
   font-weight: 400;
   font-size: 1.8em;
 }
 
-/* line 327, ../sass/style.scss */
+/* line 367, ../sass/style.scss */
 #time-bar {
   font-family: "atrament-web", sans-serif;
   font-size: .6em;
@@ -378,8 +428,8 @@ img.selected {
   margin-bottom: .6em;
 }
 
-/* line 333, ../sass/style.scss */
+/* line 373, ../sass/style.scss */
 #time-bar a {
-  color: #00ddff;
+  color: #9880ba;
   font-style: normal;
 }
