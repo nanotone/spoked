@@ -39,7 +39,88 @@
 </ul><!-- end user-nav-->
 </div> <!-- end service-nav -->
 </div> <!-- end nav -->
-
+<div id="sidebar">
+	<div id="sidebar-nav">
+		<ul>
+			<li>
+				<a href="#stats">
+    			<img class="mapbtn selected" src="img/btn/stats.png"></a>
+ 			</li>
+  			<li>
+				<a href="#stats">
+    			<img class="mapbtn selected" src="img/btn/time.png"></a>
+   			 </li> 	
+		</ul>
+	</div><!-- end sidebar-nav -->
+	<div id="leaderboard" class="sidebar-content">
+		<div class="title">Most worn tires</div>
+		<div class="sub-title">Friends leaderboard in miles</div>
+		<table>
+			<thead>
+				<tr>
+						<th></th>	
+						<th>Last week</th>
+						<th>This week</th>
+						<th>Total miles</th>
+				</tr>
+			</thead>
+			<!--
+			<tfoot>
+				<tr><td style="background-color: #d2222d;">Sera Koo</td></tr>
+				<table>
+					<tr>
+						<td><img class="avatar" style="border-color: #d2222d;" src="img/avatar/serakoo.jpg"></a></td>
+						<td>55</td>
+						<td>17</td>
+						<td>82</td>
+					</tr>
+				</table>
+				<tr><td style="background-color: #d2222d;">Carrie Stiens</td></tr>
+				<table>
+					<tr>
+						<td><img class="avatar" style="border-color: #d2222d;" src="img/avatar/carriestiens.jpg"></a></td>
+						<td>25</td>
+						<td>16</td>
+						<td>41</td>
+					</tr>
+				</table>
+			</tfoot>
+			-->
+			<tfoot>
+				<tr><th class="highlighted" style="background-color: #d2222d;">Sera Koo</th></tr>					<tr>
+				<td><img class="avatar" src="img/avatar/serakoo.jpg"></a></td>
+				<td>55</td>
+				<td>17</td>
+				<td>82</td>		
+				</tr>
+				<tr><th class="highlighted" style="background-color: #ef5476;">Carrie Stiens</th></tr>					<tr>
+				<td><img class="avatar" src="img/avatar/carriestiens.jpg"></a></td>
+				<td>55</td>
+				<td>17</td>
+				<td>82</td>		
+				</tr>
+				<tr><th class="highlighted" style="background-color: #8bb049;">Frank Bonomo</th></tr>					<tr>
+				<td><img class="avatar" src="img/avatar/frankbonomo.jpg"></a></td>
+				<td>55</td>
+				<td>17</td>
+				<td>82</td>		
+				</tr>
+				<tr><th class="highlighted" style="background-color: #0bb7ab;">Guri Venstad</th></tr>					<tr>
+				<td><img class="avatar" src="img/avatar/gurivenstad.jpg"></a></td>
+				<td>55</td>
+				<td>17</td>
+				<td>82</td>		
+				</tr>
+				<tr><th class="highlighted" style="background-color: #f0b50c;">Kristin Breivik</th></tr>					<tr>
+				<td><img class="avatar" src="img/avatar/kristinbreivik.jpg"></a></td>
+				<td>55</td>
+				<td>17</td>
+				<td>82</td>		
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+</div>
 <div id="commentary">
 	<div id="time-bar">
 		<a href="">THIS WEEK</a> | <a href="#">LAST WEEK</a>:
@@ -105,8 +186,9 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
 <div id="time-nav"> 
 <!--http://ryanfait.com/resources/custom-checkboxes-and-radio-buttons/ to style buttons+js-->
 	<ul>
-	<li><a href="thisweek.php"><input type="checkbox" class="styled" />This week</a></li>
+	<li><a href="backintime.php">Back in time</a></li>
 	<li><a href="lastweek.php"><input type="checkbox" class="styled" />Last week</a></li>
+	<li><a href="thisweek.php"><input type="checkbox" class="styled" />This week</a></li>
 	</ul>
 </div><!-- end main nav -->
 </div> <!-- end bottom-nav -->
