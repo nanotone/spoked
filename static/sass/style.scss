@@ -379,10 +379,79 @@ padding: 0.2em 0.5em;
 	top: 70px;
 	margin: 0 10px 50px 20px;
 	}
-#sidebar img.avatar {
-	width: 30px;
-	height: 30px;
+#sidebar .title {
+	font-family: $sans;
+	text-transform: uppercase;
+	font-size: 3em;
+	}
+#sidebar .sub-title {
+	font-family: Georgia;
+	font-size: 1em;
+	padding-bottom: 20px;
+	}	
+
+#leaderboard table {
+	border-spacing: 0px;
+	margin-top: 0px;
+	}
+#leaderboard table thead {
+	width: 360px;
+	display: block;
+	}
+#leaderboard table thead tr td, #leaderboard table tfoot tr td {
+	width: 70px;
+	font-family: $sans;
+	text-transform: uppercase;
+	font-size: 1em;
+	font-weight: normal;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	display: table-cell;
 }
+#leaderboard table thead tr th, #leaderboard table tfoot tr th {
+	font-family: $sans;
+	text-transform: uppercase;
+	font-weight: normal;
+	text-align: left;
+	width: 140px;
+	float: left;
+	display: table-cell;
+	}
+#leaderboard table tfoot tr th p{
+margin-top: 5px;
+margin-bottom: auto;
+	}
+#leaderboard table tfoot tr {
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	}
+#leaderboard table tfoot tr td {
+	float: left;
+	font-size: 1.4em;
+	}
+#leaderboard .highlighted {
+	width: 360px;
+	height: 20px;
+	font-family: $sans;
+	text-transform: uppercase;
+	font-weight: normal;
+	background-color: $bar;	
+	color: #fff;
+	text-align: left;
+	display: block;
+}
+#leaderboard .avatar {
+	border: none;
+	padding: 0;
+	margin: 0;
+	margin-right: 5px;
+	width: 25px;
+	height: 25px;
+	}
+
+/* OLDER LEADERBOARD DESIGN WITH 2 ROWS PER PERSON
 #leaderboard table {
 	margin-top: 0px;
 	}
@@ -424,18 +493,11 @@ padding: 0.2em 0.5em;
 	border: none;
 	padding: 0;
 	margin: 0;
+	width: 25px;
+	height: 25px;
 	}
-#sidebar .title {
-	font-family: $sans;
-	text-transform: uppercase;
-	font-size: 3em;
-	}
-#sidebar .sub-title {
-	font-family: Georgia;
-	/*text-transform: uppercase;*/
-	font-size: 1em;
-	padding-bottom: 20px;
-	}
+
+	*/
 	
 /* COMMENTARY */
 #commentary {

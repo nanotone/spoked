@@ -444,25 +444,34 @@ img.mapbtn {
 }
 
 /* line 382, ../sass/style.scss */
-#sidebar img.avatar {
-  width: 30px;
-  height: 30px;
+#sidebar .title {
+  font-family: "atrament-web", sans-serif;
+  text-transform: uppercase;
+  font-size: 3em;
 }
 
-/* line 386, ../sass/style.scss */
+/* line 387, ../sass/style.scss */
+#sidebar .sub-title {
+  font-family: Georgia;
+  font-size: 1em;
+  padding-bottom: 20px;
+}
+
+/* line 393, ../sass/style.scss */
 #leaderboard table {
+  border-spacing: 0px;
   margin-top: 0px;
 }
 
-/* line 389, ../sass/style.scss */
+/* line 397, ../sass/style.scss */
 #leaderboard table thead {
   width: 360px;
   display: block;
 }
 
-/* line 393, ../sass/style.scss */
-#leaderboard table thead tr th, #leaderboard table tfoot tr td {
-  width: 90px;
+/* line 401, ../sass/style.scss */
+#leaderboard table thead tr td, #leaderboard table tfoot tr td {
+  width: 70px;
   font-family: "atrament-web", sans-serif;
   text-transform: uppercase;
   font-size: 1em;
@@ -473,19 +482,37 @@ img.mapbtn {
   display: table-cell;
 }
 
-/* line 404, ../sass/style.scss */
+/* line 412, ../sass/style.scss */
+#leaderboard table thead tr th, #leaderboard table tfoot tr th {
+  font-family: "atrament-web", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: left;
+  width: 140px;
+  float: left;
+  display: table-cell;
+}
+
+/* line 421, ../sass/style.scss */
+#leaderboard table tfoot tr th p {
+  margin-top: 5px;
+  margin-bottom: auto;
+}
+
+/* line 425, ../sass/style.scss */
+#leaderboard table tfoot tr {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 430, ../sass/style.scss */
 #leaderboard table tfoot tr td {
   float: left;
   font-size: 1.4em;
 }
 
-/* line 408, ../sass/style.scss */
-#leaderboard table tfoot tr {
-  margin: 0;
-  padding: 0;
-}
-
-/* line 412, ../sass/style.scss */
+/* line 434, ../sass/style.scss */
 #leaderboard .highlighted {
   width: 360px;
   height: 20px;
@@ -498,30 +525,65 @@ img.mapbtn {
   display: block;
 }
 
-/* line 423, ../sass/style.scss */
+/* line 445, ../sass/style.scss */
 #leaderboard .avatar {
   border: none;
   padding: 0;
   margin: 0;
+  margin-right: 5px;
+  width: 25px;
+  height: 25px;
 }
 
-/* line 428, ../sass/style.scss */
-#sidebar .title {
-  font-family: "atrament-web", sans-serif;
-  text-transform: uppercase;
-  font-size: 3em;
+/* OLDER LEADERBOARD DESIGN WITH 2 ROWS PER PERSON
+#leaderboard table {
+	margin-top: 0px;
+	}
+#leaderboard table thead {
+	width: 360px;
+	display: block;
+	}
+#leaderboard table thead tr th, #leaderboard table tfoot tr td {
+	width: 90px;
+	font-family: $sans;
+	text-transform: uppercase;
+	font-size: 1em;
+	font-weight: normal;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	display: table-cell;
+	}
+#leaderboard table tfoot tr td {
+	float: left;
+	font-size: 1.4em;
+	}
+#leaderboard table tfoot tr {
+	margin: 0;
+	padding: 0;
+	}
+#leaderboard .highlighted {
+	width: 360px;
+	height: 20px;
+	font-family: $sans;
+	text-transform: uppercase;
+	font-weight: normal;
+	background-color: $bar;	
+	color: #fff;
+	text-align: left;
+	display: block;
 }
+#leaderboard .avatar {
+	border: none;
+	padding: 0;
+	margin: 0;
+	width: 25px;
+	height: 25px;
+	}
 
-/* line 433, ../sass/style.scss */
-#sidebar .sub-title {
-  font-family: Georgia;
-  /*text-transform: uppercase;*/
-  font-size: 1em;
-  padding-bottom: 20px;
-}
-
+	*/
 /* COMMENTARY */
-/* line 441, ../sass/style.scss */
+/* line 503, ../sass/style.scss */
 #commentary {
   /*background-color: #fff;*/
   position: fixed;
@@ -535,7 +597,7 @@ img.mapbtn {
   font-size: 1.8em;
 }
 
-/* line 453, ../sass/style.scss */
+/* line 515, ../sass/style.scss */
 #time-bar {
   font-family: "atrament-web", sans-serif;
   font-size: .6em;
@@ -543,7 +605,7 @@ img.mapbtn {
   margin-bottom: .6em;
 }
 
-/* line 459, ../sass/style.scss */
+/* line 521, ../sass/style.scss */
 #time-bar a {
   color: #9880ba;
   font-style: normal;
