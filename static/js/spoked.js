@@ -23,6 +23,26 @@ function showPortraits(users) {
 	}
 }
 
+function makeLinkHandler(title) {
+	return function(e) {
+		e.preventDefault();
+		if (title != History.getState().title) {
+			History.pushState(null, title, '?' + title);
+		}
+	};
+}
+function loadState() {
+	var title = History.getState().title;
+	console.log("loadState " + title);
+	$('.selectedLink').removeClass('selectedLink');
+	if (title == '' || title == 'friends') {
+		$('.friendsLink').closest('li').addClass('selectedLink');
+	}
+	else if (title == 'you') {
+		$('.youLink').closest('li').addClass('selectedLink');
+	}
+}
+
 function onClickA(e) {
 	e.preventDefault();
 	var index = $(this).closest('li').index();
@@ -38,5 +58,9 @@ $(function() {
 		tracks = data.tracks;
 		showPortraits(data.users);
 	});
+	$('.friendsLink').click(makeLinkHandler('friends'));
+	$('.youLink').click(makeLinkHandler('you'));
+	loadState();
+	History.Adapter.bind(window, 'statechange', loadState);
 });
 
