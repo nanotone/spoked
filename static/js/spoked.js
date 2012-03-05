@@ -40,6 +40,9 @@ function makeLinkHandler(title) {
 function loadState() {
 	if (!initPromise.isResolved()) { return; }
 	var title = History.getState().title;
+	if (title == '' && window.location.search.length > 1) {
+		title = window.location.search.substr(1);
+	}
 	console.log("loadState " + title);
 	$('.selectedLink').removeClass('selectedLink');
 	if (title == '' || title == 'friends') {
