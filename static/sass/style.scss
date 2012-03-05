@@ -99,7 +99,7 @@ h1 {
 	color: #ffffff; 
 	text-decoration: none;
 	}
-#service-nav ul li.selectedLink {
+#service-nav ul li:first-child {
 	border-bottom: 2px solid #ffffff;
 }
 #user-nav {
@@ -146,12 +146,12 @@ ul#user-nav li:first-child{
 	height: 3.5em;
 	bottom: 0;
 	width: 100%;
-	background-color: $bar;
+	/*background-color: $bar;*/
 	opacity: 0.7;
 	z-index: 180;
 	position: absolute;	
-	-moz-box-shadow: 3px -3px 7px #888;
-  	-webkit-box-shadow: 3px -3px 7px #888;
+	/*-moz-box-shadow: 3px -3px 7px #888;
+  	-webkit-box-shadow: 3px -3px 7px #888;*/
 	}
 	
 /*PORTRAIT NAV*/
@@ -256,7 +256,11 @@ img.avatar {
 	z-index: 200;
 	position: relative;
 	height: 3.5em;
-	float:left;
+	float:right;
+	}
+#control-nav ul {
+	padding-left: 0;
+	
 	}
 #control-nav ul li {
 	display: block;
@@ -281,8 +285,8 @@ img.mapbtn {
 	float:left;
 	margin:0;
 	padding:0;
-	height: 2.8em;
-	width: 2.8em;
+	height: 30px;
+	width: 30px;
 	/*-moz-border-radius-bottomright: 1em;
   	-webkit-border-bottom-right-radius: 1em;
   	-moz-border-radius: .5em;
@@ -334,8 +338,12 @@ border-right: 1px solid $yourColor;
 	z-index: 200;
 	position: relative;
 	height: 3.5em;
-	float:left;
+	float:right;
 	}
+#time-nav ul{
+	padding-left: 0;
+	padding-right: 20px;		
+		}
 #time-nav ul li {
 display: block;
 float: left;
@@ -360,7 +368,7 @@ padding: 0.2em 0.5em;
 	height: 100%;
 	z-index: 150;
 	top: 0;
-	right: 0px;	
+	right: 0px;	/*TO HIDE SIDEBAR Right: -400px;*/
 	}
 
 #sidebar-nav ul {
@@ -370,8 +378,8 @@ padding: 0.2em 0.5em;
 	margin-top: 15px;
 	}
 #sidebar-nav ul li img {
-	width: 25px;
-	height: 25px;
+	width: 30px;
+	height: 30px;
 	background-color: $yourColor;
 	}
 .sidebar-content {
@@ -388,17 +396,22 @@ padding: 0.2em 0.5em;
 	font-family: Georgia;
 	font-size: 1em;
 	padding-bottom: 20px;
-	}	
+	}
+	
+@mixin datahead {
+	font-family: $sans;
+	text-transform: uppercase;
+	font-weight: normal;
+	text-align: left;
+	width: 150px;
+	float: left;
+	display: table-cell;
+	padding: 0;
+	margin: 0;
+}
 
-#leaderboard table {
-	border-spacing: 0px;
-	margin-top: 0px;
-	}
-#leaderboard table thead {
-	width: 360px;
-	display: block;
-	}
-#leaderboard table thead tr td, #leaderboard table tfoot tr td {
+/* LEADERBOARD */
+@mixin datacell {
 	width: 70px;
 	font-family: $sans;
 	text-transform: uppercase;
@@ -409,48 +422,85 @@ padding: 0.2em 0.5em;
 	padding: 0;
 	display: table-cell;
 }
-#leaderboard table thead tr th, #leaderboard table tfoot tr th {
-	font-family: $sans;
-	text-transform: uppercase;
-	font-weight: normal;
-	text-align: left;
-	width: 140px;
-	float: left;
-	display: table-cell;
-	}
-#leaderboard table tfoot tr th p{
-margin-top: 5px;
-margin-bottom: auto;
-	}
-#leaderboard table tfoot tr {
-	background-color: #fff;
-	margin: 0;
-	padding: 0;
-	}
-#leaderboard table tfoot tr td {
-	float: left;
-	font-size: 1.4em;
-	}
-#leaderboard .highlighted {
-	width: 360px;
-	height: 20px;
-	font-family: $sans;
-	text-transform: uppercase;
-	font-weight: normal;
-	background-color: $bar;	
-	color: #fff;
-	text-align: left;
-	display: block;
-}
-#leaderboard .avatar {
-	border: none;
-	padding: 0;
-	margin: 0;
-	margin-right: 5px;
-	width: 25px;
-	height: 25px;
-	}
 
+#leaderboard {
+	/*visibility: hidden; TURN OFF LEADERBOARD HERE*/
+	table {
+		border-spacing: 4px;
+		margin-top: 0px;
+		
+		thead {
+			width: 360px;
+			display: block;
+			
+			tr{
+			 	td {
+				@include datacell;
+				}
+				th {
+				@include datahead;
+				border-top: 0;				
+				}
+			}
+		}
+		tfoot {
+			tr {
+				margin: 0;
+				padding: 0;
+				
+				td {
+					@include datacell;				
+				}
+				th {
+					@include datahead;
+					p {
+						margin-top: 5px;
+						margin-bottom: auto;
+					}
+				}
+				td {
+					float: left;
+					font-size: 1.4em;
+				}
+			} /* End tr*/
+		} /* End tfoot*/
+		
+		.avatar {
+			border: none;
+			padding: 0;
+			margin: 0;
+			margin-right: 5px;
+			width: 25px;
+			height: 25px;
+			}
+	} /*End table*/
+} /*End leaderboard*/
+
+#lb-sera {
+	th, td {
+		border-top: 3px solid $peach;
+	}
+}
+#lb-carrie {
+	th, td {
+		border-top: 3px solid $pink;
+	}
+}
+#lb-frank {
+	th, td {
+		border-top: 3px solid $green;
+	}
+}
+#lb-guri {
+	th, td {
+		border-top: 3px solid $mint;
+	}
+}
+#lb-kristin {
+	th, td {
+		border-top: 3px solid $yellow;
+	}
+}
 /* OLDER LEADERBOARD DESIGN WITH 2 ROWS PER PERSON
 #leaderboard table {
 	margin-top: 0px;

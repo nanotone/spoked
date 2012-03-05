@@ -101,7 +101,7 @@ h1 {
 }
 
 /* line 102, ../sass/style.scss */
-#service-nav ul li.selectedLink {
+#service-nav ul li:first-child {
   border-bottom: 2px solid #ffffff;
 }
 
@@ -163,12 +163,12 @@ ul#user-nav li:first-child {
   height: 3.5em;
   bottom: 0;
   width: 100%;
-  background-color: #322e10;
+  /*background-color: $bar;*/
   opacity: 0.7;
   z-index: 180;
   position: absolute;
-  -moz-box-shadow: 3px -3px 7px #888888;
-  -webkit-box-shadow: 3px -3px 7px #888888;
+  	/*-moz-box-shadow: 3px -3px 7px #888;
+    	-webkit-box-shadow: 3px -3px 7px #888;*/
 }
 
 /*PORTRAIT NAV*/
@@ -292,10 +292,15 @@ img.avatar {
   z-index: 200;
   position: relative;
   height: 3.5em;
-  float: left;
+  float: right;
 }
 
 /* line 261, ../sass/style.scss */
+#control-nav ul {
+  padding-left: 0;
+}
+
+/* line 265, ../sass/style.scss */
 #control-nav ul li {
   display: block;
   float: left;
@@ -305,18 +310,18 @@ img.avatar {
   margin-top: 0;
 }
 
-/* line 269, ../sass/style.scss */
+/* line 273, ../sass/style.scss */
 img.mapbtn:hover {
   background-color: #9880ba;
 }
 
-/* line 273, ../sass/style.scss */
+/* line 277, ../sass/style.scss */
 #control-nav ul li a {
   color: #9880ba;
   text-decoration: none;
 }
 
-/* line 277, ../sass/style.scss */
+/* line 281, ../sass/style.scss */
 img.mapbtn {
   background-color: #322e10;
   position: relative;
@@ -324,8 +329,8 @@ img.mapbtn {
   float: left;
   margin: 0;
   padding: 0;
-  height: 2.8em;
-  width: 2.8em;
+  height: 30px;
+  width: 30px;
   	/*-moz-border-radius-bottomright: 1em;
     	-webkit-border-bottom-right-radius: 1em;
     	-moz-border-radius: .5em;
@@ -333,12 +338,12 @@ img.mapbtn {
   border: none;
 }
 
-/* line 292, ../sass/style.scss */
+/* line 296, ../sass/style.scss */
 #control-nav .pop {
   width: 100px;
 }
 
-/* line 295, ../sass/style.scss */
+/* line 299, ../sass/style.scss */
 #control-nav .selected {
   background-color: #9880ba;
   -moz-box-shadow: inset 0 0 10px #aaa;
@@ -347,7 +352,7 @@ img.mapbtn {
 }
 
 /* MAIN-NAV */
-/* line 303, ../sass/style.scss */
+/* line 307, ../sass/style.scss */
 #main-nav {
   bottom: 0;
   display: block;
@@ -359,7 +364,7 @@ img.mapbtn {
   float: left;
 }
 
-/* line 313, ../sass/style.scss */
+/* line 317, ../sass/style.scss */
 #main-nav ul li {
   display: block;
   float: left;
@@ -369,7 +374,7 @@ img.mapbtn {
   padding: 0.2em 0;
 }
 
-/* line 322, ../sass/style.scss */
+/* line 326, ../sass/style.scss */
 #main-nav ul li a {
   color: #9880ba;
   text-decoration: none;
@@ -378,7 +383,7 @@ img.mapbtn {
 }
 
 /* TIME-NAV */
-/* line 329, ../sass/style.scss */
+/* line 333, ../sass/style.scss */
 #time-nav {
   bottom: 0;
   display: block;
@@ -387,10 +392,16 @@ img.mapbtn {
   z-index: 200;
   position: relative;
   height: 3.5em;
-  float: left;
+  float: right;
 }
 
-/* line 339, ../sass/style.scss */
+/* line 343, ../sass/style.scss */
+#time-nav ul {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+/* line 347, ../sass/style.scss */
 #time-nav ul li {
   display: block;
   float: left;
@@ -400,7 +411,7 @@ img.mapbtn {
   padding: 0.2em 0;
 }
 
-/* line 348, ../sass/style.scss */
+/* line 356, ../sass/style.scss */
 #time-nav ul li a {
   color: #9880ba;
   text-decoration: none;
@@ -408,7 +419,7 @@ img.mapbtn {
 }
 
 /* SIDEBAR */
-/* line 356, ../sass/style.scss */
+/* line 364, ../sass/style.scss */
 #sidebar {
   position: fixed;
   background-color: #ccc;
@@ -417,60 +428,66 @@ img.mapbtn {
   z-index: 150;
   top: 0;
   right: 0px;
+  /*TO HIDE SIDEBAR Right: -400px;*/
 }
 
-/* line 366, ../sass/style.scss */
+/* line 374, ../sass/style.scss */
 #sidebar-nav ul {
   margin: 70px auto auto -65px;
 }
 
-/* line 369, ../sass/style.scss */
+/* line 377, ../sass/style.scss */
 #sidebar-nav ul li {
   margin-top: 15px;
 }
 
-/* line 372, ../sass/style.scss */
+/* line 380, ../sass/style.scss */
 #sidebar-nav ul li img {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   background-color: #9880ba;
 }
 
-/* line 377, ../sass/style.scss */
+/* line 385, ../sass/style.scss */
 .sidebar-content {
   position: absolute;
   top: 70px;
   margin: 0 10px 50px 20px;
 }
 
-/* line 382, ../sass/style.scss */
+/* line 390, ../sass/style.scss */
 #sidebar .title {
   font-family: "atrament-web", sans-serif;
   text-transform: uppercase;
   font-size: 3em;
 }
 
-/* line 387, ../sass/style.scss */
+/* line 395, ../sass/style.scss */
 #sidebar .sub-title {
   font-family: Georgia;
   font-size: 1em;
   padding-bottom: 20px;
 }
 
-/* line 393, ../sass/style.scss */
-#leaderboard table {
-  border-spacing: 0px;
-  margin-top: 0px;
+/* LEADERBOARD */
+/* line 426, ../sass/style.scss */
+#leaderboard {
+  /*visibility: hidden; TURN OFF LEADERBOARD HERE*/
+  /*End table*/
 }
-
-/* line 397, ../sass/style.scss */
+/* line 428, ../sass/style.scss */
+#leaderboard table {
+  border-spacing: 4px;
+  margin-top: 0px;
+  /* End tfoot*/
+}
+/* line 432, ../sass/style.scss */
 #leaderboard table thead {
   width: 360px;
   display: block;
 }
-
-/* line 401, ../sass/style.scss */
-#leaderboard table thead tr td, #leaderboard table tfoot tr td {
+/* line 437, ../sass/style.scss */
+#leaderboard table thead tr td {
   width: 70px;
   font-family: "atrament-web", sans-serif;
   text-transform: uppercase;
@@ -481,58 +498,96 @@ img.mapbtn {
   padding: 0;
   display: table-cell;
 }
-
-/* line 412, ../sass/style.scss */
-#leaderboard table thead tr th, #leaderboard table tfoot tr th {
+/* line 440, ../sass/style.scss */
+#leaderboard table thead tr th {
   font-family: "atrament-web", sans-serif;
   text-transform: uppercase;
   font-weight: normal;
   text-align: left;
-  width: 140px;
+  width: 150px;
   float: left;
   display: table-cell;
+  padding: 0;
+  margin: 0;
+  border-top: 0;
 }
-
-/* line 421, ../sass/style.scss */
+/* line 446, ../sass/style.scss */
+#leaderboard table tfoot {
+  /* End tr*/
+}
+/* line 447, ../sass/style.scss */
+#leaderboard table tfoot tr {
+  margin: 0;
+  padding: 0;
+}
+/* line 451, ../sass/style.scss */
+#leaderboard table tfoot tr td {
+  width: 70px;
+  font-family: "atrament-web", sans-serif;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: normal;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: table-cell;
+}
+/* line 454, ../sass/style.scss */
+#leaderboard table tfoot tr th {
+  font-family: "atrament-web", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: left;
+  width: 150px;
+  float: left;
+  display: table-cell;
+  padding: 0;
+  margin: 0;
+}
+/* line 456, ../sass/style.scss */
 #leaderboard table tfoot tr th p {
   margin-top: 5px;
   margin-bottom: auto;
 }
-
-/* line 425, ../sass/style.scss */
-#leaderboard table tfoot tr {
-  background-color: #fff;
-  margin: 0;
-  padding: 0;
-}
-
-/* line 430, ../sass/style.scss */
+/* line 461, ../sass/style.scss */
 #leaderboard table tfoot tr td {
   float: left;
   font-size: 1.4em;
 }
-
-/* line 434, ../sass/style.scss */
-#leaderboard .highlighted {
-  width: 360px;
-  height: 20px;
-  font-family: "atrament-web", sans-serif;
-  text-transform: uppercase;
-  font-weight: normal;
-  background-color: #322e10;
-  color: #fff;
-  text-align: left;
-  display: block;
-}
-
-/* line 445, ../sass/style.scss */
-#leaderboard .avatar {
+/* line 468, ../sass/style.scss */
+#leaderboard table .avatar {
   border: none;
   padding: 0;
   margin: 0;
   margin-right: 5px;
   width: 25px;
   height: 25px;
+}
+
+/*End leaderboard*/
+/* line 480, ../sass/style.scss */
+#lb-sera th, #lb-sera td {
+  border-top: 3px solid #f6917f;
+}
+
+/* line 485, ../sass/style.scss */
+#lb-carrie th, #lb-carrie td {
+  border-top: 3px solid #ef5476;
+}
+
+/* line 490, ../sass/style.scss */
+#lb-frank th, #lb-frank td {
+  border-top: 3px solid #8bb049;
+}
+
+/* line 495, ../sass/style.scss */
+#lb-guri th, #lb-guri td {
+  border-top: 3px solid #0bb7ab;
+}
+
+/* line 500, ../sass/style.scss */
+#lb-kristin th, #lb-kristin td {
+  border-top: 3px solid #f0b50c;
 }
 
 /* OLDER LEADERBOARD DESIGN WITH 2 ROWS PER PERSON
@@ -583,7 +638,7 @@ img.mapbtn {
 
 	*/
 /* COMMENTARY */
-/* line 503, ../sass/style.scss */
+/* line 553, ../sass/style.scss */
 #commentary {
   /*background-color: #fff;*/
   position: fixed;
@@ -597,7 +652,7 @@ img.mapbtn {
   font-size: 1.8em;
 }
 
-/* line 515, ../sass/style.scss */
+/* line 565, ../sass/style.scss */
 #time-bar {
   font-family: "atrament-web", sans-serif;
   font-size: .6em;
@@ -605,7 +660,7 @@ img.mapbtn {
   margin-bottom: .6em;
 }
 
-/* line 521, ../sass/style.scss */
+/* line 571, ../sass/style.scss */
 #time-bar a {
   color: #9880ba;
   font-style: normal;
