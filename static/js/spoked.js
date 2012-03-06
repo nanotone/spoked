@@ -47,18 +47,32 @@ function loadState() {
 	$('.selectedLink').removeClass('selectedLink');
 	if (title == '' || title == 'friends') {
 		$('.friendsLink').closest('li').addClass('selectedLink');
+		instance.abortRideAnimations();
+		instance.background('#ffffff', 0);
 		for (var i = 0; i < users.length; i++) {
 			var user = users[i];
 			var userTracks = user.tracks;
 			console.log("drawing last ride for " + user.name + ": " + userTracks[userTracks.length - 1].id);
-			$.get(SERVER + 'track/' + userTracks[userTracks.length - 1].id, function(data) {
-				instance.drawRide(JSON.parse(data), 0);
+			getTrack(userTracks[userTracks.length - 1].id, function(trackData) {
+				instance.drawRide(trackData, 0);
 			});
 		}
 	}
 	else if (title == 'you') {
 		$('.youLink').closest('li').addClass('selectedLink');
+		instance.abortRideAnimations();
+		instance.background('#ffffff', 0);
+		var userTracks = users[0].tracks;
+		getTrack(userTracks[userTracks.length - 1].id, function(trackData) {
+			instance.drawRide(trackData, 0);
+		});
 	}
+}
+
+function getTrack(trackId, callback) {
+	$.get(SERVER + 'track/' + trackId, function(data) {
+		callback(JSON.parse(data));
+	});
 }
 
 function onClickA(e) {

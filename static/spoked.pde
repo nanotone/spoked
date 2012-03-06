@@ -88,3 +88,9 @@ void drawRide(myData, index) {
 	rideAnimations.add(ride);
 	loop();
 }
+
+// This will stop all ride animations in their tracks, without erasing them.
+void abortRideAnimations() {
+	rideAnimations.clear();
+	noLoop();
+}
