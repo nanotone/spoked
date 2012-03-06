@@ -8,6 +8,11 @@ var infoPromise = $.Deferred();
 var pdePromise = $.Deferred();
 var initPromise = $.when(infoPromise, pdePromise);
 
+function hexColorFromStr(s) {
+	var val = 0xFF000000 + parseInt(s, 16);
+	return val;
+}
+
 function processingReady() {
 	instance = Processing.getInstanceById('processing');
 	pdePromise.resolve();
@@ -52,10 +57,9 @@ function loadState() {
 		instance.background('#ffffff', 0);
 		for (var i = 0; i < users.length; i++) {
 			var user = users[i];
-			var userTracks = user.tracks;
-			console.log("drawing last ride for " + user.name + ": " + userTracks[userTracks.length - 1].id);
-			getTrack(userTracks[userTracks.length - 1].id, function(trackData) {
-				instance.drawRide(trackData, 0);
+			console.log("drawing last ride for " + user.name);
+			getTrack(user, function(trackData, userColor) {
+				instance.drawRide(trackData, userColor);
 			});
 		}
 	}
@@ -63,24 +67,25 @@ function loadState() {
 		$('.youLink').closest('li').addClass('selectedLink');
 		instance.abortRideAnimations();
 		instance.background('#ffffff', 0);
-		var userTracks = users[0].tracks;
-		getTrack(userTracks[userTracks.length - 1].id, function(trackData) {
-			instance.drawRide(trackData, 0);
+		var user = users[0];
+		getTrack(user, function(trackData, userColor) {
+			instance.drawRide(trackData, userColor);
 		});
 	}
 	else if (title.length == 24) {
 		instance.abortRideAnimations();
 		instance.background('#ffffff', 0);
-		var userTracks = usersById[title].tracks;
-		getTrack(userTracks[userTracks.length - 1].id, function(trackData) {
-			instance.drawRide(trackData, 0);
+		var user = usersById[title];
+		getTrack(user, function(trackData, userColor) {
+			instance.drawRide(trackData, userColor);
 		});
 	}
 }
 
-function getTrack(trackId, callback) {
-	$.get(SERVER + 'track/' + trackId, function(data) {
-		callback(JSON.parse(data));
+function getTrack(user, callback) {
+	var userTracks = user.tracks;
+	$.get(SERVER + 'track/' + userTracks[userTracks.length - 1].id, function(data) {
+		callback(JSON.parse(data), hexColorFromStr(user.color));
 	});
 }
 

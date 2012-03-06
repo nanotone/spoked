@@ -13,9 +13,11 @@ float Elong = -73.777;
 // how far we are in the animation
 class RideAnimation {
 	float points[][];
+	String color;
 	int n;
-	RideAnimation(float[][] ridePoints) {
+	RideAnimation(float[][] ridePoints, String rideColor) {
 		points = ridePoints;
+		color = rideColor;
 		n = 1;
 	}
 }
@@ -49,7 +51,7 @@ void draw() {
 
 		smooth();
 		noFill();
-		stroke(139, 176, 73); //green. magenta: 242,29,85 yellow: 244,203,28
+		stroke(ride.color);
 		strokeWeight(3); 
 		strokeJoin(ROUND);
 		vertex(longStart, latStart);
@@ -59,7 +61,7 @@ void draw() {
 		ride.n += 1;
 		// check if this ride animation has completed
 		if (ride.n == ride.points.length) {
-			fill(139, 176, 73, 150);
+			fill(ride.color - 0x69000000); // handy math trick for making it more transparent
 			noStroke();
 			ellipse(longStop, latStop, 12, 12);
 
@@ -83,8 +85,8 @@ void draw() {
 // myData is a large array of ride samples, each represented as [lat, long]
 // index is just the index of the person so we can choose between 2 colors
 //
-void drawRide(myData, index) {
-	RideAnimation ride = new RideAnimation(myData);
+void drawRide(myData, color) {
+	RideAnimation ride = new RideAnimation(myData, color);
 	rideAnimations.add(ride);
 	loop();
 }
