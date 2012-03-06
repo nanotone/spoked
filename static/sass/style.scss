@@ -1,5 +1,6 @@
 /*COLORS*/
-$yourColor: #9880ba;
+$yourColor: #f08e21;
+$land: #fffbf0;
 $bar: #322e10; /*brown #322e10*/
 $black: #000;
 $red: #d2222d;
@@ -61,16 +62,17 @@ h1 {
 	-moz-box-shadow: 3px 3px 7px #888;
   	-webkit-box-shadow: 3px 3px 7px #888;
   		}
+
 #logo {
 	display: block;
 	float: left;
 	position: relative;
 	z-index: 300;
 	margin: -0.5em 0.5em -0.5em 5%;
-	padding: 0.5em;
+	padding: 0.5em .5em 0.5em 0;
 	padding-bottom: .4em;
 	/*background-color: $yourColor; */
-	color: #ffffff;
+	color: $land;
 	font-family: $sans;
 	font-size: 2.5em;
 	text-align: center;
@@ -95,11 +97,11 @@ h1 {
 	vertical-align: baseline;
 	}
 #service-nav ul li a{
-	color: #ffffff; 
+	color: $land; 
 	text-decoration: none;
 	}
 #service-nav ul li.selectedLink {
-	border-bottom: 2px solid #ffffff;
+	border-bottom: 2px solid $land;
 }
 #nav ul {
 	margin-top: 8px;
@@ -110,7 +112,7 @@ h1 {
 	display: block;
 	float:right;
 	margin: 0em 5% 0 0;
-	color: #ffffff;
+	color: $land;
 	right: 0;
 	background-color: $yourColor; /*blue #00ddff;*/
 	font-size: 1.4em;
@@ -150,7 +152,7 @@ ul#user-nav li:first-child{
 	height: 3.5em;
 	bottom: 0;
 	width: 100%;
-	background-color: #fff;
+	background-color: $land;
 	opacity: 0.7;
 	z-index: 180;
 	position: absolute;	
@@ -319,19 +321,19 @@ img.mapbtn {
 	float:left;
 	}
 #main-nav ul li {
-display: block;
-float: left;
-font-size: 1.2em;
-font-family: "atrament-web", sans-serif;
-text-transform: uppercase;
-padding: 0.2em 0;
+	display: block;
+	float: left;
+	font-size: 1.2em;
+	font-family: "atrament-web", sans-serif;
+	text-transform: uppercase;
+	padding: 0.2em 0;
 
 }
 #main-nav ul li a {
-color: $yourColor;
-text-decoration: none;
-padding: 0.2em 0.5em;
-border-right: 1px solid $yourColor;
+	color: $yourColor;
+	text-decoration: none;
+	padding: 0.2em 0.5em;
+	border-right: 1px solid $yourColor;
 }
 /* TIME-NAV */
 #time-nav {
@@ -366,13 +368,15 @@ padding: 0.2em 0.5em;
 /* SIDEBAR */
 
 #sidebar{
+	color: #333;
 	position: fixed;
-	background-color: #ccc;
+	background-color: #ddd;
 	width: 400px;
 	height: 100%;
 	z-index: 150;
 	top: 0;
 	right: 0px;	/*TO HIDE SIDEBAR Right: -400px;*/
+	
 	}
 
 #sidebar-nav ul {
@@ -401,6 +405,8 @@ padding: 0.2em 0.5em;
 	font-size: 1em;
 	padding-bottom: 20px;
 	}
+
+/* LEADERBOARD */
 	
 @mixin datahead {
 	font-family: $sans;
@@ -414,7 +420,6 @@ padding: 0.2em 0.5em;
 	margin: 0;
 }
 
-/* LEADERBOARD */
 @mixin datacell {
 	width: 70px;
 	font-family: $sans;
