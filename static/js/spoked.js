@@ -22,7 +22,7 @@ function showPortraits() {
 		var slug = name.replace(' ', '').toLowerCase();
 		var color = '#' + (user.color || '2dddd2');
 		instance.data('userid', user.id);
-		instance.find('.avatarLink').click(onClickA);
+		instance.find('.avatarLink').click(onClickPortrait);
 		instance.find('.avatar').attr('src', 'img/avatar/' + slug + '.jpg').css({borderColor: color});
 		instance.find('.pop').css({backgroundColor: color});
 		instance.find('.name').text(name);
@@ -68,6 +68,14 @@ function loadState() {
 			instance.drawRide(trackData, 0);
 		});
 	}
+	else if (title.length == 24) {
+		instance.abortRideAnimations();
+		instance.background('#ffffff', 0);
+		var userTracks = usersById[title].tracks;
+		getTrack(userTracks[userTracks.length - 1].id, function(trackData) {
+			instance.drawRide(trackData, 0);
+		});
+	}
 }
 
 function getTrack(trackId, callback) {
@@ -76,17 +84,11 @@ function getTrack(trackId, callback) {
 	});
 }
 
-function onClickA(e) {
+function onClickPortrait(e) {
 	e.preventDefault();
-	instance.abortRideAnimations();
-	instance.background('#ffffff', 0);
-
 	var portrait = $(this).closest('.portrait');
 	var userid = portrait.data('userid');
-	var userTracks = usersById[userid].tracks;
-	getTrack(userTracks[userTracks.length - 1].id, function(trackData) {
-		instance.drawRide(trackData, 0);
-	});
+	History.pushState(null, userid, '?' + userid);
 }
 
 $(function() {
