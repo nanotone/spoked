@@ -21,6 +21,7 @@ function showPortraits() {
 		var name = user.name;
 		var slug = name.replace(' ', '').toLowerCase();
 		var color = '#' + (user.color || '2dddd2');
+		instance.data('userid', user.id);
 		instance.find('.avatarLink').click(onClickA);
 		instance.find('.avatar').attr('src', 'img/avatar/' + slug + '.jpg').css({borderColor: color});
 		instance.find('.pop').css({backgroundColor: color});
@@ -77,9 +78,14 @@ function getTrack(trackId, callback) {
 
 function onClickA(e) {
 	e.preventDefault();
-	var index = $(this).closest('li').index();
-	$.get(SERVER + 'track/' + tracks[index].id, function(data) {
-		instance.drawRide(JSON.parse(data), index);
+	instance.abortRideAnimations();
+	instance.background('#ffffff', 0);
+
+	var portrait = $(this).closest('.portrait');
+	var userid = portrait.data('userid');
+	var userTracks = usersById[userid].tracks;
+	getTrack(userTracks[userTracks.length - 1].id, function(trackData) {
+		instance.drawRide(trackData, 0);
 	});
 }
 
