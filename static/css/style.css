@@ -97,7 +97,7 @@ h1 {
 }
 
 /* line 101, ../sass/style.scss */
-#service-nav ul li:first-child {
+#service-nav ul li.selectedLink {
   border-bottom: 2px solid #ffffff;
 }
 
