@@ -8,6 +8,11 @@ var infoPromise = $.Deferred();
 var pdePromise = $.Deferred();
 var initPromise = $.when(infoPromise, pdePromise);
 
+function hexColorFromStr(s) {
+	var val = 0xFF000000 + parseInt(s, 16);
+	return val;
+}
+
 function processingReady() {
 	instance = Processing.getInstanceById('processing');
 	pdePromise.resolve();
@@ -21,7 +26,8 @@ function showPortraits() {
 		var name = user.name;
 		var slug = name.replace(' ', '').toLowerCase();
 		var color = '#' + (user.color || '2dddd2');
-		instance.find('.avatarLink').click(onClickA);
+		instance.data('userid', user.id);
+		instance.find('.avatarLink').click(onClickPortrait);
 		instance.find('.avatar').attr('src', 'img/avatar/' + slug + '.jpg').css({borderColor: color});
 		instance.find('.pop').css({backgroundColor: color});
 		instance.find('.name').text(name);
@@ -47,26 +53,47 @@ function loadState() {
 	$('.selectedLink').removeClass('selectedLink');
 	if (title == '' || title == 'friends') {
 		$('.friendsLink').closest('li').addClass('selectedLink');
+		instance.abortRideAnimations();
+		instance.background('#ffffff', 0);
 		for (var i = 0; i < users.length; i++) {
 			var user = users[i];
-			var userTracks = user.tracks;
-			console.log("drawing last ride for " + user.name + ": " + userTracks[userTracks.length - 1].id);
-			$.get(SERVER + 'track/' + userTracks[userTracks.length - 1].id, function(data) {
-				instance.drawRide(JSON.parse(data), 0);
+			console.log("drawing last ride for " + user.name);
+			getTrack(user, function(trackData, userColor) {
+				instance.drawRide(trackData, userColor);
 			});
 		}
 	}
 	else if (title == 'you') {
 		$('.youLink').closest('li').addClass('selectedLink');
+		instance.abortRideAnimations();
+		instance.background('#ffffff', 0);
+		var user = users[0];
+		getTrack(user, function(trackData, userColor) {
+			instance.drawRide(trackData, userColor);
+		});
+	}
+	else if (title.length == 24) {
+		instance.abortRideAnimations();
+		instance.background('#ffffff', 0);
+		var user = usersById[title];
+		getTrack(user, function(trackData, userColor) {
+			instance.drawRide(trackData, userColor);
+		});
 	}
 }
 
-function onClickA(e) {
-	e.preventDefault();
-	var index = $(this).closest('li').index();
-	$.get(SERVER + 'track/' + tracks[index].id, function(data) {
-		instance.drawRide(JSON.parse(data), index);
+function getTrack(user, callback) {
+	var userTracks = user.tracks;
+	$.get(SERVER + 'track/' + userTracks[userTracks.length - 1].id, function(data) {
+		callback(JSON.parse(data), hexColorFromStr(user.color));
 	});
+}
+
+function onClickPortrait(e) {
+	e.preventDefault();
+	var portrait = $(this).closest('.portrait');
+	var userid = portrait.data('userid');
+	History.pushState(null, userid, '?' + userid);
 }
 
 $(function() {
