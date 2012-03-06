@@ -1,5 +1,7 @@
+@import "compass/css3";
+
 /*COLORS*/
-$yourColor: #f08e21;
+$yourColor: #f0b50c;
 $land: #fffbf0;
 $bar: #322e10; /*brown #322e10*/
 $black: #000;
@@ -59,8 +61,8 @@ h1 {
 	margin: 0em 0 0 0;
 	position: absolute;
 	z-index: 200;
-	-moz-box-shadow: 3px 3px 7px #888;
-  	-webkit-box-shadow: 3px 3px 7px #888;
+	-moz-box-shadow: 3px 3px 7px rgba(0,0,0, .3);
+  	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .3);
   		}
 
 #logo {
@@ -112,6 +114,7 @@ h1 {
 	display: block;
 	float:right;
 	margin: 0em 5% 0 0;
+	padding: 0;
 	color: $land;
 	right: 0;
 	background-color: $yourColor; /*blue #00ddff;*/
@@ -152,12 +155,12 @@ ul#user-nav li:first-child{
 	height: 3.5em;
 	bottom: 0;
 	width: 100%;
-	background-color: $land;
 	opacity: 0.7;
 	z-index: 180;
 	position: absolute;	
-	-moz-box-shadow: 3px -3px 7px #888;
-  	-webkit-box-shadow: 3px -3px 7px #888;
+	background-color: $land;
+	-moz-box-shadow: 3px -3px 7px rgba(0,0,0, .3);
+  	-webkit-box-shadow: 3px -3px 7px rgba(0,0,0, .3);
 	}
 	
 /*PORTRAIT NAV*/
@@ -169,10 +172,6 @@ ul#user-nav li:first-child{
 	display: block;
 	float: left;
 	z-index: 200;
-	/*-moz-box-shadow: 3px -3px 7px #888;
-  	-webkit-box-shadow: 3px -3px 7px #888;*/
-/*  -moz-border-radius-bottomright: 15px;
-  	-webkit-border-bottom-right-radius: 15px;*/
 	}
 #portrait-nav ul {
 	position: relative;
@@ -368,19 +367,21 @@ padding: 0.2em 0.5em;
 /* SIDEBAR */
 
 #sidebar{
-	color: #333;
+	color: #000;
 	position: fixed;
-	background-color: #ddd;
+	background-color: darken(#fff, 25%);
+	border-left: 2px solid #ccc;
 	width: 400px;
 	height: 100%;
 	z-index: 150;
 	top: 0;
 	right: 0px;	/*TO HIDE SIDEBAR Right: -400px;*/
+	@include box-shadow(inset 10px 3px 7px rgba(0,0,0, .1));
 	
 	}
 
 #sidebar-nav ul {
-	margin: 70px auto auto -65px;
+	margin: 70px auto auto -70px;
 	}
 #sidebar-nav ul li {
 	margin-top: 15px;
