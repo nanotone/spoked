@@ -1,6 +1,9 @@
+@import "compass/css3";
+
 /*COLORS*/
-$yourColor: #9880ba;
-$bar: #322e10; /*brown #322e10*/
+$yourColor: #f0b50c;
+$land: #fffbf0;
+$bar: #1f1f1f; /*#322e10; brown #322e10*/
 $black: #000;
 $red: #d2222d;
 $pink: #ef5476;
@@ -51,34 +54,34 @@ h1 {
 	
 /*SERVICE NAV (TOP)*/
 #service-bar {
-	background-color: $yourColor;
+	background-color: $bar;
 	width: 100%;
-	height: 2.4em;
-	opacity: 1;
+	height: 35px;
+	opacity: .7;
 	margin: 0em 0 0 0;
 	position: absolute;
 	z-index: 200;
-	-moz-box-shadow: 3px 3px 7px #888;
-  	-webkit-box-shadow: 3px 3px 7px #888;
+	-moz-box-shadow: 3px 3px 7px rgba(0,0,0, .3);
+  	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .3);
   		}
+
 #logo {
 	display: block;
 	float: left;
 	position: relative;
 	z-index: 300;
-	margin: -0.5em 0.5em -0.5em 5%;
-	padding: 0.5em;
-	padding-bottom: .4em;
-	/*background-color: $yourColor; */
-	color: #ffffff;
+	margin: -0.5em 0.5em 0 5%;
+	padding: .5em 2em 0 2em;
+	padding-bottom: 0em;
+	background-color: $yourColor; 
+	color: $land;
 	font-family: $sans;
-	font-size: 2.5em;
+	font-size: 35px;
 	text-align: center;
   		}
 #service-nav {
 	font: 1em Georgia, serif;
 	width: 100%;
-	heigth: 1em;
 	position: absolute;
 	z-index: 200;
 	margin: 0em 0 0 0;
@@ -89,40 +92,51 @@ h1 {
 #service-nav ul li {
 	display: block;
 	padding-top: 0;
-	margin-top:0;
 	float: left;
 	margin: 0 1.5em 0 0;
 	vertical-align: baseline;
 	}
 #service-nav ul li a{
-	color: #ffffff; 
+	color: $yourColor; 
 	text-decoration: none;
 	}
 #service-nav ul li.selectedLink {
-	border-bottom: 2px solid #ffffff;
+	border-bottom: 2px solid $land;
 }
-#nav ul {
+#menu-nav {
+	padding-top: 0px;
 	margin-top: 8px;
 	position: relative;
 }
 #user-nav {
 	position: absolute;
+	height: 35px;
 	display: block;
 	float:right;
 	margin: 0em 5% 0 0;
-	color: #ffffff;
+	padding: 0;
+	color: $land;
 	right: 0;
-	background-color: $yourColor; /*blue #00ddff;*/
+	/*background-color: $yourColor; 
 	font-size: 1.4em;
 	font-family: $sans;
-	text-transform: uppercase;
+	text-transform: uppercase;*/
 	/*-moz-border-radius-bottomright: 1em;
   	-webkit-border-bottom-right-radius: 1em;*/	}
-ul#user-nav {
+#user-nav{
 	padding:0;
-	margin-top:0;
+	padding-top: -16px;
+	margin-top:-16px;
 	}
-ul#user-nav li:first-child{
+#user {
+	background-color: $yourColor; 
+	font-size: 1.4em;
+	font-family: $sans;
+	padding-top: -16px;
+	margin-top:-16px;
+	text-transform: uppercase;
+}
+#user-nav li:first-child{
 	border:none;
 	}
 #user-avatar {
@@ -131,15 +145,19 @@ ul#user-nav li:first-child{
 	float:left;
 	margin:0;
 	padding:0;
-	height:30px;
-	width: 30px;
+	height:35px;
+	width: 35px;
 	}
 #user-name {
 	position:relative;
 	float:left;
 	display:block;
-	padding: 0.2em;
+	padding: 6px;
 }	
+#invite {
+	font: 1em Georgia, serif;
+	margin-top: 8px;
+	padding: 0;}
 
 /*BOTTOM NAV*/
 #bottom-nav{
@@ -150,12 +168,12 @@ ul#user-nav li:first-child{
 	height: 3.5em;
 	bottom: 0;
 	width: 100%;
-	background-color: #fff;
 	opacity: 0.7;
 	z-index: 180;
 	position: absolute;	
-	-moz-box-shadow: 3px -3px 7px #888;
-  	-webkit-box-shadow: 3px -3px 7px #888;
+	background-color: $bar;
+	-moz-box-shadow: 3px -3px 7px rgba(0,0,0, .3);
+  	-webkit-box-shadow: 3px -3px 7px rgba(0,0,0, .3);
 	}
 	
 /*PORTRAIT NAV*/
@@ -167,10 +185,6 @@ ul#user-nav li:first-child{
 	display: block;
 	float: left;
 	z-index: 200;
-	/*-moz-box-shadow: 3px -3px 7px #888;
-  	-webkit-box-shadow: 3px -3px 7px #888;*/
-/*  -moz-border-radius-bottomright: 15px;
-  	-webkit-border-bottom-right-radius: 15px;*/
 	}
 #portrait-nav ul {
 	position: relative;
@@ -319,19 +333,19 @@ img.mapbtn {
 	float:left;
 	}
 #main-nav ul li {
-display: block;
-float: left;
-font-size: 1.2em;
-font-family: "atrament-web", sans-serif;
-text-transform: uppercase;
-padding: 0.2em 0;
+	display: block;
+	float: left;
+	font-size: 1.2em;
+	font-family: "atrament-web", sans-serif;
+	text-transform: uppercase;
+	padding: 0.2em 0;
 
 }
 #main-nav ul li a {
-color: $yourColor;
-text-decoration: none;
-padding: 0.2em 0.5em;
-border-right: 1px solid $yourColor;
+	color: $yourColor;
+	text-decoration: none;
+	padding: 0.2em 0.5em;
+	border-right: 1px solid $yourColor;
 }
 /* TIME-NAV */
 #time-nav {
@@ -366,17 +380,21 @@ padding: 0.2em 0.5em;
 /* SIDEBAR */
 
 #sidebar{
+	color: #1f1f1f;
 	position: fixed;
-	background-color: #ccc;
+	background-color: darken(#fff, 25%);
+	border-left: 2px solid #ccc;
 	width: 400px;
 	height: 100%;
 	z-index: 150;
 	top: 0;
-	right: 0px;	/*TO HIDE SIDEBAR Right: -400px;*/
+	right: -400px;	/*TO HIDE SIDEBAR Right: -400px;*/
+	@include box-shadow(inset 10px 3px 7px rgba(0,0,0, .1));
+	
 	}
 
 #sidebar-nav ul {
-	margin: 70px auto auto -65px;
+	margin: 70px auto auto -70px;
 	}
 #sidebar-nav ul li {
 	margin-top: 15px;
@@ -401,6 +419,8 @@ padding: 0.2em 0.5em;
 	font-size: 1em;
 	padding-bottom: 20px;
 	}
+
+/* LEADERBOARD */
 	
 @mixin datahead {
 	font-family: $sans;
@@ -414,7 +434,6 @@ padding: 0.2em 0.5em;
 	margin: 0;
 }
 
-/* LEADERBOARD */
 @mixin datacell {
 	width: 70px;
 	font-family: $sans;
@@ -566,13 +585,13 @@ padding: 0.2em 0.5em;
 	font-weight: 400;
 	font-size: 1.8em;
 	}
-#time-bar {
+#twitter-bar {
 	font-family: $sans;
-	font-size: .6em;
+	font-size: .7em;
 	font-style: normal;
 	margin-bottom: .6em;
 }
-#time-bar a {
+#twitter-bar a {
 	color: $yourColor;
 	font-style: normal;
 }
