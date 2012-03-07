@@ -8,10 +8,7 @@ var infoPromise = $.Deferred();
 var pdePromise = $.Deferred();
 var initPromise = $.when(infoPromise, pdePromise);
 
-function hexColorFromStr(s) {
-	var val = 0xFF000000 + parseInt(s, 16);
-	return val;
-}
+var currentUser = null;
 
 function processingReady() {
 	instance = Processing.getInstanceById('processing');
@@ -28,6 +25,8 @@ function showPortraits() {
 		var color = '#' + (user.color || '2dddd2');
 		instance.data('userid', user.id);
 		instance.find('.avatarLink').click(onClickPortrait);
+		instance.find('.compare a').click(onClickCompare);
+		instance.find('.profileLink').click(onClickPortrait);
 		instance.find('.avatar').attr('src', 'img/avatar/' + slug + '.jpg').css({borderColor: color});
 		instance.find('.pop').css({backgroundColor: color});
 		instance.find('.name').text(name);
@@ -39,18 +38,20 @@ function makeLinkHandler(title) {
 	return function(e) {
 		e.preventDefault();
 		if (title != History.getState().title) {
-			History.pushState(null, title, '?' + title);
+			History.pushState(null, '', '?' + title);
 		}
 	};
 }
 function loadState() {
 	if (!initPromise.isResolved()) { return; }
-	var title = History.getState().title;
+	var parts = History.getState().url.split('?');
+	var title = (parts.length > 1 ? parts[1] : '');
 	if (title == '' && window.location.search.length > 1) {
 		title = window.location.search.substr(1);
 	}
 	console.log("loadState " + title);
 	$('.selectedLink').removeClass('selectedLink');
+	currentUser = null;
 	if (title == '' || title == 'friends') {
 		$('.friendsLink').closest('li').addClass('selectedLink');
 		instance.abortRideAnimations();
@@ -62,30 +63,51 @@ function loadState() {
 				instance.drawRide(trackData, userColor);
 			});
 		}
+		$('.compare').hide();
 	}
 	else if (title == 'you') {
 		$('.youLink').closest('li').addClass('selectedLink');
-		instance.abortRideAnimations();
-		instance.background('#ffffff', 0);
-		var user = users[0];
-		getTrack(user, function(trackData, userColor) {
-			instance.drawRide(trackData, userColor);
-		});
+		currentUser = users[0];
+		showProfile(currentUser);
 	}
 	else if (title.length == 24) {
+		currentUser = usersById[title];
+		showProfile(currentUser);
+	}
+	else if (title.length == 49) {
 		instance.abortRideAnimations();
 		instance.background('#ffffff', 0);
-		var user = usersById[title];
-		getTrack(user, function(trackData, userColor) {
+		getTrack(usersById[title.substr(0, 24)], function(trackData, userColor) {
 			instance.drawRide(trackData, userColor);
 		});
+		getTrack(usersById[title.substr(25)], function(trackData, userColor) {
+			instance.drawRide(trackData, userColor);
+		});
+		$('.compare').hide();
+	}
+}
+
+function showProfile(user) {
+	instance.abortRideAnimations();
+	instance.background('#ffffff', 0);
+	getTrack(user, function(trackData, userColor) {
+		instance.drawRide(trackData, userColor);
+	});
+	var compareDivs = $('.compare');
+	compareDivs.show();
+	for (var i = 0; i < compareDivs.length; i++) {
+		if (compareDivs.eq(i).closest('.portrait').data('userid') == user.id) {
+			compareDivs.eq(i).hide();
+		}
 	}
 }
 
 function getTrack(user, callback) {
 	var userTracks = user.tracks;
+	var color = 0xFF000000 + parseInt(user.color, 16);
+
 	$.get(SERVER + 'track/' + userTracks[userTracks.length - 1].id, function(data) {
-		callback(JSON.parse(data), hexColorFromStr(user.color));
+		callback(JSON.parse(data), color);
 	});
 }
 
@@ -93,7 +115,12 @@ function onClickPortrait(e) {
 	e.preventDefault();
 	var portrait = $(this).closest('.portrait');
 	var userid = portrait.data('userid');
-	History.pushState(null, userid, '?' + userid);
+	History.pushState(null, '', '?' + userid);
+}
+function onClickCompare(e) {
+	e.preventDefault();
+	var portrait = $(this).closest('.portrait');
+	History.pushState(null, '', '?' + currentUser.id + '-' + portrait.data('userid'));
 }
 
 $(function() {
