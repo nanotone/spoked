@@ -22,11 +22,9 @@
 
   <ul id="menu-nav">
     <!--li><a href="">All</a></li-->
+    <li><a class="newyorkersLink" href="">New Yorkers</a></li>
     <li><a class="friendsLink" href="">Friends</a></li>
     <li><a class="youLink" href="">You</a></li>
-    <li><a href="">About</a></li>
-    <!--<li><a href="">Invite</a></li>-->
-
   </ul>
 
   <ul id="user-nav">
@@ -42,7 +40,7 @@
 				<li><a href="/logout">Log out</a></li>
 			</ul>
 		</div>
-	</li>--><!-- end user-->
+		</li>--><!-- end user-->
 </ul><!-- end user-nav-->
 </div> <!-- end service-nav -->
 </div> <!-- end nav -->
@@ -105,7 +103,7 @@
 				</tr>
 				-->
 				<tr id="lb-sera">
-				<th><img class="avatar" src="img/avatar/serakoo.jpg"><p>Sera Koo</p></th>
+				<th><img class="avatar" src="img/avatar/tinaye.jpg"><p>Tina Ye</p></th>
 				<td>55</td>
 				<td>17</td>
 				<td class="emph">82</td>		
@@ -177,14 +175,6 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
 <canvas id="processing" data-processing-sources="spoked.pde"></canvas>
 
 <div id="bottom-nav">
-<div id="bottom-bar"></div>
-<!--<div id="main-nav">
-	<ul>
-	<li><a href="you.php">You</a></li>
-	<li><a href="friends.php">Friends</a></li>
-	<li><a href="all.php">All</a></li>
-	</ul>
-</div>--><!-- end main nav -->
 <div id="portrait-nav">
   <ul>
     <li id="portrait-template" class="template portrait"><a href="profile.html" class="avatarLink">
@@ -200,7 +190,22 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
     </li>
   </ul>
 </div> <!-- end portrait nav -->
-<div id="control-nav"> <!--To change map backgrounds-->
+
+<div id="bottom-bar"></div>
+<div id="main-nav">
+	<ul>
+	<li><a href="you.php">All friends</a></li>
+	</ul>
+</div><!-- end main nav -->
+<div id="time-nav"> 
+<!--http://ryanfait.com/resources/custom-checkboxes-and-radio-buttons/ to style buttons+js-->
+	<ul>
+	<li><a href="animate.php">Animate</a></li>
+	<li><a class="selected" href="lastweek.php">Last week</a></li>
+	<li><a class="selected" href="thisweek.php">This week</a></li>
+	</ul>
+</div><!-- end time nav -->
+<div id="map-nav"> <!--To change map backgrounds-->
   <ul>
     <li><a href="#landseaBG">
     	<img class="mapbtn selected" src="img/btn/landsea.png"></a>
@@ -229,13 +234,6 @@ Holy cow, you have been riding 290 miles lately! NYC - Philly next?
   </ul> 
 </div> <!-- end control nav -->
 
-<div id="time-nav"> 
-<!--http://ryanfait.com/resources/custom-checkboxes-and-radio-buttons/ to style buttons+js-->
-	<ul>
-	<li><a href="backintime.php">&laquo;</a></li>
-	<li><a href="lastweek.php"><input type="checkbox" class="styled" />Last week</a></li>
-	<li><a href="thisweek.php"><input type="checkbox" class="styled" />This week</a></li>
-	</ul>
-</div><!-- end main nav -->
+
 </div> <!-- end bottom-nav -->
 </body>

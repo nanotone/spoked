@@ -110,29 +110,16 @@ h1 {
 }
 #user-nav {
 	position: absolute;
-	height: 35px;
-	display: block;
+	height: 75px;
 	float:right;
-	margin: 0em 0em 0 0;
-	padding: 0;
+	padding-top: 0;
+	margin: 8px 0 0 0;
 	color: $yourColor;
-	right: 0;
-	/*background-color: $yourColor; 
-	font-size: 1.4em;
-	font-family: $sans;
-	text-transform: uppercase;*/
-	/*-moz-border-radius-bottomright: 1em;
-  	-webkit-border-bottom-right-radius: 1em;*/	}
-#user-nav{
-	padding:0;
-	padding-top: -16px;
-	margin-top:-16px;
+	right: 0;	
 	}
 #user {
 	font-size: 1.4em;
 	font-family: $sans;
-	padding-top: -16px;
-	margin-top:-16px;
 	text-transform: uppercase;
 }
 #user-nav li:first-child{
@@ -161,10 +148,10 @@ h1 {
 /*BOTTOM NAV*/
 #bottom-nav{
 	bottom: 0;
-	height: 3.5em;
+	height: 30px;
 	}
 #bottom-bar{
-	height: 3.5em;
+	height: 30px;
 	bottom: 0;
 	width: 100%;
 	opacity: 1;
@@ -178,12 +165,12 @@ h1 {
 /*PORTRAIT NAV*/
 
 #portrait-nav {
-	bottom: 0;
-	height: 3.5em;
-	position: relative;
+	bottom: 28px;
+	height: 55px;
+	position: absolute;
 	display: block;
 	float: left;
-	z-index: 200;
+	z-index: 100;
 	}
 #portrait-nav ul {
 	position: relative;
@@ -210,8 +197,8 @@ img.avatar {
 	float:left;
 	margin:0;
 	padding:0;
-	height: 2.8em;
-	width: 2.8em;
+	height: 45px;
+	width: 45px;
 	/*-moz-border-radius-bottomright: 1em;
   	-webkit-border-bottom-right-radius: 1em;
   	-moz-border-radius: .5em;
@@ -243,7 +230,7 @@ img.avatar {
 	-moz-border-radius-bottomright: .8em;
   	-webkit-border-bottom-right-radius: .8em;
 	}
-#portrait-nav ul li:hover .pop, #control-nav ul li:hover .pop {
+#portrait-nav ul li:hover .pop, #map-nav ul li:hover .pop {
 	display: block;
 	}
 #portrait-nav ul li:hover img {
@@ -263,40 +250,41 @@ img.avatar {
 	font: .8em Georgia;
 	}
 
-/*CONTROL NAV*/
+/*MAp NAV*/
 
-#control-nav {
+#map-nav {
 	bottom: 0;
 	display:block;
-	margin: -.2em 0 0 0;	
-	padding: 0 0 0 0;
+	margin: -15px 0 0 0;	
+	padding: 0 0 0px 0;
 	z-index: 200;
 	position: relative;
-	height: 3.5em;
+	height: 30px;
 	float:right;
 	}
-#control-nav ul {
-	padding-left: 0;
+#map-nav ul {
+	padding-right: 5px;
 	
 	}
-#control-nav ul li {
+#map-nav ul li {
 	display: block;
+	border-right: 1px solid darken($yourColor, 25%);
 	float: left;
 	position: relative;
-	padding-right: .5em;
+	padding-right: 0;
 	padding-top: 0;
 	margin-top: 0;
 	}
 img.mapbtn:hover {
-	background-color: $yourColor;
+	background-color: darken($yourColor, 15%);
 
 	}
-#control-nav ul li a {
-	color: #fff;
+#map-nav ul li a {
+	color: $yourColor;
 	text-decoration: none;  
 	}
 img.mapbtn {
-	background-color: $bar;
+	background-color: $yourColor;
 	position: relative;
 	display: block;
 	float:left;
@@ -304,44 +292,36 @@ img.mapbtn {
 	padding:0;
 	height: 30px;
 	width: 30px;
-	/*-moz-border-radius-bottomright: 1em;
-  	-webkit-border-bottom-right-radius: 1em;
-  	-moz-border-radius: .5em;
-    -webkit-border-radius: .5em;*/
 	border: none;
   	}
-#control-nav .pop {
+#map-nav .pop {
 	width: 100px;
 	}
-#control-nav .selected {
-	background-color: $yourColor;
-   -moz-box-shadow: inset 0 0 10px #aaa;
-   -webkit-box-shadow: inset 0 0 10px #aaa;
-   box-shadow: inset 0 0 10px #aaa;	
+#map-nav .selected {
+	background-color: darken($yourColor, 15%);
 	}
 
 /* MAIN-NAV */
 #main-nav {
 	bottom: 0;
 	display:block;
-	margin: 0 0 0 0;	
+	margin: -12px 0 0 0;	
 	padding: 0 0 0 0;
 	z-index: 200;
 	position: relative;
-	height: 3.5em;
+	height: 30px;
 	float:left;
 	}
 #main-nav ul li {
 	display: block;
 	float: left;
-	font-size: 1.2em;
-	font-family: "atrament-web", sans-serif;
+	font-size: 20px;
+	font-family: $sans;
 	text-transform: uppercase;
-	padding: 0.2em 0;
-
+	padding: 0 0;
 }
 #main-nav ul li a {
-	color: $yourColor;
+	color: #fff;
 	text-decoration: none;
 	padding: 0.2em 0.5em;
 	border-right: 1px solid $yourColor;
@@ -350,32 +330,48 @@ img.mapbtn {
 #time-nav {
 	bottom: 0;
 	display:block;
-	margin: 0 0 0 0;	
+	margin: -12px 0 0 0;	
 	padding: 0 0 0 0;
 	z-index: 200;
 	position: relative;
-	height: 3.5em;
+	height: 30px;
 	float:right;
 	}
 #time-nav ul{
 	padding-left: 0;
-	padding-right: 20px;		
+	padding-right: 5px;		
 		}
 #time-nav ul li {
 display: block;
 float: left;
-font-size: 1.2em;
+width: 130px;
+font-size: 20px;
 font-family: "atrament-web", sans-serif;
 text-transform: uppercase;
-padding: 0.2em 0;
+padding: 0em 0;
 
 }
 #time-nav ul li a {
 color: #fff;
 text-decoration: none;
-padding: 0.2em 0.5em;
+padding: 5px 5px;
 }
 
+#time-nav ul li a.selected {
+background-color: darken($yourColor, 15%);
+}
+
+/* CHECKBOXES */
+
+#time-nav ul li a.selected:before, #main-nav ul li a.selected:before {
+content: url(../img/btn/checkbox-sq-checked-20x20.png);
+margin-right: 10px;
+	}
+#time-nav ul li a:before, #main-nav ul li a:before {
+content: url(../img/btn/checkbox-sq-20x20.png);
+margin-right: 10px;
+	}
+	
 /* SIDEBAR */
 
 #sidebar{
