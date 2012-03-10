@@ -147,5 +147,77 @@ $(function() {
 	$('.friendsLink').click(makeLinkHandler('friends'));
 	$('.youLink').click(makeLinkHandler('you'));
 	History.Adapter.bind(window, 'statechange', loadState);
+	
+	// Tony doing crazy stuff
+	$("#sidebar-btn-stats").click(
+		function(event) {
+			event.preventDefault();
+			
+			$sidebar = $("#sidebar");
+			
+			if($sidebar.hasClass("hidden")) {
+				$sidebar.removeClass("hidden");
+			} else {
+				$sidebar.addClass("hidden");
+			}
+			
+		}
+	)
+
+	$("#landandsea").click(
+		function(event) {
+			event.preventDefault();
+			
+			$body = $("body");
+			
+			if(!$body.hasClass("landandsea")) {
+				$body.removeClass("blankcanvas beatenpaths hoods");
+				$body.addClass("landandsea");
+			}
+			
+		}
+	)
+
+	$("#beatenpaths").click(
+		function(event) {
+			event.preventDefault();
+			
+			$body = $("body");
+			
+			if(!$body.hasClass("beatenpaths")) {
+				$body.removeClass("landandsea blankcanvas hoods");
+				$body.addClass("beatenpaths");
+			}
+			
+		}
+	)
+
+	$("#blankcanvas").click(
+		function(event) {
+			event.preventDefault();
+			
+			$body = $("body");
+			
+			if(!$body.hasClass("blankcanvas")) {
+				$body.removeClass("landandsea beatenpaths hoods");
+				$body.addClass("blankcanvas");
+			}
+			
+		}
+	)
+
+	$("#hoods").click(
+		function(event) {
+			event.preventDefault();
+			
+			$body = $("body");
+			
+			if(!$body.hasClass("hoods")) {
+				$body.removeClass("landandsea beatenpaths blankcanvas");
+				$body.addClass("hoods");
+			}
+			
+		}
+	)
 });
 
