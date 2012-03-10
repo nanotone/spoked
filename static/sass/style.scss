@@ -28,16 +28,17 @@ body {
 	}
 
 body.landandsea {
-	background: #f8f7f2 url(../img/map_1680x2750.png) top left no-repeat;
+	background: #f8f7f2 url(../img/map/land.png) top left no-repeat;
 }
 body.beatenpaths {
-	background: none !important;
+	background: #f8f7f2 url(../img/map/map_1680x2750.png) top left no-repeat;
 }
 body.blankcanvas {
-	background: none !important;
+	background: #f8f7f2 url(../img/map/streets.png) top left no-repeat;
+//background: none !important;
 }
 body.hoods {
-	background: #f8f7f2 url(../img/map_1680x2750.png) top left no-repeat;
+	background: #f8f7f2 url(../img/map/hoods.png) top left no-repeat;
 }
 
 canvas { 
