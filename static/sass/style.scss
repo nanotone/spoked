@@ -25,23 +25,16 @@ body {
 	margin: 0;
 	padding:0;
 	height: 2750px;
-	}
-
-body.streets {
-	background: #f8f7f2 url(../img/map/streets.png) top left no-repeat;
-}
-body.landsea {
-	background: #f8f7f2 url(../img/map/land.png) top left no-repeat;
-}
-body.beatenpaths {
-	background: #f8f7f2 url(../img/map/map_1680x2750.png) top left no-repeat;
-}
-body.blankcanvas {
 	background-color: #f8f7f2;
+	background-position: top left;
+	background-repeat: no-repeat;
 }
-body.hoods {
-	background: #f8f7f2 url(../img/map/hoods.png) top left no-repeat;
-}
+
+body.streets { background: url(../img/map/streets.png); }
+body.landsea { background: url(../img/map/land.png); }
+body.beatenpaths { background: url(../img/map/map_1680x2750.png); }
+body.blankcanvas { }
+body.hoods { background: url(../img/map/hoods.png); }
 
 canvas { 
 	margin-top: 0px;

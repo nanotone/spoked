@@ -178,7 +178,7 @@ $(function() {
 	$('.youLink').click(makeLinkHandler('you'));
 
 	$('.mapSelect a').click(mapHandler);
-	$('#landsea a').eq(0).click(); // select landsea as the default map
+	$('#streets a').eq(0).click(); // select streets as the default map
 
 	History.Adapter.bind(window, 'statechange', loadState);
 	
