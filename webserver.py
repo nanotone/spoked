@@ -44,7 +44,7 @@ def info():
 	crossorigin()
 	bottle.response.set_header('Content-Type', 'text/plain')
 	return json_encoder.encode({
-		'tracks': list({'id': t['_id'], 'time': t['time'], 'userid': t['userid']} for t in db.tracks.find()),
+		'tracks': list({'id': t['_id'], 'time': t['start_time'], 'userid': t['userid']} for t in db.tracks.find()),
 		'users': list({'id': u['_id'], 'name': u['name'], 'color': u['color']} for u in db.users.find())
 	})
 
