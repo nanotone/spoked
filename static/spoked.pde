@@ -132,6 +132,7 @@ void draw() {
 		// if all ride animations have completed, stop the draw loop
 		if (rideAnimations.size() == 0) {
 			noLoop();
+			processingFinishedAnimating();
 		}
 	}
 }

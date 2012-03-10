@@ -26,6 +26,9 @@ function processingReady() {
 	instance = Processing.getInstanceById('processing');
 	pdePromise.resolve();
 }
+function processingFinishedAnimating() {
+	$('#animate').removeClass('selected');
+}
 
 function showPortraits() {
 	var template = $('#portrait-template');
