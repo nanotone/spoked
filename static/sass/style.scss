@@ -27,6 +27,9 @@ body {
 	height: 2750px;
 	}
 
+body.streets {
+	background: #f8f7f2 url(../img/map/streets.png) top left no-repeat;
+}
 body.landandsea {
 	background: #f8f7f2 url(../img/map/land.png) top left no-repeat;
 }
@@ -34,8 +37,7 @@ body.beatenpaths {
 	background: #f8f7f2 url(../img/map/map_1680x2750.png) top left no-repeat;
 }
 body.blankcanvas {
-	background: #f8f7f2 url(../img/map/streets.png) top left no-repeat;
-//background: none !important;
+	background-color: #f8f7f2;
 }
 body.hoods {
 	background: #f8f7f2 url(../img/map/hoods.png) top left no-repeat;

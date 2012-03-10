@@ -180,6 +180,20 @@ $(function() {
 		}
 	)
 
+	$("#streets").click(
+		function(event) {
+			event.preventDefault();
+			
+			$body = $("body");
+			
+			if(!$body.hasClass("streets")) {
+				$body.removeClass("landandsea blankcanvas beatenpaths hoods");
+				$body.addClass("streets");
+			}
+			
+		}
+	)
+	
 	$("#landandsea").click(
 		function(event) {
 			event.preventDefault();
@@ -187,7 +201,7 @@ $(function() {
 			$body = $("body");
 			
 			if(!$body.hasClass("landandsea")) {
-				$body.removeClass("blankcanvas beatenpaths hoods");
+				$body.removeClass("streets blankcanvas beatenpaths hoods");
 				$body.addClass("landandsea");
 			}
 			
@@ -201,7 +215,7 @@ $(function() {
 			$body = $("body");
 			
 			if(!$body.hasClass("beatenpaths")) {
-				$body.removeClass("landandsea blankcanvas hoods");
+				$body.removeClass("streets landandsea blankcanvas hoods");
 				$body.addClass("beatenpaths");
 			}
 			
@@ -215,7 +229,7 @@ $(function() {
 			$body = $("body");
 			
 			if(!$body.hasClass("blankcanvas")) {
-				$body.removeClass("landandsea beatenpaths hoods");
+				$body.removeClass("streets landandsea beatenpaths hoods");
 				$body.addClass("blankcanvas");
 			}
 			
@@ -229,7 +243,7 @@ $(function() {
 			$body = $("body");
 			
 			if(!$body.hasClass("hoods")) {
-				$body.removeClass("landandsea beatenpaths blankcanvas");
+				$body.removeClass("streets landandsea beatenpaths blankcanvas");
 				$body.addClass("hoods");
 			}
 			
