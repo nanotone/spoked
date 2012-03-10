@@ -49,7 +49,7 @@ class RideAnimation {
 	void drawDestination() {
 		float[] lastPoint = points[points.length - 1];
 		float longStop = map(lastPoint[longPos], Wlong, Elong, 0, width);
-		float latStop = map(lastPoint[latPos], Wlat, Elat, 0, height);
+		float latStop = map(lastPoint[latPos], Nlat, Slat, 0, height);
 		fill(color - 0x69000000); // handy math trick for making it more transparent
 		noStroke();
 		ellipse(longStop, latStop, 12, 12);
