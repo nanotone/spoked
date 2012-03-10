@@ -8,6 +8,13 @@ float Slat = 40.53;
 float Wlong = -74.0854;
 float Elong = -73.777;
 
+/* Variablees for hover test
+float endLongStop;
+float endLatStop;
+boolean endHover = false;
+boolean locked = false;
+float endPoints[][];*/
+
 // a RideAnimation object contains all the data needed to represent the act
 // of drawing an animated ride. This includes both the lat/lon points, and
 // how far we are in the animation
@@ -73,6 +80,21 @@ void draw() {
 		if (ride.isAtDestination()) {
 			ride.drawDestination();
 
+			/* Attempt to create hover
+			endLongStop = longStop;
+			endLatStop = latStop;
+			if (mouseX > endLongStop && mouseY > endLatStop) {
+				endHover = true;
+			
+				
+ 					ellipse(endLongStop, endLatStop, 40, 40);
+				
+			}	else {
+				 	ellipse(endLongStop, endLatStop, 20, 20);
+				 	endHover = false;
+			}	
+			*/
+			
 			// Remove this ride from the ArrayList of active animations
 			// This is TRICKY! we must decrement the counter after removing.
 			// Otherwise we will accidentally skip the next one!
@@ -83,9 +105,11 @@ void draw() {
 
 	// if all ride animations have completed, stop the draw loop
 	if (rideAnimations.size() == 0) {
-		noLoop();
+		//noLoop();
 	}
 }
+
+
 
 
 //
@@ -102,7 +126,7 @@ void animateRide(Object trackObj, int color) {
 // This will stop all ride animations in their tracks, without erasing them.
 void abortRideAnimations() {
 	rideAnimations.clear();
-	noLoop();
+	//noLoop();
 }
 
 void drawRideImmediately(Object trackObj, int color) {

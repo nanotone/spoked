@@ -7,7 +7,6 @@ import pymongo
 
 class JSONEncoder(json.JSONEncoder):
 	def default(self, o):
-		print repr(o)
 		if isinstance(o, bson.objectid.ObjectId):
 			return str(o)
 		return json.JSONEncoder.default(self, o)
@@ -27,7 +26,7 @@ def index():
 def tracks():
 	crossorigin()
 	bottle.response.set_header('Content-Type', 'text/plain')
-	return '[' + ','.join('"%s"' % t['_id'] for t in db.tracks.find()) + ']'
+	return '{' + ','.join('"%s":' % t + open('static/json/%s.json' % t).read() for t in bottle.request.query.ids.split(',')) + '}'
 
 @bottle.route('/track/<oid>')
 def track(oid):
