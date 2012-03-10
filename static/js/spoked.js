@@ -21,6 +21,9 @@ var currentUser = null;
 	window.thisWeek = midnight - (d.getDay() - 1) * day;
 	window.lastWeek = thisWeek - 7 * day;
 })();
+function getTime() {
+	return (new Date().getTime()) / 1000;
+}
 
 function processingReady() {
 	instance = Processing.getInstanceById('processing');
@@ -127,9 +130,19 @@ var activeTrackCollection = {
 	drawImmediately: function() {
 		instance.abortRideAnimations();
 		instance.background('#ffffff', 0);
-		for (var i = 0; i < this.tracks.length; i++) {
-			instance.drawRideImmediately(this.tracks[i]);
-		}
+		var self = this;
+		var i = 0;
+		var drawRideImmediately = function() {
+			var begin = getTime();
+			while (i < self.tracks.length && getTime() - begin < 0.05) {
+				instance.drawRideImmediately(self.tracks[i]);
+				i++;
+			}
+			if (i < self.tracks.length) {
+				setTimeout(drawRideImmediately, 0);
+			}
+		};
+		drawRideImmediately();
 	},
 	drawAnimated: function() {
 		instance.abortRideAnimations();
