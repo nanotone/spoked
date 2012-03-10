@@ -54,7 +54,9 @@ if __name__ == '__main__':
 		parse_gpx.gpx_to_csv(gpx_path, 'static/csv/%s.csv' % track_id)
 		parse_gpx.gpx_to_json(gpx_path, 'static/json/%s.json' % track_id)
 
-		db.tracks.update({'mailid': mailid}, {'$set': {'gpx_complete': True}})
+		start_time = json.load(open('static/json/%s.json' % track_id))[0][2]
+
+		db.tracks.update({'mailid': mailid}, {'$set': {'gpx_complete': True, 'start_time': start_time}})
 
 	yes.close()
 
