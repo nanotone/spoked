@@ -29,7 +29,7 @@ def compress_track_file(track):
 	length = len(data)
 	data = list(compress_track(data))
 	print "Dropped", float(length - len(data)) / length, "of points"
-	with open('static/json-compressed/%s.json' % track, 'w') as f:
+	with open('static/json-sparse/%s.json' % track, 'w') as f:
 		json.dump(data, f)
 
 if __name__ == '__main__':
