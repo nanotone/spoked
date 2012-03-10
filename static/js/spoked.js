@@ -11,6 +11,17 @@ var initPromise = $.when(infoPromise, pdePromise);
 
 var currentUser = null;
 
+(function() {
+	var day = 24 * 3600;
+	var d = new Date();
+	d.setHours(0);
+	d.setMinutes(0);
+	d.setSeconds(0);
+	var midnight = Math.floor(d.getTime() / 1000);
+	window.thisWeek = midnight - (d.getDay() - 1) * day;
+	window.lastWeek = thisWeek - 7 * day;
+})();
+
 function processingReady() {
 	instance = Processing.getInstanceById('processing');
 	pdePromise.resolve();
@@ -57,6 +68,7 @@ function mapHandler(e) {
 	$body.addClass(mapSelect.attr('id'));
 }
 
+
 function loadState() {
 	if (!initPromise.isResolved()) { return; }
 	var parts = History.getState().url.split('?');
@@ -71,10 +83,7 @@ function loadState() {
 		$('.friendsLink').closest('li').addClass('selectedLink');
 		instance.abortRideAnimations();
 		instance.background('#ffffff', 0);
-		for (var i = 0; i < users.length; i++) {
-			var user = users[i];
-			drawTrack(user);
-		}
+		drawTracks(users);
 		$('.compare').hide();
 	}
 	else if (title == 'you') {
@@ -89,8 +98,7 @@ function loadState() {
 	else if (title.length == 49) {
 		instance.abortRideAnimations();
 		instance.background('#ffffff', 0);
-		drawTrack(usersById[title.substr(0, 24)]);
-		drawTrack(usersById[title.substr(25)]);
+		drawTracks([usersById[title.substr(0, 24)], usersById[title.substr(25)] ]);
 		$('.compare').hide();
 	}
 }
@@ -98,7 +106,6 @@ function loadState() {
 function showProfile(user) {
 	instance.abortRideAnimations();
 	instance.background('#ffffff', 0);
-	drawTrack(user);
 	var compareDivs = $('.compare');
 	compareDivs.show();
 	for (var i = 0; i < compareDivs.length; i++) {
@@ -106,31 +113,56 @@ function showProfile(user) {
 			compareDivs.eq(i).hide();
 		}
 	}
+	drawTracks([user]);
 }
 
-function drawTrack(user, callback) {
-	console.log("drawing last ride for " + user.name);
-	var userTracks = user.tracks;
-	var color = 0xFF000000 + parseInt(user.color, 16);
+var activeTrackCollection = {
+	tracks: [],
+	setTracks: function(tracks) {
+		this.tracks = tracks;
+	},
+	drawImmediately: function() {
+		instance.abortRideAnimations();
+		instance.background('#ffffff', 0);
+		for (var i = 0; i < this.tracks.length; i++) {
+			instance.drawRideImmediately(this.tracks[i]);
+		}
+	},
+	drawAnimated: function() {
+		instance.abortRideAnimations();
+		instance.background('#ffffff', 0);
+		instance.animateRides(this.tracks, lastWeek);
+	}
+};
 
-	var trackId = userTracks[userTracks.length - 1].id;
-	fetchTracks([trackId]).done(function() {
-		instance.animateRide(tracksById[trackId], color);
+function drawTracks(users, callback) {
+	var tracksToShow = [];
+	for (var i = 0; i < users.length; i++) {
+		var user = users[i];
+		for (var j = 0; j < user.tracks.length; j++) {
+			if (user.tracks[j].time > lastWeek) {
+				tracksToShow.push(user.tracks[j]);
+			}
+		}
+	}
+	fetchTracks(tracksToShow).done(function() {
+		activeTrackCollection.setTracks(tracksToShow);
+		activeTrackCollection.drawImmediately();
 	});
 }
-function fetchTracks(trackIds) {
+function fetchTracks(tracks) {
 	var deferred = $.Deferred();
 	var trackIdsToLoad = [];
-	for (var i = 0; i < trackIds.length; i++) {
-		if (!tracksById[trackIds[i]]) {
-			trackIdsToLoad.push(trackIds[i]);
+	for (var i = 0; i < tracks.length; i++) {
+		if (!tracks[i].points) {
+			trackIdsToLoad.push(tracks[i].id);
 		}
 	}
 	if (trackIdsToLoad.length) {
 		$.get(SERVER + 'tracks?ids=' + trackIdsToLoad.join(','), function(data) {
 			data = JSON.parse(data);
 			for (var trackId in data) {
-				tracksById[trackId] = {'points': data[trackId]};
+				tracksById[trackId].points = data[trackId];
 			}
 			deferred.resolve();
 		});
@@ -162,13 +194,16 @@ $(function() {
 		users = data.users;
 		for (var i = 0; i < users.length; i++) {
 			users[i].tracks = [];
+			users[i].pjsColor = 0xFF000000 + parseInt(users[i].color, 16);
 			usersById[users[i].id] = users[i];
 		}
 		for (var i = 0; i < tracks.length; i++) {
+			tracksById[tracks[i].id] = tracks[i];
 			var userId = tracks[i].userid;
 			if (userId) {
 				//console.log("userId = " + userId);
 				usersById[userId].tracks.push(tracks[i]);
+				tracks[i].user = usersById[userId];
 			}
 		}
 		showPortraits();
@@ -179,6 +214,19 @@ $(function() {
 
 	$('.mapSelect a').click(mapHandler);
 	$('#streets a').eq(0).click(); // select streets as the default map
+
+	$('#animate').click(function(e) {
+		e.preventDefault();
+		var $a = $(this);
+		if ($a.hasClass('selected')) {
+			$a.removeClass('selected');
+			activeTrackCollection.drawImmediately();
+		}
+		else {
+			$a.addClass('selected');
+			activeTrackCollection.drawAnimated();
+		}
+	});
 
 	History.Adapter.bind(window, 'statechange', loadState);
 	

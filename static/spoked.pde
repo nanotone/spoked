@@ -2,11 +2,15 @@
 //GlOBAl VARIABlES
 int latPos = 0;
 int longPos = 1;
+int timePos = 2;
 
 float Nlat = 40.92;
 float Slat = 40.53; 
 float Wlong = -74.0854;
 float Elong = -73.777;
+
+int tstamp;
+int animatedSecondsPerFrame = 20;
 
 /* Variablees for hover test
 float endLongStop;
@@ -26,6 +30,9 @@ class RideAnimation {
 		points = ridePoints;
 		color = rideColor;
 		n = 1;
+	}
+	int getSegmentTime() {
+		return points[n][timePos];
 	}
 	void drawNextSegment() {
 		beginShape();
@@ -65,7 +72,7 @@ void setup() {
   size(1680, 2750);
   background(0, 0, 0, 0);
   noLoop();
-  frameRate(300);
+  frameRate(100);
   processingReady(); // tell JavaScript that Processing is done setting up
 }
 
@@ -73,9 +80,21 @@ void setup() {
 //DRAW
 // This gets called once per frame when we're animating
 void draw() {
+	tstamp += animatedSecondsPerFrame;
+
+	int earliestSegmentTime = 0;
 	for (int i = 0; i < rideAnimations.size(); i++) { // loop through all rideAnimations
 		RideAnimation ride = (RideAnimation) rideAnimations.get(i);
-		ride.drawNextSegment();
+
+		// this helps us figure out when the earliest time segment was (will be useful later)
+		int segmentTime = ride.getSegmentTime();
+		if (earliestSegmentTime == 0 || segmentTime < earliestSegmentTime) {
+			earliestSegmentTime = segmentTime;
+		}
+		// draw all segments that occurred in the elapsed time frame
+		while (!ride.isAtDestination() && ride.getSegmentTime() <= tstamp) {
+			ride.drawNextSegment();
+		}
 		// check if this ride animation has completed
 		if (ride.isAtDestination()) {
 			ride.drawDestination();
@@ -103,9 +122,17 @@ void draw() {
 		}
 	}
 
-	// if all ride animations have completed, stop the draw loop
-	if (rideAnimations.size() == 0) {
-		//noLoop();
+	// if NO segments occurred in the elapsed time frame (e.g. it's nighttime)
+	// then we skip ahead to the next earliest segment, and try drawing again.
+	if (tstamp < earliestSegmentTime) {
+		tstamp = earliestSegmentTime;
+		draw();
+	}
+	else {
+		// if all ride animations have completed, stop the draw loop
+		if (rideAnimations.size() == 0) {
+			noLoop();
+		}
 	}
 }
 
@@ -117,20 +144,23 @@ void draw() {
 // myData is a large array of ride samples, each represented as [lat, long]
 // index is just the index of the person so we can choose between 2 colors
 //
-void animateRide(Object trackObj, int color) {
-	RideAnimation ride = new RideAnimation(trackObj.points, color);
-	rideAnimations.add(ride);
+void animateRides(Object[] trackObjs, startTime) {
+	for (int i = 0; i < trackObjs.length; i++) {
+		RideAnimation ride = new RideAnimation(trackObjs[i].points, trackObjs[i].user.pjsColor);
+		rideAnimations.add(ride);
+	}
+	tstamp = startTime;
 	loop();
 }
 
 // This will stop all ride animations in their tracks, without erasing them.
 void abortRideAnimations() {
 	rideAnimations.clear();
-	//noLoop();
+	noLoop();
 }
 
-void drawRideImmediately(Object trackObj, int color) {
-	RideAnimation ride = new RideAnimation(trackObj.points, color);
+void drawRideImmediately(Object trackObj) {
+	RideAnimation ride = new RideAnimation(trackObj.points, trackObj.user.pjsColor);
 	while (!ride.isAtDestination()) {
 		ride.drawNextSegment();
 	}
