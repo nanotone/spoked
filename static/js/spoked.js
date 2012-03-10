@@ -4,6 +4,7 @@ var instance = null;
 var tracks = null;
 var users = null;
 var usersById = {};
+var tracksById = {};
 var infoPromise = $.Deferred();
 var pdePromise = $.Deferred();
 var initPromise = $.when(infoPromise, pdePromise);
@@ -23,7 +24,7 @@ function showPortraits() {
 		var name = user.name;
 		var slug = name.replace(' ', '').toLowerCase();
 		var color = '#' + (user.color || '2dddd2');
-		instance.data('userid', user.id);
+		instance.data('userId', user.id);
 		instance.find('.avatarLink').click(onClickPortrait);
 		instance.find('.compare a').click(onClickCompare);
 		instance.find('.profileLink').click(onClickPortrait);
@@ -58,10 +59,7 @@ function loadState() {
 		instance.background('#ffffff', 0);
 		for (var i = 0; i < users.length; i++) {
 			var user = users[i];
-			console.log("drawing last ride for " + user.name);
-			getTrack(user, function(trackData, userColor) {
-				instance.drawRide(trackData, userColor);
-			});
+			drawTrack(user);
 		}
 		$('.compare').hide();
 	}
@@ -77,12 +75,8 @@ function loadState() {
 	else if (title.length == 49) {
 		instance.abortRideAnimations();
 		instance.background('#ffffff', 0);
-		getTrack(usersById[title.substr(0, 24)], function(trackData, userColor) {
-			instance.drawRide(trackData, userColor);
-		});
-		getTrack(usersById[title.substr(25)], function(trackData, userColor) {
-			instance.drawRide(trackData, userColor);
-		});
+		drawTrack(usersById[title.substr(0, 24)]);
+		drawTrack(usersById[title.substr(25)]);
 		$('.compare').hide();
 	}
 }
@@ -90,37 +84,59 @@ function loadState() {
 function showProfile(user) {
 	instance.abortRideAnimations();
 	instance.background('#ffffff', 0);
-	getTrack(user, function(trackData, userColor) {
-		instance.drawRide(trackData, userColor);
-	});
+	drawTrack(user);
 	var compareDivs = $('.compare');
 	compareDivs.show();
 	for (var i = 0; i < compareDivs.length; i++) {
-		if (compareDivs.eq(i).closest('.portrait').data('userid') == user.id) {
+		if (compareDivs.eq(i).closest('.portrait').data('userId') == user.id) {
 			compareDivs.eq(i).hide();
 		}
 	}
 }
 
-function getTrack(user, callback) {
+function drawTrack(user, callback) {
+	console.log("drawing last ride for " + user.name);
 	var userTracks = user.tracks;
 	var color = 0xFF000000 + parseInt(user.color, 16);
 
-	$.get(SERVER + 'track/' + userTracks[userTracks.length - 1].id, function(data) {
-		callback(JSON.parse(data), color);
+	var trackId = userTracks[userTracks.length - 1].id;
+	fetchTracks([trackId]).done(function() {
+		instance.animateRide(tracksById[trackId], color);
 	});
+}
+function fetchTracks(trackIds) {
+	var deferred = $.Deferred();
+	var trackIdsToLoad = [];
+	for (var i = 0; i < trackIds.length; i++) {
+		if (!tracksById[trackIds[i]]) {
+			trackIdsToLoad.push(trackIds[i]);
+		}
+	}
+	if (trackIdsToLoad.length) {
+		$.get(SERVER + 'tracks?ids=' + trackIdsToLoad.join(','), function(data) {
+			data = JSON.parse(data);
+			for (var trackId in data) {
+				tracksById[trackId] = {'points': data[trackId]};
+			}
+			deferred.resolve();
+		});
+	}
+	else {
+		deferred.resolve();
+	}
+	return deferred.promise();
 }
 
 function onClickPortrait(e) {
 	e.preventDefault();
 	var portrait = $(this).closest('.portrait');
-	var userid = portrait.data('userid');
-	History.pushState(null, '', '?' + userid);
+	var userId = portrait.data('userId');
+	History.pushState(null, '', '?' + userId);
 }
 function onClickCompare(e) {
 	e.preventDefault();
 	var portrait = $(this).closest('.portrait');
-	History.pushState(null, '', '?' + currentUser.id + '-' + portrait.data('userid'));
+	History.pushState(null, '', '?' + currentUser.id + '-' + portrait.data('userId'));
 }
 
 $(function() {
@@ -135,10 +151,10 @@ $(function() {
 			usersById[users[i].id] = users[i];
 		}
 		for (var i = 0; i < tracks.length; i++) {
-			var userid = tracks[i].userid;
-			if (userid) {
-				//console.log("userid = " + userid);
-				usersById[userid].tracks.push(tracks[i]);
+			var userId = tracks[i].userid;
+			if (userId) {
+				//console.log("userId = " + userId);
+				usersById[userId].tracks.push(tracks[i]);
 			}
 		}
 		showPortraits();

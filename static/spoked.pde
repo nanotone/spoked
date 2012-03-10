@@ -13,12 +13,39 @@ float Elong = -73.777;
 // how far we are in the animation
 class RideAnimation {
 	float points[][];
-	String color;
+	int color;
 	int n;
-	RideAnimation(float[][] ridePoints, String rideColor) {
+	RideAnimation(float[][] ridePoints, int rideColor) {
 		points = ridePoints;
 		color = rideColor;
 		n = 1;
+	}
+	void drawNextSegment() {
+		beginShape();
+		float longStart = map(points[n-1][longPos], Wlong, Elong, 0, width);
+		float latStart = map(points[n-1][latPos], Nlat, Slat, 0, height);
+		float longStop = map(points[n][longPos], Wlong, Elong, 0, width);
+		float latStop = map(points[n][latPos], Nlat, Slat, 0, height);
+		smooth();
+		noFill();
+		stroke(color);
+		strokeWeight(3); 
+		strokeJoin(ROUND);
+		vertex(longStart, latStart);
+		vertex(longStop, latStop);
+		endShape();
+		n += 1;
+	}
+	boolean isAtDestination() {
+		return (n == points.length);
+	}
+	void drawDestination() {
+		float[] lastPoint = points[points.length - 1];
+		float longStop = map(lastPoint[longPos], Wlong, Elong, 0, width);
+		float latStop = map(lastPoint[latPos], Wlat, Elat, 0, height);
+		fill(color - 0x69000000); // handy math trick for making it more transparent
+		noStroke();
+		ellipse(longStop, latStop, 12, 12);
 	}
 }
 
@@ -41,32 +68,13 @@ void setup() {
 void draw() {
 	for (int i = 0; i < rideAnimations.size(); i++) { // loop through all rideAnimations
 		RideAnimation ride = (RideAnimation) rideAnimations.get(i);
-
-		beginShape();
-
-		float longStart = map(ride.points[ride.n-1][longPos], Wlong, Elong, 0, width);
-		float latStart = map(ride.points[ride.n-1][latPos], Nlat, Slat, 0, height);
-		float longStop = map(ride.points[ride.n][longPos], Wlong, Elong, 0, width);
-		float latStop = map(ride.points[ride.n][latPos], Nlat, Slat, 0, height);
-
-		smooth();
-		noFill();
-		stroke(ride.color);
-		strokeWeight(3); 
-		strokeJoin(ROUND);
-		vertex(longStart, latStart);
-		vertex(longStop, latStop);
-		endShape();
-
-		ride.n += 1;
+		ride.drawNextSegment();
 		// check if this ride animation has completed
-		if (ride.n == ride.points.length) {
-			fill(ride.color - 0x69000000); // handy math trick for making it more transparent
-			noStroke();
-			ellipse(longStop, latStop, 12, 12);
+		if (ride.isAtDestination()) {
+			ride.drawDestination();
 
-			// Remove this ride animation from the ArrayList
-			// This is TRICKY! we must decrement the counter when removing.
+			// Remove this ride from the ArrayList of active animations
+			// This is TRICKY! we must decrement the counter after removing.
 			// Otherwise we will accidentally skip the next one!
 			rideAnimations.remove(i);
 			i -= 1;
@@ -85,8 +93,8 @@ void draw() {
 // myData is a large array of ride samples, each represented as [lat, long]
 // index is just the index of the person so we can choose between 2 colors
 //
-void drawRide(myData, color) {
-	RideAnimation ride = new RideAnimation(myData, color);
+void animateRide(Object trackObj, int color) {
+	RideAnimation ride = new RideAnimation(trackObj.points, color);
 	rideAnimations.add(ride);
 	loop();
 }
@@ -95,4 +103,12 @@ void drawRide(myData, color) {
 void abortRideAnimations() {
 	rideAnimations.clear();
 	noLoop();
+}
+
+void drawRideImmediately(Object trackObj, int color) {
+	RideAnimation ride = new RideAnimation(trackObj.points, color);
+	while (!ride.isAtDestination()) {
+		ride.drawNextSegment();
+	}
+	ride.drawDestination();
 }
