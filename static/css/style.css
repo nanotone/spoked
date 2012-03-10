@@ -4,13 +4,32 @@
 /* line 22, ../sass/style.scss */
 body {
   font-size: 100%;
-  background: #f8f7f2 url(../img/map_1680x2750.png) top left no-repeat;
   margin: 0;
   padding: 0;
   height: 2750px;
 }
 
 /* line 30, ../sass/style.scss */
+body.landandsea {
+  background: #f8f7f2 url(../img/map_1680x2750.png) top left no-repeat;
+}
+
+/* line 33, ../sass/style.scss */
+body.beatenpaths {
+  background: none !important;
+}
+
+/* line 36, ../sass/style.scss */
+body.blankcanvas {
+  background: none !important;
+}
+
+/* line 39, ../sass/style.scss */
+body.hoods {
+  background: #f8f7f2 url(../img/map_1680x2750.png) top left no-repeat;
+}
+
+/* line 43, ../sass/style.scss */
 canvas {
   margin-top: 0px;
   margin-left: 0px;
@@ -21,7 +40,7 @@ canvas {
   z-index: 10;
 }
 
-/* line 40, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 h1 {
   font-family: "atrament-web", sans-serif;
   font-style: normal;
@@ -31,7 +50,7 @@ h1 {
 }
 
 /* NAV TOP */
-/* line 49, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 #nav, #bottom-nav {
   position: fixed;
   width: 100%;
@@ -39,7 +58,7 @@ h1 {
 }
 
 /*SERVICE NAV (TOP)*/
-/* line 56, ../sass/style.scss */
+/* line 69, ../sass/style.scss */
 #service-bar {
   background-color: #fff;
   width: 100%;
@@ -52,7 +71,7 @@ h1 {
   -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
 }
 
-/* line 68, ../sass/style.scss */
+/* line 81, ../sass/style.scss */
 #logo {
   display: block;
   float: left;
@@ -68,7 +87,7 @@ h1 {
   text-align: center;
 }
 
-/* line 82, ../sass/style.scss */
+/* line 95, ../sass/style.scss */
 #service-nav {
   font: 1em Georgia, serif;
   width: 100%;
@@ -79,7 +98,7 @@ h1 {
   vertical-align: baseline;
 }
 
-/* line 92, ../sass/style.scss */
+/* line 105, ../sass/style.scss */
 #service-nav ul li {
   display: block;
   padding-top: 0;
@@ -88,48 +107,55 @@ h1 {
   vertical-align: baseline;
 }
 
-/* line 99, ../sass/style.scss */
+/* line 112, ../sass/style.scss */
 #service-nav ul li a {
   color: #0bb7ab;
   text-decoration: none;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 116, ../sass/style.scss */
 #service-nav ul li.selectedLink {
   border-bottom: 2px solid #0bb7ab;
 }
 
-/* line 106, ../sass/style.scss */
+/* line 119, ../sass/style.scss */
 #menu-nav {
   padding-top: 0px;
   margin-top: 8px;
   position: relative;
 }
 
-/* line 111, ../sass/style.scss */
+/* line 124, ../sass/style.scss */
 #user-nav {
+  font-family: "atrament-web", sans-serif;
+  text-transform: uppercase;
   position: absolute;
-  height: 75px;
-  float: right;
+  width: 400px;
   padding-top: 0;
-  margin: 8px 0 0 0;
+  margin: -8px 0 0 0;
   color: #0bb7ab;
-  right: 0;
+  right: 0px;
 }
 
-/* line 120, ../sass/style.scss */
+/* line 134, ../sass/style.scss */
+#user-nav ul {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* line 138, ../sass/style.scss */
 #user {
   font-size: 1.4em;
   font-family: "atrament-web", sans-serif;
   text-transform: uppercase;
 }
 
-/* line 125, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 #user-nav li:first-child {
   border: none;
 }
 
-/* line 128, ../sass/style.scss */
+/* line 146, ../sass/style.scss */
 #user-avatar {
   position: relative;
   display: block;
@@ -140,7 +166,7 @@ h1 {
   width: 35px;
 }
 
-/* line 137, ../sass/style.scss */
+/* line 155, ../sass/style.scss */
 #user-name {
   position: relative;
   float: left;
@@ -148,21 +174,14 @@ h1 {
   padding: 6px;
 }
 
-/* line 143, ../sass/style.scss */
-#invite {
-  font: 1em Georgia, serif;
-  margin-top: 8px;
-  padding: 0;
-}
-
 /*BOTTOM NAV*/
-/* line 149, ../sass/style.scss */
+/* line 164, ../sass/style.scss */
 #bottom-nav {
   bottom: 0;
   height: 30px;
 }
 
-/* line 153, ../sass/style.scss */
+/* line 168, ../sass/style.scss */
 #bottom-bar {
   height: 30px;
   bottom: 0;
@@ -176,7 +195,7 @@ h1 {
 }
 
 /*PORTRAIT NAV*/
-/* line 167, ../sass/style.scss */
+/* line 182, ../sass/style.scss */
 #portrait-nav {
   bottom: 28px;
   height: 55px;
@@ -186,7 +205,7 @@ h1 {
   z-index: 100;
 }
 
-/* line 175, ../sass/style.scss */
+/* line 190, ../sass/style.scss */
 #portrait-nav ul {
   position: relative;
   list-style-type: normal;
@@ -196,7 +215,7 @@ h1 {
   margin-left: 0;
 }
 
-/* line 183, ../sass/style.scss */
+/* line 198, ../sass/style.scss */
 #portrait-nav ul li {
   display: block;
   float: left;
@@ -204,13 +223,13 @@ h1 {
   padding-right: .5em;
 }
 
-/* line 190, ../sass/style.scss */
+/* line 205, ../sass/style.scss */
 #portrait-nav ul li a {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* line 194, ../sass/style.scss */
+/* line 209, ../sass/style.scss */
 img.avatar {
   position: relative;
   display: block;
@@ -226,13 +245,13 @@ img.avatar {
   border-top: .5em solid #fff;
 }
 
-/* line 210, ../sass/style.scss */
+/* line 225, ../sass/style.scss */
 #portrait-nav img.selected {
   border-top: 2em solid #fff;
   margin-top: -1.5em;
 }
 
-/* line 214, ../sass/style.scss */
+/* line 229, ../sass/style.scss */
 .pop {
   display: none;
   position: absolute;
@@ -253,37 +272,37 @@ img.avatar {
   -webkit-border-bottom-right-radius: .8em;
 }
 
-/* line 233, ../sass/style.scss */
+/* line 248, ../sass/style.scss */
 #portrait-nav ul li:hover .pop, #map-nav ul li:hover .pop {
   display: block;
 }
 
-/* line 236, ../sass/style.scss */
+/* line 251, ../sass/style.scss */
 #portrait-nav ul li:hover img {
   border-top: 1em solid #fff;
   margin-top: -0.5em;
 }
 
-/* line 240, ../sass/style.scss */
+/* line 255, ../sass/style.scss */
 #portrait-nav ul li .pop a {
   color: #fff;
 }
 
-/* line 243, ../sass/style.scss */
+/* line 258, ../sass/style.scss */
 .pop a.name {
   font-family: "atrament-web", sans-serif;
   font-size: 1.4em;
   text-transform: uppercase;
 }
 
-/* line 248, ../sass/style.scss */
+/* line 263, ../sass/style.scss */
 .pop-nav {
   padding-top: .4em;
   font: .8em Georgia;
 }
 
 /*MAp NAV*/
-/* line 255, ../sass/style.scss */
+/* line 270, ../sass/style.scss */
 #map-nav {
   bottom: 0;
   display: block;
@@ -295,12 +314,12 @@ img.avatar {
   float: right;
 }
 
-/* line 265, ../sass/style.scss */
+/* line 280, ../sass/style.scss */
 #map-nav ul {
   padding-right: 5px;
 }
 
-/* line 269, ../sass/style.scss */
+/* line 284, ../sass/style.scss */
 #map-nav ul li {
   display: block;
   border-right: 1px solid #043f3b;
@@ -311,18 +330,18 @@ img.avatar {
   margin-top: 0;
 }
 
-/* line 278, ../sass/style.scss */
+/* line 293, ../sass/style.scss */
 img.mapbtn:hover {
   background-color: #076f68;
 }
 
-/* line 282, ../sass/style.scss */
+/* line 297, ../sass/style.scss */
 #map-nav ul li a {
   color: #0bb7ab;
   text-decoration: none;
 }
 
-/* line 286, ../sass/style.scss */
+/* line 301, ../sass/style.scss */
 img.mapbtn {
   background-color: #0bb7ab;
   position: relative;
@@ -335,18 +354,18 @@ img.mapbtn {
   border: none;
 }
 
-/* line 297, ../sass/style.scss */
+/* line 312, ../sass/style.scss */
 #map-nav .pop {
   width: 100px;
 }
 
-/* line 300, ../sass/style.scss */
+/* line 315, ../sass/style.scss */
 #map-nav .selected {
   background-color: #076f68;
 }
 
 /* MAIN-NAV */
-/* line 305, ../sass/style.scss */
+/* line 320, ../sass/style.scss */
 #main-nav {
   bottom: 0;
   display: block;
@@ -358,7 +377,7 @@ img.mapbtn {
   float: left;
 }
 
-/* line 315, ../sass/style.scss */
+/* line 330, ../sass/style.scss */
 #main-nav ul li {
   display: block;
   float: left;
@@ -368,7 +387,7 @@ img.mapbtn {
   padding: 0 0;
 }
 
-/* line 323, ../sass/style.scss */
+/* line 338, ../sass/style.scss */
 #main-nav ul li a {
   color: #fff;
   text-decoration: none;
@@ -377,7 +396,7 @@ img.mapbtn {
 }
 
 /* TIME-NAV */
-/* line 330, ../sass/style.scss */
+/* line 345, ../sass/style.scss */
 #time-nav {
   bottom: 0;
   display: block;
@@ -389,13 +408,13 @@ img.mapbtn {
   float: right;
 }
 
-/* line 340, ../sass/style.scss */
+/* line 355, ../sass/style.scss */
 #time-nav ul {
   padding-left: 0;
   padding-right: 5px;
 }
 
-/* line 344, ../sass/style.scss */
+/* line 359, ../sass/style.scss */
 #time-nav ul li {
   display: block;
   float: left;
@@ -406,33 +425,33 @@ img.mapbtn {
   padding: 0em 0;
 }
 
-/* line 354, ../sass/style.scss */
+/* line 369, ../sass/style.scss */
 #time-nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 5px 5px;
 }
 
-/* line 360, ../sass/style.scss */
+/* line 375, ../sass/style.scss */
 #time-nav ul li a.selected {
   background-color: #076f68;
 }
 
 /* CHECKBOXES */
-/* line 366, ../sass/style.scss */
+/* line 381, ../sass/style.scss */
 #time-nav ul li a.selected:before, #main-nav ul li a.selected:before {
   content: url(../img/btn/checkbox-sq-checked-20x20.png);
   margin-right: 10px;
 }
 
-/* line 370, ../sass/style.scss */
+/* line 385, ../sass/style.scss */
 #time-nav ul li a:before, #main-nav ul li a:before {
   content: url(../img/btn/checkbox-sq-20x20.png);
   margin-right: 10px;
 }
 
 /* SIDEBAR */
-/* line 377, ../sass/style.scss */
+/* line 392, ../sass/style.scss */
 #sidebar {
   color: #1f1f1f;
   position: fixed;
@@ -450,38 +469,43 @@ img.mapbtn {
   box-shadow: inset 10px 3px 7px rgba(0, 0, 0, 0.1);
 }
 
-/* line 391, ../sass/style.scss */
+/* line 405, ../sass/style.scss */
+#sidebar.hidden {
+  right: -400px;
+}
+
+/* line 409, ../sass/style.scss */
 #sidebar-nav ul {
   margin: 55px auto auto -70px;
 }
 
-/* line 394, ../sass/style.scss */
+/* line 412, ../sass/style.scss */
 #sidebar-nav ul li {
   margin-top: 15px;
 }
 
-/* line 397, ../sass/style.scss */
+/* line 415, ../sass/style.scss */
 #sidebar-nav ul li img {
   width: 30px;
   height: 30px;
   background-color: #0bb7ab;
 }
 
-/* line 402, ../sass/style.scss */
+/* line 420, ../sass/style.scss */
 .sidebar-content {
   position: absolute;
   top: 55px;
   margin: 0 10px 50px 20px;
 }
 
-/* line 407, ../sass/style.scss */
+/* line 425, ../sass/style.scss */
 #sidebar .title {
   font-family: "atrament-web", sans-serif;
   text-transform: uppercase;
   font-size: 3em;
 }
 
-/* line 412, ../sass/style.scss */
+/* line 430, ../sass/style.scss */
 #sidebar .sub-title {
   font-family: Georgia;
   font-size: 1em;
@@ -489,23 +513,23 @@ img.mapbtn {
 }
 
 /* LEADERBOARD */
-/* line 444, ../sass/style.scss */
+/* line 462, ../sass/style.scss */
 #leaderboard {
   /*visibility: hidden; TURN OFF LEADERBOARD HERE*/
   /*End table*/
 }
-/* line 446, ../sass/style.scss */
+/* line 464, ../sass/style.scss */
 #leaderboard table {
   border-spacing: 2px;
   margin-top: 0px;
   /* End tfoot*/
 }
-/* line 450, ../sass/style.scss */
+/* line 468, ../sass/style.scss */
 #leaderboard table thead {
   width: 360px;
   display: block;
 }
-/* line 456, ../sass/style.scss */
+/* line 474, ../sass/style.scss */
 #leaderboard table thead tr td {
   width: 70px;
   font-family: "atrament-web", sans-serif;
@@ -518,7 +542,7 @@ img.mapbtn {
   display: table-cell;
   text-align: right;
 }
-/* line 460, ../sass/style.scss */
+/* line 478, ../sass/style.scss */
 #leaderboard table thead tr th {
   font-family: "atrament-web", sans-serif;
   text-transform: uppercase;
@@ -531,16 +555,16 @@ img.mapbtn {
   margin: 0;
   border-top: 0;
 }
-/* line 466, ../sass/style.scss */
+/* line 484, ../sass/style.scss */
 #leaderboard table tfoot {
   /* End tr*/
 }
-/* line 467, ../sass/style.scss */
+/* line 485, ../sass/style.scss */
 #leaderboard table tfoot tr {
   margin: 0;
   padding: 0;
 }
-/* line 471, ../sass/style.scss */
+/* line 489, ../sass/style.scss */
 #leaderboard table tfoot tr td {
   width: 70px;
   font-family: "atrament-web", sans-serif;
@@ -552,7 +576,7 @@ img.mapbtn {
   padding: 0;
   display: table-cell;
 }
-/* line 474, ../sass/style.scss */
+/* line 492, ../sass/style.scss */
 #leaderboard table tfoot tr th {
   font-family: "atrament-web", sans-serif;
   text-transform: uppercase;
@@ -564,24 +588,24 @@ img.mapbtn {
   padding: 0;
   margin: 0;
 }
-/* line 476, ../sass/style.scss */
+/* line 494, ../sass/style.scss */
 #leaderboard table tfoot tr th p {
   margin-top: 5px;
   margin-bottom: auto;
   font-size: 1em;
 }
-/* line 482, ../sass/style.scss */
+/* line 500, ../sass/style.scss */
 #leaderboard table tfoot tr td {
   text-align: right;
   float: left;
   font-size: 1.3em;
 }
-/* line 487, ../sass/style.scss */
+/* line 505, ../sass/style.scss */
 #leaderboard table tfoot tr .emph {
   font-size: 40px;
   text-align: right;
 }
-/* line 494, ../sass/style.scss */
+/* line 512, ../sass/style.scss */
 #leaderboard table .avatar {
   border: none;
   padding: 0;
@@ -592,27 +616,27 @@ img.mapbtn {
 }
 
 /*End leaderboard*/
-/* line 506, ../sass/style.scss */
+/* line 524, ../sass/style.scss */
 #lb-sera th, #lb-sera td {
   border-top: 5px solid #f6917f;
 }
 
-/* line 511, ../sass/style.scss */
+/* line 529, ../sass/style.scss */
 #lb-carrie th, #lb-carrie td {
   border-top: 5px solid #ef5476;
 }
 
-/* line 516, ../sass/style.scss */
+/* line 534, ../sass/style.scss */
 #lb-frank th, #lb-frank td {
   border-top: 5px solid #8bb049;
 }
 
-/* line 521, ../sass/style.scss */
+/* line 539, ../sass/style.scss */
 #lb-guri th, #lb-guri td {
   border-top: 5px solid #0bb7ab;
 }
 
-/* line 526, ../sass/style.scss */
+/* line 544, ../sass/style.scss */
 #lb-kristin th, #lb-kristin td {
   border-top: 5px solid #f0b50c;
 }
@@ -665,7 +689,7 @@ img.mapbtn {
 
 	*/
 /* COMMENTARY */
-/* line 579, ../sass/style.scss */
+/* line 597, ../sass/style.scss */
 #commentary {
   /*background-color: #fff;*/
   position: fixed;
@@ -679,7 +703,7 @@ img.mapbtn {
   font-size: 1.8em;
 }
 
-/* line 591, ../sass/style.scss */
+/* line 609, ../sass/style.scss */
 #twitter-bar {
   font-family: "atrament-web", sans-serif;
   font-size: .7em;
@@ -687,7 +711,7 @@ img.mapbtn {
   margin-bottom: .6em;
 }
 
-/* line 597, ../sass/style.scss */
+/* line 615, ../sass/style.scss */
 #twitter-bar a {
   color: #0bb7ab;
   font-style: normal;

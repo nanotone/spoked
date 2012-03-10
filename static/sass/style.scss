@@ -21,11 +21,24 @@ $sans: "atrament-web", sans-serif;
 
 body {
 	font-size: 100%;
-	background: #f8f7f2 url(../img/map_1680x2750.png) top left no-repeat;  
+	  
 	margin: 0;
 	padding:0;
 	height: 2750px;
 	}
+
+body.landandsea {
+	background: #f8f7f2 url(../img/map_1680x2750.png) top left no-repeat;
+}
+body.beatenpaths {
+	background: none !important;
+}
+body.blankcanvas {
+	background: none !important;
+}
+body.hoods {
+	background: #f8f7f2 url(../img/map_1680x2750.png) top left no-repeat;
+}
 
 canvas { 
 	margin-top: 0px;
@@ -109,14 +122,19 @@ h1 {
 	position: relative;
 }
 #user-nav {
+	font-family: $sans;
+	text-transform: uppercase;
 	position: absolute;
-	height: 75px;
-	float:right;
+	width: 400px;
 	padding-top: 0;
-	margin: 8px 0 0 0;
+	margin: -8px 0 0 0;
 	color: $yourColor;
-	right: 0;	
+	right: 0px;	
 	}
+#user-nav ul {
+	padding-left: 0;
+	margin-left:0;
+}
 #user {
 	font-size: 1.4em;
 	font-family: $sans;
@@ -140,10 +158,7 @@ h1 {
 	display:block;
 	padding: 6px;
 }	
-#invite {
-	font: 1em Georgia, serif;
-	margin-top: 8px;
-	padding: 0;}
+
 
 /*BOTTOM NAV*/
 #bottom-nav{
@@ -387,6 +402,9 @@ margin-right: 10px;
 	@include box-shadow(inset 10px 3px 7px rgba(0,0,0, .1));
 	
 	}
+#sidebar.hidden {
+	right: -400px;
+}
 
 #sidebar-nav ul {
 	margin: 55px auto auto -70px;
