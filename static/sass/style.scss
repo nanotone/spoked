@@ -25,20 +25,16 @@ body {
 	margin: 0;
 	padding:0;
 	height: 2750px;
-	}
+	background-color: #f8f7f2;
+	background-position: top left;
+	background-repeat: no-repeat;
+}
 
-body.landandsea {
-	background: #f8f7f2 url(../img/map_1680x2750.png) top left no-repeat;
-}
-body.beatenpaths {
-	background: none !important;
-}
-body.blankcanvas {
-	background: none !important;
-}
-body.hoods {
-	background: #f8f7f2 url(../img/map_1680x2750.png) top left no-repeat;
-}
+body.streets { background: url(../img/map/streets.png); }
+body.landsea { background: url(../img/map/land.png); }
+body.beatenpaths { background: url(../img/map/map_1680x2750.png); }
+body.blankcanvas { }
+body.hoods { background: url(../img/map/hoods.png); }
 
 canvas { 
 	margin-top: 0px;
@@ -221,7 +217,7 @@ img.avatar {
 	border-top: .5em solid #fff;
   	}
   	
-#portrait-nav img.selected
+#portrait-nav .mapSelect.selected img.mapbtn
 {
 	border-top: 2em solid #fff; 
 	margin-top: -1.5em;
@@ -276,45 +272,48 @@ img.avatar {
 	position: relative;
 	height: 30px;
 	float:right;
-	}
-#map-nav ul {
-	padding-right: 5px;
-	
-	}
-#map-nav ul li {
-	display: block;
-	border-right: 1px solid darken($yourColor, 25%);
-	float: left;
-	position: relative;
-	padding-right: 0;
-	padding-top: 0;
-	margin-top: 0;
-	}
-img.mapbtn:hover {
-	background-color: darken($yourColor, 15%);
 
+	ul {
+		padding-right: 5px;
+
+		li {
+			display: block;
+			border-right: 1px solid darken($yourColor, 25%);
+			float: left;
+			position: relative;
+			padding-right: 0;
+			padding-top: 0;
+			margin-top: 0;
+
+			a {
+				color: $yourColor;
+				text-decoration: none;  
+
+				img.mapbtn {
+					background-color: $yourColor;
+					position: relative;
+					display: block;
+					float:left;
+					margin:0;
+					padding:0;
+					height: 30px;
+					width: 30px;
+					border: none;
+			  	}
+				img.mapbtn:hover {
+					background-color: darken($yourColor, 15%);
+				}
+			}
+
+			.pop {
+				width: 100px;
+			}
+		}
+		li.selected img.mapbtn {
+			background-color: darken($yourColor, 15%);
+		}
 	}
-#map-nav ul li a {
-	color: $yourColor;
-	text-decoration: none;  
-	}
-img.mapbtn {
-	background-color: $yourColor;
-	position: relative;
-	display: block;
-	float:left;
-	margin:0;
-	padding:0;
-	height: 30px;
-	width: 30px;
-	border: none;
-  	}
-#map-nav .pop {
-	width: 100px;
-	}
-#map-nav .selected {
-	background-color: darken($yourColor, 15%);
-	}
+}
 
 /* MAIN-NAV */
 #main-nav {
