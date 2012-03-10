@@ -26,7 +26,7 @@ def index():
 def tracks():
 	crossorigin()
 	bottle.response.set_header('Content-Type', 'text/plain')
-	return '{' + ','.join('"%s":' % t + open('static/json/%s.json' % t).read() for t in bottle.request.query.ids.split(',')) + '}'
+	return '{' + ','.join('"%s":' % t + open('static/json-sparse/%s.json' % t).read() for t in bottle.request.query.ids.split(',')) + '}'
 
 @bottle.route('/track/<oid>')
 def track(oid):
