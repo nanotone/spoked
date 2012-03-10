@@ -53,7 +53,7 @@ function mapHandler(e) {
 	mapSelect.addClass('selected');
 
 	var $body = $('body');
-   $body.removeClass('landsea blankcanvas beatenpaths hoods');
+   $body.removeClass('streets landsea blankcanvas beatenpaths hoods');
 	$body.addClass(mapSelect.attr('id'));
 }
 
@@ -178,6 +178,7 @@ $(function() {
 	$('.youLink').click(makeLinkHandler('you'));
 
 	$('.mapSelect a').click(mapHandler);
+	$('#landsea a').eq(0).click(); // select landsea as the default map
 
 	History.Adapter.bind(window, 'statechange', loadState);
 	
