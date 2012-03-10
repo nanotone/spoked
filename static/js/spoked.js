@@ -43,6 +43,20 @@ function makeLinkHandler(title) {
 		}
 	};
 }
+function mapHandler(e) {
+	e.preventDefault();
+	var mapSelect = $(this).closest('.mapSelect');
+	if (mapSelect.hasClass('selected')) {
+		return;
+	}
+	$('.mapSelect.selected').removeClass('selected');
+	mapSelect.addClass('selected');
+
+	var $body = $('body');
+   $body.removeClass('landsea blankcanvas beatenpaths hoods');
+	$body.addClass(mapSelect.attr('id'));
+}
+
 function loadState() {
 	if (!initPromise.isResolved()) { return; }
 	var parts = History.getState().url.split('?');
@@ -162,78 +176,21 @@ $(function() {
 	});
 	$('.friendsLink').click(makeLinkHandler('friends'));
 	$('.youLink').click(makeLinkHandler('you'));
+
+	$('.mapSelect a').click(mapHandler);
+
 	History.Adapter.bind(window, 'statechange', loadState);
 	
 	// Tony doing crazy stuff
-	$("#sidebar-btn-stats").click(
-		function(event) {
-			event.preventDefault();
+	$("#sidebar-btn-stats").click(function(e) {
+		e.preventDefault();
+		$sidebar = $("#sidebar");
 			
-			$sidebar = $("#sidebar");
-			
-			if($sidebar.hasClass("hidden")) {
-				$sidebar.removeClass("hidden");
-			} else {
-				$sidebar.addClass("hidden");
-			}
-			
+		if($sidebar.hasClass("hidden")) {
+			$sidebar.removeClass("hidden");
+		} else {
+			$sidebar.addClass("hidden");
 		}
-	)
-
-	$("#landandsea").click(
-		function(event) {
-			event.preventDefault();
-			
-			$body = $("body");
-			
-			if(!$body.hasClass("landandsea")) {
-				$body.removeClass("blankcanvas beatenpaths hoods");
-				$body.addClass("landandsea");
-			}
-			
-		}
-	)
-
-	$("#beatenpaths").click(
-		function(event) {
-			event.preventDefault();
-			
-			$body = $("body");
-			
-			if(!$body.hasClass("beatenpaths")) {
-				$body.removeClass("landandsea blankcanvas hoods");
-				$body.addClass("beatenpaths");
-			}
-			
-		}
-	)
-
-	$("#blankcanvas").click(
-		function(event) {
-			event.preventDefault();
-			
-			$body = $("body");
-			
-			if(!$body.hasClass("blankcanvas")) {
-				$body.removeClass("landandsea beatenpaths hoods");
-				$body.addClass("blankcanvas");
-			}
-			
-		}
-	)
-
-	$("#hoods").click(
-		function(event) {
-			event.preventDefault();
-			
-			$body = $("body");
-			
-			if(!$body.hasClass("hoods")) {
-				$body.removeClass("landandsea beatenpaths blankcanvas");
-				$body.addClass("hoods");
-			}
-			
-		}
-	)
+	});
 });
 
