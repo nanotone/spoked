@@ -2,7 +2,16 @@ import json
 import time
 
 import bottle
+import bson
 import pymongo
+
+class JSONEncoder(json.JSONEncoder):
+	def default(self, o):
+		print repr(o)
+		if isinstance(o, bson.objectid.ObjectId):
+			return str(o)
+		return json.JSONEncoder.default(self, o)
+json_encoder = JSONEncoder()
 
 db = pymongo.Connection().spoked
 
@@ -35,9 +44,9 @@ def users():
 def info():
 	crossorigin()
 	bottle.response.set_header('Content-Type', 'text/plain')
-	return json.dumps({
-		'tracks': list({'id': str(t['_id']), 'time': t['time'], 'userid': str(t['userid'])} for t in db.tracks.find()),
-		'users': list({'id': str(u['_id']), 'name': u['name']} for u in db.users.find())
+	return json_encoder.encode({
+		'tracks': list({'id': t['_id'], 'time': t['time'], 'userid': t['userid']} for t in db.tracks.find()),
+		'users': list({'id': u['_id'], 'name': u['name'], 'color': u['color']} for u in db.users.find())
 	})
 
 def crossorigin():

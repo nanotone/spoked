@@ -8,18 +8,13 @@ import pymongo
 
 import gmail
 import parse_gpx
+import user
 
-db = pymongo.Connection().spoked
-
-def userid_from_spec(spec):
-	user = db.users.find_one(spec)
-	return user['_id'] if user else None
-
-def userid_from_sender(sender):
-	return (sender[0] and userid_from_spec({'email': sender[0]})) or \
-	       (sender[1] and userid_from_spec({'name' : sender[1]})) or None
 
 if __name__ == '__main__':
+	db = pymongo.Connection().spoked
+	user.db = db
+
 	subprocess.call(['mkdir', '-p', 'static/gpx'])
 	subprocess.call(['mkdir', '-p', 'static/csv'])
 
@@ -43,7 +38,7 @@ if __name__ == '__main__':
 		mail_time = time.mktime(email.utils.parsedate(msg['Date']))
 
 		doc = {'mailid': mailid, 'time': mail_time, 'sender': sender, 'gpx_complete': False,
-		       'userid': userid_from_sender(sender)}
+		       'userid': user.userid_from_sender(sender)}
 		db.tracks.update({'mailid': mailid}, doc, upsert=True)
 
 		track_id = db.tracks.find_one({'mailid': mailid})['_id']
