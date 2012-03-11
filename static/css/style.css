@@ -1,7 +1,7 @@
 /*COLORS*/
 /*#322e10; brown #322e10*/
 /*FONTS*/
-/* line 27, sass/style.scss */
+/* line 27, ../sass/style.scss */
 body {
   font-size: 100%;
   margin: 0;
@@ -12,27 +12,27 @@ body {
   background-repeat: no-repeat;
 }
 
-/* line 38, sass/style.scss */
+/* line 38, ../sass/style.scss */
 body.streets {
   background: url(../img/map/streets.png);
 }
 
-/* line 39, sass/style.scss */
+/* line 39, ../sass/style.scss */
 body.landsea {
   background: url(../img/map/land.png);
 }
 
-/* line 40, sass/style.scss */
+/* line 40, ../sass/style.scss */
 body.beatenpaths {
   background: url(../img/map/map_1680x2750.png);
 }
 
-/* line 42, sass/style.scss */
+/* line 42, ../sass/style.scss */
 body.hoods {
   background: url(../img/map/hoods.png);
 }
 
-/* line 44, sass/style.scss */
+/* line 44, ../sass/style.scss */
 canvas {
   margin-top: 0px;
   margin-left: 0px;
@@ -43,7 +43,7 @@ canvas {
   z-index: 10;
 }
 
-/* line 54, sass/style.scss */
+/* line 54, ../sass/style.scss */
 h1 {
   font-family: "atrament-web", sans-serif;
   font-style: normal;
@@ -53,7 +53,7 @@ h1 {
 }
 
 /* NAV TOP */
-/* line 63, sass/style.scss */
+/* line 63, ../sass/style.scss */
 #nav, #bottom-nav {
   position: fixed;
   width: 100%;
@@ -61,7 +61,7 @@ h1 {
 }
 
 /*SERVICE NAV (TOP)*/
-/* line 70, sass/style.scss */
+/* line 70, ../sass/style.scss */
 #service-bar {
   background-color: #fff;
   width: 100%;
@@ -74,7 +74,7 @@ h1 {
     	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .3);*/
 }
 
-/* line 82, sass/style.scss */
+/* line 82, ../sass/style.scss */
 #logo {
   display: block;
   float: left;
@@ -92,19 +92,7 @@ h1 {
   text-align: center;
 }
 
-/* line 98, sass/style.scss */
-#testing {
-  background-color: #fff;
-  font-family: "ff-netto-web";
-  float: left;
-  position: relative;
-  width: 400px;
-  top: 600px;
-  left: 40px;
-  font-size: 14px;
-}
-
-/* line 108, sass/style.scss */
+/* line 99, ../sass/style.scss */
 #service-nav {
   font: 1em Georgia, serif;
   width: 100%;
@@ -115,7 +103,7 @@ h1 {
   vertical-align: baseline;
 }
 
-/* line 118, sass/style.scss */
+/* line 109, ../sass/style.scss */
 #service-nav ul li {
   display: block;
   padding-top: 0;
@@ -124,25 +112,25 @@ h1 {
   vertical-align: baseline;
 }
 
-/* line 125, sass/style.scss */
+/* line 116, ../sass/style.scss */
 #service-nav ul li a {
   color: #0bb7ab;
   text-decoration: none;
 }
 
-/* line 129, sass/style.scss */
+/* line 120, ../sass/style.scss */
 #service-nav ul li.selectedLink {
   border-bottom: 2px solid #0bb7ab;
 }
 
-/* line 132, sass/style.scss */
+/* line 123, ../sass/style.scss */
 #menu-nav {
   padding-top: 0px;
   margin-top: 8px;
   position: relative;
 }
 
-/* line 137, sass/style.scss */
+/* line 128, ../sass/style.scss */
 #user-nav {
   font-family: "atrament-web", sans-serif;
   text-transform: uppercase;
@@ -154,25 +142,25 @@ h1 {
   right: 0px;
 }
 
-/* line 147, sass/style.scss */
+/* line 138, ../sass/style.scss */
 #user-nav ul {
   padding-left: 0;
   margin-left: 0;
 }
 
-/* line 151, sass/style.scss */
+/* line 142, ../sass/style.scss */
 #user {
   font-size: 1.4em;
   font-family: "atrament-web", sans-serif;
   text-transform: uppercase;
 }
 
-/* line 156, sass/style.scss */
+/* line 147, ../sass/style.scss */
 #user-nav li:first-child {
   border: none;
 }
 
-/* line 159, sass/style.scss */
+/* line 150, ../sass/style.scss */
 #user-avatar {
   position: relative;
   display: block;
@@ -183,7 +171,7 @@ h1 {
   width: 35px;
 }
 
-/* line 168, sass/style.scss */
+/* line 159, ../sass/style.scss */
 #user-name {
   position: relative;
   float: left;
@@ -191,7 +179,7 @@ h1 {
   padding: 6px;
 }
 
-/* line 175, sass/style.scss */
+/* line 166, ../sass/style.scss */
 #animation-clock {
   position: fixed;
   top: 35px;
@@ -203,7 +191,7 @@ h1 {
 }
 
 /*BOTTOM NAV*/
-/* line 187, sass/style.scss */
+/* line 178, ../sass/style.scss */
 #bottom-nav {
   bottom: 0;
   height: 35px;
@@ -212,7 +200,7 @@ h1 {
   font-size: 14px;
 }
 
-/* line 195, sass/style.scss */
+/* line 186, ../sass/style.scss */
 #bottom-bar {
   height: 35px;
   bottom: 0;
@@ -226,7 +214,7 @@ h1 {
 }
 
 /*PORTRAIT NAV*/
-/* line 209, sass/style.scss */
+/* line 200, ../sass/style.scss */
 #portrait-nav {
   bottom: 30px;
   height: 55px;
@@ -236,7 +224,7 @@ h1 {
   z-index: 100;
 }
 
-/* line 217, sass/style.scss */
+/* line 208, ../sass/style.scss */
 #portrait-nav ul {
   position: relative;
   list-style-type: normal;
@@ -246,7 +234,7 @@ h1 {
   margin-left: 0;
 }
 
-/* line 225, sass/style.scss */
+/* line 216, ../sass/style.scss */
 #portrait-nav ul li {
   display: block;
   float: left;
@@ -254,13 +242,13 @@ h1 {
   padding-right: .5em;
 }
 
-/* line 232, sass/style.scss */
+/* line 223, ../sass/style.scss */
 #portrait-nav ul li a {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* line 236, sass/style.scss */
+/* line 227, ../sass/style.scss */
 img.avatar {
   position: relative;
   display: block;
@@ -276,13 +264,13 @@ img.avatar {
   border-top: .5em solid #fff;
 }
 
-/* line 252, sass/style.scss */
+/* line 243, ../sass/style.scss */
 #portrait-nav .mapSelect.selected img.mapbtn {
   border-top: 2em solid #fff;
   margin-top: -1.5em;
 }
 
-/* line 256, sass/style.scss */
+/* line 247, ../sass/style.scss */
 .pop {
   display: none;
   position: absolute;
@@ -303,37 +291,37 @@ img.avatar {
   -webkit-border-bottom-right-radius: .8em;
 }
 
-/* line 275, sass/style.scss */
+/* line 266, ../sass/style.scss */
 #portrait-nav ul li:hover .pop, #map-nav ul li:hover .pop {
   display: block;
 }
 
-/* line 278, sass/style.scss */
+/* line 269, ../sass/style.scss */
 #portrait-nav ul li:hover img {
   border-top: 1em solid #fff;
   margin-top: -0.5em;
 }
 
-/* line 282, sass/style.scss */
+/* line 273, ../sass/style.scss */
 #portrait-nav ul li .pop a {
   color: #fff;
 }
 
-/* line 285, sass/style.scss */
+/* line 276, ../sass/style.scss */
 .pop a.name {
   font-family: "atrament-web", sans-serif;
   font-size: 1.4em;
   text-transform: uppercase;
 }
 
-/* line 290, sass/style.scss */
+/* line 281, ../sass/style.scss */
 .pop-nav {
   padding-top: .4em;
   font: .8em Georgia;
 }
 
 /*MAP NAV*/
-/* line 297, sass/style.scss */
+/* line 288, ../sass/style.scss */
 #map-nav {
   bottom: 0;
   display: block;
@@ -344,15 +332,15 @@ img.avatar {
   height: 35px;
   float: right;
 }
-/* line 307, sass/style.scss */
+/* line 298, ../sass/style.scss */
 #map-nav ul {
   padding-right: 5px;
 }
-/* line 310, sass/style.scss */
+/* line 301, ../sass/style.scss */
 #map-nav ul li:first-child {
   border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
-/* line 314, sass/style.scss */
+/* line 305, ../sass/style.scss */
 #map-nav ul li {
   display: block;
   border-right: 1px solid rgba(255, 255, 255, 0.2);
@@ -362,12 +350,12 @@ img.avatar {
   padding-top: 0;
   margin-top: 0;
 }
-/* line 323, sass/style.scss */
+/* line 314, ../sass/style.scss */
 #map-nav ul li a {
   color: #0bb7ab;
   text-decoration: none;
 }
-/* line 327, sass/style.scss */
+/* line 318, ../sass/style.scss */
 #map-nav ul li a img.mapbtn {
   background-color: #0bb7ab;
   position: relative;
@@ -379,21 +367,21 @@ img.avatar {
   width: 35px;
   border: none;
 }
-/* line 338, sass/style.scss */
+/* line 329, ../sass/style.scss */
 #map-nav ul li a img.mapbtn:hover {
   background-color: #08877e;
 }
-/* line 343, sass/style.scss */
+/* line 334, ../sass/style.scss */
 #map-nav ul li .pop {
   width: 100px;
 }
-/* line 347, sass/style.scss */
+/* line 338, ../sass/style.scss */
 #map-nav ul li.selected img.mapbtn {
   background-color: #08877e;
 }
 
 /* PORTRAIT-CONTROL-NAV */
-/* line 354, sass/style.scss */
+/* line 345, ../sass/style.scss */
 #portrait-control-nav {
   bottom: 0;
   display: block;
@@ -404,7 +392,7 @@ img.avatar {
   height: 30px;
   float: left;
 }
-/* line 364, sass/style.scss */
+/* line 355, ../sass/style.scss */
 #portrait-control-nav ul {
   padding-left: 0;
   /*
@@ -413,30 +401,30 @@ img.avatar {
   } 
   */
 }
-/* line 367, sass/style.scss */
+/* line 358, ../sass/style.scss */
 #portrait-control-nav ul li {
   display: block;
   float: left;
   padding: 0 0;
   margin: 0 0 0 8px;
 }
-/* line 373, sass/style.scss */
+/* line 364, ../sass/style.scss */
 #portrait-control-nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 1px 4px 3px 4px;
 }
-/* line 378, sass/style.scss */
+/* line 369, ../sass/style.scss */
 #portrait-control-nav ul li a:hover {
   background-color: #08877e;
 }
-/* line 381, sass/style.scss */
+/* line 372, ../sass/style.scss */
 #portrait-control-nav ul li a.selected {
   background-color: #08877e;
 }
 
 /* TIME-NAV */
-/* line 395, sass/style.scss */
+/* line 386, ../sass/style.scss */
 #time-nav {
   bottom: 0;
   display: block;
@@ -447,35 +435,35 @@ img.avatar {
   height: 35px;
   float: right;
 }
-/* line 405, sass/style.scss */
+/* line 396, ../sass/style.scss */
 #time-nav ul {
   padding-left: 15px;
   padding-right: 5px;
 }
-/* line 409, sass/style.scss */
+/* line 400, ../sass/style.scss */
 #time-nav ul li {
   display: block;
   float: left;
   width: 125px;
   padding: 0 0;
 }
-/* line 415, sass/style.scss */
+/* line 406, ../sass/style.scss */
 #time-nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 1px 4px 3px 4px;
 }
-/* line 420, sass/style.scss */
+/* line 411, ../sass/style.scss */
 #time-nav ul li a:hover {
   background-color: #08877e;
 }
-/* line 423, sass/style.scss */
+/* line 414, ../sass/style.scss */
 #time-nav ul li a.selected {
   background-color: #08877e;
 }
 
 /* CHECKBOXES */
-/* line 432, sass/style.scss */
+/* line 423, ../sass/style.scss */
 #time-nav ul li a.selected:before, #portrait-control-nav ul li a.selected:before {
   content: url(../img/btn/checkbox-sq-checked-20x20.png);
   margin-right: 7px;
@@ -483,7 +471,7 @@ img.avatar {
   top: 5px;
 }
 
-/* line 438, sass/style.scss */
+/* line 429, ../sass/style.scss */
 #time-nav ul li a:before, #portrait-control-nav ul li a:before {
   content: url(../img/btn/checkbox-sq-20x20.png);
   margin-right: 7px;
@@ -491,13 +479,13 @@ img.avatar {
   top: 5px;
 }
 
-/* line 444, sass/style.scss */
+/* line 435, ../sass/style.scss */
 #time-nav ul li a#animate:before, #time-nav ul li a#animate selected:before {
   content: url(../img/btn/play-animation-20x20.png);
 }
 
 /* SIDEBAR */
-/* line 450, sass/style.scss */
+/* line 441, ../sass/style.scss */
 #sidebar {
   color: #1f1f1f;
   position: fixed;
@@ -510,54 +498,54 @@ img.avatar {
   top: 0;
   right: 0px;
   /*TO HIDE SIDEBAR Right: -400px;*/
-  -moz-box-shadow: compact(inset 10px 3px 7px rgba(0, 0, 0, 0.1), false, false, false, false, false, false, false, false, false);
-  -webkit-box-shadow: compact(inset 10px 3px 7px rgba(0, 0, 0, 0.1), false, false, false, false, false, false, false, false, false);
-  -o-box-shadow: compact(inset 10px 3px 7px rgba(0, 0, 0, 0.1), false, false, false, false, false, false, false, false, false);
-  box-shadow: compact(inset 10px 3px 7px rgba(0, 0, 0, 0.1), false, false, false, false, false, false, false, false, false);
+  -moz-box-shadow: inset 10px 3px 7px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 10px 3px 7px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: inset 10px 3px 7px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 10px 3px 7px rgba(0, 0, 0, 0.1);
 }
 
-/* line 463, sass/style.scss */
+/* line 454, ../sass/style.scss */
 #sidebar.hidden {
   right: -400px;
 }
 
-/* line 467, sass/style.scss */
+/* line 458, ../sass/style.scss */
 #sidebar-nav ul {
   margin: 55px auto auto -70px;
   list-style-type: none;
 }
 
-/* line 471, sass/style.scss */
+/* line 462, ../sass/style.scss */
 #sidebar-nav ul li {
   margin-top: 15px;
 }
 
-/* line 474, sass/style.scss */
+/* line 465, ../sass/style.scss */
 #sidebar-nav ul li img {
   width: 30px;
   height: 30px;
   background-color: #0bb7ab;
 }
 
-/* line 479, sass/style.scss */
+/* line 470, ../sass/style.scss */
 #sidebar-nav ul li a img:hover {
   background-color: #08877e;
 }
 
-/* line 482, sass/style.scss */
+/* line 473, ../sass/style.scss */
 .sidebar-content {
   position: absolute;
   top: 55px;
   margin: 0 10px 50px 20px;
 }
 
-/* line 487, sass/style.scss */
+/* line 478, ../sass/style.scss */
 #sidebar .title {
   font-family: "ff-tisa-web-pro", Georgia, serif;
   font-size: 36px;
 }
 
-/* line 491, sass/style.scss */
+/* line 482, ../sass/style.scss */
 #sidebar .sub-title {
   font-family: Georgia;
   font-size: 1em;
@@ -565,23 +553,24 @@ img.avatar {
 }
 
 /* LEADERBOARD */
-/* line 525, sass/style.scss */
+/* line 516, ../sass/style.scss */
 #leaderboard {
-  /*visibility: hidden; TURN OFF LEADERBOARD HERE*/
+  visibility: hidden;
+  /*TURN OFF LEADERBOARD HERE*/
   /*End table*/
 }
-/* line 527, sass/style.scss */
+/* line 518, ../sass/style.scss */
 #leaderboard table {
   border-spacing: 2px;
   margin-top: 0px;
   /* End tfoot*/
 }
-/* line 531, sass/style.scss */
+/* line 522, ../sass/style.scss */
 #leaderboard table thead {
   width: 360px;
   display: block;
 }
-/* line 537, sass/style.scss */
+/* line 528, ../sass/style.scss */
 #leaderboard table thead tr td {
   width: 70px;
   font-family: "atrament-web", sans-serif;
@@ -595,7 +584,7 @@ img.avatar {
   display: table-cell;
   text-align: right;
 }
-/* line 541, sass/style.scss */
+/* line 532, ../sass/style.scss */
 #leaderboard table thead tr th {
   font-family: "atrament-web", sans-serif;
   text-transform: uppercase;
@@ -609,16 +598,16 @@ img.avatar {
   margin: 0;
   border-top: 0;
 }
-/* line 547, sass/style.scss */
+/* line 538, ../sass/style.scss */
 #leaderboard table tfoot {
   /* End tr*/
 }
-/* line 548, sass/style.scss */
+/* line 539, ../sass/style.scss */
 #leaderboard table tfoot tr {
   margin: 0;
   padding: 0;
 }
-/* line 552, sass/style.scss */
+/* line 543, ../sass/style.scss */
 #leaderboard table tfoot tr td {
   width: 70px;
   font-family: "atrament-web", sans-serif;
@@ -631,7 +620,7 @@ img.avatar {
   padding: 0;
   display: table-cell;
 }
-/* line 555, sass/style.scss */
+/* line 546, ../sass/style.scss */
 #leaderboard table tfoot tr th {
   font-family: "atrament-web", sans-serif;
   text-transform: uppercase;
@@ -644,24 +633,24 @@ img.avatar {
   padding: 0;
   margin: 0;
 }
-/* line 557, sass/style.scss */
+/* line 548, ../sass/style.scss */
 #leaderboard table tfoot tr th p {
   margin-top: 5px;
   margin-bottom: auto;
   font-size: 1em;
 }
-/* line 563, sass/style.scss */
+/* line 554, ../sass/style.scss */
 #leaderboard table tfoot tr td {
   text-align: right;
   float: left;
   font-size: 1.3em;
 }
-/* line 568, sass/style.scss */
+/* line 559, ../sass/style.scss */
 #leaderboard table tfoot tr .emph {
   font-size: 40px;
   text-align: right;
 }
-/* line 575, sass/style.scss */
+/* line 566, ../sass/style.scss */
 #leaderboard table .avatar {
   border: none;
   padding: 0;
@@ -672,27 +661,27 @@ img.avatar {
 }
 
 /*End leaderboard*/
-/* line 587, sass/style.scss */
+/* line 578, ../sass/style.scss */
 #lb-sera th, #lb-sera td {
   border-top: 5px solid #f6917f;
 }
 
-/* line 592, sass/style.scss */
+/* line 583, ../sass/style.scss */
 #lb-carrie th, #lb-carrie td {
   border-top: 5px solid #ef5476;
 }
 
-/* line 597, sass/style.scss */
+/* line 588, ../sass/style.scss */
 #lb-frank th, #lb-frank td {
   border-top: 5px solid #8bb049;
 }
 
-/* line 602, sass/style.scss */
+/* line 593, ../sass/style.scss */
 #lb-guri th, #lb-guri td {
   border-top: 5px solid #0bb7ab;
 }
 
-/* line 607, sass/style.scss */
+/* line 598, ../sass/style.scss */
 #lb-kristin th, #lb-kristin td {
   border-top: 5px solid #f0b50c;
 }
@@ -744,8 +733,10 @@ img.avatar {
 	}
 
 	*/
+/* STATS PROFILE */
+/* STATS PROFILE VS PROFILE */
 /* COMMENTARY */
-/* line 660, sass/style.scss */
+/* line 659, ../sass/style.scss */
 #commentary {
   /*background-color: #fff;*/
   font-family: "ff-tisa-web-pro", Georgia, serif;
@@ -761,7 +752,7 @@ img.avatar {
   line-height: 40px;
 }
 
-/* line 674, sass/style.scss */
+/* line 673, ../sass/style.scss */
 #twitter-bar {
   font-family: "atrament-web", sans-serif;
   font-size: .7em;
@@ -769,8 +760,20 @@ img.avatar {
   margin-bottom: .6em;
 }
 
-/* line 680, sass/style.scss */
+/* line 679, ../sass/style.scss */
 #twitter-bar a {
   color: #0bb7ab;
   font-style: normal;
+}
+
+/* line 684, ../sass/style.scss */
+#testing {
+  background-color: #fff;
+  font-family: "ff-netto-web";
+  float: left;
+  position: fixed;
+  width: 400px;
+  top: 600px;
+  left: 40px;
+  font-size: 14px;
 }
