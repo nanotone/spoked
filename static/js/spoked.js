@@ -120,8 +120,8 @@ function onClickCompare(e) {
 $(function() {
 	initData();
 	$('.template').css({display: 'none'});
-	infoPromise.done(loadState);
 	infoPromise.done(showPortraits);
+	infoPromise.done(loadState);
 
 	$('.friendsLink').click(makeLinkHandler('friends'));
 	$('.youLink').click(makeLinkHandler('you'));
