@@ -246,7 +246,6 @@ $(function() {
 
 	History.Adapter.bind(window, 'statechange', loadState);
 	
-	// Tony doing crazy stuff
 	$("#sidebar-btn-stats").click(function(e) {
 		e.preventDefault();
 		$sidebar = $("#sidebar");

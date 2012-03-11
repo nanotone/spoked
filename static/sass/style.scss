@@ -18,6 +18,11 @@ $green: #8bb049;
 
 /*FONTS*/
 $sans: "atrament-web", sans-serif;
+$serif: "ff-tisa-web-pro", Georgia, serif;
+$vinyl: "vinyl", sans-serif;
+$kulturista: "kulturista-web", serif;
+$nimbus: "nimbus-sans-condensed";
+$netto: "ff-netto-web";
 
 body {
 	font-size: 100%;
@@ -70,9 +75,9 @@ h1 {
 	margin: 0 0 0 0;
 	position: absolute;
 	z-index: 200;
-	-moz-box-shadow: 3px 3px 7px rgba(0,0,0, .3);
-  	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .3);
-  		}
+	/*-moz-box-shadow: 3px 3px 7px rgba(0,0,0, .3);
+  	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .3);*/
+  	}
 
 #logo {
 	display: block;
@@ -80,14 +85,26 @@ h1 {
 	position: relative;
 	z-index: 300;
 	margin: 0 0.5em 0 0em;
-	padding: 0em .5em 0 0;
+	padding: 0em 0em 0 0;
+	/*border-top: 10px solid $yourColor;*/
+	/*border-bottom: 20px solid $yourColor;*/
 	/*padding: .5em 2em 0 2em;*/
 	/*background-color: $yourColor; */
 	color: $yourColor;
 	font-family: $sans;
 	font-size: 35px;
 	text-align: center;
-  		}
+  	}
+#testing {
+	background-color: #fff;
+	font-family: $netto;
+	float:left;
+	position: relative;
+	width: 400px;
+	top: 600px;  
+	left: 40px;
+	font-size: 14px;
+  }
 #service-nav {
 	font: 1em Georgia, serif;
 	width: 100%;
@@ -160,6 +177,10 @@ h1 {
 #bottom-nav{
 	bottom: 0;
 	height: 35px;
+	font-family: $serif;
+	font-weight: bold;
+	
+	font-size: 14px;
 	}
 #bottom-bar{
 	height: 35px;
@@ -266,7 +287,7 @@ img.avatar {
 #map-nav {
 	bottom: 0;
 	display:block;
-	margin: -16px 0 0 0;	
+	margin: -14px 0 0 0;	
 	padding: 0 0 0px 0;
 	z-index: 200;
 	position: relative;
@@ -276,15 +297,19 @@ img.avatar {
 	ul {
 		padding-right: 5px;
 
+		li:first-child {
+			border-left: 1px solid rgba(255,255,255, .2);
+		}
+		
 		li {
 			display: block;
-			border-right: 1px solid darken($yourColor, 25%);
+			border-right: 1px solid rgba(255,255,255, .2);
 			float: left;
 			position: relative;
 			padding-right: 0;
 			padding-top: 0;
 			margin-top: 0;
-
+			
 			a {
 				color: $yourColor;
 				text-decoration: none;  
@@ -301,7 +326,7 @@ img.avatar {
 					border: none;
 			  	}
 				img.mapbtn:hover {
-					background-color: darken($yourColor, 15%);
+					background-color: darken($yourColor, 10%);
 				}
 			}
 
@@ -310,13 +335,13 @@ img.avatar {
 			}
 		}
 		li.selected img.mapbtn {
-			background-color: darken($yourColor, 15%);
+			background-color: darken($yourColor, 10%);
 		}
 	}
 }
 
-/* MAIN-NAV */
-#main-nav {
+/* PORTRAIT-CONTROL-NAV */
+#portrait-control-nav {
 	bottom: 0;
 	display:block;
 	margin: -10px 0 0 0;	
@@ -325,25 +350,37 @@ img.avatar {
 	position: relative;
 	height: 30px;
 	float:left;
+	
+	ul {
+		padding-left: 0;
+		
+		li {
+			display: block;
+			float: left;
+			padding: 0 0;
+			margin: 0 0 0 8px;
+			
+			a {
+				color: #fff;
+				text-decoration: none;
+				padding: 1px 4px 3px 4px;
+			}
+			a:hover {
+				background-color: darken($yourColor, 10%);
+			}
+			a.selected {
+				background-color: darken($yourColor, 10%);
+			}
+		}
+		/*
+		li.selectedLink {
+			background-color: darken($yourColor, 10%);
+		} 
+		*/
+		
 	}
-#main-nav ul {
-	padding-left: 0;
 }
-#main-nav ul li {
-	display: block;
-	float: left;
-	font-size: 20px;
-	font-family: $sans;
-	text-transform: uppercase;
-	padding: 0 0;
-	margin: 0;
-}
-#main-nav ul li a {
-	color: #fff;
-	text-decoration: none;
-	padding: 0.2em 0.5em;
-	border-right: 1px solid $yourColor;
-}
+
 /* TIME-NAV */
 #time-nav {
 	bottom: 0;
@@ -354,45 +391,45 @@ img.avatar {
 	position: relative;
 	height: 35px;
 	float:right;
+	
+	ul{
+		padding-left: 15px;
+		padding-right: 5px;
+	
+		li {
+			display: block;
+			float: left;
+			width: 125px;
+			padding: 0 0;
+			
+			a {
+				color: #fff;
+				text-decoration: none;
+				padding: 1px 4px 3px 4px;
+			}
+			a:hover {
+				background-color: darken($yourColor, 10%);
+			}
+			a.selected {
+				background-color: darken($yourColor, 10%);
+			}
+		}		
 	}
-#time-nav ul{
-	padding-left: 30px;
-	padding-right: 5px;		
-		}
-#time-nav ul li {
-display: block;
-float: left;
-width: 120px;
-font-size: 20px;
-font-family: "atrament-web", sans-serif;
-text-transform: uppercase;
-padding: 0 0;
-
-
-}
-#time-nav ul li a {
-color: #fff;
-text-decoration: none;
-padding: 4px 4px 1px 4px;
-}
-
-#time-nav ul li a.selected {
-background-color: darken($yourColor, 15%);
 }
 
 /* CHECKBOXES */
 
-#time-nav ul li a.selected:before, #main-nav ul li a.selected:before {
+#time-nav ul li a.selected:before, #portrait-control-nav ul li a.selected:before {
 content: url(../img/btn/checkbox-sq-checked-20x20.png);
 margin-right: 7px;
 position:relative;
-top: 2px;
+top: 5px;
 	}
-#time-nav ul li a:before, #main-nav ul li a:before {
+#time-nav ul li a:before, #portrait-control-nav ul li a:before, {
 content: url(../img/btn/checkbox-sq-20x20.png);
 margin-right: 7px;
 position:relative;
-top: 2px;
+top: 5px;
 	}
 #time-nav ul li a#animate:before, #time-nav ul li a#animate selected:before,  {
 content: url(../img/btn/play-animation-20x20.png);
@@ -429,15 +466,17 @@ content: url(../img/btn/play-animation-20x20.png);
 	height: 30px;
 	background-color: $yourColor;
 	}
+#sidebar-nav ul li a img:hover {
+		background-color: darken($yourColor, 10%);
+	}
 .sidebar-content {
 	position: absolute;
 	top: 55px;
 	margin: 0 10px 50px 20px;
 	}
 #sidebar .title {
-	font-family: $sans;
-	text-transform: uppercase;
-	font-size: 3em;
+	font-family: $serif;
+	font-size: 36px;
 	}
 #sidebar .sub-title {
 	font-family: Georgia;
@@ -450,6 +489,7 @@ content: url(../img/btn/play-animation-20x20.png);
 @mixin datahead {
 	font-family: $sans;
 	text-transform: uppercase;
+	font-size: 18px;
 	font-weight: normal;
 	text-align: left;
 	width: 150px;
@@ -462,6 +502,7 @@ content: url(../img/btn/play-animation-20x20.png);
 @mixin datacell {
 	width: 70px;
 	font-family: $sans;
+	font-family: $vinyl;
 	text-transform: uppercase;
 	font-size: .9em;
 	font-weight: normal;
@@ -608,6 +649,7 @@ content: url(../img/btn/play-animation-20x20.png);
 /* COMMENTARY */
 #commentary {
 	/*background-color: #fff;*/
+	font-family: $serif;
 	position: fixed;
 	width: 10em;
 	height: auto;
@@ -616,7 +658,8 @@ content: url(../img/btn/play-animation-20x20.png);
 	color: $yourColor;
 	font-style: normal;
 	font-weight: 400;
-	font-size: 1.8em;
+	font-size: 34px;
+	line-height: 40px;
 	}
 #twitter-bar {
 	font-family: $sans;
