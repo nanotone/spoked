@@ -514,7 +514,6 @@ content: url(../img/btn/play-animation-20x20.png);
 }
 
 #leaderboard {
-	visibility: hidden; /*TURN OFF LEADERBOARD HERE*/
 	table {
 		border-spacing: 2px;
 		margin-top: 0px;
@@ -573,6 +572,10 @@ content: url(../img/btn/play-animation-20x20.png);
 			}
 	} /*End table*/
 } /*End leaderboard*/
+
+#leaderboard.hidden {
+	visibility: hidden; 
+}
 
 #lb-sera {
 	th, td {
@@ -651,9 +654,18 @@ content: url(../img/btn/play-animation-20x20.png);
 #stats-profile {
 
 }
+
+#stats-profile.hidden {
+	visibility: hidden; 
+}
+
 /* STATS PROFILE VS PROFILE */
 #stats-versus {
 
+}
+
+#stats-versus.hidden {
+	visibility: hidden; 
 }	
 /* COMMENTARY */
 #commentary {

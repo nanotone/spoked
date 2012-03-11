@@ -555,22 +555,20 @@ img.avatar {
 /* LEADERBOARD */
 /* line 516, ../sass/style.scss */
 #leaderboard {
-  visibility: hidden;
-  /*TURN OFF LEADERBOARD HERE*/
   /*End table*/
 }
-/* line 518, ../sass/style.scss */
+/* line 517, ../sass/style.scss */
 #leaderboard table {
   border-spacing: 2px;
   margin-top: 0px;
   /* End tfoot*/
 }
-/* line 522, ../sass/style.scss */
+/* line 521, ../sass/style.scss */
 #leaderboard table thead {
   width: 360px;
   display: block;
 }
-/* line 528, ../sass/style.scss */
+/* line 527, ../sass/style.scss */
 #leaderboard table thead tr td {
   width: 70px;
   font-family: "atrament-web", sans-serif;
@@ -584,7 +582,7 @@ img.avatar {
   display: table-cell;
   text-align: right;
 }
-/* line 532, ../sass/style.scss */
+/* line 531, ../sass/style.scss */
 #leaderboard table thead tr th {
   font-family: "atrament-web", sans-serif;
   text-transform: uppercase;
@@ -598,16 +596,16 @@ img.avatar {
   margin: 0;
   border-top: 0;
 }
-/* line 538, ../sass/style.scss */
+/* line 537, ../sass/style.scss */
 #leaderboard table tfoot {
   /* End tr*/
 }
-/* line 539, ../sass/style.scss */
+/* line 538, ../sass/style.scss */
 #leaderboard table tfoot tr {
   margin: 0;
   padding: 0;
 }
-/* line 543, ../sass/style.scss */
+/* line 542, ../sass/style.scss */
 #leaderboard table tfoot tr td {
   width: 70px;
   font-family: "atrament-web", sans-serif;
@@ -620,7 +618,7 @@ img.avatar {
   padding: 0;
   display: table-cell;
 }
-/* line 546, ../sass/style.scss */
+/* line 545, ../sass/style.scss */
 #leaderboard table tfoot tr th {
   font-family: "atrament-web", sans-serif;
   text-transform: uppercase;
@@ -633,24 +631,24 @@ img.avatar {
   padding: 0;
   margin: 0;
 }
-/* line 548, ../sass/style.scss */
+/* line 547, ../sass/style.scss */
 #leaderboard table tfoot tr th p {
   margin-top: 5px;
   margin-bottom: auto;
   font-size: 1em;
 }
-/* line 554, ../sass/style.scss */
+/* line 553, ../sass/style.scss */
 #leaderboard table tfoot tr td {
   text-align: right;
   float: left;
   font-size: 1.3em;
 }
-/* line 559, ../sass/style.scss */
+/* line 558, ../sass/style.scss */
 #leaderboard table tfoot tr .emph {
   font-size: 40px;
   text-align: right;
 }
-/* line 566, ../sass/style.scss */
+/* line 565, ../sass/style.scss */
 #leaderboard table .avatar {
   border: none;
   padding: 0;
@@ -661,27 +659,32 @@ img.avatar {
 }
 
 /*End leaderboard*/
-/* line 578, ../sass/style.scss */
+/* line 576, ../sass/style.scss */
+#leaderboard.hidden {
+  visibility: hidden;
+}
+
+/* line 581, ../sass/style.scss */
 #lb-sera th, #lb-sera td {
   border-top: 5px solid #f6917f;
 }
 
-/* line 583, ../sass/style.scss */
+/* line 586, ../sass/style.scss */
 #lb-carrie th, #lb-carrie td {
   border-top: 5px solid #ef5476;
 }
 
-/* line 588, ../sass/style.scss */
+/* line 591, ../sass/style.scss */
 #lb-frank th, #lb-frank td {
   border-top: 5px solid #8bb049;
 }
 
-/* line 593, ../sass/style.scss */
+/* line 596, ../sass/style.scss */
 #lb-guri th, #lb-guri td {
   border-top: 5px solid #0bb7ab;
 }
 
-/* line 598, ../sass/style.scss */
+/* line 601, ../sass/style.scss */
 #lb-kristin th, #lb-kristin td {
   border-top: 5px solid #f0b50c;
 }
@@ -734,9 +737,19 @@ img.avatar {
 
 	*/
 /* STATS PROFILE */
+/* line 658, ../sass/style.scss */
+#stats-profile.hidden {
+  visibility: hidden;
+}
+
 /* STATS PROFILE VS PROFILE */
+/* line 667, ../sass/style.scss */
+#stats-versus.hidden {
+  visibility: hidden;
+}
+
 /* COMMENTARY */
-/* line 659, ../sass/style.scss */
+/* line 671, ../sass/style.scss */
 #commentary {
   /*background-color: #fff;*/
   font-family: "ff-tisa-web-pro", Georgia, serif;
@@ -752,7 +765,7 @@ img.avatar {
   line-height: 40px;
 }
 
-/* line 673, ../sass/style.scss */
+/* line 685, ../sass/style.scss */
 #twitter-bar {
   font-family: "atrament-web", sans-serif;
   font-size: .7em;
@@ -760,13 +773,13 @@ img.avatar {
   margin-bottom: .6em;
 }
 
-/* line 679, ../sass/style.scss */
+/* line 691, ../sass/style.scss */
 #twitter-bar a {
   color: #0bb7ab;
   font-style: normal;
 }
 
-/* line 684, ../sass/style.scss */
+/* line 696, ../sass/style.scss */
 #testing {
   background-color: #fff;
   font-family: "ff-netto-web";
