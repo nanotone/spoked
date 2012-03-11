@@ -10,7 +10,8 @@ float Wlong = -74.0854;
 float Elong = -73.777;
 
 int tstamp;
-int animatedSecondsPerFrame = 20;
+int animatedSecondsPerFrame = 30;
+int animatedFrameRate = 60;
 
 /* Variablees for hover test
 float endLongStop;
@@ -72,7 +73,7 @@ void setup() {
   size(1680, 2750);
   background(0, 0, 0, 0);
   noLoop();
-  frameRate(100);
+  frameRate(animatedFrameRate);
   processingReady(); // tell JavaScript that Processing is done setting up
 }
 
@@ -129,6 +130,7 @@ void draw() {
 		draw();
 	}
 	else {
+		processingUpdatedTime(tstamp);
 		// if all ride animations have completed, stop the draw loop
 		if (rideAnimations.size() == 0) {
 			noLoop();

@@ -9,7 +9,11 @@ function processingReady() {
 	instance = Processing.getInstanceById('processing');
 	pdePromise.resolve();
 }
+function processingUpdatedTime(tstamp) {
+	$('#animation-clock').show().text(formatLocaleString(new Date(tstamp*1000)));
+}
 function processingFinishedAnimating() {
+	$('#animation-clock').hide();
 	$('#animate').removeClass('selected');
 }
 

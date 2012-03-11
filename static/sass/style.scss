@@ -172,6 +172,16 @@ h1 {
 	padding: 6px;
 }	
 
+#animation-clock {
+	position: fixed;
+	top: 35px;
+	display: none;
+	background-color: black;
+	padding: 6px;
+	color: white;
+	font-family: monospace;
+}
+
 
 /*BOTTOM NAV*/
 #bottom-nav{
