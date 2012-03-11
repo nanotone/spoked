@@ -52,13 +52,8 @@ if __name__ == '__main__':
 		#with open('%d.kmz' % mailid, 'w') as f:
 		#	f.write(kmz.get_payload(decode=True))
 
-		parse_gpx.gpx_to_csv(gpx_path, 'static/csv/%s.csv' % track_id)
-		parse_gpx.gpx_to_json(gpx_path, 'static/json/%s.json' % track_id)
-		track_compress.compress_track_file(track_id)
-
-		start_time = json.load(open('static/json/%s.json' % track_id))[0][2]
-
-		db.tracks.update({'mailid': mailid}, {'$set': {'gpx_complete': True, 'start_time': start_time}})
+		pipeline.pipeline(track_id, db)
+		db.tracks.update({'mailid': mailid}, {'$set': {'gpx_complete': True}})
 
 	yes.close()
 
