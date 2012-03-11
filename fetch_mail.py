@@ -7,8 +7,7 @@ import time
 import pymongo
 
 import gmail
-import parse_gpx
-import track_compress
+import pipeline
 import user
 
 

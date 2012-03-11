@@ -7,8 +7,10 @@ import track_compress
 
 def pipeline(track, db):
 	if not isinstance(track, dict):
-		track = db.find_one({'_id': bson.objectid.ObjectId(track)})
+		track = db.tracks.find_one({'_id': bson.objectid.ObjectId(track)})
 		assert track is not None
+
+	print "Processing track", track['_id']
 
 	gpx_path = 'static/gpx/%s.gpx' % track['_id']
 	#csv_path = 'static/csv/%s.csv' % track['_id']
@@ -23,7 +25,12 @@ def pipeline(track, db):
 	db.tracks.update({'_id': track['_id']}, {'$set': {'start_time': start_time}})
 
 if __name__ == '__main__':
+	import sys
 	import pymongo
 	db = pymongo.Connection().spoked
-	for track in db.tracks.find():
-		pipeline(track, db)
+	if len(sys.argv) > 1:
+		for track_id in sys.argv[1:]:
+			pipeline(track_id, db)
+	else:
+		for track in db.tracks.find():
+			pipeline(track, db)
