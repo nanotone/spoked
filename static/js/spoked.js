@@ -70,7 +70,7 @@ function loadState() {
 		instance.abortRideAnimations();
 		instance.background('#ffffff', 0);
 		rideCanvas.update({'users': users});
-		$('.compare').hide();
+		$('.pop-nav').hide();
 	}
 	else if (title == 'you') {
 		$('.youLink').closest('li').addClass('selectedLink');
@@ -87,18 +87,18 @@ function loadState() {
 		var user1 = usersById[title.substr(0, 24)];
 		var user2 = usersById[title.substr(25)];
 		rideCanvas.update({'users': [user1, user2]});
-		$('.compare').hide();
+		$('.pop-nav').hide();
 	}
 }
 
 function showProfile(user) {
 	instance.abortRideAnimations();
 	instance.background('#ffffff', 0);
-	var compareDivs = $('.compare');
-	compareDivs.show();
-	for (var i = 0; i < compareDivs.length; i++) {
-		if (compareDivs.eq(i).closest('.portrait').data('userId') == user.id) {
-			compareDivs.eq(i).hide();
+	var popNavDivs = $('.pop-nav');
+	popNavDivs.show();
+	for (var i = 0; i < popNavDivs.length; i++) {
+		if (popNavDivs.eq(i).closest('.portrait').data('userId') == user.id) {
+			popNavDivs.eq(i).hide();
 		}
 	}
 	rideCanvas.update({'users': [user]});
