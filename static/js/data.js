@@ -7,7 +7,6 @@ var tracksById = {};
 
 function initData() {
 	$.get(SERVER + 'info', function(data) {
-		data = JSON.parse(data);
 		tracks = data.tracks;
 		users = data.users;
 		for (var i = 0; i < users.length; i++) {
@@ -40,7 +39,6 @@ function fetchTracks(tracks) {
 	}
 	if (trackIdsToLoad.length) {
 		$.get(SERVER + 'tracks?ids=' + trackIdsToLoad.join(','), function(data) {
-			data = JSON.parse(data);
 			for (var trackId in data) {
 				tracksById[trackId].points = data[trackId];
 			}

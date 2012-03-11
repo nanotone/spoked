@@ -5,6 +5,15 @@ import bottle
 import bson
 import pymongo
 
+db = pymongo.Connection().spoked
+
+def crossorigin():
+	if bottle.request.headers.get('Origin') == 'http://localhost':
+		bottle.response.set_header('Access-Control-Allow-Origin', 'http://localhost')
+
+def mimetype_json():
+	bottle.response.set_header('Content-Type', 'application/json')
+
 class JSONEncoder(json.JSONEncoder):
 	def default(self, o):
 		if isinstance(o, bson.objectid.ObjectId):
@@ -12,7 +21,6 @@ class JSONEncoder(json.JSONEncoder):
 		return json.JSONEncoder.default(self, o)
 json_encoder = JSONEncoder()
 
-db = pymongo.Connection().spoked
 
 @bottle.route('/')
 def index():
@@ -25,7 +33,7 @@ def index():
 @bottle.route('/tracks')
 def tracks():
 	crossorigin()
-	bottle.response.set_header('Content-Type', 'text/plain')
+	mimetype_json()
 	yield u'{' # first yield must be bytes or unicode, not str
 	for (i, t) in enumerate(bottle.request.query.ids.split(',')):
 		if i: yield ','
@@ -33,28 +41,13 @@ def tracks():
 		yield open('static/json-sparse/%s.json' % t).read()
 	yield '}'
 
-@bottle.route('/track/<oid>')
-def track(oid):
-	crossorigin()
-	return bottle.static_file('%s.json' % oid, root='static/json', mimetype='text/plain')
-
-@bottle.route('/users')
-def users():
-	crossorigin()
-	bottle.response.set_header('Content-Type', 'text/plain')
-	return '[' + ','.join('"%s"' % u['_id'] for u in db.users.find()) + ']'
-
 @bottle.route('/info')
 def info():
 	crossorigin()
-	bottle.response.set_header('Content-Type', 'text/plain')
+	mimetype_json()
 	return json_encoder.encode({
 		'tracks': list({'id': t['_id'], 'time': t['start_time'], 'userid': t['userid']} for t in db.tracks.find()),
 		'users': list({'id': u['_id'], 'name': u['name'], 'color': u['color']} for u in db.users.find())
 	})
-
-def crossorigin():
-	if bottle.request.headers.get('Origin') == 'http://localhost':
-		bottle.response.set_header('Access-Control-Allow-Origin', 'http://localhost')
 
 bottle.run(host='0.0.0.0', port=8081)
