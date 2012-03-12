@@ -561,27 +561,31 @@ img.avatar {
   height: 50px;
 }
 /* line 492, sass/style.scss */
+#sidebar .stats-color {
+  height: 5px;
+}
+/* line 495, sass/style.scss */
 #sidebar .stats-duration {
   text-transform: uppercase;
 }
 
 /* LEADERBOARD */
-/* line 525, sass/style.scss */
+/* line 528, sass/style.scss */
 #leaderboard {
   /*End table*/
 }
-/* line 526, sass/style.scss */
+/* line 529, sass/style.scss */
 #leaderboard table {
   border-spacing: 2px;
   margin-top: 0px;
   /* End tfoot*/
 }
-/* line 530, sass/style.scss */
+/* line 533, sass/style.scss */
 #leaderboard table thead {
   width: 360px;
   display: block;
 }
-/* line 536, sass/style.scss */
+/* line 539, sass/style.scss */
 #leaderboard table thead tr td {
   width: 70px;
   font-family: "atrament-web", sans-serif;
@@ -595,7 +599,7 @@ img.avatar {
   display: table-cell;
   text-align: right;
 }
-/* line 540, sass/style.scss */
+/* line 543, sass/style.scss */
 #leaderboard table thead tr th {
   font-family: "atrament-web", sans-serif;
   text-transform: uppercase;
@@ -609,16 +613,16 @@ img.avatar {
   margin: 0;
   border-top: 0;
 }
-/* line 546, sass/style.scss */
+/* line 549, sass/style.scss */
 #leaderboard table tfoot {
   /* End tr*/
 }
-/* line 547, sass/style.scss */
+/* line 550, sass/style.scss */
 #leaderboard table tfoot tr {
   margin: 0;
   padding: 0;
 }
-/* line 551, sass/style.scss */
+/* line 554, sass/style.scss */
 #leaderboard table tfoot tr td {
   width: 70px;
   font-family: "atrament-web", sans-serif;
@@ -631,7 +635,7 @@ img.avatar {
   padding: 0;
   display: table-cell;
 }
-/* line 554, sass/style.scss */
+/* line 557, sass/style.scss */
 #leaderboard table tfoot tr th {
   font-family: "atrament-web", sans-serif;
   text-transform: uppercase;
@@ -644,24 +648,24 @@ img.avatar {
   padding: 0;
   margin: 0;
 }
-/* line 556, sass/style.scss */
+/* line 559, sass/style.scss */
 #leaderboard table tfoot tr th p {
   margin-top: 5px;
   margin-bottom: auto;
   font-size: 1em;
 }
-/* line 562, sass/style.scss */
+/* line 565, sass/style.scss */
 #leaderboard table tfoot tr td {
   text-align: right;
   float: left;
   font-size: 1.3em;
 }
-/* line 567, sass/style.scss */
+/* line 570, sass/style.scss */
 #leaderboard table tfoot tr .emph {
   font-size: 40px;
   text-align: right;
 }
-/* line 574, sass/style.scss */
+/* line 577, sass/style.scss */
 #leaderboard table .avatar {
   border: none;
   padding: 0;
@@ -672,32 +676,32 @@ img.avatar {
 }
 
 /*End leaderboard*/
-/* line 585, sass/style.scss */
+/* line 588, sass/style.scss */
 #leaderboard.hidden {
   visibility: hidden;
 }
 
-/* line 590, sass/style.scss */
+/* line 593, sass/style.scss */
 #lb-sera th, #lb-sera td {
   border-top: 5px solid #f6917f;
 }
 
-/* line 595, sass/style.scss */
+/* line 598, sass/style.scss */
 #lb-carrie th, #lb-carrie td {
   border-top: 5px solid #ef5476;
 }
 
-/* line 600, sass/style.scss */
+/* line 603, sass/style.scss */
 #lb-frank th, #lb-frank td {
   border-top: 5px solid #8bb049;
 }
 
-/* line 605, sass/style.scss */
+/* line 608, sass/style.scss */
 #lb-guri th, #lb-guri td {
   border-top: 5px solid #0bb7ab;
 }
 
-/* line 610, sass/style.scss */
+/* line 613, sass/style.scss */
 #lb-kristin th, #lb-kristin td {
   border-top: 5px solid #f0b50c;
 }
@@ -750,19 +754,19 @@ img.avatar {
 
 	*/
 /* STATS PROFILE */
-/* line 667, sass/style.scss */
+/* line 670, sass/style.scss */
 #stats-profile.hidden {
   visibility: hidden;
 }
 
 /* STATS PROFILE VS PROFILE */
-/* line 676, sass/style.scss */
+/* line 679, sass/style.scss */
 #stats-versus.hidden {
   visibility: hidden;
 }
 
 /* COMMENTARY */
-/* line 680, sass/style.scss */
+/* line 683, sass/style.scss */
 #commentary {
   /*background-color: #fff;*/
   font-family: "ff-tisa-web-pro", Georgia, serif;
@@ -778,7 +782,7 @@ img.avatar {
   line-height: 40px;
 }
 
-/* line 694, sass/style.scss */
+/* line 697, sass/style.scss */
 #twitter-bar {
   font-family: "atrament-web", sans-serif;
   font-size: .7em;
@@ -786,13 +790,13 @@ img.avatar {
   margin-bottom: .6em;
 }
 
-/* line 700, sass/style.scss */
+/* line 703, sass/style.scss */
 #twitter-bar a {
   color: #0bb7ab;
   font-style: normal;
 }
 
-/* line 705, sass/style.scss */
+/* line 708, sass/style.scss */
 #testing {
   background-color: #fff;
   font-family: "ff-netto-web";

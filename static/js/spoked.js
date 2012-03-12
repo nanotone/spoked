@@ -120,10 +120,13 @@ function showProfile(user) {
 
 function showUserStats(user, $col) {
 	$col.find('.stats-avatar').attr('src', 'img/avatar/' + user.slug + '.jpg');
+	$col.find('.stats-color').css({backgroundColor: '#' + user.color});
+
+	var rides = user.tracks.length + ' ride' + (user.tracks.length == 1 ? '':'s') + ', ';
 	var hours = Math.floor(user.duration / 3600);
 	var minutes = Math.floor(user.duration % 3600 / 60);
 	var dur = (hours ? hours+' hr ' : '') + (minutes ? minutes+' min' : '') + ' on bike seat';
-	$col.find('.stats-duration').text(user.tracks.length + ' rides, ' + dur)
+	$col.find('.stats-duration').text(rides + dur)
 }
 
 
