@@ -26,6 +26,8 @@ def pipeline(track, db):
 	duration = track_data[-1][2] - start_time
 	db.tracks.update({'_id': track['_id']}, {'$set': {'start_time': start_time, 'duration': duration}})
 
+	return {'duration': duration} # return any/all data that could be useful for incremental updates
+
 if __name__ == '__main__':
 	import sys
 	import pymongo
