@@ -4,7 +4,7 @@
 $yourColor: #0bb7ab;
 $land: #fffbf0;
 $bar: #1f1f1f; /*#322e10; brown #322e10*/
-$black: #3d3d3d;
+$black: #1f1f1f;
 $red: #d2222d;
 $pink: #ef5476;
 $mint: #0bb7ab;
@@ -23,6 +23,9 @@ $vinyl: "vinyl", sans-serif;
 $kulturista: "kulturista-web", serif;
 $nimbus: "nimbus-sans-condensed";
 $netto: "ff-netto-web";
+$gothic: "league-gothic";
+$futura: "futura-pt-condensed";
+$dax: "ff-dax-compact-web-pro";
 
 body {
 	font-size: 100%;
@@ -84,84 +87,164 @@ h1 {
 	float: left;
 	position: relative;
 	z-index: 300;
-	margin: 0 0.5em 0 0em;
-	padding: 0em 0em 0 0;
+	margin: 3px 0 0 0;
+	padding: 0 0 0 0;
 	/*border-top: 10px solid $yourColor;*/
 	/*border-bottom: 20px solid $yourColor;*/
 	/*padding: .5em 2em 0 2em;*/
 	/*background-color: $yourColor; */
 	color: $yourColor;
 	font-family: $sans;
+	font-weight: 500;
 	font-size: 35px;
+	line-height: 38px;
 	text-align: center;
   	}
 
 #service-nav {
-	font: 1em Georgia, serif;
+	font-family: $futura;
+	font-weight: 400;
+	font-size: 22px;
 	width: 100%;
 	position: absolute;
 	z-index: 200;
-	margin: 0 0 0 5%;
+	margin: 0 0 0 20px;
 	padding: 0;
-	vertical-align: baseline;
-	}
 
-#service-nav ul li {
+	ul { 
+	
+		li {
+			display: block;
+			padding-top: 0;
+			float: left;
+						
+			a{
+				text-decoration: none;
+			}
+		}
+		li.selectedLink {
+			border-bottom: 2px solid $yourColor;
+		}
+	}
+	#menu-nav {
+		padding-top: 0px;
+		margin-top: 4px;
+		margin-left: 65px;
+		position: relative;
+		
+		li{
+			margin: 0 25px 0 0;
+			
+			a {
+				color: $yourColor; 
+			}
+			a:hover{
+				border-bottom: 2px solid $yourColor;
+			}
+	
+		}
+	}
+	
+	#user-nav {
+		font-family: $futura;
+		text-transform: none;
+		line-height: 20px;
+		position: absolute;
+		padding: 0;
+		margin: -14px 10px 0 0;
+		right: 0px;	
+		
+		li {
+			margin: 0 25px 0 0;
+	
+			a{
+				color: $black;
+			}
+			a:hover{
+				border-bottom: 2px solid $black;
+			}
+			
+		}
+		#invite {
+			border-right: 1px solid $black;
+			padding-right: 20px;
+			margin-right: 0px;
+		}
+		#you {
+			font-family: $futura;
+			display: block;
+			text-transform: none;
+			margin-top: -3px;
+			margin-left: 10px;
+			margin-right: 20px;
+			padding: 3px;
+			#user-links {
+				position: absolute;
+				top: 17px; 
+				right: 10px;
+				width: 125px;
+				margin-top: 10px;
+				
+				li {
+					display: block;
+					width: 100%;
+					clear: both;
+					margin: 0;
+					background: $yourColor;
+					border-bottom: 1px solid rgba(255,255,255, .2);
+					padding: 4px 7px;
+					a {
+						color: #fff;
+						font-size: 18px;
+						display: block;
+						width: 100%;
+					}
+					a:hover {
+						border-bottom: none;
+					}
+				}
+				li:hover{
+					background: darken($yourColor, 10%);	
+				}
+			}		
+			
+			#user-avatar {
+				position: relative;
+				display: block;
+				float: left;
+				margin: 0px 8px 10px 0px;
+				padding: 0;
+				height: 20px;
+				width: 20px;
+				top: 0;
+				right: 0;
+			}
+			#user-name {
+				color: $black;
+				position: relative;
+				float: left;
+				display: block;
+				padding: 0px;
+				line-height: 20px;
+				/*background-color: $yourColor;*/
+				
+			}	
+		}
+	}
+}
+
+/*#you:hover {
+	background-color: $yourColor;
+	}*/
+#user-links.hidden {
+	/*display: none;*/
+	}
+#you:hover .dropdown {
 	display: block;
-	padding-top: 0;
-	float: left;
-	margin: 0 1.5em 0 0;
-	vertical-align: baseline;
 	}
-#service-nav ul li a{
-	color: $yourColor; 
-	text-decoration: none;
-	}
-#service-nav ul li.selectedLink {
-	border-bottom: 2px solid $yourColor;
+#user-links.dropdown {
+	display:none;
 }
-#menu-nav {
-	padding-top: 0px;
-	margin-top: 8px;
-	position: relative;
-}
-#user-nav {
-	font-family: $sans;
-	text-transform: uppercase;
-	position: absolute;
-	width: 400px;
-	padding-top: 0;
-	margin: -8px 0 0 0;
-	color: $yourColor;
-	right: 0px;	
-	}
-#user-nav ul {
-	padding-left: 0;
-	margin-left:0;
-}
-#user {
-	font-size: 1.4em;
-	font-family: $sans;
-	text-transform: uppercase;
-}
-#user-nav li:first-child{
-	border:none;
-	}
-#user-avatar {
-	position: relative;
-	display: block;
-	float:left;
-	margin:0;
-	padding:0;
-	height:35px;
-	width: 35px;
-	}
-#user-name {
-	position:relative;
-	float:left;
-	display:block;
-	padding: 6px;
-}	
 
 #animation-clock {
 	position: fixed;
@@ -253,8 +336,8 @@ img.avatar {
 	width: 230px;
 	background-color: #fff;
 	opacity: 0.8;
-	font-family: $sans;
-	font-size: 1em;
+	font-family: $futura;
+	font-size: 14px;
 	padding: .6em;
 	-moz-border-radius-topleft: .8em;
   	-webkit-border-top-left-radius: .8em;
@@ -274,13 +357,13 @@ img.avatar {
 	color: #fff;
 	}
 .pop a.name {
-	font-family: $sans;
-	font-size: 1.4em;
+	font-family: $futura;
+	font-size: 16px;
 	text-transform: uppercase;
 	}
 .pop-nav {
 	padding-top: .4em;
-	font: .8em Georgia;
+	font: 14px $serif;
 	}
 
 /*MAP NAV*/
@@ -488,10 +571,10 @@ content: url(../img/btn/play-animation-20x20.png);
 /* LEADERBOARD */
 	
 @mixin datahead {
-	font-family: $sans;
+	font-family: $futura;
 	text-transform: uppercase;
 	font-size: 18px;
-	font-weight: normal;
+	font-weight: 500;
 	text-align: left;
 	width: 150px;
 	float: left;
@@ -502,11 +585,10 @@ content: url(../img/btn/play-animation-20x20.png);
 
 @mixin datacell {
 	width: 70px;
-	font-family: $sans;
-	font-family: $vinyl;
+	font-family: $futura;
 	text-transform: uppercase;
 	font-size: .9em;
-	font-weight: normal;
+	font-weight: 500;
 	text-align: center;
 	margin: 0;
 	padding: 0;
