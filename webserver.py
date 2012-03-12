@@ -47,7 +47,7 @@ def info():
 	mimetype_json()
 	return json_encoder.encode({
 		'tracks': list({'id': t['_id'], 'time': t['start_time'], 'userid': t['userid']} for t in db.tracks.find()),
-		'users': list({'id': u['_id'], 'name': u['name'], 'color': u['color']} for u in db.users.find())
+		'users': list({'id': u['_id'], 'name': u['name'], 'color': u['color'], 'total_duration': u['total_duration']} for u in db.users.find())
 	})
 
 bottle.run(host='0.0.0.0', port=8081)

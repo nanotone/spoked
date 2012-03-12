@@ -21,8 +21,12 @@ def pipeline(track, db):
 	parse_gpx.gpx_to_json(gpx_path, json_path)
 	track_compress.compress_track_file(json_path, sparse_path)
 
-	start_time = json.load(open(json_path))[0][2]
-	db.tracks.update({'_id': track['_id']}, {'$set': {'start_time': start_time}})
+	track_data = json.load(open(json_path))
+	start_time = track_data[0][2]
+	duration = track_data[-1][2] - start_time
+	db.tracks.update({'_id': track['_id']}, {'$set': {'start_time': start_time, 'duration': duration}})
+
+	return {'duration': duration} # return any/all data that could be useful for incremental updates
 
 if __name__ == '__main__':
 	import sys

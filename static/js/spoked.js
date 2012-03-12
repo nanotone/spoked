@@ -22,16 +22,14 @@ function showPortraits() {
 	for (var i = 0; i < users.length; i++) {
 		var user = users[i];
 		var instance = template.clone().removeClass('template').attr('id', null).css({display: ''});
-		var name = user.name;
-		var slug = name.replace(' ', '').toLowerCase();
 		var color = '#' + (user.color || '2dddd2');
 		instance.data('userId', user.id);
 		instance.find('.avatarLink').click(onClickPortrait);
 		instance.find('.compare a').click(onClickCompare);
 		instance.find('.profileLink').click(onClickPortrait);
-		instance.find('.avatar').attr('src', 'img/avatar/' + slug + '.jpg').css({borderColor: color});
+		instance.find('.avatar').attr('src', 'img/avatar/' + user.slug + '.jpg').css({borderColor: color});
 		instance.find('.pop').css({backgroundColor: color});
-		instance.find('.name').text(name);
+		instance.find('.name').text(user.name);
 		template.parent().append(instance);
 	}
 }
@@ -68,9 +66,11 @@ function loadState() {
 	}
 	console.log("loadState " + title);
 	$('.selectedLink').removeClass('selectedLink');
+	$('.sidebar-content').addClass('hidden');
 	currentUser = null;
 	if (title == '' || title == 'friends') {
 		$('.friendsLink').closest('li').addClass('selectedLink');
+		$('#leaderboard').removeClass('hidden');
 		instance.abortRideAnimations();
 		instance.background('#ffffff', 0);
 		rideCanvas.update({'users': users});
@@ -90,12 +90,22 @@ function loadState() {
 		instance.background('#ffffff', 0);
 		var user1 = usersById[title.substr(0, 24)];
 		var user2 = usersById[title.substr(25)];
+
+		$('#stats-versus').removeClass('hidden');
+		$('#stats-name1').text(user1.name);
+		$('#stats-name2').text(user2.name);
+		showUserStats(user1, $('#stats-user1'));
+		showUserStats(user2, $('#stats-user2'));
+
 		rideCanvas.update({'users': [user1, user2]});
 		$('.pop-nav').hide();
 	}
 }
 
 function showProfile(user) {
+	$('#stats-profile').removeClass('hidden');
+	$('#stats-name').text(user.name);
+	showUserStats(user, $('#stats-profile'));
 	instance.abortRideAnimations();
 	instance.background('#ffffff', 0);
 	var popNavDivs = $('.pop-nav');
@@ -106,6 +116,17 @@ function showProfile(user) {
 		}
 	}
 	rideCanvas.update({'users': [user]});
+}
+
+function showUserStats(user, $col) {
+	$col.find('.stats-avatar').attr('src', 'img/avatar/' + user.slug + '.jpg');
+	$col.find('.stats-color').css({backgroundColor: '#' + user.color});
+
+	var rides = user.tracks.length + ' ride' + (user.tracks.length == 1 ? '':'s') + ', ';
+	var hours = Math.floor(user.duration / 3600);
+	var minutes = Math.floor(user.duration % 3600 / 60);
+	var dur = (hours ? hours+' hr ' : '') + (minutes ? minutes+' min' : '') + ' on bike seat';
+	$col.find('.stats-duration').text(rides + dur)
 }
 
 
