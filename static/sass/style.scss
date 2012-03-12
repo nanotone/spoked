@@ -97,16 +97,7 @@ h1 {
 	font-size: 35px;
 	text-align: center;
   	}
-#testing {
-	background-color: #fff;
-	font-family: $netto;
-	float:left;
-	position: relative;
-	width: 400px;
-	top: 600px;  
-	left: 40px;
-	font-size: 14px;
-  }
+
 #service-nav {
 	font: 1em Georgia, serif;
 	width: 100%;
@@ -525,7 +516,6 @@ content: url(../img/btn/play-animation-20x20.png);
 }
 
 #leaderboard {
-	/*visibility: hidden; TURN OFF LEADERBOARD HERE*/
 	table {
 		border-spacing: 2px;
 		margin-top: 0px;
@@ -584,6 +574,10 @@ content: url(../img/btn/play-animation-20x20.png);
 			}
 	} /*End table*/
 } /*End leaderboard*/
+
+#leaderboard.hidden {
+	visibility: hidden; 
+}
 
 #lb-sera {
 	th, td {
@@ -657,7 +651,24 @@ content: url(../img/btn/play-animation-20x20.png);
 	}
 
 	*/
-	
+
+/* STATS PROFILE */
+#stats-profile {
+
+}
+
+#stats-profile.hidden {
+	visibility: hidden; 
+}
+
+/* STATS PROFILE VS PROFILE */
+#stats-versus {
+
+}
+
+#stats-versus.hidden {
+	visibility: hidden; 
+}	
 /* COMMENTARY */
 #commentary {
 	/*background-color: #fff;*/
@@ -684,3 +695,13 @@ content: url(../img/btn/play-animation-20x20.png);
 	font-style: normal;
 }
 
+#testing {
+	background-color: #fff;
+	font-family: $netto;
+	float:left;
+	position: fixed;
+	width: 400px;
+	top: 600px;  
+	left: 40px;
+	font-size: 14px;
+  }

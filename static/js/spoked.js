@@ -68,9 +68,11 @@ function loadState() {
 	}
 	console.log("loadState " + title);
 	$('.selectedLink').removeClass('selectedLink');
+	$('.sidebar-content').addClass('hidden');
 	currentUser = null;
 	if (title == '' || title == 'friends') {
 		$('.friendsLink').closest('li').addClass('selectedLink');
+		$('#leaderboard').removeClass('hidden');
 		instance.abortRideAnimations();
 		instance.background('#ffffff', 0);
 		rideCanvas.update({'users': users});
@@ -90,12 +92,19 @@ function loadState() {
 		instance.background('#ffffff', 0);
 		var user1 = usersById[title.substr(0, 24)];
 		var user2 = usersById[title.substr(25)];
+
+		$('#stats-versus').removeClass('hidden');
+		$('#stats-name1').text(user1.name);
+		$('#stats-name2').text(user2.name);
+
 		rideCanvas.update({'users': [user1, user2]});
 		$('.pop-nav').hide();
 	}
 }
 
 function showProfile(user) {
+	$('#stats-profile').removeClass('hidden');
+	$('#stats-name').text(user.name);
 	instance.abortRideAnimations();
 	instance.background('#ffffff', 0);
 	var popNavDivs = $('.pop-nav');

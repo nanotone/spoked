@@ -1,4 +1,6 @@
-import time
+import calendar
+import dateutil.parser
+#import time
 from xml.dom import minidom
 
 def gen_gpx_points(src):
@@ -13,12 +15,13 @@ def gen_gpx_points(src):
 				except:
 					ele = '0'
 				try:
-					date = tstamp = ''
-					date = trkpt.getElementsByTagName('time')[0].firstChild.nodeValue
-					tstamp = time.mktime(time.strptime(date, '%Y-%m-%dT%H:%M:%SZ'))
+					isodate = tstamp = ''
+					isodate = trkpt.getElementsByTagName('time')[0].firstChild.nodeValue
+					tstamp = calendar.timegm(dateutil.parser.parse(isodate).utctimetuple())
+					#tstamp = time.mktime(time.strptime(date, '%Y-%m-%dT%H:%M:%SZ'))
 				except:
 					pass
-				yield (lat, lon, ele, date, tstamp)
+				yield (lat, lon, ele, isodate, tstamp)
 
 def gpx_to_json(src, dst):
 	with open(dst, 'w') as f:

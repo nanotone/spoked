@@ -23,15 +23,15 @@ def compress_track(data):
 	yield p0
 	yield p1
 
-def compress_track_file(track):
-	with open('static/json/%s.json' % track) as f:
+def compress_track_file(src, dst):
+	with open(src) as f:
 		data = json.load(f)
 	length = len(data)
 	data = list(compress_track(data))
 	print "Dropped", float(length - len(data)) / length, "of points"
-	with open('static/json-sparse/%s.json' % track, 'w') as f:
+	with open(dst, 'w') as f:
 		json.dump(data, f)
 
 if __name__ == '__main__':
-	compress_track_file(sys.argv[1])
+	compress_track_file(sys.argv[1], sys.argv[2])
 

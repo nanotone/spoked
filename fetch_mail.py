@@ -7,8 +7,7 @@ import time
 import pymongo
 
 import gmail
-import parse_gpx
-import track_compress
+import pipeline
 import user
 
 
@@ -38,8 +37,9 @@ if __name__ == '__main__':
 		gpx = gmail.get_attachment(msg, 'gpx')
 		mail_time = time.mktime(email.utils.parsedate(msg['Date']))
 
+		userid = user.userid_from_sender(sender)
 		doc = {'mailid': mailid, 'time': mail_time, 'sender': sender, 'gpx_complete': False,
-		       'userid': user.userid_from_sender(sender)}
+		       'userid': userid}
 		db.tracks.update({'mailid': mailid}, doc, upsert=True)
 
 		track_id = db.tracks.find_one({'mailid': mailid})['_id']
@@ -52,13 +52,10 @@ if __name__ == '__main__':
 		#with open('%d.kmz' % mailid, 'w') as f:
 		#	f.write(kmz.get_payload(decode=True))
 
-		parse_gpx.gpx_to_csv(gpx_path, 'static/csv/%s.csv' % track_id)
-		parse_gpx.gpx_to_json(gpx_path, 'static/json/%s.json' % track_id)
-		track_compress.compress_track_file(track_id)
-
-		start_time = json.load(open('static/json/%s.json' % track_id))[0][2]
-
-		db.tracks.update({'mailid': mailid}, {'$set': {'gpx_complete': True, 'start_time': start_time}})
+		track_result = pipeline.pipeline(track_id, db)
+		db.tracks.update({'mailid': mailid}, {'$set': {'gpx_complete': True}})
+		if userid:
+			db.users.update({'_id': userid}, {'$inc': {'total_duration': track_result['duration']}})
 
 	yes.close()
 
