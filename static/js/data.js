@@ -12,6 +12,7 @@ function initData() {
 		for (var i = 0; i < users.length; i++) {
 			var user = users[i];
 			user.tracks = [];
+			user.slug = user.name.replace(' ', '').toLowerCase();
 			user.pjsColor = 0xFF000000 + parseInt(user.color, 16);
 			usersById[user.id] = user;
 		}

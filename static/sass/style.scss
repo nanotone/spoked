@@ -477,15 +477,22 @@ content: url(../img/btn/play-animation-20x20.png);
 	top: 55px;
 	margin: 0 10px 50px 20px;
 	}
-#sidebar .title {
-	font-family: $serif;
-	font-size: 36px;
+#sidebar {
+	.title {
+		font-family: $serif;
+		font-size: 36px;
 	}
-#sidebar .sub-title {
-	font-family: Georgia;
-	font-size: 1em;
-	padding-bottom: 20px;
+	.sub-title {
+		font-family: Georgia;
+		font-size: 1em;
+		padding-bottom: 20px;
 	}
+	#stats-profile img.stats-avatar { width: 87px; height: 87px; }
+	#stats-versus  img.stats-avatar { width: 50px; height: 50px; }
+	.stats-duration {
+		text-transform: uppercase;
+	}
+}
 
 /* LEADERBOARD */
 	
