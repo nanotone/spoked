@@ -135,9 +135,15 @@ function showUserStats(user, $col) {
 	$col.find('.stats-color').css({backgroundColor: '#' + user.color});
 	showUserMiles(user, $col);
 
-	var rides = user.tracks.length + ' ride' + (user.tracks.length == 1 ? '':'s') + ', ';
-	var hours = Math.floor(user.duration / 3600);
-	var minutes = Math.floor(user.duration % 3600 / 60);
+	var rides = 0;
+	for (var i = 0; i < user.tracks.length; i++) {
+		if (user.tracks[i].time >= lastWeek) {
+			rides += 1;
+		}
+	}
+	rides = rides + ' ride' + (rides == 1 ? '':'s') + ', ';
+	var hours = Math.floor(user.fortnightDuration / 3600);
+	var minutes = Math.floor(user.fortnightDuration % 3600 / 60);
 	var dur = (hours ? hours+' hr ' : '') + (minutes ? minutes+' min' : '') + ' on bike seat';
 	$col.find('.stats-duration').text(rides + dur)
 }
