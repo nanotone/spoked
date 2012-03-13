@@ -308,16 +308,28 @@ h1 {
 			.pop a {
 				color: #fff;
 			}
+			.filter {
+				position: absolute; 
+				width: 45px; 
+				height: 55px; 
+				background-color: #fff; 
+				opacity: .6; 
+				z-index: 102;
+			}
 		}
 		li:hover {
-			img {
-				border-top: 1em solid #fff;
-				margin-top: -.5em;
+			.filter {
+				display: none;
 			}
 
 			.pop {
 				display: block;
 			}	
+		}
+		li.selected {
+			.filter {
+				display: none;
+			}
 		}
 	}
 	/*.mapSelect.selected img.mapbtn  IS THIS DOING ANYTHING, OR CAN IT BE DELETED?
