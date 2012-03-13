@@ -166,11 +166,7 @@ h1 {
 			}
 			
 		}
-		#invite {
-			border-right: 1px solid $black;
-			padding-right: 20px;
-			margin-right: 0px;
-		}
+
 		#you {
 			font-family: $futura;
 			display: block;
@@ -524,19 +520,19 @@ img.avatar {
 
 /* CHECKBOXES */
 
-#time-nav ul li a.selected:before, #portrait-control-nav ul li a.selected:before {
+#time-nav ul li a.selected:before {
 content: url(../img/btn/checkbox-sq-checked-20x20.png);
 margin-right: 7px;
 position:relative;
 top: 5px;
 	}
-#time-nav ul li a:before, #portrait-control-nav ul li a:before, {
+#time-nav ul li a:before {
 content: url(../img/btn/checkbox-sq-20x20.png);
 margin-right: 7px;
 position:relative;
 top: 5px;
 	}
-#time-nav ul li a#animate:before, #time-nav ul li a#animate selected:before,  {
+#time-nav ul li a#animate:before  {
 content: url(../img/btn/play-animation-20x20.png);
 
 }
