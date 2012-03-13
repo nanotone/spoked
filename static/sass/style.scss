@@ -104,7 +104,7 @@ h1 {
 	/*padding: .5em 2em 0 2em;*/
 	/*background-color: $yourColor; */
 	color: $yourColor;
-	font-family: $sans;
+	font-family: $vinyl;
 	font-weight: 500;
 	font-size: 35px;
 	line-height: 38px;
@@ -579,8 +579,9 @@ content: url(../img/btn/play-animation-20x20.png);
 	}
 #sidebar {
 	.title {
-		font-family: $serif;
-		font-size: 36px;
+		font-family: $vinyl;
+		text-transform: uppercase;
+		font-size: 34px;
 	}
 	.sub-title {
 		font-family: Georgia;
@@ -600,12 +601,12 @@ content: url(../img/btn/play-animation-20x20.png);
 /* LEADERBOARD */
 	
 @mixin datahead {
-	font-family: $futura;
-	text-transform: uppercase;
-	font-size: 18px;
-	font-weight: 500;
+	font-family: $vinyl, 'Helvetica Neue', 'Arial Narrow';
+	text-transform: none;
+	font-size: 12px;
+	font-weight: 400;
 	text-align: left;
-	width: 150px;
+	/*width: 150px;*/
 	float: left;
 	display: table-cell;
 	padding: 0;
@@ -613,10 +614,10 @@ content: url(../img/btn/play-animation-20x20.png);
 }
 
 @mixin datacell {
-	width: 70px;
-	font-family: Helvetica;
+	/*width: 70px;*/
+	font-family: $vinyl;
 	text-transform: uppercase;
-	font-size: .9em;
+	font-size: 12px;
 	font-weight: 500;
 	text-align: center;
 	margin: 0;
@@ -637,38 +638,107 @@ content: url(../img/btn/play-animation-20x20.png);
 			tr{
 			 	
 			 	td {
-				@include datacell;
-				text-align:right;		
+				 	width: 90px;
+
+					/*width: 70px;*/
+					font-family: $vinyl;
+					text-transform: uppercase;
+					font-size: 12px;
+					font-weight: 500;
+					text-align: center;
+					margin: 0;
+					padding: 0;
+					display: table-cell;
+					/*numeric-figure-values: lining-nums;*/				
+					text-align:right;	
 				}
 				th {
-				@include datahead;
-				border-top: 0;		
+					font-family: $vinyl, 'Helvetica Neue', 'Arial Narrow';
+					text-transform: none;
+					font-size: 12px;
+					width: 90px;
+					font-weight: 400;
+					text-align: left;
+					/*width: 150px;*/
+					float: left;
+					display: table-cell;
+					padding: 0;
+					margin: 0;
+					border-top: 0;		
 				}
 			}
 		}
 		tbody {
 			tr {
+				width: 360px;
 				margin: 0;
 				padding: 0;
+
 				th {
-					@include datahead;
-					border-top: 5px solid;
+					font-family: $vinyl, 'Helvetica Neue', 'Arial Narrow';
+					text-transform: none;
+					font-size: 12px;
+					font-weight: 400;
+					text-align: left;
+					float: left;
+					display: table-cell;
+					padding: 0;
+					margin: 0;
+					width: 360px;
+					display: block;
+					/*border-top: 5px solid;*/
+					/*border-bottom: 5px solid;*/
+					margin-bottom: -10px;
+					margin-top:5px;
+					border-bottom: 5px solid #ccc;
+		
 					p.stats-name {
-						margin-top: 5px;
+						margin-top: 3px;
 						margin-bottom: auto;
-						font-size: 1em;
+						font-size: 16px;
+						padding-right: 190px;
 					}
 				}
 				td {
-					@include datacell;				
-					border-top: 5px solid;
+					font-family: $vinyl;
+					text-transform: uppercase;
+					font-size: 12px;
+					font-weight: 500;
+					text-align: center;
+					margin: 0;
+					margin-top: -27px;
+					margin-bottom: -5px;
+					padding: 0;
+					display: table-cell;
+					/*numeric-figure-values: lining-nums;*/			
 					text-align: right;
 					float: left;
 					font-size: 1.3em;
+					width: 82px;
+					border-right: 1px solid #ccc;
+					vertical-align:bottom;
+					padding-top: 10px;
+					padding-bottom: 0px;
+					padding-right: 8px;
+
 				}
+				td.stats-last-week{
+					display: table-cell;
+					width: 180px;
+					}
+				td.stats-total-miles{
+					margin-top: -42px;
+					vertical-align:bottom;
+					padding-right: 0px;
+					width: 80px;
+					border-right: 0px solid $black;
+					}
+	
 				.emph{
 					font-size: 40px;
 					text-align: right;
+					font-weight: 600;
+
 				}
 			} /* End tr*/
 		} /* End tbody*/
@@ -678,8 +748,8 @@ content: url(../img/btn/play-animation-20x20.png);
 			padding: 0;
 			margin: 0;
 			margin-right: 5px;
-			width: 35px;
-			height: 35px;
+			width: 40px;
+			height: 40px;
 			}
 	} /*End table*/
 } /*End leaderboard*/

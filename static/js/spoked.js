@@ -38,7 +38,7 @@ function showPortraits() {
 		var instance = template.clone().removeClass('template').attr('id', null).css({display: ''});
 		instance.find('.avatar').attr('src', 'img/avatar/' + user.slug + '.jpg');
 		instance.find('.stats-name').text(user.name);
-		instance.find('th').css({borderTopColor: '#' + user.color});
+		instance.find('th').css({borderBottomColor: '#' + user.color});
 		instance.find('td').css({borderTopColor: '#' + user.color});
 
 		showUserMiles(user, instance);

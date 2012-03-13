@@ -98,7 +98,7 @@ h1 {
   /*padding: .5em 2em 0 2em;*/
   /*background-color: $yourColor; */
   color: #0bb7ab;
-  font-family: "atrament-web", sans-serif;
+  font-family: "vinyl", sans-serif;
   font-weight: 500;
   font-size: 35px;
   line-height: 38px;
@@ -621,56 +621,58 @@ img.avatar {
 
 /* line 581, ../sass/style.scss */
 #sidebar .title {
-  font-family: "ff-tisa-web-pro", Georgia, serif;
-  font-size: 36px;
+  font-family: "vinyl", sans-serif;
+  text-transform: uppercase;
+  font-size: 34px;
 }
-/* line 585, ../sass/style.scss */
+/* line 586, ../sass/style.scss */
 #sidebar .sub-title {
   font-family: Georgia;
   font-size: 1em;
   padding-bottom: 20px;
 }
-/* line 590, ../sass/style.scss */
+/* line 591, ../sass/style.scss */
 #sidebar #stats-profile img.stats-avatar {
   width: 87px;
   height: 87px;
 }
-/* line 591, ../sass/style.scss */
+/* line 592, ../sass/style.scss */
 #sidebar #stats-versus img.stats-avatar {
   width: 50px;
   height: 50px;
 }
-/* line 592, ../sass/style.scss */
+/* line 593, ../sass/style.scss */
 #sidebar .stats-color {
   height: 5px;
 }
-/* line 595, ../sass/style.scss */
+/* line 596, ../sass/style.scss */
 #sidebar .stats-duration {
   text-transform: uppercase;
 }
 
 /* LEADERBOARD */
-/* line 628, ../sass/style.scss */
+/* line 629, ../sass/style.scss */
 #leaderboard {
   /*End table*/
 }
-/* line 629, ../sass/style.scss */
+/* line 630, ../sass/style.scss */
 #leaderboard table {
   border-spacing: 2px;
   margin-top: 0px;
   /* End tbody*/
 }
-/* line 633, ../sass/style.scss */
+/* line 634, ../sass/style.scss */
 #leaderboard table thead {
   width: 360px;
   display: block;
 }
-/* line 639, ../sass/style.scss */
+/* line 640, ../sass/style.scss */
 #leaderboard table thead tr td {
-  width: 70px;
-  font-family: Helvetica;
+  width: 90px;
+  /*width: 70px;*/
+  font-family: "vinyl", sans-serif;
   text-transform: uppercase;
-  font-size: .9em;
+  font-size: 12px;
   font-weight: 500;
   text-align: center;
   margin: 0;
@@ -679,83 +681,111 @@ img.avatar {
   /*numeric-figure-values: lining-nums;*/
   text-align: right;
 }
-/* line 643, ../sass/style.scss */
+/* line 655, ../sass/style.scss */
 #leaderboard table thead tr th {
-  font-family: "futura-pt-condensed";
-  text-transform: uppercase;
-  font-size: 18px;
-  font-weight: 500;
+  font-family: "vinyl", sans-serif, "Helvetica Neue", "Arial Narrow";
+  text-transform: none;
+  font-size: 12px;
+  width: 90px;
+  font-weight: 400;
   text-align: left;
-  width: 150px;
+  /*width: 150px;*/
   float: left;
   display: table-cell;
   padding: 0;
   margin: 0;
   border-top: 0;
 }
-/* line 649, ../sass/style.scss */
+/* line 671, ../sass/style.scss */
 #leaderboard table tbody {
   /* End tr*/
 }
-/* line 650, ../sass/style.scss */
+/* line 672, ../sass/style.scss */
 #leaderboard table tbody tr {
+  width: 360px;
   margin: 0;
   padding: 0;
 }
-/* line 653, ../sass/style.scss */
+/* line 677, ../sass/style.scss */
 #leaderboard table tbody tr th {
-  font-family: "futura-pt-condensed";
-  text-transform: uppercase;
-  font-size: 18px;
-  font-weight: 500;
+  font-family: "vinyl", sans-serif, "Helvetica Neue", "Arial Narrow";
+  text-transform: none;
+  font-size: 12px;
+  font-weight: 400;
   text-align: left;
-  width: 150px;
   float: left;
   display: table-cell;
   padding: 0;
   margin: 0;
-  border-top: 5px solid;
-}
-/* line 656, ../sass/style.scss */
-#leaderboard table tbody tr th p.stats-name {
+  width: 360px;
+  display: block;
+  /*border-top: 5px solid;*/
+  /*border-bottom: 5px solid;*/
+  margin-bottom: -10px;
   margin-top: 5px;
-  margin-bottom: auto;
-  font-size: 1em;
+  border-bottom: 5px solid #ccc;
 }
-/* line 662, ../sass/style.scss */
+/* line 695, ../sass/style.scss */
+#leaderboard table tbody tr th p.stats-name {
+  margin-top: 3px;
+  margin-bottom: auto;
+  font-size: 16px;
+  padding-right: 190px;
+}
+/* line 702, ../sass/style.scss */
 #leaderboard table tbody tr td {
-  width: 70px;
-  font-family: Helvetica;
+  font-family: "vinyl", sans-serif;
   text-transform: uppercase;
-  font-size: .9em;
+  font-size: 12px;
   font-weight: 500;
   text-align: center;
   margin: 0;
+  margin-top: -27px;
+  margin-bottom: -5px;
   padding: 0;
   display: table-cell;
   /*numeric-figure-values: lining-nums;*/
-  border-top: 5px solid;
   text-align: right;
   float: left;
   font-size: 1.3em;
+  width: 82px;
+  border-right: 1px solid #ccc;
+  vertical-align: bottom;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  padding-right: 8px;
 }
-/* line 669, ../sass/style.scss */
+/* line 725, ../sass/style.scss */
+#leaderboard table tbody tr td.stats-last-week {
+  display: table-cell;
+  width: 180px;
+}
+/* line 729, ../sass/style.scss */
+#leaderboard table tbody tr td.stats-total-miles {
+  margin-top: -42px;
+  vertical-align: bottom;
+  padding-right: 0px;
+  width: 80px;
+  border-right: 0px solid #1f1f1f;
+}
+/* line 737, ../sass/style.scss */
 #leaderboard table tbody tr .emph {
   font-size: 40px;
   text-align: right;
+  font-weight: 600;
 }
-/* line 676, ../sass/style.scss */
+/* line 746, ../sass/style.scss */
 #leaderboard table .avatar {
   border: none;
   padding: 0;
   margin: 0;
   margin-right: 5px;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
 }
 
 /*End leaderboard*/
-/* line 687, ../sass/style.scss */
+/* line 757, ../sass/style.scss */
 #leaderboard.hidden {
   visibility: hidden;
 }
@@ -808,19 +838,19 @@ img.avatar {
 
 	*/
 /* STATS PROFILE */
-/* line 744, ../sass/style.scss */
+/* line 814, ../sass/style.scss */
 #stats-profile.hidden {
   visibility: hidden;
 }
 
 /* STATS PROFILE VS PROFILE */
-/* line 753, ../sass/style.scss */
+/* line 823, ../sass/style.scss */
 #stats-versus.hidden {
   visibility: hidden;
 }
 
 /* COMMENTARY */
-/* line 757, ../sass/style.scss */
+/* line 827, ../sass/style.scss */
 #commentary {
   /*background-color: #fff;*/
   font-family: "ff-tisa-web-pro", Georgia, serif;
@@ -836,7 +866,7 @@ img.avatar {
   line-height: 40px;
 }
 
-/* line 771, ../sass/style.scss */
+/* line 841, ../sass/style.scss */
 #twitter-bar {
   font-family: "atrament-web", sans-serif;
   font-size: .7em;
@@ -844,13 +874,13 @@ img.avatar {
   margin-bottom: .6em;
 }
 
-/* line 777, ../sass/style.scss */
+/* line 847, ../sass/style.scss */
 #twitter-bar a {
   color: #0bb7ab;
   font-style: normal;
 }
 
-/* line 782, ../sass/style.scss */
+/* line 852, ../sass/style.scss */
 #testing {
   background-color: #fff;
   font-family: "ff-netto-web";
