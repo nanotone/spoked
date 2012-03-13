@@ -2,6 +2,7 @@ import json
 
 import bson
 
+import geo
 import parse_gpx
 import track_compress
 
@@ -24,7 +25,8 @@ def pipeline(track, db):
 	track_data = json.load(open(json_path))
 	start_time = track_data[0][2]
 	duration = track_data[-1][2] - start_time
-	db.tracks.update({'_id': track['_id']}, {'$set': {'start_time': start_time, 'duration': duration}})
+	distance = sum(geo.dist_meters(track_data[i-1], track_data[i], geo.NEW_YORK) for i in xrange(1, len(track_data)))
+	db.tracks.update({'_id': track['_id']}, {'$set': {'start_time': start_time, 'distance': distance, 'duration': duration}})
 
 	return {'duration': duration} # return any/all data that could be useful for incremental updates
 
