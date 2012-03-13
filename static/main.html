@@ -94,7 +94,9 @@
 		Total miles: <span class="stats-total-miles"></span>
 		<div class="stats-color"></div>
 		<div class="stats-duration"></div>
-		<canvas id="line-chart" data-processing-sources="line_chart.pde" data-processing-sources="Float_Table.pde"></canvas>
+		<!--TRIED THE MORE ADVANCED LINE-CHART
+		<canvas id="line-chart" data-processing-sources="line_chart.pde Float_Table.pde"></canvas> -->		<!--TRIED THE SIMPLE LINE-CHART. DOESN'T SHOW UP-->
+		<canvas id="line-chart" data-processing-sources="line_v2.pde"></canvas>
 	</div>
 	<div id="stats-versus" class="sidebar-content hidden">
 		<div class="title"><span id="stats-name1">Profile X</span> vs <span id="stats-name2">Profile Y</span></div>
@@ -122,12 +124,12 @@
 	<div id="twitter-bar">
 		<a href="">@iamspoked</a> says:
 	</div>
-Holy cow, you have been riding 290 miles lately! NYC - Philly next?
+	Holy cow, you have been riding 290 miles lately! NYC - Philly next?
 </div>
-<div id="testing">
+<!--<div id="testing">
 Carrie rode 7 miles in 56 min<br />
 Arrived 2 hours ago.
-</div>
+</div>-->
 
 <canvas id="processing" data-processing-sources="spoked.pde"></canvas>
 

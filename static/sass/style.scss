@@ -269,7 +269,6 @@ h1 {
 	height: 35px;
 	font-family: $serif;
 	font-weight: bold;
-	
 	font-size: 14px;
 	}
 #bottom-bar{
@@ -478,16 +477,10 @@ img.avatar {
 			a:hover {
 				background-color: darken($yourColor, 10%);
 			}
-			a.selected {
-				background-color: darken($yourColor, 10%);
-			}
 		}
-		/*
 		li.selectedLink {
 			background-color: darken($yourColor, 10%);
-		} 
-		*/
-		
+		} 	
 	}
 }
 
@@ -552,7 +545,7 @@ content: url(../img/btn/play-animation-20x20.png);
 	position: fixed;
 	background-color: darken(#f9f9f7, 10%); /*darken(#EFECDF, 2%);darken(#fff, 25%);*/
 	border-left: 2px solid #ccc;
-	width: 500px;
+	width: 400px;
 	height: 100%;
 	z-index: 150;
 	top: 0;
@@ -621,7 +614,7 @@ content: url(../img/btn/play-animation-20x20.png);
 
 @mixin datacell {
 	width: 70px;
-	font-family: $sans;
+	font-family: Helvetica;
 	text-transform: uppercase;
 	font-size: .9em;
 	font-weight: 500;
