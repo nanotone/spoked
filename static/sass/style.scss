@@ -279,6 +279,7 @@ h1 {
   	-webkit-box-shadow: 3px -3px 7px rgba(0,0,0, .3);
 	}
 	
+	
 /*PORTRAIT NAV*/
 
 #portrait-nav {
@@ -288,26 +289,44 @@ h1 {
 	display: block;
 	float: left;
 	z-index: 100;
+	ul {
+		position: relative;
+		list-style-type: normal;
+		margin-right: auto;
+		padding-left:.5em;
+		margin-top:0;
+		margin-left: 0;
+		li {
+			display: block;
+			float: left;
+			position: relative;
+			padding-right: .5em;
+			a{
+				color: #ffffff;
+				text-decoration: none;  
+			}
+			.pop a {
+				color: #fff;
+			}
+		}
+		li:hover {
+			img {
+				border-top: 1em solid #fff;
+				margin-top: -.5em;
+			}
+
+			.pop {
+				display: block;
+			}	
+		}
 	}
-#portrait-nav ul {
-	position: relative;
-	list-style-type: normal;
-	margin-right: auto;
-	padding-left:.5em;
-	margin-top:0;
-	margin-left: 0;
+	/*.mapSelect.selected img.mapbtn  IS THIS DOING ANYTHING, OR CAN IT BE DELETED?
+	{
+		border-top: 2em solid #fff; 
+		margin-top: -1.5em;
+	}*/
 }
-#portrait-nav ul li {
-	display: block;
-	float: left;
-	position: relative;
-	padding-right: .5em;
-	}
 	
-#portrait-nav ul li a{
-	color: #ffffff;
-	text-decoration: none;  
-	}
 img.avatar {
 	position: relative;
 	display: block;
@@ -323,11 +342,6 @@ img.avatar {
 	border-top: .5em solid #fff;
   	}
   	
-#portrait-nav .mapSelect.selected img.mapbtn
-{
-	border-top: 2em solid #fff; 
-	margin-top: -1.5em;
-	}
 .pop {
 	display: none;
 	position: absolute;
@@ -347,16 +361,7 @@ img.avatar {
 	-moz-border-radius-bottomright: .8em;
   	-webkit-border-bottom-right-radius: .8em;
 	}
-#portrait-nav ul li:hover .pop, #map-nav ul li:hover .pop {
-	display: block;
-	}
-#portrait-nav ul li:hover img {
-	border-top: 1em solid #fff;
-	margin-top: -.5em;
-	}
-#portrait-nav ul li .pop a {
-	color: #fff;
-	}
+
 .pop a.name {
 	font-family: $futura;
 	font-size: 16px;
@@ -421,6 +426,9 @@ img.avatar {
 		}
 		li.selected img.mapbtn {
 			background-color: darken($yourColor, 10%);
+		}
+		li:hover .pop {
+			display: block;
 		}
 	}
 }
@@ -596,7 +604,7 @@ content: url(../img/btn/play-animation-20x20.png);
 
 @mixin datacell {
 	width: 70px;
-	font-family: $futura;
+	font-family: $sans;
 	text-transform: uppercase;
 	font-size: .9em;
 	font-weight: 500;
@@ -604,6 +612,7 @@ content: url(../img/btn/play-animation-20x20.png);
 	margin: 0;
 	padding: 0;
 	display: table-cell;
+	/*numeric-figure-values: lining-nums;*/
 }
 
 #leaderboard {
