@@ -45,7 +45,7 @@ body.beatenpaths { background: url(../img/map/map_1680x2750.png); }
 body.blankcanvas { }
 body.hoods { background: url(../img/map/hoods.png); }
 
-canvas { 
+canvas#processing { 
 	margin-top: 0px;
 	margin-left: 0px;
 	width: 1680px;
@@ -53,6 +53,15 @@ canvas {
 	display: block;
 	position: relative;
 	z-index: 10;
+}
+canvas#line-chart { 
+	margin-top: 0px;
+	margin-left: 0px;
+	width: 400px;
+	height: 200px;
+	display: block;
+	position: relative;
+	z-index: 1000;
 }
 
 h1 {
@@ -543,7 +552,7 @@ content: url(../img/btn/play-animation-20x20.png);
 	position: fixed;
 	background-color: darken(#f9f9f7, 10%); /*darken(#EFECDF, 2%);darken(#fff, 25%);*/
 	border-left: 2px solid #ccc;
-	width: 400px;
+	width: 500px;
 	height: 100%;
 	z-index: 150;
 	top: 0;
