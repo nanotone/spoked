@@ -4,10 +4,10 @@ int latPos = 0;
 int longPos = 1;
 int timePos = 2;
 
-float Nlat = 40.92;
+float Nlat = 40.9188; //40.92
 float Slat = 40.53; 
 float Wlong = -74.0854;
-float Elong = -73.777;
+float Elong = -73.7759; //-73.777
 
 int tstamp;
 int animatedSecondsPerFrame = 30;
