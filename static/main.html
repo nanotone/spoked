@@ -71,104 +71,31 @@
 						<td>Total miles</td>
 				</tr>
 			</thead>
-			<tfoot>
+			<tbody>
 <!-- OLDER LEADERBOARD DESIGN WITH 2 ROWS PER PERSON	
-			<tr><th class="highlighted" style="background-color: #d2222d;">Sera Koo</th></tr>					<tr>
-				<td><img class="avatar" src="img/avatar/serakoo.jpg"></a>Sera Koo</td>
-				<td>55</td>
-				<td>17</td>
-				<td>82</td>		
+				<tr><th class="highlighted" style="background-color: #d2222d;">Sera Koo</th></tr>
+				<tr>
+					<td><img class="avatar" src="img/avatar/serakoo.jpg"></a>Sera Koo</td>
+					<td>55</td>
+					<td>17</td>
+					<td>82</td>		
 				</tr>
-				<tr><th class="highlighted" style="background-color: #ef5476;">Carrie Stiens</th></tr>					<tr>
-				<td><img class="avatar" src="img/avatar/carriestiens.jpg"></a></td>
-				<td>55</td>
-				<td>17</td>
-				<td>82</td>		
+-->
+				<tr id="leaderboard-template" class="template">
+					<th><img class="avatar" src="img/avatar/tinaye.jpg"><p class="stats-name">Tina Ye</p></th>
+					<td class="stats-last-week">55</td>
+					<td class="stats-this-week">17</td>
+					<td class="emph stats-total-miles">82</td>
 				</tr>
-				<tr><th class="highlighted" style="background-color: #8bb049;">Frank Bonomo</th></tr>					<tr>
-				<td><img class="avatar" src="img/avatar/frankbonomo.jpg"></a></td>
-				<td>55</td>
-				<td>17</td>
-				<td>82</td>		
-				</tr>
-				<tr><th class="highlighted" style="background-color: #0bb7ab;">Guri Venstad</th></tr>					<tr>
-				<td><img class="avatar" src="img/avatar/gurivenstad.jpg"></a></td>
-				<td>55</td>
-				<td>17</td>
-				<td>82</td>		
-				</tr>
-				<tr><th class="highlighted" style="background-color: #f0b50c;">Kristin Breivik</th></tr>					<tr>
-				<td><img class="avatar" src="img/avatar/kristinbreivik.jpg"></a></td>
-				<td>55</td>
-				<td>17</td>
-				<td>82</td>		
-				</tr>
-				-->
-				<tr id="lb-sera">
-				<th><img class="avatar" src="img/avatar/tinaye.jpg"><p>Tina Ye</p></th>
-				<td>55</td>
-				<td>17</td>
-				<td class="emph">82</td>		
-				</tr>
-				<tr id="lb-carrie">
-				<th><img class="avatar" src="img/avatar/carriestiens.jpg"><p>Carrie Stiens</p></th>
-				<td>55</td>
-				<td>17</td>
-				<td class="emph">76</td>		
-				</tr>
-				<tr id="lb-frank">
-				<th><img class="avatar" src="img/avatar/frankbonomo.jpg"><p>Frank Bonomo</p></th>
-				<td>55</td>
-				<td>17</td>
-				<td class="emph">75</td>		
-				</tr>
-				<tr id="lb-guri">
-				<th><img class="avatar" src="img/avatar/gurivenstad.jpg"><p>Guri Venstad</p></th>
-				<td>55</td>
-				<td>17</td>
-				<td class="emph">62</td>		
-				</tr>	
-				<tr id="lb-kristin">
-				<th><img class="avatar" src="img/avatar/kristinbreivik.jpg"><p>Kristin Breivik</p></th>
-				<td>55</td>
-				<td>17</td>
-				<td class="emph">62</td>		
-				</tr>
-				<tr id="lb-sera">
-				<th><img class="avatar" src="img/avatar/serakoo.jpg"><p>Sera Koo</p></th>
-				<td>55</td>
-				<td>17</td>
-				<td class="emph">82</td>		
-				</tr>
-				<tr id="lb-carrie">
-				<th><img class="avatar" src="img/avatar/carriestiens.jpg"><p>Carrie Stiens</p></th>
-				<td>55</td>
-				<td>17</td>
-				<td class="emph">76</td>		
-				</tr>
-				<tr id="lb-frank">
-				<th><img class="avatar" src="img/avatar/frankbonomo.jpg"><p>Frank Bonomo</p></th>
-				<td>55</td>
-				<td>17</td>
-				<td class="emph">75</td>		
-				</tr>
-				<tr id="lb-guri">
-				<th><img class="avatar" src="img/avatar/gurivenstad.jpg"><p>Guri Venstad</p></th>
-				<td>55</td>
-				<td>17</td>
-				<td class="emph">62</td>		
-				</tr>	
-				<tr id="lb-kristin">
-				<th><img class="avatar" src="img/avatar/kristinbreivik.jpg"><p>Kristin Breivik</p></th>
-				<td>55</td>
-				<td>17</td>
-				<td class="emph">62</td>		
-				</tr>			</tfoot>
+			</tbody>
 		</table>
 	</div>
 	<div id="stats-profile" class="sidebar-content">
 		<div class="title" id="stats-name">Profile X</div>
 		<img class="stats-avatar"></img>
+		Last week: <span class="stats-last-week"></span><br />
+		This week: <span class="stats-this-week"></span><br />
+		Total miles: <span class="stats-total-miles"></span>
 		<div class="stats-color"></div>
 		<div class="stats-duration"></div>
 	</div>
@@ -176,11 +103,17 @@
 		<div class="title"><span id="stats-name1">Profile X</span> vs <span id="stats-name2">Profile Y</span></div>
 		<div id="stats-user1">
 			<img class="stats-avatar"></img>
+			Last week: <span class="stats-last-week"></span><br />
+			This week: <span class="stats-this-week"></span><br />
+			Total miles: <span class="stats-total-miles"></span>
 			<div class="stats-color"></div>
 			<div class="stats-duration"></div>
 		</div>
 		<div id="stats-user2">
 			<img class="stats-avatar"></img>
+			Last week: <span class="stats-last-week"></span><br />
+			This week: <span class="stats-this-week"></span><br />
+			Total miles: <span class="stats-total-miles"></span>
 			<div class="stats-color"></div>
 			<div class="stats-duration"></div>
 		</div>

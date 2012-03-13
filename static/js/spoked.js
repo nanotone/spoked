@@ -32,6 +32,18 @@ function showPortraits() {
 		instance.find('.name').text(user.name);
 		template.parent().append(instance);
 	}
+	template = $('#leaderboard-template');
+	for (var i = 0; i < users.length; i++) {
+		var user = users[i];
+		var instance = template.clone().removeClass('template').attr('id', null).css({display: ''});
+		instance.find('.avatar').attr('src', 'img/avatar/' + user.slug + '.jpg');
+		instance.find('.stats-name').text(user.name);
+		instance.find('th').css({borderTopColor: '#' + user.color});
+		instance.find('td').css({borderTopColor: '#' + user.color});
+
+		showUserMiles(user, instance);
+		template.parent().append(instance);
+	}
 }
 
 function makeLinkHandler(title) {
@@ -121,12 +133,20 @@ function showProfile(user) {
 function showUserStats(user, $col) {
 	$col.find('.stats-avatar').attr('src', 'img/avatar/' + user.slug + '.jpg');
 	$col.find('.stats-color').css({backgroundColor: '#' + user.color});
+	showUserMiles(user, $col);
 
 	var rides = user.tracks.length + ' ride' + (user.tracks.length == 1 ? '':'s') + ', ';
 	var hours = Math.floor(user.duration / 3600);
 	var minutes = Math.floor(user.duration % 3600 / 60);
 	var dur = (hours ? hours+' hr ' : '') + (minutes ? minutes+' min' : '') + ' on bike seat';
 	$col.find('.stats-duration').text(rides + dur)
+}
+function showUserMiles(user, $col) {
+	var lastWeekDist = user.lastWeekDist / 1609.344;
+	var thisWeekDist = user.thisWeekDist / 1609.344;
+	$col.find('.stats-last-week').text(Math.round(lastWeekDist));
+	$col.find('.stats-this-week').text(Math.round(thisWeekDist));
+	$col.find('.stats-total-miles').text(Math.round(lastWeekDist + thisWeekDist));
 }
 
 

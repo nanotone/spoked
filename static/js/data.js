@@ -12,6 +12,7 @@ function initData() {
 		for (var i = 0; i < users.length; i++) {
 			var user = users[i];
 			user.tracks = [];
+			user.lastWeekDist = user.thisWeekDist = 0;
 			user.slug = user.name.replace(' ', '').toLowerCase();
 			user.pjsColor = 0xFF000000 + parseInt(user.color, 16);
 			usersById[user.id] = user;
@@ -24,6 +25,7 @@ function initData() {
 				var owner = usersById[userId];
 				track.user = owner;
 				owner.tracks.push(tracks[i]);
+				owner[(track.time < thisWeek ? 'last':'this') + 'WeekDist'] += track.distance;
 			}
 		}
 		infoPromise.resolve();
