@@ -631,19 +631,18 @@ content: url(../img/btn/play-animation-20x20.png);
 			tr {
 				margin: 0;
 				padding: 0;
-				
-				td {
-					@include datacell;				
-				}
 				th {
 					@include datahead;
-					p {
+					border-top: 5px solid;
+					p.stats-name {
 						margin-top: 5px;
 						margin-bottom: auto;
 						font-size: 1em;
 					}
 				}
 				td {
+					@include datacell;				
+					border-top: 5px solid;
 					text-align: right;
 					float: left;
 					font-size: 1.3em;
@@ -670,31 +669,6 @@ content: url(../img/btn/play-animation-20x20.png);
 	visibility: hidden; 
 }
 
-#lb-sera {
-	th, td {
-		border-top: 5px solid $peach;
-	}
-}
-#lb-carrie {
-	th, td {
-		border-top: 5px solid $pink;
-	}
-}
-#lb-frank {
-	th, td {
-		border-top: 5px solid $green;
-	}
-}
-#lb-guri {
-	th, td {
-		border-top: 5px solid $mint;
-	}
-}
-#lb-kristin {
-	th, td {
-		border-top: 5px solid $yellow;
-	}
-}
 /* OLDER LEADERBOARD DESIGN WITH 2 ROWS PER PERSON
 #leaderboard table {
 	margin-top: 0px;

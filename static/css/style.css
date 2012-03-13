@@ -692,19 +692,7 @@ img.avatar {
   margin: 0;
   padding: 0;
 }
-/* line 635, sass/style.scss */
-#leaderboard table tbody tr td {
-  width: 70px;
-  font-family: "futura-pt-condensed";
-  text-transform: uppercase;
-  font-size: .9em;
-  font-weight: 500;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  display: table-cell;
-}
-/* line 638, sass/style.scss */
+/* line 634, sass/style.scss */
 #leaderboard table tbody tr th {
   font-family: "futura-pt-condensed";
   text-transform: uppercase;
@@ -716,25 +704,36 @@ img.avatar {
   display: table-cell;
   padding: 0;
   margin: 0;
+  border-top: 5px solid;
 }
-/* line 640, sass/style.scss */
-#leaderboard table tbody tr th p {
+/* line 637, sass/style.scss */
+#leaderboard table tbody tr th p.stats-name {
   margin-top: 5px;
   margin-bottom: auto;
   font-size: 1em;
 }
-/* line 646, sass/style.scss */
+/* line 643, sass/style.scss */
 #leaderboard table tbody tr td {
+  width: 70px;
+  font-family: "futura-pt-condensed";
+  text-transform: uppercase;
+  font-size: .9em;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: table-cell;
+  border-top: 5px solid;
   text-align: right;
   float: left;
   font-size: 1.3em;
 }
-/* line 651, sass/style.scss */
+/* line 650, sass/style.scss */
 #leaderboard table tbody tr .emph {
   font-size: 40px;
   text-align: right;
 }
-/* line 658, sass/style.scss */
+/* line 657, sass/style.scss */
 #leaderboard table .avatar {
   border: none;
   padding: 0;
@@ -745,34 +744,9 @@ img.avatar {
 }
 
 /*End leaderboard*/
-/* line 669, sass/style.scss */
+/* line 668, sass/style.scss */
 #leaderboard.hidden {
   visibility: hidden;
-}
-
-/* line 674, sass/style.scss */
-#lb-sera th, #lb-sera td {
-  border-top: 5px solid #f6917f;
-}
-
-/* line 679, sass/style.scss */
-#lb-carrie th, #lb-carrie td {
-  border-top: 5px solid #ef5476;
-}
-
-/* line 684, sass/style.scss */
-#lb-frank th, #lb-frank td {
-  border-top: 5px solid #8bb049;
-}
-
-/* line 689, sass/style.scss */
-#lb-guri th, #lb-guri td {
-  border-top: 5px solid #0bb7ab;
-}
-
-/* line 694, sass/style.scss */
-#lb-kristin th, #lb-kristin td {
-  border-top: 5px solid #f0b50c;
 }
 
 /* OLDER LEADERBOARD DESIGN WITH 2 ROWS PER PERSON
@@ -823,19 +797,19 @@ img.avatar {
 
 	*/
 /* STATS PROFILE */
-/* line 751, sass/style.scss */
+/* line 725, sass/style.scss */
 #stats-profile.hidden {
   visibility: hidden;
 }
 
 /* STATS PROFILE VS PROFILE */
-/* line 760, sass/style.scss */
+/* line 734, sass/style.scss */
 #stats-versus.hidden {
   visibility: hidden;
 }
 
 /* COMMENTARY */
-/* line 764, sass/style.scss */
+/* line 738, sass/style.scss */
 #commentary {
   /*background-color: #fff;*/
   font-family: "ff-tisa-web-pro", Georgia, serif;
@@ -851,7 +825,7 @@ img.avatar {
   line-height: 40px;
 }
 
-/* line 778, sass/style.scss */
+/* line 752, sass/style.scss */
 #twitter-bar {
   font-family: "atrament-web", sans-serif;
   font-size: .7em;
@@ -859,13 +833,13 @@ img.avatar {
   margin-bottom: .6em;
 }
 
-/* line 784, sass/style.scss */
+/* line 758, sass/style.scss */
 #twitter-bar a {
   color: #0bb7ab;
   font-style: normal;
 }
 
-/* line 789, sass/style.scss */
+/* line 763, sass/style.scss */
 #testing {
   background-color: #fff;
   font-family: "ff-netto-web";
