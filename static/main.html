@@ -24,15 +24,11 @@
 <div id="logo">SPOKED</div>
 
   <ul id="menu-nav">
-    <!--li><a href="">All</a></li-->
-    <li><a class="newyorkersLink" href="">New Yorkers</a></li>
-    <li><a class="friendsLink" href="">Friends</a></li>
-    <li><a class="youLink" href="">You</a></li>
+  	<li id="about"><a href="#">About</a></li>
+  	<li id="invite"><a href="#">Invite</a></li>
   </ul>
 
   <ul id="user-nav">
-  	<li id="about"><a href="#">About</a></li>
-  	<li id="invite"><a href="#">Invite</a></li>
   	<li id="you">
   		<a href="#"><img id="user-avatar" src="img/avatar/kristinbreivik.jpg">
   		<div id="user-name">Kristin Breivik</a>
@@ -98,6 +94,7 @@
 		Total miles: <span class="stats-total-miles"></span>
 		<div class="stats-color"></div>
 		<div class="stats-duration"></div>
+		<canvas id="line-chart" data-processing-sources="line_chart.pde" data-processing-sources="Float_Table.pde"></canvas>
 	</div>
 	<div id="stats-versus" class="sidebar-content hidden">
 		<div class="title"><span id="stats-name1">Profile X</span> vs <span id="stats-name2">Profile Y</span></div>
@@ -154,7 +151,9 @@ Arrived 2 hours ago.
 <div id="bottom-bar"></div>
 <div id="portrait-control-nav">
 	<ul>
-	<li><a class="friendsLink" href="#">All friends</a></li>
+	<li><a class="newyorkersLink" href="#">All</a></li>
+	<li><a class="friendsLink" href="#">Friends</a></li>
+	<li><a class="youLink" href="#">You</a></li>
 	</ul>
 </div><!-- end portrait-control-nav -->
 <div id="time-nav"> 
