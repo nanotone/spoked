@@ -17,21 +17,12 @@ void setup() {
 
   // corners of plot area
   // width of sidebar is 400, padding on each side = 10
-  plotX1 = 10;
+  plotX1 = 0;
   plotX2 = width - plotX1;
-  plotY1 = 10;
+  plotY1 = 0;
   plotY2 = height - plotY1;
   
   smooth();
-  
-  // load data from text file
-  lines = loadStrings("data.txt"); 
-  // get the lines length (four), determined by data AND get the fieldNum, set manually in global variables
-  myData = new String[lines.length][fieldNum]; 
-  for (int i=0; i < lines.length; i++) {
-    // refer to data, take whatever is in lines
-    myData[i] = lines[i].split(","); // for each of those lines split it at the comma
-  }  
   
   // ** need to determine min and max values of data--- for the y-axis only, x-axis is fixed
     
@@ -40,7 +31,7 @@ void setup() {
 void draw() {
   background(#EFECDE);
   // white box on plot area
-  fill(255);
+  fill(255, 255, 255, 5);
   rectMode(CORNERS);
   noStroke();
   rect(plotX1, plotY1, plotX2, plotY2); 
@@ -59,9 +50,7 @@ void draw() {
   
  
 // --------- line graph for comparison ---------
-  for (int i=0; i < lines.length; i++) {
       beginShape();
-      //point(float(myData[i][1])*scaleFactor, float(myData[i][2])*scaleFactor); // *scaleFactor not working
    
       // style of plot line
       strokeWeight(4);
@@ -86,27 +75,6 @@ void draw() {
 
       endShape();
       noLoop();
-  } 
+
 
 }
-
-
-/*
-  for (int i=0; i < lines.length; i++) {
-    
-    //point(float(myData[i][1])*scaleFactor, float(myData[i][2])*scaleFactor);
-  
-    float x = plotX1;
-    for(x = plotX1; x < plotX2; x += 20){
-      //float value = myData[n][dayMiles];
-      //float y = 50;
-      //float y2 = 70;
-      beginShape();
-      point(x, float(myData[i][2]));  
-      //vertex(x, 70);
-      endShape(); 
-      //println(x); // x is incrementing by 20 
-      println(float(myData[i][2]));  
-      }    
-  } 
-*/
