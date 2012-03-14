@@ -652,24 +652,24 @@ img.avatar {
 
 /* LEADERBOARD */
 /* line 629, ../sass/style.scss */
-#leaderboard {
+#leaderboard, #stats-profile, #stats-versus {
   /*End table*/
 }
 /* line 630, ../sass/style.scss */
-#leaderboard table {
+#leaderboard table, #stats-profile table, #stats-versus table {
   border-spacing: 2px;
   margin-top: 0px;
   /* End tbody*/
 }
 /* line 634, ../sass/style.scss */
-#leaderboard table thead {
+#leaderboard table thead, #stats-profile table thead, #stats-versus table thead {
+  margin-top: 5px;
   width: 360px;
   display: block;
 }
-/* line 640, ../sass/style.scss */
-#leaderboard table thead tr td {
+/* line 641, ../sass/style.scss */
+#leaderboard table thead tr td, #stats-profile table thead tr td, #stats-versus table thead tr td {
   width: 90px;
-  /*width: 70px;*/
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
   font-size: 12px;
@@ -678,12 +678,11 @@ img.avatar {
   margin: 0;
   padding: 0;
   display: table-cell;
-  /*numeric-figure-values: lining-nums;*/
   text-align: right;
 }
-/* line 655, ../sass/style.scss */
-#leaderboard table thead tr th {
-  font-family: "vinyl", sans-serif, "Helvetica Neue", "Arial Narrow";
+/* line 653, ../sass/style.scss */
+#leaderboard table thead tr th, #stats-profile table thead tr th, #stats-versus table thead tr th {
+  font-family: "vinyl", sans-serif;
   text-transform: none;
   font-size: 12px;
   width: 90px;
@@ -696,19 +695,19 @@ img.avatar {
   margin: 0;
   border-top: 0;
 }
-/* line 671, ../sass/style.scss */
-#leaderboard table tbody {
+/* line 669, ../sass/style.scss */
+#leaderboard table tbody, #stats-profile table tbody, #stats-versus table tbody {
   /* End tr*/
 }
-/* line 672, ../sass/style.scss */
-#leaderboard table tbody tr {
+/* line 670, ../sass/style.scss */
+#leaderboard table tbody tr, #stats-profile table tbody tr, #stats-versus table tbody tr {
   width: 360px;
   margin: 0;
   padding: 0;
 }
-/* line 677, ../sass/style.scss */
-#leaderboard table tbody tr th {
-  font-family: "vinyl", sans-serif, "Helvetica Neue", "Arial Narrow";
+/* line 675, ../sass/style.scss */
+#leaderboard table tbody tr th, #stats-profile table tbody tr th, #stats-versus table tbody tr th {
+  font-family: "vinyl", sans-serif;
   text-transform: none;
   font-size: 12px;
   font-weight: 400;
@@ -719,21 +718,21 @@ img.avatar {
   margin: 0;
   width: 360px;
   display: block;
-  /*border-top: 5px solid;*/
-  /*border-bottom: 5px solid;*/
   margin-bottom: -10px;
   margin-top: 5px;
   border-bottom: 5px solid #ccc;
 }
-/* line 695, ../sass/style.scss */
-#leaderboard table tbody tr th p.stats-name {
+/* line 691, ../sass/style.scss */
+#leaderboard table tbody tr th p.stats-name, #stats-profile table tbody tr th p.stats-name, #stats-versus table tbody tr th p.stats-name {
   margin-top: 3px;
-  margin-bottom: auto;
+  margin-bottom: -5px;
   font-size: 16px;
   padding-right: 190px;
+  text-transform: uppercase;
+  line-height: 10px;
 }
-/* line 702, ../sass/style.scss */
-#leaderboard table tbody tr td {
+/* line 700, ../sass/style.scss */
+#leaderboard table tbody tr td, #stats-profile table tbody tr td, #stats-versus table tbody tr td {
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
   font-size: 12px;
@@ -741,13 +740,12 @@ img.avatar {
   text-align: center;
   margin: 0;
   margin-top: -27px;
-  margin-bottom: -5px;
+  margin-bottom: -3px;
   padding: 0;
   display: table-cell;
-  /*numeric-figure-values: lining-nums;*/
   text-align: right;
   float: left;
-  font-size: 1.3em;
+  font-size: 18px;
   width: 82px;
   border-right: 1px solid #ccc;
   vertical-align: bottom;
@@ -755,102 +753,55 @@ img.avatar {
   padding-bottom: 0px;
   padding-right: 8px;
 }
-/* line 725, ../sass/style.scss */
-#leaderboard table tbody tr td.stats-last-week {
+/* line 722, ../sass/style.scss */
+#leaderboard table tbody tr td.stats-last-week, #stats-profile table tbody tr td.stats-last-week, #stats-versus table tbody tr td.stats-last-week {
   display: table-cell;
   width: 180px;
 }
-/* line 729, ../sass/style.scss */
-#leaderboard table tbody tr td.stats-total-miles {
-  margin-top: -42px;
+/* line 726, ../sass/style.scss */
+#leaderboard table tbody tr td.stats-total-miles, #stats-profile table tbody tr td.stats-total-miles, #stats-versus table tbody tr td.stats-total-miles {
+  margin-top: -44px;
   vertical-align: bottom;
   padding-right: 0px;
   width: 80px;
   border-right: 0px solid #1f1f1f;
 }
-/* line 737, ../sass/style.scss */
-#leaderboard table tbody tr .emph {
+/* line 734, ../sass/style.scss */
+#leaderboard table tbody tr .emph, #stats-profile table tbody tr .emph, #stats-versus table tbody tr .emph {
   font-size: 40px;
   text-align: right;
   font-weight: 600;
 }
-/* line 746, ../sass/style.scss */
-#leaderboard table .avatar {
+/* line 743, ../sass/style.scss */
+#leaderboard table .avatar, #stats-profile table .avatar, #stats-versus table .avatar {
   border: none;
   padding: 0;
   margin: 0;
   margin-right: 5px;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
 }
 
 /*End leaderboard*/
-/* line 757, ../sass/style.scss */
+/* line 754, ../sass/style.scss */
 #leaderboard.hidden {
   visibility: hidden;
 }
 
-/* OLDER LEADERBOARD DESIGN WITH 2 ROWS PER PERSON
-#leaderboard table {
-	margin-top: 0px;
-	}
-#leaderboard table thead {
-	width: 360px;
-	display: block;
-	}
-#leaderboard table thead tr th, #leaderboard table tfoot tr td {
-	width: 90px;
-	font-family: $sans;
-	text-transform: uppercase;
-	font-size: 1em;
-	font-weight: normal;
-	text-align: center;
-	margin: 0;
-	padding: 0;
-	display: table-cell;
-	}
-#leaderboard table tfoot tr td {
-	float: left;
-	font-size: 1.4em;
-	}
-#leaderboard table tfoot tr {
-	margin: 0;
-	padding: 0;
-	}
-#leaderboard .highlighted {
-	width: 360px;
-	height: 20px;
-	font-family: $sans;
-	text-transform: uppercase;
-	font-weight: normal;
-	background-color: $bar;	
-	color: #fff;
-	text-align: left;
-	display: block;
-}
-#leaderboard .avatar {
-	border: none;
-	padding: 0;
-	margin: 0;
-	width: 25px;
-	height: 25px;
-	}
-
-	*/
 /* STATS PROFILE */
-/* line 814, ../sass/style.scss */
+/* line 764, ../sass/style.scss */
 #stats-profile.hidden {
   visibility: hidden;
 }
 
 /* STATS PROFILE VS PROFILE */
-/* line 823, ../sass/style.scss */
+/* line 773, ../sass/style.scss */
 #stats-versus.hidden {
   visibility: hidden;
 }
 
 /* COMMENTARY */
-/* line 827, ../sass/style.scss */
+/* line 777, ../sass/style.scss */
 #commentary {
   /*background-color: #fff;*/
   font-family: "ff-tisa-web-pro", Georgia, serif;
@@ -866,7 +817,7 @@ img.avatar {
   line-height: 40px;
 }
 
-/* line 841, ../sass/style.scss */
+/* line 791, ../sass/style.scss */
 #twitter-bar {
   font-family: "atrament-web", sans-serif;
   font-size: .7em;
@@ -874,13 +825,13 @@ img.avatar {
   margin-bottom: .6em;
 }
 
-/* line 847, ../sass/style.scss */
+/* line 797, ../sass/style.scss */
 #twitter-bar a {
   color: #0bb7ab;
   font-style: normal;
 }
 
-/* line 852, ../sass/style.scss */
+/* line 802, ../sass/style.scss */
 #testing {
   background-color: #fff;
   font-family: "ff-netto-web";

@@ -626,12 +626,13 @@ content: url(../img/btn/play-animation-20x20.png);
 	/*numeric-figure-values: lining-nums;*/
 }
 
-#leaderboard {
+#leaderboard, #stats-profile, #stats-versus {
 	table {
 		border-spacing: 2px;
 		margin-top: 0px;
 		
 		thead {
+			margin-top: 5px;
 			width: 360px;
 			display: block;
 			
@@ -639,8 +640,6 @@ content: url(../img/btn/play-animation-20x20.png);
 			 	
 			 	td {
 				 	width: 90px;
-
-					/*width: 70px;*/
 					font-family: $vinyl;
 					text-transform: uppercase;
 					font-size: 12px;
@@ -649,11 +648,10 @@ content: url(../img/btn/play-animation-20x20.png);
 					margin: 0;
 					padding: 0;
 					display: table-cell;
-					/*numeric-figure-values: lining-nums;*/				
 					text-align:right;	
 				}
 				th {
-					font-family: $vinyl, 'Helvetica Neue', 'Arial Narrow';
+					font-family: $vinyl;
 					text-transform: none;
 					font-size: 12px;
 					width: 90px;
@@ -675,7 +673,7 @@ content: url(../img/btn/play-animation-20x20.png);
 				padding: 0;
 
 				th {
-					font-family: $vinyl, 'Helvetica Neue', 'Arial Narrow';
+					font-family: $vinyl;
 					text-transform: none;
 					font-size: 12px;
 					font-weight: 400;
@@ -686,17 +684,17 @@ content: url(../img/btn/play-animation-20x20.png);
 					margin: 0;
 					width: 360px;
 					display: block;
-					/*border-top: 5px solid;*/
-					/*border-bottom: 5px solid;*/
 					margin-bottom: -10px;
 					margin-top:5px;
 					border-bottom: 5px solid #ccc;
 		
 					p.stats-name {
 						margin-top: 3px;
-						margin-bottom: auto;
+						margin-bottom: -5px;
 						font-size: 16px;
 						padding-right: 190px;
+						text-transform: uppercase;
+						line-height: 10px;
 					}
 				}
 				td {
@@ -707,13 +705,12 @@ content: url(../img/btn/play-animation-20x20.png);
 					text-align: center;
 					margin: 0;
 					margin-top: -27px;
-					margin-bottom: -5px;
+					margin-bottom: -3px;
 					padding: 0;
 					display: table-cell;
-					/*numeric-figure-values: lining-nums;*/			
 					text-align: right;
 					float: left;
-					font-size: 1.3em;
+					font-size: 18px;
 					width: 82px;
 					border-right: 1px solid #ccc;
 					vertical-align:bottom;
@@ -727,7 +724,7 @@ content: url(../img/btn/play-animation-20x20.png);
 					width: 180px;
 					}
 				td.stats-total-miles{
-					margin-top: -42px;
+					margin-top: -44px;
 					vertical-align:bottom;
 					padding-right: 0px;
 					width: 80px;
@@ -748,8 +745,8 @@ content: url(../img/btn/play-animation-20x20.png);
 			padding: 0;
 			margin: 0;
 			margin-right: 5px;
-			width: 40px;
-			height: 40px;
+			width: 35px;
+			height: 35px;
 			}
 	} /*End table*/
 } /*End leaderboard*/
@@ -758,53 +755,6 @@ content: url(../img/btn/play-animation-20x20.png);
 	visibility: hidden; 
 }
 
-/* OLDER LEADERBOARD DESIGN WITH 2 ROWS PER PERSON
-#leaderboard table {
-	margin-top: 0px;
-	}
-#leaderboard table thead {
-	width: 360px;
-	display: block;
-	}
-#leaderboard table thead tr th, #leaderboard table tfoot tr td {
-	width: 90px;
-	font-family: $sans;
-	text-transform: uppercase;
-	font-size: 1em;
-	font-weight: normal;
-	text-align: center;
-	margin: 0;
-	padding: 0;
-	display: table-cell;
-	}
-#leaderboard table tfoot tr td {
-	float: left;
-	font-size: 1.4em;
-	}
-#leaderboard table tfoot tr {
-	margin: 0;
-	padding: 0;
-	}
-#leaderboard .highlighted {
-	width: 360px;
-	height: 20px;
-	font-family: $sans;
-	text-transform: uppercase;
-	font-weight: normal;
-	background-color: $bar;	
-	color: #fff;
-	text-align: left;
-	display: block;
-}
-#leaderboard .avatar {
-	border: none;
-	padding: 0;
-	margin: 0;
-	width: 25px;
-	height: 25px;
-	}
-
-	*/
 
 /* STATS PROFILE */
 #stats-profile {
