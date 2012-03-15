@@ -172,7 +172,7 @@ $(function() {
 	initData();
 	$('.template').css({display: 'none'});
 	infoPromise.done(showPortraits);
-	infoPromise.done(loadState);
+	initPromise.done(loadState);
 
 	$('.friendsLink').click(makeLinkHandler('friends'));
 	$('.youLink').click(makeLinkHandler('you'));
