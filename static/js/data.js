@@ -25,7 +25,7 @@ function clearHistoryState(replace) {
 			History.replaceState(null, '', '?');
 		}
 		else {
-			History.pushState(null, '', '?');
+			switchToTitle('friends');
 		}
 	}
 }
@@ -49,7 +49,7 @@ function onLogin(data, forceProfile) {
 		$('.user-avatar').attr('src', authUser.avatarSrc);
 		$('.user-name').text(authUser.name);
 		if (forceProfile) {
-			History.pushState(null, '', '?you');
+			switchToTitle('you');
 		}
 		else {
 			loadState();
@@ -102,13 +102,7 @@ function sessionLogout(e) {
 	$('#login-form .password').val('');
 	$('.guest').show();
 
-	var title = getHistoryTitle();
-	if (title != 'friends') {
-		History.pushState(null, '', '?');
-	}
-	else {
-		loadState(); // refresh so we only see latest, and color-scrambled
-	}
+	switchToState('friends', true);
 }
 
 function initData() {
