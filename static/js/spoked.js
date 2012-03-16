@@ -1,7 +1,7 @@
 var instance = null;
 var infoPromise = $.Deferred();
 var pdePromise = $.Deferred();
-var initPromise = $.when(infoPromise, pdePromise);
+var initPromise = $.when(infoPromise, pdePromise, sessionPromise);
 
 var currentUser = null;
 
@@ -69,18 +69,26 @@ function mapHandler(e) {
 }
 
 
-function loadState() {
-	if (!initPromise.isResolved()) { return; }
+function getHistoryTitle() {
 	var parts = History.getState().url.split('?');
 	var title = (parts.length > 1 ? parts[1] : '');
 	if (title == '' && window.location.search.length > 1) {
 		title = window.location.search.substr(1);
 	}
+	if (title == '') {
+		title = 'friends';
+	}
+	return title;
+}
+
+function loadState() {
+	if (!initPromise.isResolved()) { return; }
+	var title = getHistoryTitle();
 	console.log("loadState " + title);
 	$('.selectedLink').removeClass('selectedLink');
 	$('.sidebar-content').addClass('hidden');
 	currentUser = null;
-	if (title == '' || title == 'friends') {
+	if (title == 'friends') {
 		$('.friendsLink').closest('li').addClass('selectedLink');
 		$('#leaderboard').removeClass('hidden');
 		instance.abortRideAnimations();
@@ -169,16 +177,26 @@ function onClickCompare(e) {
 }
 
 $(function() {
-	initData();
 	$('.template').css({display: 'none'});
-	infoPromise.done(showPortraits);
-	initPromise.done(loadState);
+	$('.auth').hide();
+
+	$('.toggle-login-form').click(function() {
+		$('#login-form').toggle();
+		$('#login-form .username').focus();
+	});
+	$('#login-form').submit(sessionLogin);
+	$('.logout').click(sessionLogout);
 
 	$('.friendsLink').click(makeLinkHandler('friends'));
 	$('.youLink').click(makeLinkHandler('you'));
 
 	$('.mapSelect a').click(mapHandler);
 	$('#streets a').eq(0).click(); // select streets as the default map
+
+	$("#sidebar-btn-stats").click(function(e) {
+		e.preventDefault();
+		$("#sidebar").toggleClass('hidden');
+	});
 
 	$('#animate').click(function(e) {
 		e.preventDefault();
@@ -199,17 +217,13 @@ $(function() {
 		rideCanvas.update({maxTime: ($a.hasClass('selected') ? getTime() : thisWeek)});
 	});
 
-	History.Adapter.bind(window, 'statechange', loadState);
-	
-	$("#sidebar-btn-stats").click(function(e) {
-		e.preventDefault();
-		$sidebar = $("#sidebar");
-			
-		if($sidebar.hasClass("hidden")) {
-			$sidebar.removeClass("hidden");
-		} else {
-			$sidebar.addClass("hidden");
-		}
-	});
+	initData();
+	initSession();
+	initPromise.done(initMain);
 });
+function initMain() {
+	History.Adapter.bind(window, 'statechange', loadState);
+	showPortraits();
+	loadState();
+}
 

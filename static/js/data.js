@@ -1,12 +1,89 @@
 var SERVER = 'http://dev.iamspoked.com/';
 
+var auth;
+
 var tracks = null;
 var users = null;
 var usersById = {};
 var tracksById = {};
+var randomPjsColors = [];
+function getRandomPjsColor() {
+	var index = Math.pow(100, -Math.random());
+	index = Math.floor(randomPjsColors.length * index);
+	var value = randomPjsColors.splice(index, 1)[0];
+	randomPjsColors.push(value);
+	return value;
+}
+
+var sessionPromise = $.Deferred();
+
+function clearHistoryState(replace) {
+	var title = getHistoryTitle();
+	if (title != 'friends') {
+		if (replace) {
+			History.replaceState(null, '', '?');
+		}
+		else {
+			History.pushState(null, '', '?');
+		}
+	}
+}
+
+function initSession() {
+	auth = $.cookie('spokedAuth') || '';
+	if (auth) {
+		$.get(SERVER + 'auth?auth=' + auth, function(data) {
+			auth = data.auth;
+			if (!auth) {
+				console.log("not logged in");
+				clearHistoryState(true);
+			}
+			sessionPromise.resolve();
+		});
+	}
+	else {
+		clearHistoryState(true);
+		sessionPromise.resolve();
+	}
+}
+function sessionLogin(e) {
+	e.preventDefault();
+	$form = $(this);
+	var query = {'username': $form.find('.username').val(),
+	             'password': $form.find('.password').val()};
+	$.get(SERVER + 'auth', query, function(data) {
+		if (data.auth) {
+			auth = data.auth;
+			$('.guest').hide();
+			$('.wrong-login').hide();
+			$('.auth').show();
+			loadState();
+		}
+		else {
+			$('.wrong-login').show();
+		}
+	});
+}
+function sessionLogout(e) {
+	e.preventDefault();
+	auth = '';
+	$('.auth').hide();
+	$('#login-form').hide();
+	$('#login-form .username').val('');
+	$('#login-form .password').val('');
+	$('.guest').show();
+
+	var title = getHistoryTitle();
+	if (title != 'friends') {
+		History.pushState(null, '', '?');
+	}
+	else {
+		loadState(); // refresh so we only see latest, and color-scrambled
+	}
+}
 
 function initData() {
-	$.get(SERVER + 'info', function(data) {
+	$.get(SERVER + 'info', {'auth': auth}, function(data) {
 		tracks = data.tracks;
 		users = data.users;
 		for (var i = 0; i < users.length; i++) {
@@ -17,6 +94,7 @@ function initData() {
 			user.slug = user.name.replace(' ', '').toLowerCase();
 			user.pjsColor = 0xFF000000 + parseInt(user.color, 16);
 			usersById[user.id] = user;
+			randomPjsColors.push(user.pjsColor);
 		}
 		for (var i = 0; i < tracks.length; i++) {
 			var track = tracks[i];
@@ -50,7 +128,8 @@ function fetchTracks(tracks) {
 		}
 	}
 	if (trackIdsToLoad.length) {
-		$.get(SERVER + 'tracks?ids=' + trackIdsToLoad.join(','), function(data) {
+		query = {'auth': auth, 'ids': trackIdsToLoad.join(',')};
+		$.get(SERVER + 'tracks', query, function(data) {
 			for (var trackId in data) {
 				tracksById[trackId].points = data[trackId];
 			}
