@@ -31,6 +31,7 @@ function showPortraits() {
 		instance.find('.pop').css({backgroundColor: color});
 		instance.find('.name').text(user.name);
 		template.parent().append(instance);
+		user.portrait = instance;
 	}
 	template = $('#leaderboard-template');
 	for (var i = 0; i < users.length; i++) {
@@ -97,6 +98,7 @@ function loadState() {
 	console.log("loadState " + title);
 	$('.selectedLink').removeClass('selectedLink');
 	$('.sidebar-content').addClass('hidden');
+	$('.portrait').removeClass('selected');
 	currentUser = null;
 	if (title == 'friends') {
 		$('.friendsLink').closest('li').addClass('selectedLink');
@@ -124,6 +126,8 @@ function loadState() {
 		$('#stats-versus').removeClass('hidden');
 		$('#stats-name1').text(user1.name);
 		$('#stats-name2').text(user2.name);
+		user1.portrait.addClass('selected');
+		user2.portrait.addClass('selected');
 		showUserStats(user1, $('#stats-user1'));
 		showUserStats(user2, $('#stats-user2'));
 
@@ -135,6 +139,7 @@ function loadState() {
 function showProfile(user) {
 	$('#stats-profile').removeClass('hidden');
 	$('#stats-name').text(user.name);
+	user.portrait.addClass('selected');
 	showUserStats(user, $('#stats-profile'));
 	instance.abortRideAnimations();
 	instance.background('#ffffff', 0);

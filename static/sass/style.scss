@@ -273,17 +273,14 @@ h1 {
 		padding-left:.5em;
 		margin-top:0;
 		margin-left: 0;
-		li {
+		.portrait {
 			display: block;
 			float: left;
 			position: relative;
 			padding-right: .5em;
-			a{
+			a {
 				color: #ffffff;
 				text-decoration: none;  
-			}
-			.pop a {
-				color: #fff;
 			}
 			.filter {
 				position: absolute; 
@@ -293,21 +290,10 @@ h1 {
 				opacity: .6; 
 				z-index: 102;
 			}
+			&:hover .filter { display: none; }
+			&:hover .pop { display: block; }
 		}
-		li:hover {
-			.filter {
-				display: none;
-			}
-
-			.pop {
-				display: block;
-			}	
-		}
-		li.selected {
-			.filter {
-				display: none;
-			}
-		}
+		.portrait.selected .filter { display: none; }
 	}
 	/*.mapSelect.selected img.mapbtn  IS THIS DOING ANYTHING, OR CAN IT BE DELETED?
 	{
