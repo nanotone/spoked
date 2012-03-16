@@ -759,26 +759,33 @@ content: url(../img/btn/play-animation-20x20.png);
 	/*background-color: #fff;*/
 	font-family: $serif;
 	position: fixed;
-	width: 10em;
+	width: 380px;
 	height: auto;
-	margin: 5em 0 0 5%;
+	margin: 90px 0 0 20px;
 	z-index: 200;	
 	color: $yourColor;
 	font-style: normal;
 	font-weight: 400;
-	font-size: 34px;
-	line-height: 40px;
+	font-size: 24px;
+	line-height: 30px;
 	}
 #twitter-bar {
 	font-family: $sans;
-	font-size: .7em;
+	font-size: 22px;
 	font-style: normal;
-	margin-bottom: .6em;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
 }
 #twitter-bar a {
 	color: $yourColor;
 	font-style: normal;
 }
+#commentary ul{
+	list-style-type: none;
+	padding-left: 0;
+}
+
+
 
 #testing {
 	background-color: #fff;
@@ -787,6 +794,6 @@ content: url(../img/btn/play-animation-20x20.png);
 	position: fixed;
 	width: 400px;
 	top: 600px;  
-	left: 40px;
+	left: 20px;
 	font-size: 14px;
   }
