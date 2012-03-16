@@ -26,9 +26,12 @@ json_encoder = JSONEncoder()
 def auth():
 	crossorigin()
 	mimetype_json()
-	user = db.users.find_one({'email': bottle.request.query.username})
+	email_addr = bottle.request.query.username
+	user = None
+	if email_addr:
+		user = db.users.find_one({'email': email_addr})
 	if user:
-		return '{"auth":"auth", "userid":"%s"}' % user['_id']
+		return '{"auth":"%s", "userid":"%s"}' % (email_addr, user['_id'])
 	return '{"auth":""}'
 
 
