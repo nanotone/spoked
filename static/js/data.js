@@ -1,6 +1,7 @@
 var SERVER = 'http://dev.iamspoked.com/';
 
 var auth;
+var authUserId;
 
 var tracks = null;
 var users = null;
@@ -28,13 +29,45 @@ function clearHistoryState(replace) {
 		}
 	}
 }
+function getAuth() {
+	return $.cookie('spokedAuth') || '';
+}
+function setAuth(value) {
+	auth = value;
+	$.cookie('spokedAuth', auth);
+}
+function onLogin(data, forceProfile) {
+	var deferred = $.Deferred();
+
+	setAuth(data.auth);
+	authUserId = data.userid;
+	$('.guest').hide();
+	$('.wrong-login').hide();
+	$('.auth').show();
+	infoPromise.done(function() {
+		var authUser = usersById[authUserId];
+		$('.user-avatar').attr('src', authUser.avatarSrc);
+		$('.user-name').text(authUser.name);
+		if (forceProfile) {
+			History.pushState(null, '', '?you');
+		}
+		else {
+			loadState();
+		}
+		deferred.resolve();
+	});
+	return deferred.promise();
+}
 
 function initSession() {
-	auth = $.cookie('spokedAuth') || '';
+	auth = getAuth();
 	if (auth) {
-		$.get(SERVER + 'auth?auth=' + auth, function(data) {
-			auth = data.auth;
-			if (!auth) {
+		$.get(SERVER + 'auth', {'username': auth}, function(data) {
+			if (data.auth) {
+				onLogin(data, false);
+			}
+			else {
+				setAuth(data.auth);
 				console.log("not logged in");
 				clearHistoryState(true);
 			}
@@ -53,11 +86,7 @@ function sessionLogin(e) {
 	             'password': $form.find('.password').val()};
 	$.get(SERVER + 'auth', query, function(data) {
 		if (data.auth) {
-			auth = data.auth;
-			$('.guest').hide();
-			$('.wrong-login').hide();
-			$('.auth').show();
-			loadState();
+			onLogin(data, true);
 		}
 		else {
 			$('.wrong-login').show();
@@ -66,7 +95,7 @@ function sessionLogin(e) {
 }
 function sessionLogout(e) {
 	e.preventDefault();
-	auth = '';
+	setAuth('');
 	$('.auth').hide();
 	$('#login-form').hide();
 	$('#login-form .username').val('');
@@ -93,6 +122,7 @@ function initData() {
 			user.fortnightDuration = 0;
 			user.slug = user.name.replace(' ', '').toLowerCase();
 			user.pjsColor = 0xFF000000 + parseInt(user.color, 16);
+			user.avatarSrc = 'img/avatar/' + user.slug + '.jpg';
 			usersById[user.id] = user;
 			randomPjsColors.push(user.pjsColor);
 		}
