@@ -103,6 +103,7 @@ function loadState() {
 	if (title == 'friends') {
 		$('.friendsLink').closest('li').addClass('selectedLink');
 		$('#leaderboard').removeClass('hidden');
+		$('.portrait').addClass('selected');
 		instance.abortRideAnimations();
 		instance.background('#ffffff', 0);
 		rideCanvas.update({'users': users});
