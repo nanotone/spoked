@@ -46,12 +46,22 @@ function showPortraits() {
 	}
 }
 
+function switchToTitle(title, reload) {
+	if (title != getHistoryTitle()) {
+		if (title == 'friends') {
+			title = '';
+		}
+		History.pushState(null, '', '?' + title);
+	}
+	else if (reload) {
+		loadState();
+	}
+}
+
 function makeLinkHandler(title) {
 	return function(e) {
 		e.preventDefault();
-		if (title != History.getState().title) {
-			History.pushState(null, '', '?' + title);
-		}
+		switchToTitle(title);
 	};
 }
 function mapHandler(e) {
@@ -168,12 +178,12 @@ function onClickPortrait(e) {
 	e.preventDefault();
 	var portrait = $(this).closest('.portrait');
 	var userId = portrait.data('userId');
-	History.pushState(null, '', '?' + userId);
+	switchToTitle(userId);
 }
 function onClickCompare(e) {
 	e.preventDefault();
 	var portrait = $(this).closest('.portrait');
-	History.pushState(null, '', '?' + currentUser.id + '-' + portrait.data('userId'));
+	switchToTitle(currentUser.id + '-' + portrait.data('userId'));
 }
 
 $(function() {
@@ -185,6 +195,7 @@ $(function() {
 		$('#login-form .username').focus();
 	});
 	$('#login-form').submit(sessionLogin);
+	$('.your-profile').click(makeLinkHandler('you'));
 	$('.logout').click(sessionLogout);
 
 	$('.friendsLink').click(makeLinkHandler('friends'));
