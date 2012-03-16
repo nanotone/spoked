@@ -27,7 +27,7 @@ function showPortraits() {
 		instance.find('.avatarLink').click(onClickPortrait);
 		instance.find('.compare a').click(onClickCompare);
 		instance.find('.profileLink').click(onClickPortrait);
-		instance.find('.avatar').attr('src', 'img/avatar/' + user.slug + '.jpg').css({borderColor: color});
+		instance.find('.avatar').attr('src', user.avatarSrc).css({borderColor: color});
 		instance.find('.pop').css({backgroundColor: color});
 		instance.find('.name').text(user.name);
 		template.parent().append(instance);
@@ -36,7 +36,7 @@ function showPortraits() {
 	for (var i = 0; i < users.length; i++) {
 		var user = users[i];
 		var instance = template.clone().removeClass('template').attr('id', null).css({display: ''});
-		instance.find('.avatar').attr('src', 'img/avatar/' + user.slug + '.jpg');
+		instance.find('.avatar').attr('src', user.avatarSrc);
 		instance.find('.stats-name').text(user.name);
 		instance.find('th').css({borderBottomColor: '#' + user.color});
 		instance.find('td').css({borderTopColor: '#' + user.color});
@@ -98,7 +98,7 @@ function loadState() {
 	}
 	else if (title == 'you') {
 		$('.youLink').closest('li').addClass('selectedLink');
-		currentUser = users[0];
+		currentUser = usersById[authUserId];
 		showProfile(currentUser);
 	}
 	else if (title.length == 24) {
@@ -139,7 +139,7 @@ function showProfile(user) {
 }
 
 function showUserStats(user, $col) {
-	$col.find('.stats-avatar').attr('src', 'img/avatar/' + user.slug + '.jpg');
+	$col.find('.stats-avatar').attr('src', user.avatarSrc);
 	$col.find('.stats-color').css({backgroundColor: '#' + user.color});
 	showUserMiles(user, $col);
 
