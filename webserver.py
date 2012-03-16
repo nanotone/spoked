@@ -22,8 +22,19 @@ class JSONEncoder(json.JSONEncoder):
 json_encoder = JSONEncoder()
 
 
+@bottle.route('/auth')
+def auth():
+	crossorigin()
+	mimetype_json()
+	user = db.users.find_one({'email': bottle.request.query.username})
+	if user:
+		return '{"auth":"auth", "userid":"%s"}' % user['_id']
+	return '{"auth":""}'
+
+
 @bottle.route('/')
 def index():
+	bottle.redirect('/static/main.html')
 	return ('<div><a href="/static/everything.tar.gz">ALL THE CSVs!</a></div>'
 		+ ''.join('<div>%s - %s [<a href="/static/csv/%s.csv">csv</a>] [<a href="/track/%s">json</a>]</div>'
 		          % (' '.join(f['sender']), time.ctime(f['time']), f['_id'], f['_id'])
