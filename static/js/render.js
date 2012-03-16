@@ -10,11 +10,17 @@ var rideCanvas = {
 		this.tracks = [];
 		for (var i = 0; i < this.users.length; i++) {
 			var user = this.users[i];
-			for (var j = 0; j < user.tracks.length; j++) {
-				var track = user.tracks[j];
-				if (this.minTime < track.time && track.time < this.maxTime) {
-					this.tracks.push(track);
+			var userTracks = user.tracks;
+			if (auth) {
+				for (var j = 0; j < userTracks.length; j++) {
+					var track = userTracks[j];
+					if (this.minTime < track.time && track.time < this.maxTime) {
+						this.tracks.push(track);
+					}
 				}
+			}
+			else if (userTracks.length) { // guests can only see latest tracks
+				this.tracks.push(userTracks[userTracks.length - 1]);
 			}
 		}
 		fetchTracks(this.tracks).done(function() {

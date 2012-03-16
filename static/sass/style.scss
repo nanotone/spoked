@@ -71,7 +71,12 @@ h1 {
 	font-size: 4.3em;
 	text-align: center;
 	}
+
+/* GENERIC HELPFUL STUFFS */
+.link { cursor: pointer; }
+.non-text { cursor: default; }
 	
+
 /* NAV TOP */	
 #nav, #bottom-nav {
 	position: fixed;
@@ -157,99 +162,67 @@ h1 {
 	
 	#user-nav {
 		font-family: $futura;
-		text-transform: none;
 		line-height: 20px;
 		position: absolute;
-		padding: 0;
 		margin: -14px 10px 0 0;
+		padding: 0;
 		right: 0px;	
-		
-		li {
-			margin: 0 25px 0 0;
-	
-			a{
-				color: $black;
-			}
-			a:hover{
-				border-bottom: 2px solid $black;
-			}
-			
-		}
 
-		#you {
-			font-family: $futura;
-			display: block;
-			text-transform: none;
-			margin-top: -3px;
-			margin-left: 10px;
-			margin-right: 20px;
-			padding: 3px;
-			#user-links {
-				position: absolute;
-				top: 17px; 
-				right: 10px;
-				width: 125px;
-				margin-top: 10px;
-				
-				li {
-					display: block;
-					width: 100%;
-					clear: both;
-					margin: 0;
-					background: $yourColor;
-					border-bottom: 1px solid rgba(255,255,255, .2);
-					padding: 4px 7px;
-					a {
-						color: #fff;
-						font-size: 18px;
-						display: block;
-						width: 100%;
-					}
-					a:hover {
-						border-bottom: none;
-					}
-				}
-				li:hover{
-					background: darken($yourColor, 10%);	
-				}
-			}		
-			
-			#user-avatar {
-				position: relative;
+		.you {
+			margin: -3px 20px 0px 10px;
+			padding: 3px 3px 30px 3px;
+			.user-avatar {
 				display: block;
 				float: left;
 				margin: 0px 8px 10px 0px;
-				padding: 0;
-				height: 20px;
+				padding: 0px;
 				width: 20px;
-				top: 0;
-				right: 0;
+				height: 20px;
 			}
-			#user-name {
-				color: $black;
+			.menu-link {
 				position: relative;
 				float: left;
-				display: block;
 				padding: 0px;
-				line-height: 20px;
+				color: $black;
 				/*background-color: $yourColor;*/
-				
-			}	
+				line-height: 20px;
+				&:hover { border-bottom: 2px solid $black; }
+			}
+
+			#login-form {
+				display: none;
+				clear: both;
+				background-color: white;
+			}
+
+			&:hover .dropdown { display: block; }
+			.dropdown {
+				display: none;
+				position: absolute;
+				top: 17px; 
+				right: 10px;
+				margin-top: 10px;
+				width: 125px;
+				.menu-item {
+					clear: both;
+					cursor: pointer;
+					margin: 0px;
+					border-bottom: 1px solid rgba(255,255,255, .2);
+					padding: 4px 7px;
+					width: 100%;
+					background-color: $yourColor;
+					&:hover { background-color: darken($yourColor, 10%); }
+					color: white;
+					font-size: 18px;
+				}
+			}
 		}
 	}
 }
 
-/*#you:hover {
-	background-color: $yourColor;
-	}*/
-#user-links.hidden {
-	/*display: none;*/
-	}
-#you:hover .dropdown {
-	display: block;
-	}
-#user-links.dropdown {
-	display:none;
+.wrong-login {
+	color: red;
+	display: none;
 }
 
 #animation-clock {
@@ -634,7 +607,7 @@ content: url(../img/btn/play-animation-20x20.png);
 	/*numeric-figure-values: lining-nums;*/
 }
 
-#leaderboard, #stats-profile, #stats-versus {
+.sidebar-content {
 	table {
 		border-spacing: 2px;
 		margin-top: 0px;

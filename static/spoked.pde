@@ -30,6 +30,9 @@ class RideAnimation {
 	RideAnimation(float[][] ridePoints, int rideColor) {
 		points = ridePoints;
 		color = rideColor;
+		if (!auth) {
+			color = getRandomPjsColor();
+		}
 		n = 1;
 	}
 	int getSegmentTime() {
