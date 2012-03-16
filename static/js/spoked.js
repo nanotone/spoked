@@ -157,6 +157,7 @@ function showProfile(user) {
 function showUserStats(user, $col) {
 	$col.find('.stats-avatar').attr('src', user.avatarSrc);
 	$col.find('.stats-color').css({backgroundColor: '#' + user.color});
+	/*$col.find('.stats-color').css({borderBottomColor: '#' + user.color});*/
 	showUserMiles(user, $col);
 
 	var rides = 0;

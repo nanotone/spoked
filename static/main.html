@@ -70,6 +70,9 @@
 		Track your bike rides. See your snazzy patterns emerge on your city map.<br />
 		Something about a poster...
 	</div>
+	
+	<!-- LEADERBOARD -->
+	
 	<div id="leaderboard" class="sidebar-content auth">
 		<div class="title">Most worn tires</div>
 		<!--<div class="sub-title">Friends leaderboard in miles</div>-->
@@ -85,22 +88,48 @@
 			<tbody>
 				<tr id="leaderboard-template" class="template">
 					<th><img class="avatar" src="img/avatar/tinaye.jpg"><p class="stats-name">Tina Ye</p></th>
-					<td class="stats-last-week">55</td>
-					<td class="stats-this-week">17</td>
-					<td class="emph stats-total-miles">82</td>
+					<td class="stats-last-week"></td>
+					<td class="stats-this-week"></td>
+					<td class="emph stats-total-miles"></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	<div id="stats-profile" class="sidebar-content auth">
 	
+	
+	<!-- STATS ON PROFILE -->
+	
+	<div id="stats-profile" class="sidebar-content auth">
 		<div class="title" id="stats-name">Profile X</div>
+		<table>
+			<thead>
+				<tr>
+						<th></th>	
+						<td>Last week</td>
+						<td>This week</td>
+						<td>Total miles</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th><img class="stats-avatar" src="img/avatar/tinaye.jpg"><p class="stats-name"></p></th>
+					<td class="stats-last-week"></td>
+					<td class="stats-this-week"></td>
+					<td class="emph stats-total-miles"></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="stats-color"></div>
+		<div class="stats-duration"></div>
+
+<!--		<div class="title" id="stats-name">Profile X</div>
 		<img class="stats-avatar"></img>
 		Last week: <span class="stats-last-week"></span><br />
 		This week: <span class="stats-this-week"></span><br />
 		Total miles: <span class="stats-total-miles"></span>
 		<div class="stats-color"></div>
 		<div class="stats-duration"></div>
+		-->
 		
 		
 		<!--TRIED THE MORE ADVANCED LINE-CHART
@@ -112,28 +141,75 @@
 	
 	
 	</div>
+	
+	
+	<!-- STATS ON PROFILE VS PROFILE -->
+	
 	<div id="stats-versus" class="sidebar-content hidden auth">
 		<div class="title"><span id="stats-name1">Profile X</span> vs <span id="stats-name2">Profile Y</span></div>
 		<div id="stats-user1">
-			<img class="stats-avatar"></img>
-			Last week: <span class="stats-last-week"></span><br />
-			This week: <span class="stats-this-week"></span><br />
-			Total miles: <span class="stats-total-miles"></span>
+			<table>
+				<thead>
+					<tr>
+							<th></th>	
+							<td>Last week</td>
+							<td>This week</td>
+							<td>Total miles</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th><img class="stats-avatar" src="img/avatar/tinaye.jpg"><p class="stats-name"></p></th>
+						<td class="stats-last-week"></td>
+						<td class="stats-this-week"></td>
+						<td class="emph stats-total-miles"></td>
+					</tr>
+				</tbody>
+			</table>
 			<div class="stats-color"></div>
 			<div class="stats-duration"></div>
 		</div>
-		<div id="stats-user2">
-			<img class="stats-avatar"></img>
-			Last week: <span class="stats-last-week"></span><br />
-			This week: <span class="stats-this-week"></span><br />
-			Total miles: <span class="stats-total-miles"></span>
-			<div class="stats-color"></div>
-			<div class="stats-duration"></div>
-		</div>
-		<img src="img/line_chart.png" width="370px" style="margin-top: 25px;">		
 
+		<div id="stats-user2">
+			<table>
+				<tbody>
+					<tr>
+						<th><img class="stats-avatar" src="img/avatar/tinaye.jpg"><p class="stats-name"></p></th>
+						<td class="stats-last-week"></td>
+						<td class="stats-this-week"></td>
+						<td class="emph stats-total-miles"></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="stats-color"></div>
+			<div class="stats-duration"></div>
+		</div>
 	</div>
-</div>
+	
+		<!-- OLD VERSION OF VERSUS STATS
+	<div id="stats-versus" class="sidebar-content hidden auth">
+			<div class="title"><span id="stats-name1">Profile X</span> vs <span id="stats-name2">Profile Y</span></div>
+			<div id="stats-user1">
+				<img class="stats-avatar"></img>
+				Last week: <span class="stats-last-week"></span><br />
+				This week: <span class="stats-this-week"></span><br />
+				Total miles: <span class="stats-total-miles"></span>
+				<div class="stats-color"></div>
+				<div class="stats-duration"></div>
+			</div>
+			<div id="stats-user2">
+				<img class="stats-avatar"></img>
+				Last week: <span class="stats-last-week"></span><br />
+				This week: <span class="stats-this-week"></span><br />
+				Total miles: <span class="stats-total-miles"></span>
+				<div class="stats-color"></div>
+				<div class="stats-duration"></div>
+			</div>
+			<img src="img/line_chart.png" width="370px" style="margin-top: 25px;">
+
+	</div>  END OLD VERSION OF VERSUS STATS -->
+
+</div> <!-- end sidebar -->
 
 
 <div id="commentary" class="auth">
@@ -169,11 +245,10 @@ Arrived 2 hours ago.
     <li id="portrait-template" class="template portrait"><a href="profile.html" class="avatarLink">
     	<div class="filter"></div><img class="avatar" style="border-color: #d2222d;" src="img/avatar/serakoo.jpg"></a>
     	<div class="pop" style="background-color: #d2222d;">
-    		<a href="#ToUserProfile" class="name">DISPLAY NAME</a> is on two wheels!
+    		<a href="#ToUserProfile" class="name">DISPLAY NAME</a> biked 2 hours ago.
     		<div class="pop-nav">
     			<div class="compare"><a href="">Compare rides to yours &raquo;</a></div>
-    			<!--<a href="#AddRidesOnTopOfProfile">Compare rides &raquo;</a><br /> Only on profile page -->
-	    		<a class="profileLink" href="">To profile &raquo;</a>
+   	    		<a class="profileLink" href="">To profile &raquo;</a>
     		</div>
     	</div>
     </li>

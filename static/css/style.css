@@ -625,36 +625,39 @@ img.avatar {
 }
 /* line 562, ../sass/style.scss */
 #sidebar #stats-versus img.stats-avatar {
-  width: 50px;
-  height: 50px;
+  width: 87px;
+  height: 87px;
 }
 /* line 563, ../sass/style.scss */
 #sidebar .stats-color {
   height: 5px;
+  width: 360px;
+  margin-left: 2px;
+  margin-top: -8px;
 }
-/* line 566, ../sass/style.scss */
+/* line 569, ../sass/style.scss */
 #sidebar .stats-duration {
   text-transform: uppercase;
 }
 
 /* LEADERBOARD */
-/* line 599, ../sass/style.scss */
+/* line 602, ../sass/style.scss */
 .sidebar-content {
   /*End table*/
 }
-/* line 600, ../sass/style.scss */
+/* line 603, ../sass/style.scss */
 .sidebar-content table {
   border-spacing: 2px;
   margin-top: 0px;
   /* End tbody*/
 }
-/* line 604, ../sass/style.scss */
+/* line 607, ../sass/style.scss */
 .sidebar-content table thead {
   margin-top: 5px;
   width: 360px;
   display: block;
 }
-/* line 611, ../sass/style.scss */
+/* line 614, ../sass/style.scss */
 .sidebar-content table thead tr td {
   width: 90px;
   font-family: "vinyl", sans-serif;
@@ -667,7 +670,7 @@ img.avatar {
   display: table-cell;
   text-align: right;
 }
-/* line 623, ../sass/style.scss */
+/* line 626, ../sass/style.scss */
 .sidebar-content table thead tr th {
   font-family: "vinyl", sans-serif;
   text-transform: none;
@@ -682,17 +685,17 @@ img.avatar {
   margin: 0;
   border-top: 0;
 }
-/* line 639, ../sass/style.scss */
+/* line 642, ../sass/style.scss */
 .sidebar-content table tbody {
   /* End tr*/
 }
-/* line 640, ../sass/style.scss */
+/* line 643, ../sass/style.scss */
 .sidebar-content table tbody tr {
   width: 360px;
   margin: 0;
   padding: 0;
 }
-/* line 645, ../sass/style.scss */
+/* line 648, ../sass/style.scss */
 .sidebar-content table tbody tr th {
   font-family: "vinyl", sans-serif;
   text-transform: none;
@@ -709,7 +712,7 @@ img.avatar {
   margin-top: 5px;
   border-bottom: 5px solid #ccc;
 }
-/* line 661, ../sass/style.scss */
+/* line 664, ../sass/style.scss */
 .sidebar-content table tbody tr th p.stats-name {
   margin-top: 3px;
   margin-bottom: -5px;
@@ -718,7 +721,7 @@ img.avatar {
   text-transform: uppercase;
   line-height: 10px;
 }
-/* line 670, ../sass/style.scss */
+/* line 673, ../sass/style.scss */
 .sidebar-content table tbody tr td {
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
@@ -740,12 +743,12 @@ img.avatar {
   padding-bottom: 0px;
   padding-right: 8px;
 }
-/* line 692, ../sass/style.scss */
+/* line 695, ../sass/style.scss */
 .sidebar-content table tbody tr td.stats-last-week {
   display: table-cell;
   width: 180px;
 }
-/* line 696, ../sass/style.scss */
+/* line 699, ../sass/style.scss */
 .sidebar-content table tbody tr td.stats-total-miles {
   margin-top: -44px;
   vertical-align: bottom;
@@ -753,13 +756,13 @@ img.avatar {
   width: 80px;
   border-right: 0px solid #1f1f1f;
 }
-/* line 704, ../sass/style.scss */
+/* line 707, ../sass/style.scss */
 .sidebar-content table tbody tr .emph {
   font-size: 40px;
   text-align: right;
   font-weight: 600;
 }
-/* line 713, ../sass/style.scss */
+/* line 716, ../sass/style.scss */
 .sidebar-content table .avatar {
   border: none;
   padding: 0;
@@ -770,25 +773,39 @@ img.avatar {
 }
 
 /*End leaderboard*/
-/* line 724, ../sass/style.scss */
+/* line 727, ../sass/style.scss */
 #leaderboard.hidden {
   visibility: hidden;
 }
 
 /* STATS PROFILE */
-/* line 734, ../sass/style.scss */
+/* line 737, ../sass/style.scss */
 #stats-profile.hidden {
   visibility: hidden;
 }
 
+/* line 740, ../sass/style.scss */
+#stats-profile.sidebar-content table tbody tr th {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  border-bottom: none;
+}
+
 /* STATS PROFILE VS PROFILE */
-/* line 743, ../sass/style.scss */
+/* line 751, ../sass/style.scss */
 #stats-versus.hidden {
   visibility: hidden;
 }
 
+/* line 755, ../sass/style.scss */
+#stats-versus.sidebar-content table tbody tr th {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  border-bottom: none;
+}
+
 /* COMMENTARY */
-/* line 747, ../sass/style.scss */
+/* line 762, ../sass/style.scss */
 #commentary {
   /*background-color: #fff;*/
   font-family: "ff-tisa-web-pro", Georgia, serif;
@@ -804,7 +821,7 @@ img.avatar {
   line-height: 30px;
 }
 
-/* line 761, ../sass/style.scss */
+/* line 776, ../sass/style.scss */
 #twitter-bar {
   font-family: "atrament-web", sans-serif;
   font-size: 22px;
@@ -813,19 +830,19 @@ img.avatar {
   padding-bottom: 0px;
 }
 
-/* line 768, ../sass/style.scss */
+/* line 783, ../sass/style.scss */
 #twitter-bar a {
   color: #0bb7ab;
   font-style: normal;
 }
 
-/* line 772, ../sass/style.scss */
+/* line 787, ../sass/style.scss */
 #commentary ul {
   list-style-type: none;
   padding-left: 0;
 }
 
-/* line 779, ../sass/style.scss */
+/* line 794, ../sass/style.scss */
 #testing {
   background-color: #fff;
   font-family: "ff-netto-web";
