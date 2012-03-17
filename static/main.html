@@ -237,6 +237,15 @@ Arrived 2 hours ago.
 
 <canvas id="processing" data-processing-sources="spoked.pde"></canvas>
 
+<!-- TO MAKE A .PNG OF THE PROCESSING CANVAS OF RIDES -->
+<script>
+var canvas = document.getElementById("processing");
+    
+	canvas.onclick = function () {
+  	window.location = canvas.toDataURL('image/png');
+};
+</script>
+
 
 
 <div id="bottom-nav">
