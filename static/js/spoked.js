@@ -1,3 +1,6 @@
+var DEFAULT_SCROLL_LEFT = 20;
+var DEFAULT_SCROLL_TOP = 970;
+
 var instance = null;
 var infoPromise = $.Deferred();
 var pdePromise = $.Deferred();
@@ -35,11 +38,7 @@ function showPortraits() {
 	}
 	template = $('#leaderboard-template');
 	users.sort(function(a, b) {
-		a = a.lastWeekDist + a.thisWeekDist;
-		b = b.lastWeekDist + b.thisWeekDist;
-		if (a > b) { return -1; }
-		if (a > b) { return  1; }
-		return 0;
+		return (b.lastWeekDist + b.thisWeekDist) - (a.lastWeekDist + a.thisWeekDist);
 	});
 	for (var i = 0; i < users.length; i++) {
 		var user = users[i];
@@ -203,6 +202,14 @@ function onClickCompare(e) {
 $(function() {
 	$('.template').css({display: 'none'});
 	$('.auth').hide();
+	$body = $('body');
+	console.log($body.scrollLeft() + " " + $body.scrollTop());
+	if ($body.scrollLeft() == 0 && $body.scrollTop() == 0) {
+		setTimeout(function() {
+			$body.scrollLeft(DEFAULT_SCROLL_LEFT);
+			$body.scrollTop(DEFAULT_SCROLL_TOP);
+		}, 0);
+	}
 
 	$('.toggle-login-form').click(function() {
 		$('#login-form').toggle();
