@@ -34,6 +34,13 @@ function showPortraits() {
 		user.portrait = instance;
 	}
 	template = $('#leaderboard-template');
+	users.sort(function(a, b) {
+		a = a.lastWeekDist + a.thisWeekDist;
+		b = b.lastWeekDist + b.thisWeekDist;
+		if (a > b) { return -1; }
+		if (a > b) { return  1; }
+		return 0;
+	});
 	for (var i = 0; i < users.length; i++) {
 		var user = users[i];
 		var instance = template.clone().removeClass('template').attr('id', null).css({display: ''});
