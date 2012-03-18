@@ -180,12 +180,13 @@ function showUserStats(user, $col) {
 			rides += 1;
 		}
 	}
-	rides = rides + ' ride' + (rides == 1 ? '':'s') + ', ';
+	rides = ' (' +rides + ' ride' + (rides == 1 ? '':'s') + ')';
 	var hours = Math.floor(user.fortnightDuration / 3600);
 	var minutes = Math.floor(user.fortnightDuration % 3600 / 60);
-	var dur = (hours ? hours+' hr ' : '') + (minutes ? minutes+' min' : '') + ' on bike seat';
-	$col.find('.stats-duration').text(rides + dur)
-}
+	var dur = 'Spent ' + (hours ? hours+' hours and ' : '') + (minutes ? minutes+' minutes' : '') + ' on two wheels';
+	$col.find('.stats-duration').text(dur + rides)
+	//If user rides for 1 hour, it'll say 1 hours (plural). Fix?
+	}
 function showUserMiles(user, $col) {
 	var lastWeekDist = user.lastWeekDist / 1609.344;
 	var thisWeekDist = user.thisWeekDist / 1609.344;

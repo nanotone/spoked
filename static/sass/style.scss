@@ -553,8 +553,8 @@ content: url(../img/btn/play-animation-20x20.png);
 		font-size: 1em;
 		padding-bottom: 20px;
 	}
-	#stats-profile img.stats-avatar { width: 87px; height: 87px; }
-	#stats-versus  img.stats-avatar { width: 87px; height: 87px; }
+	#stats-profile img.stats-avatar { width: 87px; height: 87px; margin-bottom: -5px; }
+	#stats-versus  img.stats-avatar { width: 87px; height: 87px; margin-bottom: -5px; }
 	.stats-color {
 		height: 5px;
 		width: 360px;
@@ -562,7 +562,12 @@ content: url(../img/btn/play-animation-20x20.png);
 		margin-top:-8px;
 	}
 	.stats-duration {
-		text-transform: uppercase;
+		text-transform: normal;
+		font-family: $futura;
+		font-weight: 300;
+		font-size: 16px;
+		color: darken(#ccc, 20%);
+		margin-left: 2px;
 	}
 }
 

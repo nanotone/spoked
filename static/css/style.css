@@ -620,11 +620,13 @@ img.avatar {
 #sidebar #stats-profile img.stats-avatar {
   width: 87px;
   height: 87px;
+  margin-bottom: -5px;
 }
 /* line 557, ../sass/style.scss */
 #sidebar #stats-versus img.stats-avatar {
   width: 87px;
   height: 87px;
+  margin-bottom: -5px;
 }
 /* line 558, ../sass/style.scss */
 #sidebar .stats-color {
@@ -635,27 +637,32 @@ img.avatar {
 }
 /* line 564, ../sass/style.scss */
 #sidebar .stats-duration {
-  text-transform: uppercase;
+  text-transform: normal;
+  font-family: "futura-pt-condensed";
+  font-weight: 300;
+  font-size: 16px;
+  color: #999999;
+  margin-left: 2px;
 }
 
 /* LEADERBOARD */
-/* line 597, ../sass/style.scss */
+/* line 602, ../sass/style.scss */
 .sidebar-content {
   /*End table*/
 }
-/* line 598, ../sass/style.scss */
+/* line 603, ../sass/style.scss */
 .sidebar-content table {
   border-spacing: 2px;
   margin-top: 0px;
   /* End tbody*/
 }
-/* line 602, ../sass/style.scss */
+/* line 607, ../sass/style.scss */
 .sidebar-content table thead {
   margin-top: 5px;
   width: 360px;
   display: block;
 }
-/* line 609, ../sass/style.scss */
+/* line 614, ../sass/style.scss */
 .sidebar-content table thead tr td {
   width: 90px;
   font-family: "vinyl", sans-serif;
@@ -668,7 +675,7 @@ img.avatar {
   display: table-cell;
   text-align: right;
 }
-/* line 621, ../sass/style.scss */
+/* line 626, ../sass/style.scss */
 .sidebar-content table thead tr th {
   font-family: "vinyl", sans-serif;
   text-transform: none;
@@ -683,17 +690,17 @@ img.avatar {
   margin: 0;
   border-top: 0;
 }
-/* line 637, ../sass/style.scss */
+/* line 642, ../sass/style.scss */
 .sidebar-content table tbody {
   /* End tr*/
 }
-/* line 638, ../sass/style.scss */
+/* line 643, ../sass/style.scss */
 .sidebar-content table tbody tr {
   width: 360px;
   margin: 0;
   padding: 0;
 }
-/* line 643, ../sass/style.scss */
+/* line 648, ../sass/style.scss */
 .sidebar-content table tbody tr th {
   font-family: "vinyl", sans-serif;
   text-transform: none;
@@ -710,7 +717,7 @@ img.avatar {
   margin-top: 5px;
   border-bottom: 5px solid #ccc;
 }
-/* line 659, ../sass/style.scss */
+/* line 664, ../sass/style.scss */
 .sidebar-content table tbody tr th p.stats-name {
   margin-top: 3px;
   margin-bottom: -5px;
@@ -719,7 +726,7 @@ img.avatar {
   text-transform: uppercase;
   line-height: 10px;
 }
-/* line 668, ../sass/style.scss */
+/* line 673, ../sass/style.scss */
 .sidebar-content table tbody tr td {
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
@@ -741,12 +748,12 @@ img.avatar {
   padding-bottom: 0px;
   padding-right: 8px;
 }
-/* line 690, ../sass/style.scss */
+/* line 695, ../sass/style.scss */
 .sidebar-content table tbody tr td.stats-last-week {
   display: table-cell;
   width: 180px;
 }
-/* line 694, ../sass/style.scss */
+/* line 699, ../sass/style.scss */
 .sidebar-content table tbody tr td.stats-total-miles {
   margin-top: -44px;
   vertical-align: bottom;
@@ -754,13 +761,13 @@ img.avatar {
   width: 80px;
   border-right: 0px solid #1f1f1f;
 }
-/* line 702, ../sass/style.scss */
+/* line 707, ../sass/style.scss */
 .sidebar-content table tbody tr .emph {
   font-size: 40px;
   text-align: right;
   font-weight: 600;
 }
-/* line 711, ../sass/style.scss */
+/* line 716, ../sass/style.scss */
 .sidebar-content table .avatar {
   border: none;
   padding: 0;
@@ -771,18 +778,18 @@ img.avatar {
 }
 
 /*End leaderboard*/
-/* line 722, ../sass/style.scss */
+/* line 727, ../sass/style.scss */
 #leaderboard.hidden {
   visibility: hidden;
 }
 
 /* STATS PROFILE */
-/* line 732, ../sass/style.scss */
+/* line 737, ../sass/style.scss */
 #stats-profile.hidden {
   visibility: hidden;
 }
 
-/* line 735, ../sass/style.scss */
+/* line 740, ../sass/style.scss */
 #stats-profile.sidebar-content table tbody tr th {
   margin-bottom: 0px;
   padding-bottom: 0px;
@@ -790,12 +797,12 @@ img.avatar {
 }
 
 /* STATS PROFILE VS PROFILE */
-/* line 746, ../sass/style.scss */
+/* line 751, ../sass/style.scss */
 #stats-versus.hidden {
   visibility: hidden;
 }
 
-/* line 750, ../sass/style.scss */
+/* line 755, ../sass/style.scss */
 #stats-versus.sidebar-content table tbody tr th {
   margin-bottom: 0px;
   padding-bottom: 0px;
@@ -803,7 +810,7 @@ img.avatar {
 }
 
 /* COMMENTARY */
-/* line 757, ../sass/style.scss */
+/* line 762, ../sass/style.scss */
 #commentary.user-color {
   /*background-color: #fff;*/
   font-family: "ff-tisa-web-pro", Georgia, serif;
@@ -819,7 +826,7 @@ img.avatar {
   line-height: 30px;
 }
 
-/* line 771, ../sass/style.scss */
+/* line 776, ../sass/style.scss */
 #twitter-bar {
   font-family: "atrament-web", sans-serif;
   font-size: 22px;
@@ -828,19 +835,19 @@ img.avatar {
   padding-bottom: 0px;
 }
 
-/* line 778, ../sass/style.scss */
+/* line 783, ../sass/style.scss */
 #twitter-bar a.user-color {
   color: #0bb7ab;
   font-style: normal;
 }
 
-/* line 782, ../sass/style.scss */
+/* line 787, ../sass/style.scss */
 #commentary ul {
   list-style-type: none;
   padding-left: 0;
 }
 
-/* line 789, ../sass/style.scss */
+/* line 794, ../sass/style.scss */
 #testing {
   background-color: #fff;
   font-family: "ff-netto-web";
