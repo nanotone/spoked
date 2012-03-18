@@ -129,6 +129,9 @@ function loadState() {
 		showProfile(currentUser);
 	}
 	else if (title.length == 24) {
+		if (title == authUserId) {
+			$('.youLink').closest('li').addClass('selectedLink');
+		}
 		currentUser = usersById[title];
 		showProfile(currentUser);
 	}
