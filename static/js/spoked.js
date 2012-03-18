@@ -222,8 +222,7 @@ $(function() {
 	$('.friendsLink').click(makeLinkHandler('friends'));
 	$('.youLink').click(makeLinkHandler('you'));
 
-	$('.mapSelect a').click(mapHandler);
-	$('#streets a').eq(0).click(); // select streets as the default map
+	$('.mapSelect').click(mapHandler).eq(0).click(); // streets is default map
 
 	$("#sidebar-btn-stats").click(function(e) {
 		e.preventDefault();

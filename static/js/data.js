@@ -36,6 +36,13 @@ function setAuth(value) {
 	auth = value;
 	$.cookie('spokedAuth', auth);
 }
+function darken(color) {
+	var intColor = 0;
+	for (var i = 0; i < 3; i++) {
+		intColor += Math.round(parseInt(color.substr(2*i, 2), 16) * 0.8) * Math.pow(256, 2 - i);
+	}
+	return intColor.toString(16);
+}
 function onLogin(data, forceProfile) {
 	var deferred = $.Deferred();
 
@@ -48,6 +55,13 @@ function onLogin(data, forceProfile) {
 		var authUser = usersById[authUserId];
 		$('.user-avatar').attr('src', authUser.avatarSrc);
 		$('.user-name').text(authUser.name);
+		var filters = [
+			['user-color', 'color', '#' + authUser.color],
+			['user-bottomcolor', 'borderBottomColor', '#' + authUser.color],
+			['user-bgcolor', 'backgroundColor', '#' + authUser.color],
+			['user-dark-bgcolor', 'backgroundColor', '#' + darken(authUser.color)] ];
+		updateStyles(getStyleSheetById('style'), filters);
+
 		if (forceProfile) {
 			switchToTitle('you');
 		}

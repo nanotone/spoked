@@ -97,7 +97,7 @@ h1 {
   	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .3);*/
   	}
 
-#logo {
+#logo.user-color {
 	display: block;
 	float: left;
 	position: relative;
@@ -127,18 +127,15 @@ h1 {
 	padding: 0;
 
 	ul { 
-	
 		li {
 			display: block;
 			padding-top: 0;
 			float: left;
-						
-			a{
-				text-decoration: none;
-			}
+			a { text-decoration: none; }
 		}
-		li.selectedLink {
-			border-bottom: 2px solid $yourColor;
+		li.user-bottomcolor.selectedLink {
+			border-bottom: 2px solid;
+			border-bottom-color: $yourColor;
 		}
 	}
 	#menu-nav {
@@ -146,17 +143,15 @@ h1 {
 		margin-top: 4px;
 		margin-left: 80px;
 		position: relative;
-		
-		li{
+		li {
 			margin: 0 25px 0 0;
-			
-			a {
+			a.user-color.user-bottomcolor {
 				color: $yourColor; 
+				&:hover {
+					border-bottom: 2px solid;
+					border-bottom-color: $yourColor;
+				}
 			}
-			a:hover{
-				border-bottom: 2px solid $yourColor;
-			}
-	
 		}
 	}
 	
@@ -203,7 +198,7 @@ h1 {
 				right: 10px;
 				margin-top: 10px;
 				width: 125px;
-				.menu-item {
+				.menu-item.user-bgcolor {
 					clear: both;
 					cursor: pointer;
 					margin: 0px;
@@ -211,9 +206,11 @@ h1 {
 					padding: 4px 7px;
 					width: 100%;
 					background-color: $yourColor;
-					&:hover { background-color: darken($yourColor, 10%); }
 					color: white;
 					font-size: 18px;
+				}
+				.menu-item.user-dark-bgcolor:hover {
+					background-color: darken($yourColor, 10%);
 				}
 			}
 		}
@@ -244,7 +241,7 @@ h1 {
 	font-weight: bold;
 	font-size: 14px;
 	}
-#bottom-bar{
+#bottom-bar.user-bgcolor {
 	height: 35px;
 	bottom: 0;
 	width: 100%;
@@ -375,12 +372,11 @@ img.avatar {
 			padding-top: 0;
 			margin-top: 0;
 			
-			a {
+			a.user-color {
 				color: $yourColor;
 				text-decoration: none;  
 
 				img.mapbtn {
-					background-color: $yourColor;
 					position: relative;
 					display: block;
 					float:left;
@@ -390,7 +386,7 @@ img.avatar {
 					width: 35px;
 					border: none;
 			  	}
-				img.mapbtn:hover {
+				img.mapbtn.user-dark-bgcolor:hover {
 					background-color: darken($yourColor, 10%);
 				}
 			}
@@ -399,7 +395,7 @@ img.avatar {
 				width: 100px;
 			}
 		}
-		li.selected img.mapbtn {
+		li.selected img.mapbtn.user-dark-bgcolor {
 			background-color: darken($yourColor, 10%);
 		}
 		li:hover .pop {
@@ -427,19 +423,18 @@ img.avatar {
 			float: left;
 			padding: 0 0;
 			margin: 0 0 0 8px;
-			
 			a {
 				color: #fff;
 				text-decoration: none;
 				padding: 1px 4px 3px 4px;
 			}
-			a:hover {
-				background-color: darken($yourColor, 10%);
-			}
 		}
-		li.selectedLink {
+		li.user-dark-bgcolor.selectedLink {
 			background-color: darken($yourColor, 10%);
 		} 	
+		li.user-dark-bgcolor:hover {
+			background-color: darken($yourColor, 10%);
+		}
 	}
 }
 
@@ -469,10 +464,10 @@ img.avatar {
 				text-decoration: none;
 				padding: 1px 4px 3px 4px;
 			}
-			a:hover {
+			a.user-dark-bgcolor:hover {
 				background-color: darken($yourColor, 10%);
 			}
-			a.selected {
+			a.user-dark-bgcolor.selected {
 				background-color: darken($yourColor, 10%);
 			}
 		}		
@@ -530,18 +525,18 @@ content: url(../img/btn/play-animation-20x20.png);
 #sidebar-nav ul {
 	margin: 55px auto auto -70px;
 	list-style-type: none;
+	li {
+		margin-top: 15px;
+		a img.user-bgcolor {
+			width: 30px;
+			height: 30px;
+			background-color: $yourColor;
+		}
+		a img.user-dark-bgcolor:hover {
+			background-color: darken($yourColor, 10%);
+		}
 	}
-#sidebar-nav ul li {
-	margin-top: 15px;
-	}
-#sidebar-nav ul li img {
-	width: 30px;
-	height: 30px;
-	background-color: $yourColor;
-	}
-#sidebar-nav ul li a img:hover {
-		background-color: darken($yourColor, 10%);
-	}
+}
 .sidebar-content {
 	position: absolute;
 	top: 55px;
@@ -759,7 +754,7 @@ content: url(../img/btn/play-animation-20x20.png);
 }
 
 /* COMMENTARY */
-#commentary {
+#commentary.user-color {
 	/*background-color: #fff;*/
 	font-family: $serif;
 	position: fixed;
@@ -780,7 +775,7 @@ content: url(../img/btn/play-animation-20x20.png);
 	margin-bottom: 0px;
 	padding-bottom: 0px;
 }
-#twitter-bar a {
+#twitter-bar a.user-color {
 	color: $yourColor;
 	font-style: normal;
 }
