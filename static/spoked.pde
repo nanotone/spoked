@@ -26,11 +26,16 @@ float endPoints[][];*/
 class RideAnimation {
 	float points[][];
 	int color;
+	boolean isLastRide;
 	int n;
-	RideAnimation(float[][] ridePoints, int rideColor) {
-		points = ridePoints;
-		color = rideColor;
-		if (!auth) {
+	RideAnimation(Object trackObj) {
+		// N.B. trackObj is a JS object, and its properties are unfortunately
+		// not documented anywhere. Please refer to the JS.
+		points = trackObj.points;
+		color = trackObj.user.pjsColor;
+		isLastRide = trackObj.isLastTrack;
+
+		if (!auth) { // auth is a JS global that is set if the user is logged in
 			color = getRandomPjsColor();
 		}
 		n = 1;
@@ -66,12 +71,11 @@ class RideAnimation {
 		noStroke();
 		ellipse(longStop, latStop, 9, 9);
 		
-		/* YANG, THIS IS THE STYLE FOR THE LAST RIDE THAT IS INTERACTIVE
-		fill(255);
-		stroke(color);
-		ellipse(longStop, latStop, 12, 12);
-		*/	
-	
+		if (isLastRide) {// YANG, THIS IS THE STYLE FOR THE LAST RIDE THAT IS INTERACTIVE
+			fill(255);
+			stroke(color);
+			ellipse(longStop, latStop, 12, 12);
+		}
 	}
 }
 
@@ -160,7 +164,7 @@ void draw() {
 //
 void animateRides(Object[] trackObjs, startTime) {
 	for (int i = 0; i < trackObjs.length; i++) {
-		RideAnimation ride = new RideAnimation(trackObjs[i].points, trackObjs[i].user.pjsColor);
+		RideAnimation ride = new RideAnimation(trackObjs[i]);
 		rideAnimations.add(ride);
 	}
 	tstamp = startTime;
@@ -174,7 +178,7 @@ void abortRideAnimations() {
 }
 
 void drawRideImmediately(Object trackObj) {
-	RideAnimation ride = new RideAnimation(trackObj.points, trackObj.user.pjsColor);
+	RideAnimation ride = new RideAnimation(trackObj);
 	while (!ride.isAtDestination()) {
 		ride.drawNextSegment();
 	}

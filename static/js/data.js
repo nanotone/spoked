@@ -137,6 +137,7 @@ function initData() {
 		}
 		for (var i = 0; i < tracks.length; i++) {
 			var track = tracks[i];
+			track.isLastTrack = false;
 			tracksById[track.id] = track;
 			var userId = track.userid;
 			if (userId) {
@@ -157,8 +158,9 @@ function initData() {
 		for (var i = 0; i < users.length; i++) { // circle back now that users have tracks
 			var user = users[i];
 			if (user.tracks.length) {
-				var track = user.tracks[user.tracks.length - 1];
-				user.lastTrackEnd = track.time + track.duration;
+				var lastTrack = user.tracks[user.tracks.length - 1];
+				user.lastTrackEnd = lastTrack.time + lastTrack.duration;
+				lastTrack.isLastTrack = true;
 			}
 		}
 		infoPromise.resolve();
