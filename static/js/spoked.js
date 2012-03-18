@@ -142,8 +142,8 @@ function loadState() {
 		var user2 = usersById[title.substr(25)];
 
 		$('#stats-versus').removeClass('hidden');
-		$('#stats-name1').text(user1.name);
-		$('#stats-name2').text(user2.name);
+		$('#stats-name1').text(user1.firstName);
+		$('#stats-name2').text(user2.firstName);
 		user1.portrait.addClass('selected');
 		user2.portrait.addClass('selected');
 		showUserStats(user1, $('#stats-user1'));

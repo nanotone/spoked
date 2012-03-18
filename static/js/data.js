@@ -132,6 +132,7 @@ function initData() {
 			user.pjsColor = 0xFF000000 + parseInt(user.color, 16);
 			user.avatarSrc = 'img/avatar/' + user.slug + '.jpg';
 			user.lastTrackEnd = 0;
+			user.firstName = user.name.split(' ')[0];
 			usersById[user.id] = user;
 			randomPjsColors.push(user.pjsColor);
 		}
