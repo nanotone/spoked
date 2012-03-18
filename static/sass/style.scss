@@ -156,7 +156,9 @@ h1 {
 	}
 	
 	#user-nav {
-		font-family: $futura;
+		font-family: $vinyl;
+		font-size: 16px;
+		text-transform: uppercase;
 		line-height: 20px;
 		position: absolute;
 		margin: -14px 10px 0 0;
@@ -222,14 +224,32 @@ h1 {
 	display: none;
 }
 
-#animation-clock {
+#animation-clock-OLD{
 	position: fixed;
-	top: 35px;
-	display: none;
+	z-index: 200;
+	bottom: 35px;
+	width: 392px;
+	right: 0px;
+	display: block;
 	background-color: black;
-	padding: 6px;
+	padding: 5px;
 	color: white;
 	font-family: monospace;
+}
+
+#animation-clock {
+	position: fixed;
+	z-index: 200;
+	bottom: 35px;
+	width: 392px;
+	right: 0px;
+	display: block;
+	padding: 5px;
+	background-color: #fff;
+	opacity: 0.6;
+	color: $black;
+	font-family: $vinyl;
+	text-transform: uppercase;
 }
 
 
@@ -237,9 +257,10 @@ h1 {
 #bottom-nav{
 	bottom: 0;
 	height: 35px;
-	font-family: $serif;
-	font-weight: bold;
-	font-size: 14px;
+	font-family: $vinyl;
+	text-transform: uppercase;
+	/*font-weight: bold;*/
+	font-size: 16px;
 	}
 #bottom-bar.user-bgcolor {
 	height: 35px;
@@ -349,7 +370,7 @@ img.avatar {
 #map-nav {
 	bottom: 0;
 	display:block;
-	margin: -14px 0 0 0;	
+	margin: -16px 0 0 0;	
 	padding: 0 0 0px 0;
 	z-index: 200;
 	position: relative;
@@ -408,7 +429,7 @@ img.avatar {
 #portrait-control-nav {
 	bottom: 0;
 	display:block;
-	margin: -10px 0 0 0;	
+	margin: -6px 0 0 0;	
 	padding: 0 0 0 0;
 	z-index: 200;
 	position: relative;
@@ -442,7 +463,7 @@ img.avatar {
 #time-nav {
 	bottom: 0;
 	display:block;
-	margin: -10px 0 0 0;	
+	margin: -12px 0 0 0;	
 	padding: 0 0 0 0;
 	z-index: 200;
 	position: relative;
