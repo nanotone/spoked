@@ -131,6 +131,7 @@ function initData() {
 			user.slug = user.name.replace(' ', '').toLowerCase();
 			user.pjsColor = 0xFF000000 + parseInt(user.color, 16);
 			user.avatarSrc = 'img/avatar/' + user.slug + '.jpg';
+			user.lastTrackEnd = 0;
 			usersById[user.id] = user;
 			randomPjsColors.push(user.pjsColor);
 		}
@@ -151,6 +152,13 @@ function initData() {
 				if (lastWeek <= track.time) {
 					owner.fortnightDuration += track.duration;
 				}
+			}
+		}
+		for (var i = 0; i < users.length; i++) { // circle back now that users have tracks
+			var user = users[i];
+			if (user.tracks.length) {
+				var track = user.tracks[user.tracks.length - 1];
+				user.lastTrackEnd = track.time + track.duration;
 			}
 		}
 		infoPromise.resolve();

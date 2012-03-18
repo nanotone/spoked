@@ -20,13 +20,16 @@ function processingFinishedAnimating() {
 	$('#animate').removeClass('selected');
 }
 
+function humanizeAgo(seconds) {
+	var data = [[1, "second"], [60, "minute"], [3600, "hour"], [86400, "day"], [604800, "week"], [2629728, "month"], [31556736, "year"]];
+	while (data.length > 1 && seconds >= data[1][0]) { data.shift(); }
+	var num = Math.floor(seconds / data[0][0] + 0.25);
+	return num + " " + data[0][1] + (num > 1 ? 's' : '') + " ago";
+}
+
 function showPortraits() {
 	var template = $('#portrait-template');
-	users.sort(function(a, b) {
-		a = (a.tracks.length ? a.tracks[a.tracks.length - 1].time : 0);
-		b = (b.tracks.length ? b.tracks[b.tracks.length - 1].time : 0);
-		return b - a;
-	});
+	users.sort(function(a, b) { return b.lastTrackEnd - a.lastTrackEnd; });
 	for (var i = 0; i < users.length; i++) {
 		var user = users[i];
 		var instance = template.clone().removeClass('template').attr('id', null).css({display: ''});
@@ -38,14 +41,13 @@ function showPortraits() {
 		instance.find('.avatar').attr('src', user.avatarSrc).css({borderColor: color});
 		instance.find('.pop').css({backgroundColor: color});
 		instance.find('.name').text(user.name);
+		instance.find('.last-ride').text(humanizeAgo(getTime() - user.lastTrackEnd));
 		template.parent().append(instance);
 		user.portrait = instance;
 	}
 
 	template = $('#leaderboard-template');
-	users.sort(function(a, b) {
-		return (b.lastWeekDist + b.thisWeekDist) - (a.lastWeekDist + a.thisWeekDist);
-	});
+	users.sort(function(a, b) { return (b.lastWeekDist + b.thisWeekDist) - (a.lastWeekDist + a.thisWeekDist); });
 	for (var i = 0; i < users.length; i++) {
 		var user = users[i];
 		var instance = template.clone().removeClass('template').attr('id', null).css({display: ''});
