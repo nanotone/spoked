@@ -20,11 +20,15 @@ function processingFinishedAnimating() {
 	$('#animate').removeClass('selected');
 }
 
+function humanizeUnits(num, unit, explicitZero) {
+	if (num == 0 && !explicitZero) { return ''; }
+	return num + ' ' + unit + (num == 1 ? '' : 's');
+}
 function humanizeAgo(seconds) {
 	var data = [[1, "second"], [60, "minute"], [3600, "hour"], [86400, "day"], [604800, "week"], [2629728, "month"], [31556736, "year"]];
 	while (data.length > 1 && seconds >= data[1][0]) { data.shift(); }
 	var num = Math.floor(seconds / data[0][0] + 0.25);
-	return num + " " + data[0][1] + (num > 1 ? 's' : '') + " ago";
+	return humanizeUnits(num, data[0][1]) + " ago";
 }
 
 function showPortraits() {
@@ -183,13 +187,13 @@ function showUserStats(user, $col) {
 			rides += 1;
 		}
 	}
-	rides = ' (' +rides + ' ride' + (rides == 1 ? '':'s') + ')';
+	rides = humanizeUnits(rides, 'ride');
 	var hours = Math.floor(user.fortnightDuration / 3600);
 	var minutes = Math.floor(user.fortnightDuration % 3600 / 60);
-	var dur = 'Spent ' + (hours ? hours+' hours and ' : '') + (minutes ? minutes+' minutes' : '') + ' on two wheels';
-	$col.find('.stats-duration').text(dur + rides)
-	//If user rides for 1 hour, it'll say 1 hours (plural). Fix?
-	}
+	var dur = [humanizeUnits(hours, 'hour'), humanizeUnits(minutes, 'minute')].join(' and ');
+
+	$col.find('.stats-duration').text('Spent ' + dur + ' on two wheels (' + rides + ')');
+}
 function showUserMiles(user, $col) {
 	var lastWeekDist = user.lastWeekDist / 1609.344;
 	var thisWeekDist = user.thisWeekDist / 1609.344;
