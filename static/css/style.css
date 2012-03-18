@@ -154,11 +154,11 @@ h1 {
   margin: 0 25px 0 0;
 }
 /* line 148, sass/style.scss */
-#service-nav #menu-nav li a.user-color.user-bottomcolor {
+#service-nav #menu-nav li a.user-color {
   color: #0bb7ab;
 }
-/* line 150, sass/style.scss */
-#service-nav #menu-nav li a.user-color.user-bottomcolor:hover {
+/* line 151, sass/style.scss */
+#service-nav #menu-nav li a.user-bottomcolor:hover {
   border-bottom: 2px solid;
   border-bottom-color: #0bb7ab;
 }

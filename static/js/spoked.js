@@ -22,6 +22,11 @@ function processingFinishedAnimating() {
 
 function showPortraits() {
 	var template = $('#portrait-template');
+	users.sort(function(a, b) {
+		a = (a.tracks.length ? a.tracks[a.tracks.length - 1].time : 0);
+		b = (b.tracks.length ? b.tracks[b.tracks.length - 1].time : 0);
+		return b - a;
+	});
 	for (var i = 0; i < users.length; i++) {
 		var user = users[i];
 		var instance = template.clone().removeClass('template').attr('id', null).css({display: ''});
@@ -36,6 +41,7 @@ function showPortraits() {
 		template.parent().append(instance);
 		user.portrait = instance;
 	}
+
 	template = $('#leaderboard-template');
 	users.sort(function(a, b) {
 		return (b.lastWeekDist + b.thisWeekDist) - (a.lastWeekDist + a.thisWeekDist);

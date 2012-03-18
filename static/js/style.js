@@ -19,7 +19,6 @@ function updateStyles(css, filters) {
 			classNameIndex = (selector + ' ').search(filter[0]);
 			if (classNameIndex != -1 && selector.indexOf(' ', classNameIndex) == -1) {
 				rule.style[filter[1]] = filter[2];
-				console.log(i + " " + selector);
 			}
 		}
 	}

@@ -145,12 +145,12 @@ h1 {
 		position: relative;
 		li {
 			margin: 0 25px 0 0;
-			a.user-color.user-bottomcolor {
+			a.user-color {
 				color: $yourColor; 
-				&:hover {
-					border-bottom: 2px solid;
-					border-bottom-color: $yourColor;
-				}
+			}
+			a.user-bottomcolor:hover {
+				border-bottom: 2px solid;
+				border-bottom-color: $yourColor;
 			}
 		}
 	}
