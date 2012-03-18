@@ -338,31 +338,35 @@ img.avatar {
 .pop {
 	display: none;
 	position: absolute;
-	left: -.6em;
+	left: 0px;
+	text-transform: none;
 	/*top: -5.2em;*/
-	bottom: 3.7em;
-	width: 230px;
+	bottom: 55px;
+	width: 140px;
 	background-color: #fff;
 	opacity: 0.8;
 	font-family: $futura;
 	font-size: 14px;
-	padding: .6em;
-	-moz-border-radius-topleft: .8em;
+	padding: 5px;
+	/*-moz-border-radius-topleft: .8em;
   	-webkit-border-top-left-radius: .8em;
 	-moz-border-radius-topright: .8em;
   	-webkit-border-top-right-radius: .8em;
 	-moz-border-radius-bottomright: .8em;
-  	-webkit-border-bottom-right-radius: .8em;
+  	-webkit-border-bottom-right-radius: .8em;*/
 	}
 
 .pop a.name {
-	font-family: $futura;
+	font-family: $vinyl;
 	font-size: 16px;
 	text-transform: uppercase;
-	}
+ 	width: 100%;
+	line-height: 18px;
+	 	}
 .pop-nav {
-	padding-top: .4em;
-	font: 14px $serif;
+	text-transform: none;
+	padding-top: 20px;
+	font: 14px $futura;
 	}
 
 /*MAP NAV*/
@@ -525,7 +529,6 @@ content: url(../img/btn/play-animation-20x20.png);
 	z-index: 150;
 	top: 0;
 	right: 0px;	
-	/*@include box-shadow(inset 10px 3px 7px rgba(0,0,0, .1)); scss shadow that doesn't work anymore?*/
 	box-shadow: inset 10px 3px 7px rgba(0,0,0,0.1);
 	-moz-box-shadow: inset 10px 3px 7px rgba(0,0,0,0.1);
 	-webkit-box-shadow: inset 10px 3px 7px rgba(0,0,0,0.1);
@@ -751,9 +754,6 @@ content: url(../img/btn/play-animation-20x20.png);
 
 
 /* STATS PROFILE */
-#stats-profile {
-
-}
 
 #stats-profile.hidden {
 	visibility: hidden; 
@@ -765,9 +765,6 @@ content: url(../img/btn/play-animation-20x20.png);
 }
 
 /* STATS PROFILE VS PROFILE */
-#stats-versus {
-
-}
 
 #stats-versus.hidden {
 	visibility: hidden; 
