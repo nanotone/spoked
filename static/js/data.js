@@ -36,6 +36,13 @@ function setAuth(value) {
 	auth = value;
 	$.cookie('spokedAuth', auth);
 }
+function darken(color) {
+	var intColor = 0;
+	for (var i = 0; i < 3; i++) {
+		intColor += Math.round(parseInt(color.substr(2*i, 2), 16) * 0.8) * Math.pow(256, 2 - i);
+	}
+	return intColor.toString(16);
+}
 function onLogin(data, forceProfile) {
 	var deferred = $.Deferred();
 
@@ -48,6 +55,13 @@ function onLogin(data, forceProfile) {
 		var authUser = usersById[authUserId];
 		$('.user-avatar').attr('src', authUser.avatarSrc);
 		$('.user-name').text(authUser.name);
+		var filters = [
+			['user-color', 'color', '#' + authUser.color],
+			['user-bottomcolor', 'borderBottomColor', '#' + authUser.color],
+			['user-bgcolor', 'backgroundColor', '#' + authUser.color],
+			['user-dark-bgcolor', 'backgroundColor', '#' + darken(authUser.color)] ];
+		updateStyles(getStyleSheetById('style'), filters);
+
 		if (forceProfile) {
 			switchToTitle('you');
 		}
@@ -117,11 +131,14 @@ function initData() {
 			user.slug = user.name.replace(' ', '').toLowerCase();
 			user.pjsColor = 0xFF000000 + parseInt(user.color, 16);
 			user.avatarSrc = 'img/avatar/' + user.slug + '.jpg';
+			user.lastTrackEnd = 0;
+			user.firstName = user.name.split(' ')[0];
 			usersById[user.id] = user;
 			randomPjsColors.push(user.pjsColor);
 		}
 		for (var i = 0; i < tracks.length; i++) {
 			var track = tracks[i];
+			track.isLastTrack = false;
 			tracksById[track.id] = track;
 			var userId = track.userid;
 			if (userId) {
@@ -137,6 +154,14 @@ function initData() {
 				if (lastWeek <= track.time) {
 					owner.fortnightDuration += track.duration;
 				}
+			}
+		}
+		for (var i = 0; i < users.length; i++) { // circle back now that users have tracks
+			var user = users[i];
+			if (user.tracks.length) {
+				var lastTrack = user.tracks[user.tracks.length - 1];
+				user.lastTrackEnd = lastTrack.time + lastTrack.duration;
+				lastTrack.isLastTrack = true;
 			}
 		}
 		infoPromise.resolve();

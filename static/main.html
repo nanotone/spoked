@@ -11,28 +11,29 @@
 <script type="text/javascript" src="js/native.history.js"></script>
 <script type="text/javascript" src="js/time.js"></script>
 <script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/style.js"></script>
 <script type="text/javascript" src="js/render.js"></script>
 <script type="text/javascript" src="js/spoked.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-<link rel="stylesheet" href="css/style.css" media="screen" />
+<link rel="stylesheet" href="css/style.css" media="screen" id="style" />
 </head>
 <body>
 <div id="nav">
 <div id="service-bar">
 </div>
 <div id="service-nav">
-<div id="logo">SPOKED</div>
+	<div id="logo" class="user-color">SPOKED</div>
 
   <ul id="menu-nav">
-  	<li id="about"><a href="#">About</a></li>
-  	<li id="invite"><a href="#">Invite</a></li>
+  	<li id="about" class="user-bottomcolor"><a href="" class="user-color user-bottomcolor">About</a></li>
+  	<li id="invite" class="user-bottomcolor"><a href="" class="user-color user-bottomcolor">Follow us on Twitter</a></li>
   </ul>
 
 <div id="user-nav">
 	<div class="you guest">
-		<img class="user-avatar" src="img/avatar/kristinbreivik.jpg" />
-		<div class="toggle-login-form link menu-link">Log in!</div>
+		<!--<img class="user-avatar" src="img/avatar/kristinbreivik.jpg" />-->
+		<div class="toggle-login-form link menu-link">Log in</div>
 		<form id="login-form" action="/">
 			<input type="text" placeholder="username" class="username" /><br />
 			<input type="password" placeholder="password" class="password" /><br />
@@ -44,21 +45,21 @@
 		<img class="user-avatar" src="img/avatar/kristinbreivik.jpg" />
 		<div class="non-text menu-link user-name">Kristin Breivik</div>
 		<div class="dropdown">
-			<div class="menu-item your-profile">Your Profile</div>
-			<div class="menu-item logout">Log out</div>
+			<div class="menu-item your-profile user-bgcolor user-dark-bgcolor">Your Profile</div>
+			<div class="menu-item logout user-bgcolor user-dark-bgcolor">Log out</div>
 		</div>	
 	</div>
 </div><!-- end user-nav-->
 </div> <!-- end service-nav -->
 </div> <!-- end nav -->
 
-<div id="animation-clock">Animation clock! Make this pretty, please... pretty please?</div>
+<div id="animation-clock"></div>
 <div id="sidebar">
 	<div id="sidebar-nav">
 		<ul>
 			<li>
 				<a id="sidebar-btn-stats" href="#stats">
-    			<img class="mapbtn selected" src="img/btn/stats.png"></a>
+    			<img class="mapbtn selected user-bgcolor user-dark-bgcolor" src="img/btn/stats.png"></a>
  			</li>
   			<!--<li>
 				<a href="#stats">
@@ -70,6 +71,9 @@
 		Track your bike rides. See your snazzy patterns emerge on your city map.<br />
 		Something about a poster...
 	</div>
+	
+	<!-- LEADERBOARD -->
+	
 	<div id="leaderboard" class="sidebar-content auth">
 		<div class="title">Most worn tires</div>
 		<!--<div class="sub-title">Friends leaderboard in miles</div>-->
@@ -85,15 +89,41 @@
 			<tbody>
 				<tr id="leaderboard-template" class="template">
 					<th><img class="avatar" src="img/avatar/tinaye.jpg"><p class="stats-name">Tina Ye</p></th>
-					<td class="stats-last-week">55</td>
-					<td class="stats-this-week">17</td>
-					<td class="emph stats-total-miles">82</td>
+					<td class="stats-last-week"></td>
+					<td class="stats-this-week"></td>
+					<td class="emph stats-total-miles"></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	<div id="stats-profile" class="sidebar-content auth">
 	
+	
+	<!-- STATS ON PROFILE -->
+	
+	<div id="stats-profile" class="sidebar-content auth">
+		<div class="title" id="stats-name">Profile X</div>
+		<table>
+			<thead>
+				<tr>
+						<th></th>	
+						<td>Last week</td>
+						<td>This week</td>
+						<td>Total miles</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th><img class="stats-avatar" src="img/avatar/tinaye.jpg"><p class="stats-name"></p></th>
+					<td class="stats-last-week"></td>
+					<td class="stats-this-week"></td>
+					<td class="emph stats-total-miles"></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="stats-color"></div>
+		<div class="stats-duration"></div>
+
+		<!-- OLD VERSION OF PROFILE STATS
 		<div class="title" id="stats-name">Profile X</div>
 		<img class="stats-avatar"></img>
 		Last week: <span class="stats-last-week"></span><br />
@@ -101,53 +131,117 @@
 		Total miles: <span class="stats-total-miles"></span>
 		<div class="stats-color"></div>
 		<div class="stats-duration"></div>
+		-->
 		
+		
+		<!--LINE-CHART PLACEHOLDER IMAGE
+		<img src="img/line_chart_profile.png" width="370px" style="margin-top: 25px;"> -->
 		
 		<!--TRIED THE MORE ADVANCED LINE-CHART
 		<canvas id="line-chart" data-processing-sources="chart.pde"></canvas> -->
-		<img src="img/line_chart_profile.png" width="370px" style="margin-top: 25px;">		
-		
+				
 		<!--TRIED THE SIMPLE LINE-CHART. DOESN'T SHOW UP
 		<canvas id="line-chart" data-processing-sources="line_v2.pde"></canvas> -->
 	
 	
 	</div>
+	
+	
+	<!-- STATS ON PROFILE VS PROFILE -->
+	
 	<div id="stats-versus" class="sidebar-content hidden auth">
 		<div class="title"><span id="stats-name1">Profile X</span> vs <span id="stats-name2">Profile Y</span></div>
 		<div id="stats-user1">
-			<img class="stats-avatar"></img>
-			Last week: <span class="stats-last-week"></span><br />
-			This week: <span class="stats-this-week"></span><br />
-			Total miles: <span class="stats-total-miles"></span>
+			<table>
+				<thead>
+					<tr>
+							<th></th>	
+							<td>Last week</td>
+							<td>This week</td>
+							<td>Total miles</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th><img class="stats-avatar" src="img/avatar/tinaye.jpg"><p class="stats-name"></p></th>
+						<td class="stats-last-week"></td>
+						<td class="stats-this-week"></td>
+						<td class="emph stats-total-miles"></td>
+					</tr>
+				</tbody>
+			</table>
 			<div class="stats-color"></div>
 			<div class="stats-duration"></div>
 		</div>
+
 		<div id="stats-user2">
-			<img class="stats-avatar"></img>
-			Last week: <span class="stats-last-week"></span><br />
-			This week: <span class="stats-this-week"></span><br />
-			Total miles: <span class="stats-total-miles"></span>
+			<table>
+				<tbody>
+					<tr>
+						<th><img class="stats-avatar" src="img/avatar/tinaye.jpg"><p class="stats-name"></p></th>
+						<td class="stats-last-week"></td>
+						<td class="stats-this-week"></td>
+						<td class="emph stats-total-miles"></td>
+					</tr>
+				</tbody>
+			</table>
 			<div class="stats-color"></div>
 			<div class="stats-duration"></div>
 		</div>
-		<img src="img/line_chart.png" width="370px" style="margin-top: 25px;">		
-
 	</div>
-</div>
-
 	
-<div id="commentary" class="auth">
-	<div id="twitter-bar">
-		<a href="">@iamspoked</a> says:
-	</div>
-	Holy cow, you have been riding 290 miles lately! NYC - Philly next?
+		<!-- OLD VERSION OF VERSUS STATS
+	<div id="stats-versus" class="sidebar-content hidden auth">
+			<div class="title"><span id="stats-name1">Profile X</span> vs <span id="stats-name2">Profile Y</span></div>
+			<div id="stats-user1">
+				<img class="stats-avatar"></img>
+				Last week: <span class="stats-last-week"></span><br />
+				This week: <span class="stats-this-week"></span><br />
+				Total miles: <span class="stats-total-miles"></span>
+				<div class="stats-color"></div>
+				<div class="stats-duration"></div>
+			</div>
+			<div id="stats-user2">
+				<img class="stats-avatar"></img>
+				Last week: <span class="stats-last-week"></span><br />
+				This week: <span class="stats-this-week"></span><br />
+				Total miles: <span class="stats-total-miles"></span>
+				<div class="stats-color"></div>
+				<div class="stats-duration"></div>
+			</div>
+			<img src="img/line_chart.png" width="370px" style="margin-top: 25px;">
+
+	</div>  END OLD VERSION OF VERSUS STATS -->
+
+</div> <!-- end sidebar -->
+
+
+<div id="commentary" class="auth user-color">
+
+	<!--<div id="twitter-bar">
+		<a href="http://twitter.com/iamspoked" class="user-color">@iamspoked</a> says:
+	</div>-->
+	<ul id="twitter_update_list"></ul>
+
+	<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
+	<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/carriestiens.json?callback=twitterCallback2&amp;count=1"></script>
 </div>
+
 <!--<div id="testing">
 Carrie rode 7 miles in 56 min<br />
 Arrived 2 hours ago.
 </div>-->
 
 <canvas id="processing" data-processing-sources="spoked.pde"></canvas>
+
+<!-- TO MAKE A .PNG OF THE PROCESSING CANVAS OF RIDES -->
+<script>
+var canvas = document.getElementById("processing");
+    
+	canvas.onclick = function () {
+  	window.location = canvas.toDataURL('image/png');
+};
+</script>
 
 
 
@@ -157,63 +251,62 @@ Arrived 2 hours ago.
     <li id="portrait-template" class="template portrait"><a href="profile.html" class="avatarLink">
     	<div class="filter"></div><img class="avatar" style="border-color: #d2222d;" src="img/avatar/serakoo.jpg"></a>
     	<div class="pop" style="background-color: #d2222d;">
-    		<a href="#ToUserProfile" class="name">DISPLAY NAME</a> is on two wheels!
+			<a href="#ToUserProfile" class="name">DISPLAY NAME</a><br />biked <span class="last-ride">2 hours ago</span>.
     		<div class="pop-nav">
-    			<div class="compare"><a href="">Compare rides to yours &raquo;</a></div>
-    			<!--<a href="#AddRidesOnTopOfProfile">Compare rides &raquo;</a><br /> Only on profile page -->
-	    		<a class="profileLink" href="">To profile &raquo;</a>
+    			<div class="compare"><a href="">Compare rides &raquo;</a></div>
+   	    		<!--<a class="profileLink" href="">To profile &raquo;</a>-->
     		</div>
     	</div>
     </li>
   </ul>
 </div> <!-- end portrait nav -->
 
-<div id="bottom-bar"></div>
+<div id="bottom-bar" class="user-bgcolor"></div>
 <div id="portrait-control-nav" class="auth">
 	<ul>
-	<li><a class="newyorkersLink" href="#">All</a></li>
-	<li><a class="friendsLink" href="#">Friends</a></li>
-	<li><a class="youLink" href="#">You</a></li>
+		<li class="user-dark-bgcolor"><a class="newyorkersLink" href="#">All</a></li>
+		<li class="user-dark-bgcolor"><a class="friendsLink" href="#">Friends</a></li>
+		<li class="user-dark-bgcolor"><a class="youLink" href="#">You</a></li>
 	</ul>
 </div><!-- end portrait-control-nav -->
 <div id="time-nav" class="auth"> 
 <!--http://ryanfait.com/resources/custom-checkboxes-and-radio-buttons/ to style buttons+js-->
 	<ul>
-	<li><a id="animate" href="">Animation</a></li>
-	<li><a class="selected" id="lastweek" href="">Last week</a></li>
-	<li><a class="selected" id="thisweek" href="">This week</a></li>
+	<li><a class="user-dark-bgcolor" id="animate" href="">Animation</a></li>
+	<li><a class="selected user-dark-bgcolor" id="lastweek" href="">Last week</a></li>
+	<li><a class="selected user-dark-bgcolor" id="thisweek" href="">This week</a></li>
 	</ul>
 </div><!-- end time nav -->
 <div id="map-nav" class="auth"> <!--To change map backgrounds-->
   <ul>
     <li class="mapSelect" id="streets">
-		<a href=""><img class="mapbtn" src="img/btn/hoods.png"></a>
+		<a href="" class="user-color"><img class="mapbtn user-dark-bgcolor" src="img/btn/hoods.png"></a>
     	<div class="pop">
-    		<a href="#">Streets</a> 
+    		<a href="" class="user-color">Streets</a> 
     	</div>
 	</li>
     <li class="mapSelect" id="landsea">
-      <a href=""><img class="mapbtn" src="img/btn/landsea.png"></a>
+      <a href="" class="user-color"><img class="mapbtn user-dark-bgcolor" src="img/btn/landsea.png"></a>
     	<div class="pop">
-    		<a href="#">Land and Sea</a> 
+    		<a href="" class="user-color">Land and Sea</a> 
     	</div>
 	</li>
     <li class="mapSelect" id="beatenpaths">
-      <a href=""><img class="mapbtn" src="img/btn/beatenpaths.png"></a>
+      <a href="" class="user-color"><img class="mapbtn user-dark-bgcolor" src="img/btn/beatenpaths.png"></a>
     	<div class="pop">
-    		<a href="#">Beaten Paths</a> 
+    		<a href="" class="user-color">Beaten Paths</a> 
     	</div>
 	</li>
     <li class="mapSelect" id="blankcanvas">
-      <a href=""><img class="mapbtn" src="img/btn/blankcanvas.png"></a>
+      <a href="" class="user-color"><img class="mapbtn user-dark-bgcolor" src="img/btn/blankcanvas.png"></a>
     	<div class="pop">
-    		<a href="#">Blank Canvas</a> 
+    		<a href="" class="user-color">Blank Canvas</a> 
     	</div>
 	</li>
     <li class="mapSelect" id="hoods">
-      <a href=""><img class="mapbtn" src="img/btn/hoods.png"></a>
+      <a href="" class="user-color"><img class="mapbtn user-dark-bgcolor" src="img/btn/hoods.png"></a>
     	<div class="pop">
-    		<a href="#">Neighborhoods</a> 
+    		<a href="" class="user-color">Neighborhoods</a> 
     	</div>
 	</li>
   </ul> 

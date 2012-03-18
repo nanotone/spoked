@@ -97,7 +97,7 @@ h1 {
   	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .3);*/
   	}
 
-#logo {
+#logo.user-color {
 	display: block;
 	float: left;
 	position: relative;
@@ -127,18 +127,15 @@ h1 {
 	padding: 0;
 
 	ul { 
-	
 		li {
 			display: block;
 			padding-top: 0;
 			float: left;
-						
-			a{
-				text-decoration: none;
-			}
+			a { text-decoration: none; }
 		}
-		li.selectedLink {
-			border-bottom: 2px solid $yourColor;
+		li.user-bottomcolor.selectedLink {
+			border-bottom: 2px solid;
+			border-bottom-color: $yourColor;
 		}
 	}
 	#menu-nav {
@@ -146,22 +143,22 @@ h1 {
 		margin-top: 4px;
 		margin-left: 80px;
 		position: relative;
-		
-		li{
+		li {
 			margin: 0 25px 0 0;
-			
-			a {
+			a.user-color {
 				color: $yourColor; 
 			}
-			a:hover{
-				border-bottom: 2px solid $yourColor;
+			a.user-bottomcolor:hover {
+				border-bottom: 2px solid;
+				border-bottom-color: $yourColor;
 			}
-	
 		}
 	}
 	
 	#user-nav {
-		font-family: $futura;
+		font-family: $vinyl;
+		font-size: 16px;
+		text-transform: uppercase;
 		line-height: 20px;
 		position: absolute;
 		margin: -14px 10px 0 0;
@@ -203,7 +200,7 @@ h1 {
 				right: 10px;
 				margin-top: 10px;
 				width: 125px;
-				.menu-item {
+				.menu-item.user-bgcolor {
 					clear: both;
 					cursor: pointer;
 					margin: 0px;
@@ -211,9 +208,11 @@ h1 {
 					padding: 4px 7px;
 					width: 100%;
 					background-color: $yourColor;
-					&:hover { background-color: darken($yourColor, 10%); }
 					color: white;
 					font-size: 18px;
+				}
+				.menu-item.user-dark-bgcolor:hover {
+					background-color: darken($yourColor, 10%);
 				}
 			}
 		}
@@ -225,14 +224,32 @@ h1 {
 	display: none;
 }
 
-#animation-clock {
+#animation-clock-OLD{
 	position: fixed;
-	top: 35px;
-	display: none;
+	z-index: 200;
+	bottom: 35px;
+	width: 392px;
+	right: 0px;
+	display: block;
 	background-color: black;
-	padding: 6px;
+	padding: 5px;
 	color: white;
 	font-family: monospace;
+}
+
+#animation-clock {
+	position: fixed;
+	z-index: 200;
+	bottom: 35px;
+	width: 392px;
+	right: 0px;
+	display: block;
+	padding: 5px;
+	background-color: #fff;
+	opacity: 0.6;
+	color: $black;
+	font-family: $vinyl;
+	text-transform: uppercase;
 }
 
 
@@ -240,11 +257,12 @@ h1 {
 #bottom-nav{
 	bottom: 0;
 	height: 35px;
-	font-family: $serif;
-	font-weight: bold;
-	font-size: 14px;
+	font-family: $vinyl;
+	text-transform: uppercase;
+	/*font-weight: bold;*/
+	font-size: 16px;
 	}
-#bottom-bar{
+#bottom-bar.user-bgcolor {
 	height: 35px;
 	bottom: 0;
 	width: 100%;
@@ -273,17 +291,14 @@ h1 {
 		padding-left:.5em;
 		margin-top:0;
 		margin-left: 0;
-		li {
+		.portrait {
 			display: block;
 			float: left;
 			position: relative;
 			padding-right: .5em;
-			a{
+			a {
 				color: #ffffff;
 				text-decoration: none;  
-			}
-			.pop a {
-				color: #fff;
 			}
 			.filter {
 				position: absolute; 
@@ -293,21 +308,10 @@ h1 {
 				opacity: .6; 
 				z-index: 102;
 			}
+			&:hover .filter { display: none; }
+			&:hover .pop { display: block; }
 		}
-		li:hover {
-			.filter {
-				display: none;
-			}
-
-			.pop {
-				display: block;
-			}	
-		}
-		li.selected {
-			.filter {
-				display: none;
-			}
-		}
+		.portrait.selected .filter { display: none; }
 	}
 	/*.mapSelect.selected img.mapbtn  IS THIS DOING ANYTHING, OR CAN IT BE DELETED?
 	{
@@ -334,31 +338,35 @@ img.avatar {
 .pop {
 	display: none;
 	position: absolute;
-	left: -.6em;
+	left: 0px;
+	text-transform: none;
 	/*top: -5.2em;*/
-	bottom: 3.7em;
-	width: 230px;
+	bottom: 55px;
+	width: 140px;
 	background-color: #fff;
 	opacity: 0.8;
 	font-family: $futura;
 	font-size: 14px;
-	padding: .6em;
-	-moz-border-radius-topleft: .8em;
+	padding: 5px;
+	/*-moz-border-radius-topleft: .8em;
   	-webkit-border-top-left-radius: .8em;
 	-moz-border-radius-topright: .8em;
   	-webkit-border-top-right-radius: .8em;
 	-moz-border-radius-bottomright: .8em;
-  	-webkit-border-bottom-right-radius: .8em;
+  	-webkit-border-bottom-right-radius: .8em;*/
 	}
 
 .pop a.name {
-	font-family: $futura;
+	font-family: $vinyl;
 	font-size: 16px;
 	text-transform: uppercase;
-	}
+ 	width: 100%;
+	line-height: 18px;
+	 	}
 .pop-nav {
-	padding-top: .4em;
-	font: 14px $serif;
+	text-transform: none;
+	padding-top: 20px;
+	font: 14px $futura;
 	}
 
 /*MAP NAV*/
@@ -366,7 +374,7 @@ img.avatar {
 #map-nav {
 	bottom: 0;
 	display:block;
-	margin: -14px 0 0 0;	
+	margin: -16px 0 0 0;	
 	padding: 0 0 0px 0;
 	z-index: 200;
 	position: relative;
@@ -389,12 +397,11 @@ img.avatar {
 			padding-top: 0;
 			margin-top: 0;
 			
-			a {
+			a.user-color {
 				color: $yourColor;
 				text-decoration: none;  
 
 				img.mapbtn {
-					background-color: $yourColor;
 					position: relative;
 					display: block;
 					float:left;
@@ -404,7 +411,7 @@ img.avatar {
 					width: 35px;
 					border: none;
 			  	}
-				img.mapbtn:hover {
+				img.mapbtn.user-dark-bgcolor:hover {
 					background-color: darken($yourColor, 10%);
 				}
 			}
@@ -413,7 +420,7 @@ img.avatar {
 				width: 100px;
 			}
 		}
-		li.selected img.mapbtn {
+		li.selected img.mapbtn.user-dark-bgcolor {
 			background-color: darken($yourColor, 10%);
 		}
 		li:hover .pop {
@@ -426,7 +433,7 @@ img.avatar {
 #portrait-control-nav {
 	bottom: 0;
 	display:block;
-	margin: -10px 0 0 0;	
+	margin: -6px 0 0 0;	
 	padding: 0 0 0 0;
 	z-index: 200;
 	position: relative;
@@ -441,19 +448,18 @@ img.avatar {
 			float: left;
 			padding: 0 0;
 			margin: 0 0 0 8px;
-			
 			a {
 				color: #fff;
 				text-decoration: none;
 				padding: 1px 4px 3px 4px;
 			}
-			a:hover {
-				background-color: darken($yourColor, 10%);
-			}
 		}
-		li.selectedLink {
+		li.user-dark-bgcolor.selectedLink {
 			background-color: darken($yourColor, 10%);
 		} 	
+		li.user-dark-bgcolor:hover {
+			background-color: darken($yourColor, 10%);
+		}
 	}
 }
 
@@ -461,7 +467,7 @@ img.avatar {
 #time-nav {
 	bottom: 0;
 	display:block;
-	margin: -10px 0 0 0;	
+	margin: -12px 0 0 0;	
 	padding: 0 0 0 0;
 	z-index: 200;
 	position: relative;
@@ -483,10 +489,10 @@ img.avatar {
 				text-decoration: none;
 				padding: 1px 4px 3px 4px;
 			}
-			a:hover {
+			a.user-dark-bgcolor:hover {
 				background-color: darken($yourColor, 10%);
 			}
-			a.selected {
+			a.user-dark-bgcolor.selected {
 				background-color: darken($yourColor, 10%);
 			}
 		}		
@@ -522,8 +528,10 @@ content: url(../img/btn/play-animation-20x20.png);
 	height: 100%;
 	z-index: 150;
 	top: 0;
-	right: 0px;	/*TO HIDE SIDEBAR Right: -400px;*/
-	@include box-shadow(inset 10px 3px 7px rgba(0,0,0, .1));
+	right: 0px;	
+	box-shadow: inset 10px 3px 7px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 10px 3px 7px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 10px 3px 7px rgba(0,0,0,0.1);
 	-webkit-transition-property: right;
 	-webkit-transition-duration: 0.3s;
 	-webkit-transition-timing-function: ease;
@@ -541,18 +549,18 @@ content: url(../img/btn/play-animation-20x20.png);
 #sidebar-nav ul {
 	margin: 55px auto auto -70px;
 	list-style-type: none;
+	li {
+		margin-top: 15px;
+		a img.user-bgcolor {
+			width: 30px;
+			height: 30px;
+			background-color: $yourColor;
+		}
+		a img.user-dark-bgcolor:hover {
+			background-color: darken($yourColor, 10%);
+		}
 	}
-#sidebar-nav ul li {
-	margin-top: 15px;
-	}
-#sidebar-nav ul li img {
-	width: 30px;
-	height: 30px;
-	background-color: $yourColor;
-	}
-#sidebar-nav ul li a img:hover {
-		background-color: darken($yourColor, 10%);
-	}
+}
 .sidebar-content {
 	position: absolute;
 	top: 55px;
@@ -569,13 +577,21 @@ content: url(../img/btn/play-animation-20x20.png);
 		font-size: 1em;
 		padding-bottom: 20px;
 	}
-	#stats-profile img.stats-avatar { width: 87px; height: 87px; }
-	#stats-versus  img.stats-avatar { width: 50px; height: 50px; }
+	#stats-profile img.stats-avatar { width: 87px; height: 87px; margin-bottom: -5px; }
+	#stats-versus  img.stats-avatar { width: 87px; height: 87px; margin-bottom: -5px; }
 	.stats-color {
 		height: 5px;
+		width: 360px;
+		margin-left: 2px;
+		margin-top:-8px;
 	}
 	.stats-duration {
-		text-transform: uppercase;
+		text-transform: normal;
+		font-family: $futura;
+		font-weight: 300;
+		font-size: 16px;
+		color: darken(#ccc, 20%);
+		margin-left: 2px;
 	}
 }
 
@@ -738,47 +754,60 @@ content: url(../img/btn/play-animation-20x20.png);
 
 
 /* STATS PROFILE */
-#stats-profile {
-
-}
 
 #stats-profile.hidden {
 	visibility: hidden; 
 }
+#stats-profile.sidebar-content table tbody tr th {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+ 	border-bottom: none;
+}
 
 /* STATS PROFILE VS PROFILE */
-#stats-versus {
-
-}
 
 #stats-versus.hidden {
 	visibility: hidden; 
 }	
+
+#stats-versus.sidebar-content table tbody tr th {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+ 	border-bottom: none;
+}
+
 /* COMMENTARY */
-#commentary {
+#commentary.user-color {
 	/*background-color: #fff;*/
 	font-family: $serif;
 	position: fixed;
-	width: 10em;
+	width: 360px;
 	height: auto;
-	margin: 5em 0 0 5%;
+	margin: 90px 0 0 20px;
 	z-index: 200;	
 	color: $yourColor;
 	font-style: normal;
 	font-weight: 400;
-	font-size: 34px;
-	line-height: 40px;
+	font-size: 24px;
+	line-height: 30px;
 	}
 #twitter-bar {
 	font-family: $sans;
-	font-size: .7em;
+	font-size: 22px;
 	font-style: normal;
-	margin-bottom: .6em;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
 }
-#twitter-bar a {
+#twitter-bar a.user-color {
 	color: $yourColor;
 	font-style: normal;
 }
+#commentary ul{
+	list-style-type: none;
+	padding-left: 0;
+}
+
+
 
 #testing {
 	background-color: #fff;
@@ -787,6 +816,6 @@ content: url(../img/btn/play-animation-20x20.png);
 	position: fixed;
 	width: 400px;
 	top: 600px;  
-	left: 40px;
+	left: 20px;
 	font-size: 14px;
   }
