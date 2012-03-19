@@ -26,7 +26,7 @@ json_encoder = JSONEncoder()
 def auth():
 	crossorigin()
 	mimetype_json()
-	auth_key = bottle.request.query.username
+	auth_key = bottle.request.query.username.lower()
 	spec = {('email' if '@' in auth_key else 'twitterid'): auth_key}
 	user = db.users.find_one(spec)
 	if user:
