@@ -45,8 +45,8 @@
 		<img class="user-avatar" src="img/avatar/kristinbreivik.jpg" />
 		<div class="non-text menu-link user-name">Kristin Breivik</div>
 		<div class="dropdown">
-			<div class="menu-item your-profile user-bgcolor user-dark-bgcolor">Your Profile</div>
-			<div class="menu-item logout user-bgcolor user-dark-bgcolor">Log out</div>
+			<div class="menu-item your-profile user-bgcolor user-dark-bgcolor">&raquo; Your Profile</div>
+			<div class="menu-item logout user-bgcolor user-dark-bgcolor">&raquo; Log out</div>
 		</div>	
 	</div>
 </div><!-- end user-nav-->
@@ -221,16 +221,23 @@
 	<!--<div id="twitter-bar">
 		<a href="http://twitter.com/iamspoked" class="user-color">@iamspoked</a> says:
 	</div>-->
+	<!--
 	<ul id="twitter_update_list"></ul>
 
 	<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
+<<<<<<< HEAD
 	<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/spokoetry.json?callback=twitterCallback2&amp;count=1"></script>
+=======
+	<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/carriestiens.json?callback=twitterCallback2&amp;count=1"></script>
+-->
+>>>>>>> 019378bc6e2cae92a113de267e3a16df29de0b98
 </div>
 
-<!--<div id="testing">
-Carrie rode 7 miles in 56 min<br />
-Arrived 2 hours ago.
-</div>-->
+<!-- END-RIDE HOVER ON LAST RIDE -->
+<div id="end-ride" class="hidden">
+		<a href="#" class="name">GURI</a> arrived <span class="last-ride">8:45 am</span>
+		<div class="end-ride-stats">7.2 <small>mi</small> | 2 <small>hrs</small> 25 <small>min</small> | 8 <small>mph</small></div>
+</div>
 
 <canvas id="processing" data-processing-sources="spoked.pde"></canvas>
 
@@ -251,10 +258,12 @@ var canvas = document.getElementById("processing");
     <li id="portrait-template" class="template portrait"><a href="profile.html" class="avatarLink">
     	<div class="filter"></div><img class="avatar" style="border-color: #d2222d;" src="img/avatar/serakoo.jpg"></a>
     	<div class="pop" style="background-color: #d2222d;">
-			<a href="#ToUserProfile" class="name">DISPLAY NAME</a><br />biked <span class="last-ride">2 hours ago</span>.
-    		<div class="pop-nav">
-    			<div class="compare"><a href="">Compare rides &raquo;</a></div>
-   	    		<!--<a class="profileLink" href="">To profile &raquo;</a>-->
+			<div class="profileLink">
+				<a href="#" class="name">DISPLAY NAME</a><br />
+				biked <span class="last-ride">2 hours ago</span>.
+			</div>
+    		<div class="pop-nav user-dark-bgcolor">
+    			<div class="compare"><a href="">&raquo; Compare rides</a></div>
     		</div>
     	</div>
     </li>
@@ -264,7 +273,7 @@ var canvas = document.getElementById("processing");
 <div id="bottom-bar" class="user-bgcolor"></div>
 <div id="portrait-control-nav" class="auth">
 	<ul>
-		<li class="user-dark-bgcolor"><a class="newyorkersLink" href="#">All</a></li>
+		<!--<li class="user-dark-bgcolor"><a class="newyorkersLink" href="#">All</a></li>-->
 		<li class="user-dark-bgcolor"><a class="friendsLink" href="#">Friends</a></li>
 		<li class="user-dark-bgcolor"><a class="youLink" href="#">You</a></li>
 	</ul>
@@ -279,24 +288,39 @@ var canvas = document.getElementById("processing");
 </div><!-- end time nav -->
 <div id="map-nav" class="auth"> <!--To change map backgrounds-->
   <ul>
+<<<<<<< HEAD
 
 	<li class="mapSelect" id="landsea">
       <a href="" class="user-color"><img class="mapbtn user-dark-bgcolor" src="img/btn/landsea.png"></a>
+=======
+    <li class="mapSelect" id="streets">
+		<a href="" class="user-color"><img class="mapbtn user-dark-bgcolor" src="img/btn/landsea.png"></a>
+>>>>>>> 019378bc6e2cae92a113de267e3a16df29de0b98
     	<div class="pop">
     		<a href="" class="user-color">Land and Sea</a> 
     	</div>
 	</li>
+<<<<<<< HEAD
 	
   
     <li class="mapSelect" id="streets">
 		<a href="" class="user-color"><img class="mapbtn user-dark-bgcolor" src="img/btn/streets.png"></a>
+=======
+<!--    <li class="mapSelect" id="landsea">
+      <a href="" class="user-color"><img class="mapbtn user-dark-bgcolor" src="img/btn/landsea.png"></a>
+>>>>>>> 019378bc6e2cae92a113de267e3a16df29de0b98
     	<div class="pop">
     		<a href="" class="user-color">Streets</a> 
     	</div>
+<<<<<<< HEAD
 	</li>
 	
     
 <!-- <li class="mapSelect" id="beatenpaths">
+=======
+	</li> -->
+    <li class="mapSelect" id="beatenpaths">
+>>>>>>> 019378bc6e2cae92a113de267e3a16df29de0b98
       <a href="" class="user-color"><img class="mapbtn user-dark-bgcolor" src="img/btn/beatenpaths.png"></a>
     	<div class="pop">
     		<a href="" class="user-color">Beaten Paths</a> 
