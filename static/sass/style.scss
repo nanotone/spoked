@@ -34,7 +34,7 @@ body {
 	margin: 0;
 	padding:0;
 	height: 2750px;
-	background-color: #f8f7f2;
+	background-color: #fff;
 	background-position: top left;
 	background-repeat: no-repeat;
 }
@@ -430,7 +430,9 @@ img.avatar {
 			}
 
 			.pop {
-				width: 100px;
+				padding: 5px 8px;
+				margin-bottom: -10px;
+				width: 80px;
 			}
 		}
 		li.selected img.mapbtn.user-dark-bgcolor {

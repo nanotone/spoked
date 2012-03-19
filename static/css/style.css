@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   height: 2750px;
-  background-color: #f8f7f2;
+  background-color: #fff;
   background-position: top left;
   background-repeat: no-repeat;
 }
@@ -474,19 +474,21 @@ img.avatar {
 }
 /* line 432, ../sass/style.scss */
 #map-nav ul li .pop {
-  width: 100px;
+  padding: 5px 8px;
+  margin-bottom: -10px;
+  width: 80px;
 }
-/* line 436, ../sass/style.scss */
+/* line 438, ../sass/style.scss */
 #map-nav ul li.selected img.mapbtn.user-dark-bgcolor {
   background-color: #08877e;
 }
-/* line 439, ../sass/style.scss */
+/* line 441, ../sass/style.scss */
 #map-nav ul li:hover .pop {
   display: block;
 }
 
 /* PORTRAIT-CONTROL-NAV */
-/* line 446, ../sass/style.scss */
+/* line 448, ../sass/style.scss */
 #portrait-control-nav {
   bottom: 0;
   display: block;
@@ -497,34 +499,34 @@ img.avatar {
   height: 30px;
   float: left;
 }
-/* line 456, ../sass/style.scss */
+/* line 458, ../sass/style.scss */
 #portrait-control-nav ul {
   padding-left: 0;
 }
-/* line 459, ../sass/style.scss */
+/* line 461, ../sass/style.scss */
 #portrait-control-nav ul li {
   display: block;
   float: left;
   padding: 0 0;
   margin: 0 0 0 8px;
 }
-/* line 464, ../sass/style.scss */
+/* line 466, ../sass/style.scss */
 #portrait-control-nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 1px 4px 3px 4px;
 }
-/* line 470, ../sass/style.scss */
+/* line 472, ../sass/style.scss */
 #portrait-control-nav ul li.user-dark-bgcolor.selectedLink {
   background-color: #08877e;
 }
-/* line 473, ../sass/style.scss */
+/* line 475, ../sass/style.scss */
 #portrait-control-nav ul li.user-dark-bgcolor:hover {
   background-color: #08877e;
 }
 
 /* TIME-NAV */
-/* line 480, ../sass/style.scss */
+/* line 482, ../sass/style.scss */
 #time-nav {
   bottom: 0;
   display: block;
@@ -535,35 +537,35 @@ img.avatar {
   height: 35px;
   float: right;
 }
-/* line 490, ../sass/style.scss */
+/* line 492, ../sass/style.scss */
 #time-nav ul {
   padding-left: 15px;
   padding-right: 5px;
 }
-/* line 494, ../sass/style.scss */
+/* line 496, ../sass/style.scss */
 #time-nav ul li {
   display: block;
   float: left;
   width: 125px;
   padding: 0 0;
 }
-/* line 500, ../sass/style.scss */
+/* line 502, ../sass/style.scss */
 #time-nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 1px 4px 3px 4px;
 }
-/* line 505, ../sass/style.scss */
+/* line 507, ../sass/style.scss */
 #time-nav ul li a.user-dark-bgcolor:hover {
   background-color: #08877e;
 }
-/* line 508, ../sass/style.scss */
+/* line 510, ../sass/style.scss */
 #time-nav ul li a.user-dark-bgcolor.selected {
   background-color: #08877e;
 }
 
 /* CHECKBOXES */
-/* line 517, ../sass/style.scss */
+/* line 519, ../sass/style.scss */
 #time-nav ul li a.selected:before {
   content: url(../img/btn/checkbox-sq-checked-20x20.png);
   margin-right: 7px;
@@ -571,7 +573,7 @@ img.avatar {
   top: 5px;
 }
 
-/* line 523, ../sass/style.scss */
+/* line 525, ../sass/style.scss */
 #time-nav ul li a:before {
   content: url(../img/btn/checkbox-sq-20x20.png);
   margin-right: 7px;
@@ -579,13 +581,13 @@ img.avatar {
   top: 5px;
 }
 
-/* line 529, ../sass/style.scss */
+/* line 531, ../sass/style.scss */
 #time-nav ul li a#animate:before {
   content: url(../img/btn/play-animation-20x20.png);
 }
 
 /* SIDEBAR */
-/* line 535, ../sass/style.scss */
+/* line 537, ../sass/style.scss */
 #sidebar {
   color: #1f1f1f;
   position: fixed;
@@ -611,70 +613,70 @@ img.avatar {
   transition-timing-function: ease;
 }
 
-/* line 558, ../sass/style.scss */
+/* line 560, ../sass/style.scss */
 #sidebar.hidden {
   right: -400px;
 }
 
-/* line 562, ../sass/style.scss */
+/* line 564, ../sass/style.scss */
 #sidebar-nav ul {
   margin: 55px auto auto -70px;
   list-style-type: none;
 }
-/* line 565, ../sass/style.scss */
+/* line 567, ../sass/style.scss */
 #sidebar-nav ul li {
   margin-top: 15px;
 }
-/* line 567, ../sass/style.scss */
+/* line 569, ../sass/style.scss */
 #sidebar-nav ul li a img.user-bgcolor {
   width: 30px;
   height: 30px;
   background-color: #0bb7ab;
 }
-/* line 572, ../sass/style.scss */
+/* line 574, ../sass/style.scss */
 #sidebar-nav ul li a img.user-dark-bgcolor:hover {
   background-color: #08877e;
 }
 
-/* line 577, ../sass/style.scss */
+/* line 579, ../sass/style.scss */
 .sidebar-content {
   position: absolute;
   top: 55px;
   margin: 0 10px 50px 20px;
 }
 
-/* line 583, ../sass/style.scss */
+/* line 585, ../sass/style.scss */
 #sidebar .title {
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
   font-size: 34px;
 }
-/* line 588, ../sass/style.scss */
+/* line 590, ../sass/style.scss */
 #sidebar .sub-title {
   font-family: Georgia;
   font-size: 1em;
   padding-bottom: 20px;
 }
-/* line 593, ../sass/style.scss */
+/* line 595, ../sass/style.scss */
 #sidebar #stats-profile img.stats-avatar {
   width: 87px;
   height: 87px;
   margin-bottom: -5px;
 }
-/* line 594, ../sass/style.scss */
+/* line 596, ../sass/style.scss */
 #sidebar #stats-versus img.stats-avatar {
   width: 87px;
   height: 87px;
   margin-bottom: -5px;
 }
-/* line 595, ../sass/style.scss */
+/* line 597, ../sass/style.scss */
 #sidebar .stats-color {
   height: 5px;
   width: 360px;
   margin-left: 2px;
   margin-top: -8px;
 }
-/* line 601, ../sass/style.scss */
+/* line 603, ../sass/style.scss */
 #sidebar .stats-duration {
   text-transform: normal;
   font-family: "futura-pt-condensed";
@@ -685,23 +687,23 @@ img.avatar {
 }
 
 /* LEADERBOARD */
-/* line 639, ../sass/style.scss */
+/* line 641, ../sass/style.scss */
 .sidebar-content {
   /*End table*/
 }
-/* line 640, ../sass/style.scss */
+/* line 642, ../sass/style.scss */
 .sidebar-content table {
   border-spacing: 2px;
   margin-top: 0px;
   /* End tbody*/
 }
-/* line 644, ../sass/style.scss */
+/* line 646, ../sass/style.scss */
 .sidebar-content table thead {
   margin-top: 5px;
   width: 360px;
   display: block;
 }
-/* line 651, ../sass/style.scss */
+/* line 653, ../sass/style.scss */
 .sidebar-content table thead tr td {
   width: 90px;
   font-family: "vinyl", sans-serif;
@@ -714,7 +716,7 @@ img.avatar {
   display: table-cell;
   text-align: right;
 }
-/* line 663, ../sass/style.scss */
+/* line 665, ../sass/style.scss */
 .sidebar-content table thead tr th {
   font-family: "vinyl", sans-serif;
   text-transform: none;
@@ -729,17 +731,17 @@ img.avatar {
   margin: 0;
   border-top: 0;
 }
-/* line 679, ../sass/style.scss */
+/* line 681, ../sass/style.scss */
 .sidebar-content table tbody {
   /* End tr*/
 }
-/* line 680, ../sass/style.scss */
+/* line 682, ../sass/style.scss */
 .sidebar-content table tbody tr {
   width: 360px;
   margin: 0;
   padding: 0;
 }
-/* line 685, ../sass/style.scss */
+/* line 687, ../sass/style.scss */
 .sidebar-content table tbody tr th {
   font-family: "vinyl", sans-serif;
   text-transform: none;
@@ -756,7 +758,7 @@ img.avatar {
   margin-top: 5px;
   border-bottom: 5px solid #ccc;
 }
-/* line 701, ../sass/style.scss */
+/* line 703, ../sass/style.scss */
 .sidebar-content table tbody tr th p.stats-name {
   margin-top: 3px;
   margin-bottom: -5px;
@@ -765,7 +767,7 @@ img.avatar {
   text-transform: uppercase;
   line-height: 10px;
 }
-/* line 710, ../sass/style.scss */
+/* line 712, ../sass/style.scss */
 .sidebar-content table tbody tr td {
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
@@ -787,12 +789,12 @@ img.avatar {
   padding-bottom: 0px;
   padding-right: 8px;
 }
-/* line 732, ../sass/style.scss */
+/* line 734, ../sass/style.scss */
 .sidebar-content table tbody tr td.stats-last-week {
   display: table-cell;
   width: 180px;
 }
-/* line 736, ../sass/style.scss */
+/* line 738, ../sass/style.scss */
 .sidebar-content table tbody tr td.stats-total-miles {
   margin-top: -44px;
   vertical-align: bottom;
@@ -800,13 +802,13 @@ img.avatar {
   width: 80px;
   border-right: 0px solid #1f1f1f;
 }
-/* line 744, ../sass/style.scss */
+/* line 746, ../sass/style.scss */
 .sidebar-content table tbody tr .emph {
   font-size: 40px;
   text-align: right;
   font-weight: 600;
 }
-/* line 753, ../sass/style.scss */
+/* line 755, ../sass/style.scss */
 .sidebar-content table .avatar {
   border: none;
   padding: 0;
@@ -817,18 +819,18 @@ img.avatar {
 }
 
 /*End leaderboard*/
-/* line 764, ../sass/style.scss */
+/* line 766, ../sass/style.scss */
 #leaderboard.hidden {
   visibility: hidden;
 }
 
 /* STATS PROFILE */
-/* line 771, ../sass/style.scss */
+/* line 773, ../sass/style.scss */
 #stats-profile.hidden {
   visibility: hidden;
 }
 
-/* line 774, ../sass/style.scss */
+/* line 776, ../sass/style.scss */
 #stats-profile.sidebar-content table tbody tr th {
   margin-bottom: 0px;
   padding-bottom: 0px;
@@ -836,12 +838,12 @@ img.avatar {
 }
 
 /* STATS PROFILE VS PROFILE */
-/* line 782, ../sass/style.scss */
+/* line 784, ../sass/style.scss */
 #stats-versus.hidden {
   visibility: hidden;
 }
 
-/* line 786, ../sass/style.scss */
+/* line 788, ../sass/style.scss */
 #stats-versus.sidebar-content table tbody tr th {
   margin-bottom: 0px;
   padding-bottom: 0px;
@@ -849,7 +851,7 @@ img.avatar {
 }
 
 /* COMMENTARY */
-/* line 793, ../sass/style.scss */
+/* line 795, ../sass/style.scss */
 #commentary.user-color {
   /*background-color: #fff;*/
   font-family: "ff-tisa-web-pro", Georgia, serif;
@@ -865,7 +867,7 @@ img.avatar {
   line-height: 30px;
 }
 
-/* line 807, ../sass/style.scss */
+/* line 809, ../sass/style.scss */
 #twitter-bar {
   font-family: "atrament-web", sans-serif;
   font-size: 22px;
@@ -874,25 +876,25 @@ img.avatar {
   padding-bottom: 0px;
 }
 
-/* line 814, ../sass/style.scss */
+/* line 816, ../sass/style.scss */
 #twitter-bar a.user-color {
   color: #0bb7ab;
   font-style: normal;
 }
 
-/* line 818, ../sass/style.scss */
+/* line 820, ../sass/style.scss */
 #commentary ul {
   list-style-type: none;
   padding-left: 0;
 }
 
 /* END RIDE HOVER */
-/* line 824, ../sass/style.scss */
+/* line 826, ../sass/style.scss */
 #end-ride.hidden {
   visibility: hidden;
 }
 
-/* line 827, ../sass/style.scss */
+/* line 829, ../sass/style.scss */
 #end-ride {
   background-color: #0bb7ab;
   /*The color of the ride you hover over*/
@@ -908,20 +910,20 @@ img.avatar {
   z-index: 1000;
   padding: 5px 8px;
 }
-/* line 841, ../sass/style.scss */
+/* line 843, ../sass/style.scss */
 #end-ride .name {
   color: white;
   font: 16px "vinyl", sans-serif;
   text-decoration: none;
 }
-/* line 846, ../sass/style.scss */
+/* line 848, ../sass/style.scss */
 #end-ride .end-ride-stats {
   padding-top: 5px;
   font: 16px "vinyl", sans-serif;
   text-transform: uppercase;
   color: #fff;
 }
-/* line 853, ../sass/style.scss */
+/* line 855, ../sass/style.scss */
 #end-ride .end-ride-stats small {
   font-size: 10px;
 }
