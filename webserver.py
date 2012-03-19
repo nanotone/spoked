@@ -59,7 +59,7 @@ def info():
 	crossorigin()
 	mimetype_json()
 	return json_encoder.encode({
-		'tracks': list({'id': t['_id'], 'time': t['start_time'], 'userid': t['userid'], 'distance': t['distance'], 'duration': t['duration']} for t in db.tracks.find()),
+		'tracks': list({'id': t['_id'], 'time': t['start_time'], 'userid': t['userid'], 'distance': t['distance'], 'duration': t['duration']} for t in db.tracks.find({'start_time': {'$gt': time.time() - 86400*14}})),
 		'users': list({'id': u['_id'], 'name': u['name'], 'color': u['color'], 'duration': u['total_duration']} for u in db.users.find())
 	})
 
