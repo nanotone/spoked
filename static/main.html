@@ -45,8 +45,8 @@
 		<img class="user-avatar" src="img/avatar/kristinbreivik.jpg" />
 		<div class="non-text menu-link user-name">Kristin Breivik</div>
 		<div class="dropdown">
-			<div class="menu-item your-profile user-bgcolor user-dark-bgcolor">Your Profile</div>
-			<div class="menu-item logout user-bgcolor user-dark-bgcolor">Log out</div>
+			<div class="menu-item your-profile user-bgcolor user-dark-bgcolor">&raquo; Your Profile</div>
+			<div class="menu-item logout user-bgcolor user-dark-bgcolor">&raquo; Log out</div>
 		</div>	
 	</div>
 </div><!-- end user-nav-->
@@ -229,10 +229,10 @@
 -->
 </div>
 
-<!--<div id="testing">
-Carrie rode 7 miles in 56 min<br />
-Arrived 2 hours ago.
-</div>-->
+<div id="end-ride" class="hidden">
+		<a href="#" class="name">GURI</a> arrived <span class="last-ride">8:45 am</span>
+		<div class="end-ride-stats">7.2 <small>mi</small> | 2 <small>hrs</small> 25 <small>min</small> | 8 <small>mph</small></div>
+</div>
 
 <canvas id="processing" data-processing-sources="spoked.pde"></canvas>
 
@@ -258,7 +258,7 @@ var canvas = document.getElementById("processing");
 				biked <span class="last-ride">2 hours ago</span>.
 			</div>
     		<div class="pop-nav user-dark-bgcolor">
-    			<div class="compare"><a href="">Compare rides &raquo;</a></div>
+    			<div class="compare"><a href="">&raquo; Compare rides</a></div>
     		</div>
     	</div>
     </li>

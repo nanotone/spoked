@@ -336,7 +336,7 @@ img.avatar {
 	margin-bottom: 10px;
 	width: 140px;
 	background-color: #fff;
-	opacity: 0.8;
+	opacity: 0.9;
 	/*-moz-border-radius-topleft: .8em;
   	-webkit-border-top-left-radius: .8em;
 	-moz-border-radius-topright: .8em;
@@ -373,7 +373,7 @@ img.avatar {
 	border-top: 1px solid rgba(255, 255, 255, 0.2);
 	padding: 4px 7px;
 	color: white;
-	font: 18px $futura;
+	font: 16px $futura;
 	width: 126px;
 	font-weight: normal;
 	}
@@ -820,15 +820,37 @@ content: url(../img/btn/play-animation-20x20.png);
 	padding-left: 0;
 }
 
-
-
-#testing {
-	background-color: #fff;
-	font-family: $netto;
+/* END RIDE HOVER */
+#end-ride.hidden {
+	visibility: hidden; 
+}
+#end-ride {
+	background-color: $yourColor; /*The color of the ride you hover over*/
+	opacity: 0.9;
+	color: #fff;
+	font-family: $futura;
 	float:left;
 	position: fixed;
-	width: 400px;
-	top: 600px;  
+	top: 200px;  
 	left: 20px;
-	font-size: 14px;
-  }
+	font-size: 16px;
+	line-height: 16px;
+	z-index: 1000;
+	padding: 5px 8px;
+  	
+  	.name {
+		color: white;
+		font: 16px $vinyl;
+		text-decoration: none;
+	}
+	.end-ride-stats {
+		padding-top: 5px;
+		font: 16px $vinyl;
+		text-transform: uppercase;
+		color: #fff;
+		
+	}
+	.end-ride-stats small {
+	font-size:10px;
+	}
+}

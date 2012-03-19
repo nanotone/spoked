@@ -371,7 +371,7 @@ img.avatar {
   margin-bottom: 10px;
   width: 140px;
   background-color: #fff;
-  opacity: 0.8;
+  opacity: 0.9;
   	/*-moz-border-radius-topleft: .8em;
     	-webkit-border-top-left-radius: .8em;
   	-moz-border-radius-topright: .8em;
@@ -412,7 +412,7 @@ img.avatar {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding: 4px 7px;
   color: white;
-  font: 18px "futura-pt-condensed";
+  font: 16px "futura-pt-condensed";
   width: 126px;
   font-weight: normal;
 }
@@ -886,14 +886,42 @@ img.avatar {
   padding-left: 0;
 }
 
-/* line 825, ../sass/style.scss */
-#testing {
-  background-color: #fff;
-  font-family: "ff-netto-web";
+/* END RIDE HOVER */
+/* line 824, ../sass/style.scss */
+#end-ride.hidden {
+  visibility: hidden;
+}
+
+/* line 827, ../sass/style.scss */
+#end-ride {
+  background-color: #0bb7ab;
+  /*The color of the ride you hover over*/
+  opacity: 0.9;
+  color: #fff;
+  font-family: "futura-pt-condensed";
   float: left;
   position: fixed;
-  width: 400px;
-  top: 600px;
+  top: 200px;
   left: 20px;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 16px;
+  z-index: 1000;
+  padding: 5px 8px;
+}
+/* line 841, ../sass/style.scss */
+#end-ride .name {
+  color: white;
+  font: 16px "vinyl", sans-serif;
+  text-decoration: none;
+}
+/* line 846, ../sass/style.scss */
+#end-ride .end-ride-stats {
+  padding-top: 5px;
+  font: 16px "vinyl", sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+}
+/* line 853, ../sass/style.scss */
+#end-ride .end-ride-stats small {
+  font-size: 10px;
 }
