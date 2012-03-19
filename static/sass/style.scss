@@ -210,6 +210,8 @@ h1 {
 					background-color: $yourColor;
 					color: white;
 					font-size: 18px;
+					text-transform:none;
+					font-family: $futura;
 				}
 				.menu-item.user-dark-bgcolor:hover {
 					background-color: darken($yourColor, 10%);
@@ -222,19 +224,6 @@ h1 {
 .wrong-login {
 	color: red;
 	display: none;
-}
-
-#animation-clock-OLD{
-	position: fixed;
-	z-index: 200;
-	bottom: 35px;
-	width: 392px;
-	right: 0px;
-	display: block;
-	background-color: black;
-	padding: 5px;
-	color: white;
-	font-family: monospace;
 }
 
 #animation-clock {
@@ -279,7 +268,7 @@ h1 {
 
 #portrait-nav {
 	bottom: 30px;
-	height: 55px;
+	height: 65px;
 	position: absolute;
 	display: block;
 	float: left;
@@ -295,7 +284,8 @@ h1 {
 			display: block;
 			float: left;
 			position: relative;
-			padding-right: .5em;
+			padding-right: 8px;
+			padding-top:10px;
 			a {
 				color: #ffffff;
 				text-decoration: none;  
@@ -325,6 +315,7 @@ img.avatar {
 	display: block;
 	float:left;
 	margin:0;
+	margin-top: 0px;
 	padding:0;
 	height: 45px;
 	width: 45px;
@@ -341,13 +332,11 @@ img.avatar {
 	left: 0px;
 	text-transform: none;
 	/*top: -5.2em;*/
-	bottom: 55px;
+	bottom: 45px;
+	margin-bottom: 10px;
 	width: 140px;
 	background-color: #fff;
 	opacity: 0.8;
-	font-family: $futura;
-	font-size: 14px;
-	padding: 5px;
 	/*-moz-border-radius-topleft: .8em;
   	-webkit-border-top-left-radius: .8em;
 	-moz-border-radius-topright: .8em;
@@ -362,11 +351,35 @@ img.avatar {
 	text-transform: uppercase;
  	width: 100%;
 	line-height: 18px;
-	 	}
+	 }
+.profileLink {
+	text-transform: none;
+	clear: both;
+	cursor: pointer;
+	margin: 0px;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	padding: 4px 7px;
+	color: white;
+	font: 16px $futura;
+	width: 126px;
+	font-weight: normal;
+	}
+	
 .pop-nav {
 	text-transform: none;
-	padding-top: 20px;
-	font: 14px $futura;
+	clear: both;
+	cursor: pointer;
+	margin: 0px;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	padding: 4px 7px;
+	color: white;
+	font: 18px $futura;
+	width: 126px;
+	font-weight: normal;
+	}
+
+.pop-nav.user-dark-bgcolor:hover, .profileLink.user-dark-bgcolor:hover {
+		background-color: darken(#ccc, 10%);
 	}
 
 /*MAP NAV*/
