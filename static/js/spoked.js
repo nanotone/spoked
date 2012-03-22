@@ -217,7 +217,7 @@ function onClickCompare(e) {
 
 $(function() {
 	$('.template').css({display: 'none'});
-	$('.auth').hide();
+	$('.guest').hide();
 	$body = $('body');
 	console.log($body.scrollLeft() + " " + $body.scrollTop());
 	if ($body.scrollLeft() == 0 && $body.scrollTop() == 0) {
@@ -227,11 +227,6 @@ $(function() {
 		}, 0);
 	}
 
-	$('.toggle-login-form').click(function() {
-		$('#login-form').toggle();
-		$('#login-form .username').focus();
-	});
-	$('#login-form').submit(sessionLogin);
 	$('.your-profile').click(makeLinkHandler('you'));
 	$('.logout').click(sessionLogout);
 

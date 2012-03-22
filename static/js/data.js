@@ -27,13 +27,6 @@ function clearHistoryState(replace) {
 		}
 	}
 }
-function getAuth() {
-	return $.cookie('spokedAuth') || '';
-}
-function setAuth(value) {
-	auth = value;
-	$.cookie('spokedAuth', auth);
-}
 function darken(color) {
 	var intColor = 0;
 	for (var i = 0; i < 3; i++) {
@@ -43,12 +36,7 @@ function darken(color) {
 }
 function onLogin(data, forceProfile) {
 	var deferred = $.Deferred();
-
-	setAuth(data.auth);
 	authUserId = data.userid;
-	$('.guest').hide();
-	$('.wrong-login').hide();
-	$('.auth').show();
 	infoPromise.done(function() {
 		var authUser = usersById[authUserId];
 		$('.user-avatar').attr('src', authUser.avatarSrc);
@@ -72,49 +60,27 @@ function onLogin(data, forceProfile) {
 }
 
 function initSession() {
-	auth = getAuth();
+	auth = $.cookie('spokedAuth');
 	if (auth) {
 		$.get(SERVER + 'auth', {'username': auth}, function(data) {
 			if (data.auth) {
 				onLogin(data, false);
+				sessionPromise.resolve();
 			}
 			else {
-				setAuth(data.auth);
-				console.log("not logged in");
-				clearHistoryState(true);
+				$.cookie('spokedAuth', '');
+				window.location.replace('login.html');
 			}
-			sessionPromise.resolve();
 		});
 	}
 	else {
-		clearHistoryState(true);
-		sessionPromise.resolve();
+		window.location.replace('login.html');
 	}
-}
-function sessionLogin(e) {
-	e.preventDefault();
-	$form = $(this);
-	var query = {'username': $form.find('.username').val(),
-	             'password': $form.find('.password').val()};
-	$.get(SERVER + 'auth', query, function(data) {
-		if (data.auth) {
-			onLogin(data, true);
-		}
-		else {
-			$('.wrong-login').show();
-		}
-	});
 }
 function sessionLogout(e) {
 	e.preventDefault();
-	setAuth('');
-	$('.auth').hide();
-	$('#login-form').hide();
-	$('#login-form .username').val('');
-	$('#login-form .password').val('');
-	$('.guest').show();
-
-	switchToState('friends', true);
+	$.cookie('spokedAuth', '');
+	window.location.replace('login.html');
 }
 
 function initData() {
