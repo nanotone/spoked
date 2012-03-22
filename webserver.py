@@ -58,9 +58,32 @@ def tracks():
 def info():
 	crossorigin()
 	mimetype_json()
+	def userobj(u):
+		obj = {'id': u['_id']}
+		for field in ('name', 'color', 'email', 'twitterid', 'passwd', 'duration'):
+			obj[field] = u.get(field)
+		return obj
 	return json_encoder.encode({
 		'tracks': list({'id': t['_id'], 'time': t['start_time'], 'userid': t['userid'], 'distance': t['distance'], 'duration': t['duration']} for t in db.tracks.find({'start_time': {'$gt': time.time() - 86400*14}})),
-		'users': list({'id': u['_id'], 'name': u['name'], 'color': u['color'], 'duration': u['total_duration']} for u in db.users.find())
+		'users': list(userobj(u) for u in db.users.find())
 	})
+
+@bottle.post('/saveUser')
+def saveUser():
+	crossorigin()
+	mimetype_json()
+	forms = bottle.request.forms
+	print dict(forms)
+	user = getattr(forms, 'id', None)
+	if user and len(user) == 24:
+		user = db.users.find_one({'_id': bson.objectid.ObjectId(user)})
+	if not user:
+		user = {}
+	for field in ('name', 'color', 'email', 'twitterid', 'passwd'):
+		value = getattr(forms, field, None)
+		if value is not None:
+			user[field] = value
+	db.users.save(user)
+	return '{}'
 
 bottle.run(host='0.0.0.0', port=8081)
