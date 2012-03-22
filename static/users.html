@@ -10,6 +10,8 @@ $(function() {
 			var user = data.users[i];
 			var $inst = instantiate($('#user-template'));
 			$inst.find('.name').text(user.name);
+			$inst.find('.email').text(user.email);
+			$inst.find('.twitterid').text(user.twitterid);
 			$inst.find('.color').text(user.color).css({backgroundColor: '#' + user.color});
 			$inst.find('.edit').attr('href', 'user.html?' + user.id);
 		}
@@ -24,6 +26,8 @@ $(function() {
 <div id="users">
 	<div id="user-template" class="template">
 		<div>Name: <span class="name"></span></div>
+		<div>Email: <span class="email"></span></div>
+		<div>Twitter: <span class="twitterid"></span></div>
 		<div>Color: <span class="color"></span></div>
 		<div><a class="edit">Edit</a></div>
 		<br />
