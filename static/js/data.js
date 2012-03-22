@@ -1,5 +1,3 @@
-var SERVER = 'http://dev.iamspoked.com/';
-
 var auth;
 var authUserId;
 
