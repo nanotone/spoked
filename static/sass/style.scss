@@ -1,7 +1,7 @@
 @import "compass/css3";
 
 /*COLORS*/
-$yourColor: #0bb7ab;
+$yourColor: #ffffff;
 $land: #fffbf0;
 $bar: #1f1f1f; /*#322e10; brown #322e10*/
 $black: #1f1f1f;
@@ -29,14 +29,13 @@ $dax: "ff-dax-compact-web-pro";
 $ronnia: "ronnia-condensed";
 
 body {
-	font-size: 100%;
-	  
+	font-size: 100%;  
 	margin: 0;
 	padding:0;
-	height: 2750px;
 	background-color: #fff;
 	background-position: top left;
 	background-repeat: no-repeat;
+	font-family: $futura;
 }
 
 body.streets { background: url(../img/map/streets.png); }
@@ -65,17 +64,31 @@ canvas#line-chart {
 }
 
 h1 {
-	font-family: $sans;
+	font-family: $vinyl;
 	font-style: normal;
-	font-weight: 400;
-	font-size: 4.3em;
-	text-align: center;
+	font-weight: 500;
+	font-size: 34px;
+	text-align: left;
+	text-transform: uppercase;
+	line-height: 34px;
+	margin-top: 20px;
 	}
-
+h2 {
+	font-family: $vinyl;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	text-align: left;
+	text-transform: uppercase;
+	line-height: 34px;
+	margin-top: 20px;
+	margin-bottom: 0px;
+	}
 /* GENERIC HELPFUL STUFFS */
 .link { cursor: pointer; }
 .non-text { cursor: default; }
-	
+
+a { text-decoration: none; }
 
 /* NAV TOP */	
 #nav, #bottom-nav {
@@ -108,13 +121,17 @@ h1 {
 	/*border-bottom: 20px solid $yourColor;*/
 	/*padding: .5em 2em 0 2em;*/
 	/*background-color: $yourColor; */
-	color: $yourColor;
+/*	color: $yourColor;*/
 	font-family: $vinyl;
 	font-weight: 500;
 	font-size: 35px;
 	line-height: 38px;
 	text-align: center;
   	}
+a#logo.user-color {
+	color: $black;
+	text-decoration: none;
+}
 
 #service-nav {
 	font-family: $futura;
@@ -854,5 +871,50 @@ content: url(../img/btn/play-animation-20x20.png);
 	}
 	.end-ride-stats small {
 	font-size:10px;
+	}
+}
+
+/* MAP */
+#map {
+	height: 2750px;	
+}
+
+/* PAGE ABOUT */
+#page-about, #page-howto {
+	#service-bar {
+		-moz-box-shadow: 3px 3px 7px rgba(0,0,0, .2);
+	  	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .2);
+	}
+	#content {
+		width: 100%;
+		padding: 10px 0 0;
+		position: relative;
+		
+		#box {
+			border: 1px solid #D4D4D4;
+			margin: 60px auto 20px;
+			width: 900px;
+			
+			.page-content {
+				border: 1px solid #D4D4D4;
+				margin: 10px auto 10px 0px;
+				left: 0;
+				float:left;
+				width: 550px;
+				position: relative;
+				padding: 0 10px;
+				
+				h1 {
+					
+				}
+			}
+			.sidebar {
+				border: 1px solid #D4D4D4;
+				margin: 10px 0px 10px auto;
+				right: 0;
+				width: 300px;
+				padding: 0 10px;
+			}
+		}
 	}
 }
