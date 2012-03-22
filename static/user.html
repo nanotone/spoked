@@ -1,0 +1,48 @@
+<head>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript">
+$(function() {
+	var fields = ['id', 'name', 'email', 'twitterid', 'color', 'passwd'];
+	$('.color').on('input', function() {
+		$('.preview-color').css({backgroundColor: '#' + $('.color').val()});
+	});
+	var search = window.location.search;
+	if (search) {
+		if (search[0] == '?') { search = search.substr(1); }
+		if (search.length == 24) { // mongo id
+			$.get(SERVER + 'info', function(data) {
+				for (var i = 0; i < data.users.length; i++) {
+					var user = data.users[i];
+					if (user.id == search) {
+						for (var j = 0; j < fields.length; j++) {
+							$('.' + fields[j]).val(user[fields[j]]);
+						}
+						$('.color').trigger('input');
+					}
+				}
+			});
+		}
+	}
+	$('.save').click(function() {
+		var query = {};
+		for (var i = 0; i < fields.length; i++) {
+			query[fields[i]] = $('.' + fields[i]).val();
+		}
+		$.post(SERVER + 'saveUser', query, function(data) {
+			window.location.href = 'users.html';
+		});
+	});
+})
+</script>
+</head>
+<body>
+<h2>Add new user</h2>
+<input class="id" type="hidden" />
+<div>Name: <input class="name" /></div>
+<div>Email: <input class="email" /></div>
+<div>Twitter: <input class="twitterid" /></div>
+<div>Color: <input class="color" /> <span class="preview-color">&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+<div>Passwd: <input class="passwd" type="password" /></div>
+<button class="save">Save</button>
+</body>

@@ -11,7 +11,7 @@ $(function() {
 			var $inst = instantiate($('#user-template'));
 			$inst.find('.name').text(user.name);
 			$inst.find('.color').text(user.color).css({backgroundColor: '#' + user.color});
-			$inst.find('.edit').attr('href', 'user.html?id=' + user.id);
+			$inst.find('.edit').attr('href', 'user.html?' + user.id);
 		}
 	});
 });
