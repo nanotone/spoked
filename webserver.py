@@ -79,10 +79,12 @@ def saveUser():
 		user = db.users.find_one({'_id': bson.objectid.ObjectId(user)})
 	if not user:
 		user = {}
-	for field in ('name', 'color', 'email', 'twitterid', 'passwd'):
-		value = getattr(forms, field, None)
-		if value is not None:
-			user[field] = value
+	for field in ('name', 'color', 'email', 'twitterid'):
+		user[field] = getattr(forms, field, '')
+	if getattr(forms, 'passwd'):
+		user['passwd'] = forms['passwd']
+	user['email'] = user['email'].lower()
+	user['twitterid'] = user['twitterid'].lower()
 	db.users.save(user)
 	return '{}'
 
