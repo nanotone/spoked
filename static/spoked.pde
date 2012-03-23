@@ -66,15 +66,17 @@ class RideAnimation {
 		float[] lastPoint = points[points.length - 1];
 		float longStop = map(lastPoint[longPos], Wlong, Elong, 0, width);
 		float latStop = map(lastPoint[latPos], Nlat, Slat, 0, height);
-		// fill(color - 0x69000000); // handy math trick for making it more transparent
-		fill(color);
+		fill(color - 0x69000000); // handy math trick for making it more transparent
+		//fill(color);
 		noStroke();
 		ellipse(longStop, latStop, 9, 9);
 		
 		if (isLastRide) {// YANG, THIS IS THE STYLE FOR THE LAST RIDE THAT IS INTERACTIVE
-			fill(255);
-			stroke(color);
-			ellipse(longStop, latStop, 12, 12);
+			//fill(255);
+			fill(color - 0x69000000); 
+			stroke(255);
+			strokeWeight(2);
+			ellipse(longStop, latStop, 15, 15);
 		}
 	}
 }
