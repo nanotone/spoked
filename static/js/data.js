@@ -1,10 +1,13 @@
 var auth;
 var authUserId;
+var sessionPromise = $.Deferred();
 
 var tracks = null;
 var users = null;
+var games = null;
 var usersById = {};
 var tracksById = {};
+var gamesById = {};
 var randomPjsColors = [];
 function getRandomPjsColor() {
 	var index = Math.pow(100, -Math.random());
@@ -13,8 +16,6 @@ function getRandomPjsColor() {
 	randomPjsColors.push(value);
 	return value;
 }
-
-var sessionPromise = $.Deferred();
 
 function clearHistoryState(replace) {
 	var title = getHistoryTitle();
@@ -87,9 +88,17 @@ function initData() {
 	$.get(SERVER + 'info', {'auth': auth}, function(data) {
 		tracks = data.tracks;
 		users = data.users;
+		games = data.games;
+		for (var i = 0; i < games.length; i++) {
+			var game = games[i];
+			gamesById[game.id] = game;
+		}
 		for (var i = 0; i < users.length; i++) {
 			var user = users[i];
 			user.tracks = [];
+			if (user.gameid) {
+				user.game = gamesById[user.gameid];
+			}
 			user.lastWeekDist = user.thisWeekDist = 0;
 			user.fortnightDuration = 0;
 			user.slug = user.name.replace(' ', '').toLowerCase();

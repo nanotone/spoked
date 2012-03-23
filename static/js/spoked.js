@@ -7,6 +7,7 @@ var pdePromise = $.Deferred();
 var initPromise = $.when(infoPromise, pdePromise, sessionPromise);
 
 var currentUser = null;
+var gameState = '';
 
 function processingReady() {
 	instance = Processing.getInstanceById('processing');
@@ -36,6 +37,9 @@ function showPortraits() {
 	users.sort(function(a, b) { return b.lastTrackEnd - a.lastTrackEnd; });
 	for (var i = 0; i < users.length; i++) {
 		var user = users[i];
+		if (gameState && usersById[authUserId].game != user.game) {
+			continue;
+		}
 		var instance = template.clone().removeClass('template').attr('id', null).css({display: ''});
 		var color = '#' + (user.color || '2dddd2');
 		instance.data('userId', user.id);
@@ -205,6 +209,7 @@ function showUserMiles(user, $col) {
 
 function onClickPortrait(e) {
 	e.preventDefault();
+	if (gameState && gameState != 'during') { return; }
 	var portrait = $(this).closest('.portrait');
 	var userId = portrait.data('userId');
 	switchToTitle(userId);
@@ -218,6 +223,7 @@ function onClickCompare(e) {
 $(function() {
 	$('.template').css({display: 'none'});
 	$('.guest').hide();
+	//$('#sidebar').hide();
 	$body = $('body');
 	console.log($body.scrollLeft() + " " + $body.scrollTop());
 	if ($body.scrollLeft() == 0 && $body.scrollTop() == 0) {
@@ -264,8 +270,26 @@ $(function() {
 	initPromise.done(initMain);
 });
 function initMain() {
-	History.Adapter.bind(window, 'statechange', loadState);
+	var userGame = usersById[authUserId].game;
+	if (userGame) {
+		if (getTime() < userGame.start) {
+			gameState = 'before';
+			$('.pop').hide();
+			$('#portrait-control-nav').hide();
+			$('.portrait a').addClass('disabled');
+		}
+		else if (getTime() < userGame.stop) {
+			gameState = 'during';
+		}
+		else {
+			gameState = 'after';
+		}
+	}
+	if (!gameState || gameState == 'during') {
+		$('#sidebar').show();
+		History.Adapter.bind(window, 'statechange', loadState);
+		loadState();
+	}
 	showPortraits();
-	loadState();
 }
 
