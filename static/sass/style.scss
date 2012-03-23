@@ -317,6 +317,9 @@ a#logo.user-color {
 			}
 			&:hover .filter { display: none; }
 			&:hover .pop { display: block; }
+			a.disabled {
+				cursor: default;
+			}
 		}
 		.portrait.selected .filter { display: none; }
 	}
