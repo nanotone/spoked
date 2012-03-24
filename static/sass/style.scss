@@ -928,10 +928,18 @@ content: url(../img/btn/play-animation-20x20.png);
 		}
 	}
 }
+
+/* PAGE LOGIN */
 #page-login {
 	#service-bar {
 		-moz-box-shadow: 3px 3px 7px rgba(0,0,0, .2);
 	  	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .2);
+	}
+	#form {
+	 padding-top: 80px; 
+	 position: absolute; 
+	 z-index: 2500;
+	 right: 10px;
 	}
 	#content {
 		width: 100%;
