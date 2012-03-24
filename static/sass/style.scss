@@ -1,7 +1,7 @@
 @import "compass/css3";
 
 /*COLORS*/
-$yourColor: #0bb7ab;
+$yourColor: #f0b50c;
 $land: #fffbf0;
 $bar: #1f1f1f; /*#322e10; brown #322e10*/
 $black: #1f1f1f;
@@ -797,6 +797,62 @@ content: url(../img/btn/play-animation-20x20.png);
 	margin-bottom: 0px;
 	padding-bottom: 0px;
  	border-bottom: none;
+}
+
+#super-spoked {
+.super-spoked-title {
+	font-family: $vinyl;
+	text-transform: uppercase;
+	font-size: 12px;
+	margin-left: 2px;
+	margin-top: 20px;
+}
+	table {
+		tbody{
+			margin-top: 5px;
+			width: 370px;
+			display: block;
+			tr {
+				td {
+					width: 25px;
+					font-family: $vinyl;
+					text-transform: uppercase;
+					font-size: 12px;
+					font-weight: 500;
+					text-align: center;
+					margin: 0;
+					margin-top: 0;
+					margin-bottom: 0;
+					padding: 0;
+					display: table-cell;
+					text-align: right;
+					float: left;
+					border-right: 1px solid #ccc;
+					vertical-align:bottom;
+					padding-top: 5px;
+					padding-bottom: 5px;
+					text-align: center;
+				}
+				td.biked {
+					color: $yourColor;
+					background-color: #fff;
+				}
+				td.super-spoked {
+					background-color: $yourColor;
+					color: #fff;
+				}
+				td.rest {
+					color: #ccc;
+				}
+				td.begin-week-one {
+					border-left: 1px solid #ccc;
+						}
+				td.begin-week-two {
+
+				}
+			}
+		}
+	}
 }
 
 /* STATS PROFILE VS PROFILE */
