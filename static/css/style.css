@@ -1041,7 +1041,7 @@ img.avatar {
   border: 1px solid #D4D4D4;
   margin: 10px auto 10px auto;
   left: 0;
-  width: 600px;
+  width: 550px;
   position: relative;
   padding: 0 10px;
 }
@@ -1058,6 +1058,12 @@ img.avatar {
   text-align: center;
 }
 /* line 972, ../sass/style.scss */
+#page-login #content #box .page-content .intro {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+/* line 977, ../sass/style.scss */
 #page-login #content #box .page-content h3 {
   font-size: 20px;
 }

@@ -955,7 +955,7 @@ content: url(../img/btn/play-animation-20x20.png);
 				border: 1px solid #D4D4D4;
 				margin: 10px auto 10px auto;
 				left: 0;
-				width: 600px;
+				width: 550px;
 				position: relative;
 				padding: 0 10px;
 				
@@ -969,6 +969,11 @@ content: url(../img/btn/play-animation-20x20.png);
 					font-size: 52px;
 					text-align: center;
 				}
+				.intro {
+					text-align: center;
+					font-weight: bold;
+					font-size: 24px;
+					}					
 				h3 {
 					font-size: 20px;
 				}
