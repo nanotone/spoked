@@ -297,6 +297,7 @@ function initBeforeGame() {
 	$('.portrait a').addClass('disabled');
 	$('#before-game').show();
 	$('.before-game').text(game.name);
+	$('#time-nav li').hide();
 	var updateCountdown = function() {
 		var timeLeft = game.start - getTime();
 		$('.before-days').text(humanizeUnits(Math.floor(timeLeft / 86400), "day", true));
