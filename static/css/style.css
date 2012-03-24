@@ -903,10 +903,11 @@ img.avatar {
   position: fixed;
   left: 100px;
   top: 200px;
+  z-index: 200;
   text-transform: uppercase;
 }
 
-/* line 835, sass/style.scss */
+/* line 836, sass/style.scss */
 #twitter-bar {
   font-family: "atrament-web", sans-serif;
   font-size: 22px;
@@ -915,25 +916,25 @@ img.avatar {
   padding-bottom: 0px;
 }
 
-/* line 842, sass/style.scss */
+/* line 843, sass/style.scss */
 #twitter-bar a.user-color {
   color: white;
   font-style: normal;
 }
 
-/* line 846, sass/style.scss */
+/* line 847, sass/style.scss */
 #commentary ul {
   list-style-type: none;
   padding-left: 0;
 }
 
 /* END RIDE HOVER */
-/* line 852, sass/style.scss */
+/* line 853, sass/style.scss */
 #end-ride.hidden {
   visibility: hidden;
 }
 
-/* line 855, sass/style.scss */
+/* line 856, sass/style.scss */
 #end-ride {
   background-color: white;
   /*The color of the ride you hover over*/
@@ -949,49 +950,49 @@ img.avatar {
   z-index: 1000;
   padding: 5px 8px;
 }
-/* line 869, sass/style.scss */
+/* line 870, sass/style.scss */
 #end-ride .name {
   color: white;
   font: 16px "vinyl", sans-serif;
   text-decoration: none;
 }
-/* line 874, sass/style.scss */
+/* line 875, sass/style.scss */
 #end-ride .end-ride-stats {
   padding-top: 5px;
   font: 16px "vinyl", sans-serif;
   text-transform: uppercase;
   color: #fff;
 }
-/* line 881, sass/style.scss */
+/* line 882, sass/style.scss */
 #end-ride .end-ride-stats small {
   font-size: 10px;
 }
 
 /* MAP */
-/* line 887, sass/style.scss */
+/* line 888, sass/style.scss */
 #map {
   height: 2750px;
 }
 
 /* PAGE ABOUT */
-/* line 893, sass/style.scss */
+/* line 894, sass/style.scss */
 #page-about #service-bar, #page-howto #service-bar {
   -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
 }
-/* line 897, sass/style.scss */
+/* line 898, sass/style.scss */
 #page-about #content, #page-howto #content {
   width: 100%;
   padding: 10px 0 0;
   position: relative;
 }
-/* line 902, sass/style.scss */
+/* line 903, sass/style.scss */
 #page-about #content #box, #page-howto #content #box {
   border: 1px solid #D4D4D4;
   margin: 60px auto 20px;
   width: 900px;
 }
-/* line 907, sass/style.scss */
+/* line 908, sass/style.scss */
 #page-about #content #box .page-content, #page-howto #content #box .page-content {
   border: 1px solid #D4D4D4;
   margin: 10px auto 10px 0px;
@@ -1001,7 +1002,7 @@ img.avatar {
   position: relative;
   padding: 0 10px;
 }
-/* line 920, sass/style.scss */
+/* line 921, sass/style.scss */
 #page-about #content #box .sidebar, #page-howto #content #box .sidebar {
   border: 1px solid #D4D4D4;
   margin: 10px 0px 10px auto;
