@@ -26,11 +26,16 @@ json_encoder = JSONEncoder()
 def auth():
 	crossorigin()
 	mimetype_json()
-	auth_key = bottle.request.query.username.lower()
-	spec = {('email' if '@' in auth_key else 'twitterid'): auth_key}
+	query = bottle.request.query
+	auth_key = query.username.lower()
+	try:
+		spec = {'_id': bson.objectid.ObjectId(auth_key)}
+	except:
+		spec = {('email' if '@' in auth_key else 'twitterid'): auth_key, 'passwd': query.password}
+	print spec
 	user = db.users.find_one(spec)
 	if user:
-		return '{"auth":"%s", "userid":"%s"}' % (auth_key, user['_id'])
+		return '{"auth":"%s"}' % (user['_id'])
 	return '{"auth":""}'
 
 
@@ -58,12 +63,18 @@ def tracks():
 def info():
 	crossorigin()
 	mimetype_json()
+	def gameobj(g):
+		obj = {'id': g['_id']}
+		for field in ('name', 'start', 'stop'):
+			obj[field] = g.get(field)
+		return obj
 	def userobj(u):
 		obj = {'id': u['_id']}
-		for field in ('name', 'color', 'email', 'twitterid', 'passwd', 'duration'):
+		for field in ('name', 'color', 'email', 'twitterid', 'passwd', 'duration', 'gameid'):
 			obj[field] = u.get(field)
 		return obj
 	return json_encoder.encode({
+		'games': list(gameobj(g) for g in db.games.find()),
 		'tracks': list({'id': t['_id'], 'time': t['start_time'], 'userid': t['userid'], 'distance': t['distance'], 'duration': t['duration']} for t in db.tracks.find({'start_time': {'$gt': time.time() - 86400*14}})),
 		'users': list(userobj(u) for u in db.users.find())
 	})
