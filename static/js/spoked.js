@@ -222,7 +222,6 @@ function onClickCompare(e) {
 
 $(function() {
 	$('.template').css({display: 'none'});
-	$('.guest').hide();
 	//$('#sidebar').hide();
 	$body = $('body');
 	console.log($body.scrollLeft() + " " + $body.scrollTop());
