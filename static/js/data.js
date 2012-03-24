@@ -37,7 +37,7 @@ function darken(color) {
 }
 function onLogin(data, forceProfile) {
 	var deferred = $.Deferred();
-	authUserId = data.userid;
+	authUserId = data.auth;
 	infoPromise.done(function() {
 		var authUser = usersById[authUserId];
 		$('.user-avatar').attr('src', authUser.avatarSrc);
