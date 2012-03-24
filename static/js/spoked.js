@@ -273,9 +273,7 @@ function initMain() {
 	if (userGame) {
 		if (getTime() < userGame.start) {
 			gameState = 'before';
-			$('.pop').hide();
-			$('#portrait-control-nav').hide();
-			$('.portrait a').addClass('disabled');
+			initBeforeGame();
 		}
 		else if (getTime() < userGame.stop) {
 			gameState = 'during';
@@ -290,5 +288,23 @@ function initMain() {
 		loadState();
 	}
 	showPortraits();
+}
+
+function initBeforeGame() {
+	var game = usersById[authUserId].game;
+	$('.pop').hide();
+	$('#portrait-control-nav').hide();
+	$('.portrait a').addClass('disabled');
+	$('#before-game').show();
+	$('.before-game').text(game.name);
+	var updateCountdown = function() {
+		var timeLeft = game.start - getTime();
+		$('.before-days').text(humanizeUnits(Math.floor(timeLeft / 86400), "day", true));
+		timeLeft %= 86400;
+		$('.before-time').text(humanizeUnits(Math.floor(timeLeft/3600), "hour", true) + " " +
+		                       Math.floor(timeLeft%3600/60) + " min " + Math.floor(timeLeft%60) + " sec");
+		setTimeout(updateCountdown, 1000);
+	};
+	updateCountdown();
 }
 

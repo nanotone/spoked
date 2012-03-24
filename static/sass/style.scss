@@ -825,7 +825,13 @@ content: url(../img/btn/play-animation-20x20.png);
 	font-weight: 400;
 	font-size: 24px;
 	line-height: 30px;
-	}
+}
+#before-game {
+	position: fixed;
+	left: 100px;
+	top: 200px;
+	text-transform: uppercase;
+}
 #twitter-bar {
 	font-family: $sans;
 	font-size: 22px;
