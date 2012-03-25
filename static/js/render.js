@@ -1,8 +1,24 @@
+var mapPde = null;
+var pdeDeferred = $.Deferred();
+
+function initRender() {
+	return pdeDeferred.promise();
+}
+
+function processingReady() {
+	mapPde = Processing.getInstanceById('processing');
+	pdeDeferred.resolve();
+}
+
 var rideCanvas = {
 	minTime: lastWeek,
 	maxTime: getTime(),
 	users: [],
 	tracks: [],
+	clear: function() {
+		mapPde.abortRideAnimations();
+		mapPde.background('#ffffff', 0);
+	},
 	update: function(options) {
 		for (var key in options) {
 			this[key] = options[key];
@@ -32,7 +48,7 @@ var rideCanvas = {
 			if (this.drawFrameTimeout) {
 				clearTimeout(this.drawFrameTimeout);
 			}
-			instance.animateRides(this.tracks, lastWeek);
+			mapPde.animateRides(this.tracks, lastWeek);
 		}
 		else {
 			var self = this;
@@ -41,7 +57,7 @@ var rideCanvas = {
 				self.drawFrameTimeout = null;
 				var begin = getTime();
 				while (i < self.tracks.length && getTime() - begin < 0.05) {
-					instance.drawRideImmediately(self.tracks[i]);
+					mapPde.drawRideImmediately(self.tracks[i]);
 					i++;
 				}
 				if (i < self.tracks.length) {
@@ -52,8 +68,7 @@ var rideCanvas = {
 		}
 	},
 	redraw: function() {
-		instance.abortRideAnimations();
-		instance.background('#ffffff', 0);
+		this.clear();
 		this.draw($('#animate').hasClass('selected'));
 	}
 };

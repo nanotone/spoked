@@ -1,6 +1,36 @@
+function initData() {
+	var promise = $.when(initSession(), initInfo());
+	promise.done(initUser);
+	return promise;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
 var auth;
 var authUserId;
-var sessionPromise = $.Deferred();
+
+function initSession() {
+	var deferred = $.Deferred();
+	auth = $.cookie('spokedAuth');
+	if (auth) {
+		$.get(SERVER + 'auth', {'username': auth}, function(data) {
+			if (data.auth) {
+				authUserId = data.auth;
+				deferred.resolve();
+			}
+			else {
+				$.cookie('spokedAuth', '');
+				window.location.replace('login.html');
+			}
+		});
+	}
+	else {
+		window.location.replace('login.html');
+	}
+	return deferred.promise()
+}
+
+////////////////////////////////////////////////////////////////////////////////
 
 var tracks = null;
 var users = null;
@@ -17,74 +47,8 @@ function getRandomPjsColor() {
 	return value;
 }
 
-function clearHistoryState(replace) {
-	var title = getHistoryTitle();
-	if (title != 'friends') {
-		if (replace) {
-			History.replaceState(null, '', '?');
-		}
-		else {
-			switchToTitle('friends');
-		}
-	}
-}
-function darken(color) {
-	var intColor = 0;
-	for (var i = 0; i < 3; i++) {
-		intColor += Math.round(parseInt(color.substr(2*i, 2), 16) * 0.8) * Math.pow(256, 2 - i);
-	}
-	return intColor.toString(16);
-}
-function onLogin(data, forceProfile) {
+function initInfo() {
 	var deferred = $.Deferred();
-	authUserId = data.auth;
-	infoPromise.done(function() {
-		var authUser = usersById[authUserId];
-		$('.user-avatar').attr('src', authUser.avatarSrc);
-		$('.user-name').text(authUser.name);
-		var filters = [
-			['user-color', 'color', '#' + authUser.color],
-			['user-bottomcolor', 'borderBottomColor', '#' + authUser.color],
-			['user-bgcolor', 'backgroundColor', '#' + authUser.color],
-			['user-dark-bgcolor', 'backgroundColor', '#' + darken(authUser.color)] ];
-		updateStyles(getStyleSheetById('style'), filters);
-
-		if (forceProfile) {
-			switchToTitle('you');
-		}
-		else {
-			loadState();
-		}
-		deferred.resolve();
-	});
-	return deferred.promise();
-}
-
-function initSession() {
-	auth = $.cookie('spokedAuth');
-	if (auth) {
-		$.get(SERVER + 'auth', {'username': auth}, function(data) {
-			if (data.auth) {
-				onLogin(data, false);
-				sessionPromise.resolve();
-			}
-			else {
-				$.cookie('spokedAuth', '');
-				window.location.replace('login.html');
-			}
-		});
-	}
-	else {
-		window.location.replace('login.html');
-	}
-}
-function sessionLogout(e) {
-	e.preventDefault();
-	$.cookie('spokedAuth', '');
-	window.location.replace('login.html');
-}
-
-function initData() {
 	$.get(SERVER + 'info', {'auth': auth}, function(data) {
 		tracks = data.tracks;
 		users = data.users;
@@ -137,9 +101,53 @@ function initData() {
 				lastTrack.isLastTrack = true;
 			}
 		}
-		infoPromise.resolve();
+		deferred.resolve();
 	});
+	return deferred.promise();
 }
+
+////////////////////////////////////////////////////////////////////////////////
+
+var gameState = ''
+var gamers = null;
+var userGame = null;
+
+function initUser() {
+	console.log("initUser");
+	var authUser = usersById[authUserId];
+	$('.user-avatar').attr('src', authUser.avatarSrc);
+	$('.user-name').text(authUser.name);
+	var filters = [
+		['user-color', 'color', '#' + authUser.color],
+		['user-bottomcolor', 'borderBottomColor', '#' + authUser.color],
+		['user-bgcolor', 'backgroundColor', '#' + authUser.color],
+		['user-dark-bgcolor', 'backgroundColor', '#' + darken(authUser.color)] ];
+	updateStyles(getStyleSheetById('style'), filters);
+
+	userGame = usersById[authUserId].game;
+	if (userGame) {
+		if      (getTime() < userGame.start) { gameState = 'before'; }
+		else if (getTime() < userGame.stop ) { gameState = 'during'; }
+		else                                 { gameState = 'after' ; }
+		gamers = [];
+		for (var i = 0; i < users.length; i++) {
+			if (users[i].game == userGame) {
+				gamers.push(users[i]);
+			}
+		}
+		users = gamers;
+	}
+}
+
+function darken(color) {
+	var intColor = 0;
+	for (var i = 0; i < 3; i++) {
+		intColor += Math.round(parseInt(color.substr(2*i, 2), 16) * 0.8) * Math.pow(256, 2 - i);
+	}
+	return intColor.toString(16);
+}
+
+////////////////////////////////////////////////////////////////////////////////
 
 function fetchTracks(tracks) {
 	var deferred = $.Deferred();
@@ -162,5 +170,12 @@ function fetchTracks(tracks) {
 		deferred.resolve();
 	}
 	return deferred.promise();
+}
+
+
+function sessionLogout(e) {
+	e.preventDefault();
+	$.cookie('spokedAuth', '');
+	window.location.replace('login.html');
 }
 
