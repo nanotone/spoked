@@ -46,14 +46,34 @@ $(function() {
 <link rel="stylesheet" href="css/style.css" media="screen" id="style" />
 </head>
 <body id="page-login" class="login">
+<div id="nav">
+
+<!-- 
+<div id="service-bar">
+</div>
+-->
+
+<div id="service-nav">
+	<!--<a href="main.html"><div id="logo" class="user-color">SPOKED</div></a>
+
+  <ul id="menu-nav">
+  	<li id="current-game" class="user-bottomcolor"><a href="main.html" class="user-color user-bottomcolor">Current game</a></li>
+    <li id="game-archive" class="user-bottomcolor"><a href="game-archive.html" class="user-color user-bottomcolor">Game archive</a></li>
+    <li id="how-to" class="user-bottomcolor"><a href="how-to.html" class="user-color user-bottomcolor">How to</a></li>
+  	<li id="about" class="user-bottomcolor"><a href="about.html" class="user-color user-bottomcolor">About</a></li>
+  </ul> -->
+
+<div id="user-nav">
+	<form id="form">
+	<input name="username" placeholder="Username"/>
+	<input name="password" placeholder="Password" type="password" />
+	<input class="login-button" type="submit" value="Get in" />	</form>
+	<div class="wrong" style="color:red;display:none">Wrong username or password, please try again.</div>
+</div><!-- end form-->
+</div> <!-- end service-nav -->
+</div> <!-- end nav -->
 
 
-<form id="form">
-Username: <input name="username" /><br />
-Password: <input name="password" type="password" /><br />
-<input type="submit" />
-</form>
-<div class="wrong" style="color:red;display:none">Wrong username or password, please try again.</div>
 
 
 <div id="content">
@@ -61,13 +81,13 @@ Password: <input name="password" type="password" /><br />
 		<div class="page-content">
 			<h1>SPOKED</h1>
 			<h2>Battle for your happiness</h2>
-			<p class="intro">We believe you are happier when you ride a bike. That’s why we’ve made a way for you to indulge in a two-week bike game with your work friends.</p>
-			<h3>CURIOUS?</h3>
+			<p class="intro">We believe you are happier when you ride a bike. Dare to challenge your friends in a two-week bike game to get those wheels rolling.</p>
+			<!--<h3>CURIOUS?</h3>-->
 
-			<p>We’re currently in alpha. Give us your info, and we’ll spoke you when the time is right!</p>
+				<form id="email-form">
+					<p>We are currently made for New York and in private beta. If you have an interest in hosting a game or want to keep up to date, we'd love to hear from you!</p>
 			
 			<p>
-				<form id="email-form">
 					<input class="email-field" placeholder="Email" name="email" />
 					<select class="dropdown-field" name="disposition">
 						<option value="curious">I'm just curious...</option>
@@ -76,12 +96,12 @@ Password: <input name="password" type="password" /><br />
 					<textarea class="notes-field" name="notes" placeholder="Notes, questions, comments?"></textarea>
 					<input class="send-button" type="submit" value="SEND" />
 				</form>
-				<div id="email-submitted" style="display:none">Thank you!</div>
+				<div id="email-submitted" style="display:none"><p style="font-size: 16px;">Thank you!</p></div>
 			</p>
 			
 			<div id="features">
 				<div class="feature">
-					<img src="img/login/feature-snazzy-patterns.jpg"/>
+					<img src="img/login/feature-snazzy-patterns.png"/>
 					<div class="feature-text">
 						<h3 class="title">Make snazzy patterns</h3>
 						<p class="body-text">
@@ -90,7 +110,7 @@ Password: <input name="password" type="password" /><br />
 					</div>
 				</div>
 				<div class="feature">
-					<img src="img/login/feature-snazzy-patterns.jpg"/>
+					<img src="img/login/feature-bike-for-smiles.png"/>
 					<div class="feature-text">
 						<h3 class="title">Bike for smiles <br/>1 mile = 1 smile</h3>
 						<p class="body-text">
@@ -98,7 +118,7 @@ Password: <input name="password" type="password" /><br />
 					</div>
 				</div>
 				<div class="feature">
-					<img src="img/login/feature-snazzy-patterns.jpg"/>
+					<img src="img/login/feature-social-pressure.png"/>
 					<div class="feature-text">
 						<h3 class="title">Feel wonderful social pressure</h3>
 						<p class="body-text">
@@ -107,7 +127,7 @@ Password: <input name="password" type="password" /><br />
 					</div>
 				</div>
 				<div class="feature">
-					<img src="img/login/feature-snazzy-patterns.jpg"/>
+					<img src="img/login/feature-twitter.png"/>
 					<div class="feature-text">
 						<h3 class="title">Hear your bike calling you</h3>
 						<p class="body-text">
@@ -116,7 +136,7 @@ Password: <input name="password" type="password" /><br />
 					</div>
 				</div>
 				<div class="feature">
-					<img src="img/login/feature-snazzy-patterns.jpg"/>
+					<img src="img/login/feature-poster.png"/>
 					<div class="feature-text">
 						<h3 class="title">Be proud. Show your mom.</h3>
 						<p class="body-text">
