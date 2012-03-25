@@ -1073,21 +1073,22 @@ content: url(../img/btn/play-animation-20x20.png);
 	}
 	#content {
 		width: 100%;
-		padding: 10px 0 0;
+		padding: 0px 0 0;
 		position: relative;
 		
 		#box {
 			border: 1px solid #D4D4D4;
-			margin: 60px auto 20px;
+			margin: 0px auto 0px;
 			width: 900px;
+			background-color: #fff;
 			
 			.page-content {
 				border: 1px solid #D4D4D4;
-				margin: 10px auto 10px auto;
+				margin: 0px auto 10px auto;
+				padding: 70px 10px;
 				left: 0;
 				width: 550px;
 				position: relative;
-				padding: 0 10px;
 				
 				h1 {
 					font-size: 200px;
@@ -1100,9 +1101,9 @@ content: url(../img/btn/play-animation-20x20.png);
 					text-align: center;
 				}
 				.intro {
-					text-align: center;
 					font-weight: bold;
-					font-size: 24px;
+					font-family: $serif;
+					font-size: 20px;
 					}					
 				h3 {
 					font-size: 20px;
