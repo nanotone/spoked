@@ -621,12 +621,12 @@ content: url(../img/btn/play-animation-20x20.png);
 		margin-top:-8px;
 	}
 	.stats-duration {
-		text-transform: normal;
+		/*text-transform: normal;
 		font-family: $futura;
 		font-weight: 300;
 		font-size: 16px;
 		color: darken(#ccc, 20%);
-		margin-left: 2px;
+		margin-left: 2px;*/
 	}
 }
 
@@ -717,7 +717,7 @@ content: url(../img/btn/play-animation-20x20.png);
 					width: 360px;
 					display: block;
 					margin-bottom: -10px;
-					margin-top:5px;
+					margin-top: 5px;
 					border-bottom: 5px solid #ccc;
 		
 					p.stats-name {
@@ -802,29 +802,30 @@ content: url(../img/btn/play-animation-20x20.png);
 #convert-to-miles {
 	table {
 		thead{
-			margin-top: 0px;
+			margin-top: -2px;
 			width: 370px;
 			display: block;
 			tr {
 				th {
-					width: 90px;
-					font-family: $vinyl;
+					width: 270px;
+					font-family: $futura;
 					color: #999;
-					text-transform: uppercase;
-					font-size: 12px;
-					font-weight: 500;
+					text-transform: none;
+					font-size: 14px;
+					font-weight: 400;
 					text-align: center;
 					padding: 0;
+					margin-left: -2px;
 					display: table-cell;
 					text-align:left;	
 				}
 				td {
 					width: 90px;
-					font-family: $vinyl;
+					font-family: $futura;
 					color: #999;
 					text-transform: lowercase;
-					font-size: 12px;
-					font-weight: 500;
+					font-size: 14px;
+					font-weight: 400;
 					text-align: center;
 					padding: 0;
 					padding-right: 5px;
@@ -882,6 +883,7 @@ content: url(../img/btn/play-animation-20x20.png);
 						width: 50px;
 						background-color: #fff;
 						opacity: 0.9;
+						z-index:2000;
 					}
 					.pop-super-day {
 						text-align: left;
@@ -896,6 +898,7 @@ content: url(../img/btn/play-animation-20x20.png);
 						background-color: $yourColor;
 						color: #fff;
 						opacity: 0.9;
+						z-index:2000;
 					}
 
 					&:hover .pop-day, &:hover .pop-super-day {
@@ -955,10 +958,26 @@ content: url(../img/btn/play-animation-20x20.png);
 }
 #before-game {
 	position: fixed;
-	left: 100px;
-	top: 200px;
-	z-index: 200;	
+	background-color: #fff;
+	opacity: 0.8;
+	color: $black;
+	font-family: $vinyl;
+	font-size: 48px;
+	top: 250px;
+	left: 50%; 
+	margin-left: -280px; 
+	width: 560px;
+	z-index: 200;
+	padding: 10px 10px 10px;
+	text-align: center;	
 	text-transform: uppercase;
+	#before-game-text {
+		font-size: 25px;
+		a {
+			color: $black;
+			border-bottom: 1px solid $black;
+		}
+	}
 }
 #twitter-bar {
 	font-family: $sans;

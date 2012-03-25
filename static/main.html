@@ -114,9 +114,8 @@
 			<table>
 				<thead>
 					<tr>
-							<th></th>	
-							<td></td>
-							<td></td>
+							<th><div class="stats-duration"></div>
+</th>	
 							<td>149 miles</td>
 					</tr>
 				</thead>
@@ -187,8 +186,6 @@
 				</tbody>
 			</table>
 		</div> <!-- end super-spoked -->
-
-		<div class="stats-duration"></div>
 		
 		
 		<!--LINE-CHART PLACEHOLDER IMAGE
@@ -277,11 +274,11 @@
 </div> <!-- end sidebar -->
 
 
-<div id="commentary" class="auth user-color">
+<!--<div id="commentary" class="auth user-color">
 
-	<!--<div id="twitter-bar">
+	<div id="twitter-bar">
 		<a href="http://twitter.com/iamspoked" class="user-color">@iamspoked</a> says:
-	</div>-->
+	</div>
 	
 	<ul id="twitter_update_list"></ul>
 
@@ -289,13 +286,23 @@
 
 	<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/spokoetry.json?callback=twitterCallback2&amp;count=1"></script>
 
-</div>
+</div>-->
+
 <div id="before-game" style="display:none">
-	<div><span class="before-game"></span> starts in</div>
-	<div class="before-days"></div>
-	<div class="before-time"></div>
-	<div class="before-learn">In the meantime, learn <a>how to</a> play.</div>
-	<div class="before-twitter"><a href="http://twitter.com/spokoetry" target="_blank">Follow us on Twitter</a> to ramp up!</div>
+	
+	<!--<div class="before-days"></div>
+	<div class="before-time"></div>-->
+	
+	<div><span class="before-days"></span> <span class="before-time"></span></div>
+	
+	
+	<div id="before-game-text">until the <span class="before-game"></span> game starts.
+	<span class="before-learn"></span>In the meantime, learn <a href="#">how to</a> play.
+	<span class="before-twitter"><a href="http://twitter.com/spokoetry" target="_blank">Follow us on Twitter</a></span> to ramp up!</div>
+	
+	<!--<div>until the <span class="before-game"></span> game starts.</div>
+	<div class="before-learn">In the meantime, learn <a href="#">how to</a> play.</div>
+	<div class="before-twitter"><a href="http://twitter.com/iamspoked" target="_blank">Follow us on Twitter</a> to ramp up!</div>-->
 </div>
 
 <!-- END-RIDE HOVER ON LAST RIDE -->
