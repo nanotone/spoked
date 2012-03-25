@@ -20,13 +20,7 @@ $green: #8bb049;
 $sans: "atrament-web", sans-serif;
 $serif: "ff-tisa-web-pro", Georgia, serif;
 $vinyl: "vinyl", sans-serif;
-$kulturista: "kulturista-web", serif;
-$nimbus: "nimbus-sans-condensed";
-$netto: "ff-netto-web";
-$gothic: "league-gothic";
 $futura: "futura-pt-condensed";
-$dax: "ff-dax-compact-web-pro";
-$ronnia: "ronnia-condensed";
 
 body {
 	font-size: 100%;  
@@ -1060,6 +1054,9 @@ content: url(../img/btn/play-animation-20x20.png);
 }
 
 /* PAGE LOGIN */
+
+body#page-login { background: url(../img/map/streets.png); }
+
 #page-login {
 	#service-bar {
 		-moz-box-shadow: 3px 3px 7px rgba(0,0,0, .2);
@@ -1077,17 +1074,14 @@ content: url(../img/btn/play-animation-20x20.png);
 		position: relative;
 		
 		#box {
-			border: 1px solid #D4D4D4;
 			margin: 0px auto 0px;
-			width: 900px;
-			background-color: #fff;
 			
 			.page-content {
-				border: 1px solid #D4D4D4;
-				margin: 0px auto 10px auto;
-				padding: 70px 10px;
+				margin: 0px auto 0px auto;
+				padding: 70px 45px;
 				left: 0;
 				width: 550px;
+				background-color: rgba(255, 255, 255, .8);
 				position: relative;
 				
 				h1 {
@@ -1101,12 +1095,42 @@ content: url(../img/btn/play-animation-20x20.png);
 					text-align: center;
 				}
 				.intro {
-					font-weight: bold;
 					font-family: $serif;
-					font-size: 20px;
+					font-size: 18px;
 					}					
 				h3 {
 					font-size: 20px;
+				}
+				#features {
+					width: 550px;
+					display: block;
+					float:left;
+					
+					.feature {
+						margin-top: 50px;
+						height: 265px;
+		
+						img {
+							width: 265px;
+							float: left;
+							padding-right: 20px;	
+						}
+						.feature-text {
+							width: 265px;
+							float: left;
+							
+							.title {
+								text-transform: uppercase;
+								font-family: $vinyl;
+								font-size: 30px;
+								margin: 0;
+							}
+							.body-text {
+								font-family: $serif;
+								font-size: 14px;
+							}
+						}
+					}
 				}
 			}
 		}
