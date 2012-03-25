@@ -68,13 +68,13 @@ Password: <input name="password" type="password" /><br />
 			
 			<p>
 				<form id="email-form">
-					<input placeholder="Email" name="email" /><br />
-					<select name="disposition">
-						<option value="curious">Just curious...</option>
+					<input class="email-field" placeholder="Email" name="email" />
+					<select class="dropdown-field" name="disposition">
+						<option value="curious">I'm just curious...</option>
 						<option value="gamehost">I want to host a game!</option>
-					</select><br />
-					<textarea name="notes" placeholder="Notes, questions, comments?"></textarea><br />
-					<input type="submit" value="SEND" />
+					</select>
+					<textarea class="notes-field" name="notes" placeholder="Notes, questions, comments?"></textarea>
+					<input class="send-button" type="submit" value="SEND" />
 				</form>
 				<div id="email-submitted" style="display:none">Thank you!</div>
 			</p>
@@ -83,7 +83,7 @@ Password: <input name="password" type="password" /><br />
 				<div class="feature">
 					<img src="img/login/feature-snazzy-patterns.jpg"/>
 					<div class="feature-text">
-						<h3 class="title">Make snazzy patterns</h2>
+						<h3 class="title">Make snazzy patterns</h3>
 						<p class="body-text">
 						Begin your game with a ride. But before you start pedaling, start tracking. We'll be converting the bike rides you take on the city streets into beautiful marks on a communal city map shared with your friends. Your phones need to be smart, though. Both the iPhone and Android are acceptable.
 						</p>
@@ -92,7 +92,7 @@ Password: <input name="password" type="password" /><br />
 				<div class="feature">
 					<img src="img/login/feature-snazzy-patterns.jpg"/>
 					<div class="feature-text">
-						<h3 class="title">Bike for smiles 1 mile = 1 smile</h2>
+						<h3 class="title">Bike for smiles <br/>1 mile = 1 smile</h3>
 						<p class="body-text">
 						Pedal up smiles by riding miles. One miles equals one smile. You get extra smiles for riding consistently. If you ride for 3 consecutive days, your third day is a super-spoked day. You get double the smiles for your miles gained that day. The winner is the one who ramps up the most smiles!</p>
 					</div>
@@ -100,7 +100,7 @@ Password: <input name="password" type="password" /><br />
 				<div class="feature">
 					<img src="img/login/feature-snazzy-patterns.jpg"/>
 					<div class="feature-text">
-						<h3 class="title">Feel wonderful social pressure</h2>
+						<h3 class="title">Feel wonderful social pressure</h3>
 						<p class="body-text">
 						On the gameboard you can compare with your closest rivals and get up to date on your friend's progress and current bike status.
 						</p>
@@ -109,7 +109,7 @@ Password: <input name="password" type="password" /><br />
 				<div class="feature">
 					<img src="img/login/feature-snazzy-patterns.jpg"/>
 					<div class="feature-text">
-						<h3 class="title">Hear your bike calling you</h2>
+						<h3 class="title">Hear your bike calling you</h3>
 						<p class="body-text">
 						We'll be sure to let you know when your bike has ants in its' pants and needs to hit the streets. Since we're well into the 21st century, we talk over twitter.
 						</p>
@@ -118,18 +118,27 @@ Password: <input name="password" type="password" /><br />
 				<div class="feature">
 					<img src="img/login/feature-snazzy-patterns.jpg"/>
 					<div class="feature-text">
-						<h3 class="title">Be proud. Show your mom.</h2>
+						<h3 class="title">Be proud. Show your mom.</h3>
 						<p class="body-text">
 						We sure hope you make your mother proud throughout the two weeks of the game! We hope it so badly, that we will make you a poster that she can hang on the fridge and use to brag about you. You probably shouldn't let her down. Or just put it on your own wall to relive this two-week city adventure!
 						</p>
 					</div>
 				</div>
-			</div>
+			</div>			
 			<h3>What you need</h3>
 	
-			<p>6-12 spoked people with intelligent phones. MotionX GPS for iPhone ($1) or MyTracks for Android (free). We hope to make our own app in the future, but for now these work very well with our SPOKED web interface. <a href="http://leatherducking.com/tracking-instructions-motionx/">Here's how you set up the iPhone to get the data to us.</a></p>
-			<p>If you want to get really excited during the game, you probably should have a Twitter account so we can talk to you. And right now, while you're busy gathering spoked people to form a team of friends and rivals, you could also consider following <a href="https://twitter.com/#!/iamspoked">@iamspoked</a> to see what we're up to!</p>
-			
+			<p>
+6-12 spoked people with intelligent phones. MotionX GPS for iPhone ($1) or MyTracks for Android (free). We hope to make our own app in the future, but for now these work very well with our SPOKED web interface. <a href="http://leatherducking.com/tracking-instructions-motionx/">Here's how you set up the iPhone to get the data to us.</a></p>
+						<p>If you want to get really excited during the game, you probably should have a Twitter account so we can talk to you. And right now, while you're busy gathering spoked people to form a team of friends and rivals, you could also consider following <a href="https://twitter.com/#!/iamspoked">@iamspoked</a> to see what we're up to!</p>
+
+				<!--<div class="feature">
+					<div class="feature-text-full-width">
+					<h3 class="title">What you need</h3>
+						<p class="body-text">
+6-12 spoked people with intelligent phones. MotionX GPS for iPhone ($1) or MyTracks for Android (free). We hope to make our own app in the future, but for now these work very well with our SPOKED web interface. <a href="http://leatherducking.com/tracking-instructions-motionx/">Here's how you set up the iPhone to get the data to us.</a></p>
+						<p>If you want to get really excited during the game, you probably should have a Twitter account so we can talk to you. And right now, while you're busy gathering spoked people to form a team of friends and rivals, you could also consider following <a href="https://twitter.com/#!/iamspoked">@iamspoked</a> to see what we're up to!</p>
+					</div>
+				</div>-->
 			<!--<h3>LET’S PLAY!</h3>
 			
 			<p>When you’re playing a SPOKED game, by tracking your rides with an iPhone or Android, you get to make snazzy patterns on a map with the color of your choice. You get to share the patterns and feel the wonderful social pressure by people around you to bike a little more than usual. You’ll also get encouraged in the currency “smiles” to bike consistently, and nudged on twitter when your bike is calling for you to get on the streets. Most importantly, you get to take part of a little two week adventure that just might change your lifestyle forever!</p>
@@ -151,7 +160,7 @@ Password: <input name="password" type="password" /><br />
 	
 			<p>MotionX GPS for iPhone ($1) or MyTracks for Android (free). We hope to make our own app in the future, but for now these work very well with our SPOKED web interface.</p>
 			-->
-					
+	
 		</div>		
 	</div>
 </div>

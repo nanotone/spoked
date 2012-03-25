@@ -1089,6 +1089,7 @@ body#page-login { background: url(../img/map/streets.png); }
 					margin-top: 30px;
 					margin-bottom: 80px;
 					text-align: center;
+					/*color: $yourColor;*/
 					}				
 				h2 {
 					font-size: 52px;
@@ -1097,23 +1098,34 @@ body#page-login { background: url(../img/map/streets.png); }
 				.intro {
 					font-family: $serif;
 					font-size: 18px;
+					padding-bottom: 20px;
+					border-bottom: 1px solid #3D3D3D;
+					margin-bottom: 20px;
 					}					
 				h3 {
-					font-size: 20px;
+					text-transform: uppercase;
+					font-family: $vinyl;
+					font-size: 30px;
+					margin: 0;
+					}
+				p {
+					font-family: $serif;
+					font-size: 14px;				
 				}
 				#features {
 					width: 550px;
 					display: block;
 					float:left;
+					padding-bottom: 20px;
 					
 					.feature {
-						margin-top: 50px;
+						margin-top: 40px;
 						height: 265px;
 		
 						img {
 							width: 265px;
 							float: left;
-							padding-right: 20px;	
+							padding-right: 20px;
 						}
 						.feature-text {
 							width: 265px;
@@ -1129,8 +1141,64 @@ body#page-login { background: url(../img/map/streets.png); }
 								font-family: $serif;
 								font-size: 14px;
 							}
-						}
+						}	
 					}
+				}
+				#email-form {
+					width: 550px;
+					display: block;
+					float: left;
+				
+					.email-field {
+					top: 0;
+						width: 170px;
+						height: 25px;
+
+						float:left; 
+						position:relative;
+						margin-right: 10px;
+						border : 1px solid #ccc;
+
+					}
+					.dropdown-field {
+						top: 0;
+						display: block;
+						width: 150px;
+						float:left; 
+						position:relative;
+						margin-right: 10px;
+					}
+					select  {
+					  outline: 0;
+					  overflow: hidden;
+					  height: 30px;
+					  background: #fff;
+					  color:$black;
+					  border: 1px solid #ccc;
+					  padding:5px 3px 5px 10px;
+					  -moz-border-radius:6px;
+					 -webkit-border-radius:6px;
+					 border-radius:10px;
+					}
+
+					.notes-field {
+						width: 200px;
+						height: 25px;
+						float:left; 
+						position:relative;
+						border : 1px solid #ccc;
+
+					}
+					.send-button {
+						width: 100px;
+						float: right;
+						margin-top: 10px;
+						background-color: $yourColor;
+						color: #fff;
+						font-family: $vinyl;
+						border: none;
+					}
+
 				}
 			}
 		}
