@@ -26,6 +26,7 @@ function humanizeAgo(seconds) {
 }
 
 function showPortraits() {
+	console.log("showPortraits");
 	var template = $('#portrait-template');
 	users.sort(function(a, b) { return b.lastTrackEnd - a.lastTrackEnd; });
 	for (var i = 0; i < users.length; i++) {
@@ -211,6 +212,7 @@ function onClickCompare(e) {
 }
 
 $(function() {
+	console.log("DOM ready");
 	$('.template').css({display: 'none'});
 	//$('#sidebar').hide();
 	$body = $('body');
@@ -257,6 +259,7 @@ $(function() {
 });
 function initMain() {
 	console.log("initMain");
+	showPortraits();
 	if (gameState == 'before') {
 		initBeforeGame();
 	}
@@ -265,7 +268,6 @@ function initMain() {
 		History.Adapter.bind(window, 'statechange', loadState);
 		loadState();
 	}
-	showPortraits();
 }
 
 function initBeforeGame() {

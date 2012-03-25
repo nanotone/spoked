@@ -122,7 +122,9 @@ function initUser() {
 		['user-bottomcolor', 'borderBottomColor', '#' + authUser.color],
 		['user-bgcolor', 'backgroundColor', '#' + authUser.color],
 		['user-dark-bgcolor', 'backgroundColor', '#' + darken(authUser.color)] ];
-	updateStyles(getStyleSheetById('style'), filters);
+	$(function() {
+		updateStyles(getStyleSheetById('style'), filters);
+	});
 
 	userGame = usersById[authUserId].game;
 	if (userGame) {
