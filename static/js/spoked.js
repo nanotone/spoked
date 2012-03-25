@@ -1,3 +1,4 @@
+var M_PER_MI = 1609.344;
 var DEFAULT_SCROLL_LEFT = 20;
 var DEFAULT_SCROLL_TOP = 970;
 
@@ -14,7 +15,7 @@ function processingFinishedAnimating() {
 	$('#animate').removeClass('selected');
 }
 
-function humanizeUnits(num, unit, explicitZero) {
+function humanUnits(num, unit, explicitZero) {
 	if (num == 0 && !explicitZero) { return ''; }
 	return num + ' ' + unit + (num == 1 ? '' : 's');
 }
@@ -22,7 +23,7 @@ function humanizeAgo(seconds) {
 	var data = [[1, "second"], [60, "minute"], [3600, "hour"], [86400, "day"], [604800, "week"], [2629728, "month"], [31556736, "year"]];
 	while (data.length > 1 && seconds >= data[1][0]) { data.shift(); }
 	var num = Math.floor(seconds / data[0][0] + 0.25);
-	return humanizeUnits(num, data[0][1]) + " ago";
+	return humanUnits(num, data[0][1]) + " ago";
 }
 
 function showPortraits() {
@@ -58,7 +59,8 @@ function showPortraits() {
 		instance.find('th').css({borderBottomColor: '#' + user.color});
 		instance.find('td').css({borderTopColor: '#' + user.color});
 
-		showUserMiles(user, instance);
+		calculateAndShowUserSmiles(user);
+		showUserSmiles(user, instance);
 		template.parent().append(instance);
 	}
 }
@@ -174,7 +176,6 @@ function showUserStats(user, $col) {
 	$col.find('.stats-avatar').attr('src', user.avatarSrc);
 	$col.find('.stats-color').css({backgroundColor: '#' + user.color});
 	/*$col.find('.stats-color').css({borderBottomColor: '#' + user.color});*/
-	showUserMiles(user, $col);
 
 	var rides = 0;
 	for (var i = 0; i < user.tracks.length; i++) {
@@ -182,19 +183,75 @@ function showUserStats(user, $col) {
 			rides += 1;
 		}
 	}
-	rides = humanizeUnits(rides, 'ride');
-	var hours = humanizeUnits(Math.floor(user.fortnightDuration / 3600), 'hour');
-	var minutes = humanizeUnits(Math.floor(user.fortnightDuration % 3600 / 60), 'minute');
+	rides = humanUnits(rides, 'ride');
+	var hours = humanUnits(Math.floor(user.fortnightDuration / 3600), 'hour');
+	var minutes = humanUnits(Math.floor(user.fortnightDuration % 3600 / 60), 'minute');
 	var dur = hours + (hours && minutes ? ' and ' : '') + minutes;
 
 	$col.find('.stats-duration').text('Spent ' + dur + ' on two wheels (' + rides + ')');
+
+	calculateAndShowUserSmiles(user, $col);
+	showUserSmiles(user, $col);
 }
-function showUserMiles(user, $col) {
-	var lastWeekDist = user.lastWeekDist / 1609.344;
-	var thisWeekDist = user.thisWeekDist / 1609.344;
+function calculateAndShowUserSmiles(user, $col) {
+	user.lastWeekSmiles = user.thisWeekSmiles = user.totalDist = 0;
+	var buildupDays = [];
+	var tIdx = 0; // index of user's next un-processed track
+	var html = '';
+	for (var i = 0; i < gameDays.length; i++) {
+		var gameDay = gameDays[i];
+		var ssClass = '', beginClass = '', isBuildup = false;
+		var bikedClass = (getTime() >= gameDay.stop ? 'rest' : '');
+		if (i % 7 == 0) {
+			//html += '<tr>';
+			beginClass = ' begin-week-' + ['one','two','three'][Math.floor(i/7)]; //TODO?
+		}
+		var dayDist = 0;
+		for (; tIdx < user.tracks.length && user.tracks[tIdx].time < gameDay.stop; tIdx++) {
+			dayDist += user.tracks[tIdx].distance;
+		}
+		if (dayDist > 0) {
+			bikedClass = 'biked';
+			if (buildupDays.length >= 2 && buildupDays[buildupDays.length - 2] && buildupDays[buildupDays.length - 1]) {
+				ssClass = ' super-spoked';
+			}
+			else {
+				isBuildup = true;
+			}
+		}
+		buildupDays.push(isBuildup);
+		var week = null;
+		if      (lastWeek <= gameDay.start && gameDay.start < thisWeek ) { week = 'last'; }
+		else if (thisWeek <= gameDay.start && gameDay.start < getTime()) { week = 'this'; }
+		if (week) {
+			user[week + 'WeekSmiles'] += dayDist * (ssClass ? 2 : 1);
+		}
+		user.totalDist += dayDist;
+
+		html += '<td class="user-color user-bgcolor ' + bikedClass + ssClass + beginClass + '">' + gameDay.day;
+		if (dayDist > 0) {
+			html += '<div class="pop-day user-bgcolor">' + humanUnits(Math.floor(dayDist/M_PER_MI + 0.25), 'smile', true);
+			if (ssClass) { html += ' x2 Super-Spoked!'; }
+			html += '</div>';
+		}
+		html += '</td>';
+		if (i % 7 == 6 || i == gameDays.length - 1) { /*html += '</tr>';*/ }
+	}
+	if ($col) {
+		$tr = $col.find('.week-chart-row');
+		$tr.empty().html(html);
+		$tr.find('.biked.user-color').css({color: '#' + user.color});
+		$tr.find('.biked.super-spoked.user-bgcolor').css({color: '#fff', backgroundColor: '#' + user.color});
+		$tr.find('.biked.super-spoked .pop-day.user-bgcolor').css({backgroundColor: '#' + user.color});
+	}
+}
+function showUserSmiles(user, $col) {
+	var lastWeekDist = user.lastWeekSmiles / M_PER_MI;
+	var thisWeekDist = user.thisWeekSmiles / M_PER_MI;
 	$col.find('.stats-last-week').text(Math.round(lastWeekDist));
 	$col.find('.stats-this-week').text(Math.round(thisWeekDist));
 	$col.find('.stats-total-miles').text(Math.round(lastWeekDist + thisWeekDist));
+	$col.find('.convert-total-miles').text(humanUnits(Math.round(user.totalDist / M_PER_MI), 'mile'));
 }
 
 
@@ -280,9 +337,9 @@ function initBeforeGame() {
 	$('#time-nav li').hide();
 	var updateCountdown = function() {
 		var timeLeft = game.start - getTime();
-		$('.before-days').text(humanizeUnits(Math.floor(timeLeft / 86400), "day", true));
+		$('.before-days').text(humanUnits(Math.floor(timeLeft / 86400), "day", true));
 		timeLeft %= 86400;
-		$('.before-time').text(humanizeUnits(Math.floor(timeLeft/3600), "hour", true) + " " +
+		$('.before-time').text(humanUnits(Math.floor(timeLeft/3600), "hour", true) + " " +
 		                       Math.floor(timeLeft%3600/60) + " min " + Math.floor(timeLeft%60) + " sec");
 		setTimeout(updateCountdown, 1000);
 	};

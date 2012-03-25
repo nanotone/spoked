@@ -34,7 +34,7 @@
   </ul>
 
 <div id="user-nav">
-	<div class="you auth">
+	<div class="you">
 		<img class="user-avatar" src="img/avatar/kristinbreivik.jpg" />
 		<div class="non-text menu-link user-name">Kristin Breivik</div>
 		<div class="dropdown">
@@ -63,7 +63,7 @@
 	
 	<!-- LEADERBOARD -->
 	
-	<div id="leaderboard" class="sidebar-content auth">
+	<div id="leaderboard" class="sidebar-content">
 		<div class="title">Battle of Happiness</div>
 		<!--<div class="sub-title">Friends leaderboard in miles</div>-->
 		<table>
@@ -89,7 +89,7 @@
 	
 	<!-- STATS ON PROFILE -->
 	
-	<div id="stats-profile" class="sidebar-content auth">
+	<div id="stats-profile" class="sidebar-content">
 		<div class="title" id="stats-name">Profile X</div>
 		<table>
 			<thead>
@@ -102,7 +102,7 @@
 			</thead>
 			<tbody>
 				<tr>
-					<th><img class="stats-avatar" src="img/avatar/tinaye.jpg"><p class="stats-name"></p></th>
+					<th><img class="stats-avatar" src="img/avatar/tinaye.jpg" /><p class="stats-name"></p></th>
 					<td class="stats-last-week"></td>
 					<td class="stats-this-week"></td>
 					<td class="emph stats-total-miles"></td>
@@ -114,75 +114,18 @@
 			<table>
 				<thead>
 					<tr>
-							<th><div class="stats-duration"></div>
-</th>	
-							<td>149 miles</td>
+							<th><div class="stats-duration"></div></th>
+							<td class="convert-total-miles"></td>
 					</tr>
 				</thead>
 			</table>
 		</div>
 				
-		<div id="super-spoked">
+		<div class="week-chart">
 		<!--<div class="super-spoked-title">Make it a bike day!</div>-->
-
 			<table>
 				<tbody>
-					<tr>
-						<td class="biked begin-week-two">Mo
-							<div class="pop-day">
-	    						17 smiles
-	    					</div>
-    					</td>
-						<td class="biked">Tu
-							<div class="pop-day">
-	    						2 smiles
-	    					</div>						
-						</td>
-						<td class="super-spoked">We
-							<div class="pop-super-day">
-	    						17 smiles x2
-	    						Super-Spoked!	    						
-	    					</div>						
-						</td>
-						<td class="biked">Th
-							<div class="pop-day">
-	    						8 smiles
-	    					</div>
-	    				</td>
-						<td class="biked">Fr
-							<div class="pop-day">
-	    						17 smiles
-	    					</div>						
-						</td>
-						<td class="super-spoked">Sa
-							<div class="pop-super-day">
-	    						21 smiles x2
-	    						Super-Spoked!
-	    					</div>
-						</td>
-						<td class="rest">Su</td>
-						
-						<td class="biked begin-week-two">Mo
-							<div class="pop-day">
-	    						12 smiles
-	    					</div>						
-						</td>
-						<td class="biked">Tu
-							<div class="pop-day">
-	    						1 smiles
-	    					</div>						
-						</td>
-						<td class="super-spoked">We
-							<div class="pop-super-day">
-	    						17 smiles x2
-	    						Super-Spoked!
-	    					</div>						
-						</td>
-						<td>Th</td>
-						<td>Fr</td>
-						<td>Sa</td>
-						<td>Su</td>
-					</tr>
+					<tr class="week-chart-row"></tr>
 				</tbody>
 			</table>
 		</div> <!-- end super-spoked -->
@@ -203,7 +146,7 @@
 	
 	<!-- STATS ON PROFILE VS PROFILE -->
 	
-	<div id="stats-versus" class="sidebar-content hidden auth">
+	<div id="stats-versus" class="sidebar-content hidden">
 		<div class="title"><span id="stats-name1">Profile X</span> vs <span id="stats-name2">Profile Y</span></div>
 		<div id="stats-user1">
 			<table>
@@ -212,7 +155,7 @@
 							<th></th>	
 							<td>Last week</td>
 							<td>This week</td>
-							<td>Total miles</td>
+							<td>Total smiles</td>
 					</tr>
 				</thead>
 				<tbody>
@@ -232,13 +175,15 @@
 							<th></th>	
 							<td></td>
 							<td></td>
-							<td>149 miles</td>
+							<td class="convert-total-miles"></td>
 					</tr>
 				</thead>
 			</table>
 		</div>
-		
 			<div class="stats-duration"></div>
+			<div class="week-chart">
+				<table><tbody><tr class="week-chart-row"></tr></tbody></table>
+			</div>
 		</div>
 
 		<div id="stats-user2">
@@ -261,13 +206,15 @@
 							<th></th>	
 							<td></td>
 							<td></td>
-							<td>149 miles</td>
+							<td class="convert-total-miles"></td>
 					</tr>
 				</thead>
 			</table>
 		</div>
-		
 			<div class="stats-duration"></div>
+			<div class="week-chart">
+				<table><tbody><tr class="week-chart-row"></tr></tbody></table>
+			</div>
 		</div>
 	</div>
 
@@ -325,7 +272,7 @@
 
 
 <div id="bottom-nav">
-<div id="portrait-nav" class="auth">
+<div id="portrait-nav">
   <ul>
     <li id="portrait-template" class="template portrait"><a href="profile.html" class="avatarLink">
     	<div class="filter"></div><img class="avatar" style="border-color: #d2222d;" src="img/avatar/serakoo.jpg"></a>
@@ -343,14 +290,14 @@
 </div> <!-- end portrait nav -->
 
 <div id="bottom-bar" class="user-bgcolor"></div>
-<div id="portrait-control-nav" class="auth">
+<div id="portrait-control-nav">
 	<ul>
 		<!--<li class="user-dark-bgcolor"><a class="newyorkersLink" href="#">All</a></li>-->
 		<li class="user-dark-bgcolor"><a class="friendsLink" href="#">Friends</a></li>
 		<li class="user-dark-bgcolor"><a class="youLink" href="#">You</a></li>
 	</ul>
 </div><!-- end portrait-control-nav -->
-<div id="time-nav" class="auth"> 
+<div id="time-nav">
 <!--http://ryanfait.com/resources/custom-checkboxes-and-radio-buttons/ to style buttons+js-->
 	<ul>
 	<li><a class="user-dark-bgcolor" id="animate" href="">Animation</a></li>
@@ -358,7 +305,7 @@
 	<li><a class="selected user-dark-bgcolor" id="thisweek" href="">This week</a></li>
 	</ul>
 </div><!-- end time nav -->
-<div id="map-nav" class="auth"> <!--To change map backgrounds-->
+<div id="map-nav"> <!--To change map backgrounds-->
   <ul>
 
     <li class="mapSelect" id="streets">

@@ -104,25 +104,7 @@ function initUser() {
 
 	userGame = usersById[authUserId].game;
 	if (userGame) {
-		if      (getTime() < userGame.start) { gameState = 'before'; }
-		else if (getTime() < userGame.stop ) { gameState = 'during'; }
-		else                                 { gameState = 'after' ; }
-		gameUsers = [];
-		for (var i = 0; i < users.length; i++) {
-			var user = users[i];
-			if (user.game == userGame) {
-				gameUsers.push(user);
-			}
-		}
-		users = gameUsers;
-		var gameTracks = [];
-		for (var i = 0; i < tracks.length; i++) {
-			var track = tracks[i];
-			if (userGame.start < track.time && track.time+track.duration < userGame.stop) {
-				gameTracks.push(track);
-			}
-		}
-		tracks = gameTracks;
+		initGame();
 	}
 
 	for (var i = 0; i < tracks.length; i++) {
@@ -151,6 +133,56 @@ function initUser() {
 			lastTrack.isLastTrack = true;
 		}
 	}
+}
+
+var gameDays = null;
+
+function initGame() {
+	console.log("initGame");
+	if      (getTime() < userGame.start) { gameState = 'before'; }
+	else if (getTime() < userGame.stop ) { gameState = 'during'; }
+	else                                 { gameState = 'after' ; }
+
+	gameDays = [];
+	var d = new Date(userGame.start * 1000); // let js Date handle all tz yuckiness
+	d.setHours(0);
+	d.setMinutes(0);
+	d.setSeconds(0);
+	while (true) {
+		var start = d.getTime() / 1000;
+		if (start >= userGame.stop) { break; }
+		var day = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"][d.getDay()];
+		d.setDate(d.getDate() + 1);
+		gameDays.push({'start': start, 'stop': d.getTime() / 1000, 'day': day});
+	}
+
+	// filter out all non-game data from global users and tracks!
+	gameUsers = [];
+	for (var i = 0; i < users.length; i++) {
+		var user = users[i];
+		if (user.game == userGame) {
+			gameUsers.push(user);
+		}
+	}
+	users = gameUsers;
+	var gameTracks = [];
+	for (var i = 0; i < tracks.length; i++) {
+		var track = tracks[i];
+		if (userGame.start < track.time && track.time+track.duration < userGame.stop) {
+			gameTracks.push(track);
+		}
+	}
+	tracks = gameTracks;
+/*
+	for (var i = 0; i < users.length; i++) {
+		var user = users[i];
+		user.tracksByDate = [];
+		var k = 0;
+		for (var j = 0; j < gameDays.length; j++) {
+			var dateTracks = [];
+			user.tracksByDate.push(dateTracks);
+		}
+	}*/
 }
 
 function darken(color) {

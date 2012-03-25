@@ -836,7 +836,7 @@ content: url(../img/btn/play-animation-20x20.png);
 		}	
 	}
 }
-#super-spoked {
+.week-chart {
 	.super-spoked-title {
 		font-family: $vinyl;
 		text-transform: uppercase;
@@ -851,6 +851,7 @@ content: url(../img/btn/play-animation-20x20.png);
 			display: block;
 			tr {
 				td {
+					position: relative;
 					width: 25px;
 					font-family: $vinyl;
 					text-transform: uppercase;
@@ -874,10 +875,10 @@ content: url(../img/btn/play-animation-20x20.png);
 					.pop-day {
 						text-align: left;
 						display: none;
-						position: relative;
+						position: absolute;
 						left: 0px;
 						text-transform: none;
-						top: 5px;
+						top: 25px;
 						padding: 2px;
 						padding-left: 5px;
 						width: 50px;
@@ -885,43 +886,26 @@ content: url(../img/btn/play-animation-20x20.png);
 						opacity: 0.9;
 						z-index:2000;
 					}
-					.pop-super-day {
-						text-align: left;
-						display: none;
-						position: relative;
-						left: 0px;
-						text-transform: none;
-						top: 5px;
-						padding: 2px;
-						padding-left: 5px;
-						width: 65px;
-						background-color: $yourColor;
-						color: #fff;
-						opacity: 0.9;
-						z-index:2000;
-					}
-
-					&:hover .pop-day, &:hover .pop-super-day {
-						display: block;
-					}
+					&:hover .pop-day { display: block; }
 				}
-				td.biked {
-					color: $yourColor;
+				td.biked.user-color {
+					/*color: $yourColor; Overridden in JavaScript */
 					background-color: #fff;
 				}
-				td.super-spoked {
-					background-color: $yourColor;
+				td.biked.super-spoked.user-bgcolor {
+					/*background-color: $yourColor; Overridden in JavaScript */
 					color: #fff;
+					.pop-day.user-bgcolor {
+						width: 65px;
+						/*background-color: $yourColor; Overridden in JavaScript */
+						color: #fff;
 					}
+				}
 				td.rest {
 					color: #ccc;
 				}
-				td.begin-week-one {
-					border-left: 1px solid #ccc;
-						}
-				td.begin-week-two {
-
-				}
+				td.begin-week-one { border-left: 1px solid #ccc; }
+				td.begin-week-two { }
 			}
 		}
 	}
