@@ -4,7 +4,7 @@
 $yourColor: #f0b50c;
 $land: #fffbf0;
 $bar: #1f1f1f; /*#322e10; brown #322e10*/
-$black: #1f1f1f;
+$black: #3d3d3d;
 $red: #d2222d;
 $pink: #ef5476;
 $mint: #0bb7ab;
@@ -1055,7 +1055,8 @@ content: url(../img/btn/play-animation-20x20.png);
 
 /* PAGE LOGIN */
 
-body#page-login { background: url(../img/map/streets.png); }
+/* MAP bg body#page-login { background: url(../img/map/streets.png); }*/
+body#page-login { background: url(../img/login/biking_1680x1255.jpg);}
 
 #page-login {
 	#service-bar {
@@ -1083,13 +1084,13 @@ body#page-login { background: url(../img/map/streets.png); }
 				width: 550px;
 				background-color: rgba(255, 255, 255, .8);
 				position: relative;
+				color: $black;
 				
 				h1 {
 					font-size: 200px;
 					margin-top: 30px;
 					margin-bottom: 80px;
 					text-align: center;
-					/*color: $yourColor;*/
 					}				
 				h2 {
 					font-size: 52px;
@@ -1099,8 +1100,6 @@ body#page-login { background: url(../img/map/streets.png); }
 					font-family: $serif;
 					font-size: 18px;
 					padding-bottom: 20px;
-					border-bottom: 1px solid #3D3D3D;
-					margin-bottom: 20px;
 					}					
 				h3 {
 					text-transform: uppercase;
@@ -1110,7 +1109,7 @@ body#page-login { background: url(../img/map/streets.png); }
 					}
 				p {
 					font-family: $serif;
-					font-size: 14px;				
+					font-size: 13px;				
 				}
 				#features {
 					width: 550px;
@@ -1134,29 +1133,30 @@ body#page-login { background: url(../img/map/streets.png); }
 							.title {
 								text-transform: uppercase;
 								font-family: $vinyl;
+								color: $black;
 								font-size: 30px;
 								margin: 0;
 							}
 							.body-text {
 								font-family: $serif;
-								font-size: 14px;
 							}
 						}	
 					}
 				}
 				#email-form {
-					width: 550px;
+					width: 540px;
 					display: block;
 					float: left;
-				
+					background-color: lighten($yourColor, 25%);
+					padding-left: 10px;
+			
 					.email-field {
 					top: 0;
-						width: 170px;
+						width: 160px;
 						height: 25px;
-
 						float:left; 
 						position:relative;
-						margin-right: 10px;
+						margin: 0 10px 0 0;
 						border : 1px solid #ccc;
 
 					}
@@ -1182,23 +1182,24 @@ body#page-login { background: url(../img/map/streets.png); }
 					}
 
 					.notes-field {
-						width: 200px;
+						width: 190px;
 						height: 25px;
 						float:left; 
 						position:relative;
 						border : 1px solid #ccc;
-
 					}
 					.send-button {
 						width: 100px;
 						float: right;
-						margin-top: 10px;
+						margin: 10px;
 						background-color: $yourColor;
 						color: #fff;
 						font-family: $vinyl;
+						font-size: 16px;
 						border: none;
+						cursor: pointer;
+					
 					}
-
 				}
 			}
 		}
