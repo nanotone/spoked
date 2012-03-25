@@ -22,6 +22,16 @@ class JSONEncoder(json.JSONEncoder):
 json_encoder = JSONEncoder()
 
 
+@bottle.post('/emailbox')
+def emailbox():
+	crossorigin()
+	forms = bottle.request.forms
+	doc = {}
+	for field in ('email', 'disposition', 'notes'):
+		doc[field] = getattr(forms, field, None)
+	db.emailbox.insert(doc)
+	return 'OK'
+
 @bottle.route('/auth')
 def auth():
 	crossorigin()
