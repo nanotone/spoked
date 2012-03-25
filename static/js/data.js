@@ -91,14 +91,14 @@ var userGame = null;
 function initUser() {
 	console.log("initUser");
 	var authUser = usersById[authUserId];
-	$('.user-avatar').attr('src', authUser.avatarSrc);
-	$('.user-name').text(authUser.name);
-	var filters = [
-		['user-color', 'color', '#' + authUser.color],
-		['user-bottomcolor', 'borderBottomColor', '#' + authUser.color],
-		['user-bgcolor', 'backgroundColor', '#' + authUser.color],
-		['user-dark-bgcolor', 'backgroundColor', '#' + darken(authUser.color)] ];
 	$(function() {
+		$('.user-avatar').attr('src', authUser.avatarSrc);
+		$('.user-name').text(authUser.name);
+		var filters = [
+			['user-color', 'color', '#' + authUser.color],
+			['user-bottomcolor', 'borderBottomColor', '#' + authUser.color],
+			['user-bgcolor', 'backgroundColor', '#' + authUser.color],
+			['user-dark-bgcolor', 'backgroundColor', '#' + darken(authUser.color)] ];
 		updateStyles(getStyleSheetById('style'), filters);
 	});
 
