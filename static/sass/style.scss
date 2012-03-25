@@ -1056,7 +1056,8 @@ content: url(../img/btn/play-animation-20x20.png);
 /* PAGE LOGIN */
 
 /* MAP bg body#page-login { background: url(../img/map/streets.png); }*/
-body#page-login { background: url(../img/login/biking_1680x1255.jpg);}
+body#page-login { background: url(../img/login/biking_1680x1255.jpg); background-repeat:no-repeat;
+background-attachment:fixed;}
 
 #page-login {
 	#service-bar {
@@ -1082,7 +1083,7 @@ body#page-login { background: url(../img/login/biking_1680x1255.jpg);}
 				padding: 70px 45px;
 				left: 0;
 				width: 550px;
-				background-color: rgba(255, 255, 255, .8);
+				background-color: rgba(255, 255, 255, .85);
 				position: relative;
 				color: $black;
 				
