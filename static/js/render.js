@@ -6,8 +6,10 @@ function initRender() {
 }
 
 function processingReady() {
-	mapPde = Processing.getInstanceById('processing');
-	pdeDeferred.resolve();
+	setTimeout(function() {
+		mapPde = Processing.getInstanceById('processing');
+		pdeDeferred.resolve();
+	}, 0); // wait for Processing:setup to really finish
 }
 
 var rideCanvas = {
