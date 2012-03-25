@@ -800,13 +800,13 @@ content: url(../img/btn/play-animation-20x20.png);
 }
 
 #super-spoked {
-.super-spoked-title {
-	font-family: $vinyl;
-	text-transform: uppercase;
-	font-size: 12px;
-	margin-left: 2px;
-	margin-top: 20px;
-}
+	.super-spoked-title {
+		font-family: $vinyl;
+		text-transform: uppercase;
+		font-size: 12px;
+		margin-left: 2px;
+		margin-top: 20px;
+	}
 	table {
 		tbody{
 			margin-top: 5px;
@@ -832,6 +832,40 @@ content: url(../img/btn/play-animation-20x20.png);
 					padding-top: 5px;
 					padding-bottom: 5px;
 					text-align: center;
+					pointer: cursor;
+					
+					.pop-day {
+						text-align: left;
+						display: none;
+						position: relative;
+						left: 0px;
+						text-transform: none;
+						top: 5px;
+						padding: 2px;
+						padding-left: 5px;
+						width: 50px;
+						background-color: #fff;
+						opacity: 0.9;
+					}
+					.pop-super-day {
+						text-align: left;
+						display: none;
+						position: relative;
+						left: 0px;
+						text-transform: none;
+						top: 5px;
+						padding: 2px;
+						padding-left: 5px;
+						width: 65px;
+						background-color: $yourColor;
+						color: #fff;
+						opacity: 0.9;
+				
+					}
+
+					&:hover .pop-day, &:hover .pop-super-day {
+						display: block;
+					}
 				}
 				td.biked {
 					color: $yourColor;
@@ -840,7 +874,7 @@ content: url(../img/btn/play-animation-20x20.png);
 				td.super-spoked {
 					background-color: $yourColor;
 					color: #fff;
-				}
+					}
 				td.rest {
 					color: #ccc;
 				}
@@ -854,6 +888,8 @@ content: url(../img/btn/play-animation-20x20.png);
 		}
 	}
 }
+
+
 
 /* STATS PROFILE VS PROFILE */
 

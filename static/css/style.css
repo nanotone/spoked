@@ -902,33 +902,67 @@ img.avatar {
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: center;
+  pointer: cursor;
 }
-/* line 836, ../sass/style.scss */
+/* line 837, ../sass/style.scss */
+#super-spoked table tbody tr td .pop-day {
+  text-align: left;
+  display: none;
+  position: relative;
+  left: 0px;
+  text-transform: none;
+  top: 5px;
+  padding: 2px;
+  padding-left: 5px;
+  width: 50px;
+  background-color: #fff;
+  opacity: 0.9;
+}
+/* line 850, ../sass/style.scss */
+#super-spoked table tbody tr td .pop-super-day {
+  text-align: left;
+  display: none;
+  position: relative;
+  left: 0px;
+  text-transform: none;
+  top: 5px;
+  padding: 2px;
+  padding-left: 5px;
+  width: 65px;
+  background-color: #f0b50c;
+  color: #fff;
+  opacity: 0.9;
+}
+/* line 866, ../sass/style.scss */
+#super-spoked table tbody tr td:hover .pop-day, #super-spoked table tbody tr td:hover .pop-super-day {
+  display: block;
+}
+/* line 870, ../sass/style.scss */
 #super-spoked table tbody tr td.biked {
   color: #f0b50c;
   background-color: #fff;
 }
-/* line 840, ../sass/style.scss */
+/* line 874, ../sass/style.scss */
 #super-spoked table tbody tr td.super-spoked {
   background-color: #f0b50c;
   color: #fff;
 }
-/* line 844, ../sass/style.scss */
+/* line 878, ../sass/style.scss */
 #super-spoked table tbody tr td.rest {
   color: #ccc;
 }
-/* line 847, ../sass/style.scss */
+/* line 881, ../sass/style.scss */
 #super-spoked table tbody tr td.begin-week-one {
   border-left: 1px solid #ccc;
 }
 
 /* STATS PROFILE VS PROFILE */
-/* line 860, ../sass/style.scss */
+/* line 896, ../sass/style.scss */
 #stats-versus.hidden {
   visibility: hidden;
 }
 
-/* line 864, ../sass/style.scss */
+/* line 900, ../sass/style.scss */
 #stats-versus.sidebar-content table tbody tr th {
   margin-bottom: 0px;
   padding-bottom: 0px;
@@ -936,7 +970,7 @@ img.avatar {
 }
 
 /* COMMENTARY */
-/* line 871, ../sass/style.scss */
+/* line 907, ../sass/style.scss */
 #commentary.user-color {
   /*background-color: #fff;*/
   font-family: "ff-tisa-web-pro", Georgia, serif;
@@ -952,7 +986,7 @@ img.avatar {
   line-height: 30px;
 }
 
-/* line 885, ../sass/style.scss */
+/* line 921, ../sass/style.scss */
 #before-game {
   position: fixed;
   left: 100px;
@@ -961,7 +995,7 @@ img.avatar {
   text-transform: uppercase;
 }
 
-/* line 892, ../sass/style.scss */
+/* line 928, ../sass/style.scss */
 #twitter-bar {
   font-family: "atrament-web", sans-serif;
   font-size: 22px;
@@ -970,25 +1004,25 @@ img.avatar {
   padding-bottom: 0px;
 }
 
-/* line 899, ../sass/style.scss */
+/* line 935, ../sass/style.scss */
 #twitter-bar a.user-color {
   color: #f0b50c;
   font-style: normal;
 }
 
-/* line 903, ../sass/style.scss */
+/* line 939, ../sass/style.scss */
 #commentary ul {
   list-style-type: none;
   padding-left: 0;
 }
 
 /* END RIDE HOVER */
-/* line 909, ../sass/style.scss */
+/* line 945, ../sass/style.scss */
 #end-ride.hidden {
   visibility: hidden;
 }
 
-/* line 912, ../sass/style.scss */
+/* line 948, ../sass/style.scss */
 #end-ride {
   background-color: #f0b50c;
   /*The color of the ride you hover over*/
@@ -1004,49 +1038,49 @@ img.avatar {
   z-index: 1000;
   padding: 5px 8px;
 }
-/* line 926, ../sass/style.scss */
+/* line 962, ../sass/style.scss */
 #end-ride .name {
   color: white;
   font: 16px "vinyl", sans-serif;
   text-decoration: none;
 }
-/* line 931, ../sass/style.scss */
+/* line 967, ../sass/style.scss */
 #end-ride .end-ride-stats {
   padding-top: 5px;
   font: 16px "vinyl", sans-serif;
   text-transform: uppercase;
   color: #fff;
 }
-/* line 938, ../sass/style.scss */
+/* line 974, ../sass/style.scss */
 #end-ride .end-ride-stats small {
   font-size: 10px;
 }
 
 /* MAP */
-/* line 944, ../sass/style.scss */
+/* line 980, ../sass/style.scss */
 #map {
   height: 2750px;
 }
 
 /* PAGE ABOUT */
-/* line 950, ../sass/style.scss */
+/* line 986, ../sass/style.scss */
 #page-about #service-bar, #page-howto #service-bar {
   -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
 }
-/* line 954, ../sass/style.scss */
+/* line 990, ../sass/style.scss */
 #page-about #content, #page-howto #content {
   width: 100%;
   padding: 10px 0 0;
   position: relative;
 }
-/* line 959, ../sass/style.scss */
+/* line 995, ../sass/style.scss */
 #page-about #content #box, #page-howto #content #box {
   border: 1px solid #D4D4D4;
   margin: 60px auto 20px;
   width: 900px;
 }
-/* line 964, ../sass/style.scss */
+/* line 1000, ../sass/style.scss */
 #page-about #content #box .page-content, #page-howto #content #box .page-content {
   border: 1px solid #D4D4D4;
   margin: 10px auto 10px 0px;
@@ -1056,7 +1090,7 @@ img.avatar {
   position: relative;
   padding: 0 10px;
 }
-/* line 977, ../sass/style.scss */
+/* line 1013, ../sass/style.scss */
 #page-about #content #box .sidebar, #page-howto #content #box .sidebar {
   border: 1px solid #D4D4D4;
   margin: 10px 0px 10px auto;
@@ -1066,31 +1100,31 @@ img.avatar {
 }
 
 /* PAGE LOGIN */
-/* line 990, ../sass/style.scss */
+/* line 1026, ../sass/style.scss */
 #page-login #service-bar {
   -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
 }
-/* line 994, ../sass/style.scss */
+/* line 1030, ../sass/style.scss */
 #page-login #form {
   padding-top: 80px;
   position: absolute;
   z-index: 2500;
   right: 10px;
 }
-/* line 1000, ../sass/style.scss */
+/* line 1036, ../sass/style.scss */
 #page-login #content {
   width: 100%;
   padding: 10px 0 0;
   position: relative;
 }
-/* line 1005, ../sass/style.scss */
+/* line 1041, ../sass/style.scss */
 #page-login #content #box {
   border: 1px solid #D4D4D4;
   margin: 60px auto 20px;
   width: 900px;
 }
-/* line 1010, ../sass/style.scss */
+/* line 1046, ../sass/style.scss */
 #page-login #content #box .page-content {
   border: 1px solid #D4D4D4;
   margin: 10px auto 10px auto;
@@ -1099,25 +1133,25 @@ img.avatar {
   position: relative;
   padding: 0 10px;
 }
-/* line 1018, ../sass/style.scss */
+/* line 1054, ../sass/style.scss */
 #page-login #content #box .page-content h1 {
   font-size: 200px;
   margin-top: 30px;
   margin-bottom: 80px;
   text-align: center;
 }
-/* line 1024, ../sass/style.scss */
+/* line 1060, ../sass/style.scss */
 #page-login #content #box .page-content h2 {
   font-size: 52px;
   text-align: center;
 }
-/* line 1028, ../sass/style.scss */
+/* line 1064, ../sass/style.scss */
 #page-login #content #box .page-content .intro {
   text-align: center;
   font-weight: bold;
   font-size: 24px;
 }
-/* line 1033, ../sass/style.scss */
+/* line 1069, ../sass/style.scss */
 #page-login #content #box .page-content h3 {
   font-size: 20px;
 }
