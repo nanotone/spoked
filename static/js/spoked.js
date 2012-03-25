@@ -1,18 +1,11 @@
 var DEFAULT_SCROLL_LEFT = 20;
 var DEFAULT_SCROLL_TOP = 970;
 
-var instance = null;
-var infoPromise = $.Deferred();
-var pdePromise = $.Deferred();
-var initPromise = $.when(infoPromise, pdePromise, sessionPromise);
+var initPromise = $.when(initData(), initRender());
 
 var currentUser = null;
 var gameState = '';
 
-function processingReady() {
-	instance = Processing.getInstanceById('processing');
-	pdePromise.resolve();
-}
 function processingUpdatedTime(tstamp) {
 	$('#animation-clock').show().text(formatLocaleString(new Date(tstamp*1000)));
 }
@@ -126,8 +119,7 @@ function loadState() {
 		$('.friendsLink').closest('li').addClass('selectedLink');
 		$('#leaderboard').removeClass('hidden');
 		$('.portrait').addClass('selected');
-		instance.abortRideAnimations();
-		instance.background('#ffffff', 0);
+		rideCanvas.clear();
 		rideCanvas.update({'users': users});
 		$('.pop-nav').hide();
 	}
@@ -144,8 +136,7 @@ function loadState() {
 		showProfile(currentUser);
 	}
 	else if (title.length == 49) {
-		instance.abortRideAnimations();
-		instance.background('#ffffff', 0);
+		rideCanvas.clear();
 		var user1 = usersById[title.substr(0, 24)];
 		var user2 = usersById[title.substr(25)];
 
@@ -167,8 +158,7 @@ function showProfile(user) {
 	$('#stats-name').text(user.name);
 	user.portrait.addClass('selected');
 	showUserStats(user, $('#stats-profile'));
-	instance.abortRideAnimations();
-	instance.background('#ffffff', 0);
+	rideCanvas.clear();
 	var popNavDivs = $('.pop-nav');
 	popNavDivs.show();
 	for (var i = 0; i < popNavDivs.length; i++) {
@@ -263,26 +253,14 @@ $(function() {
 		$a.toggleClass('selected');
 		rideCanvas.update({maxTime: ($a.hasClass('selected') ? getTime() : thisWeek)});
 	});
-
-	initData();
-	initSession();
 	initPromise.done(initMain);
 });
 function initMain() {
-	var userGame = usersById[authUserId].game;
-	if (userGame) {
-		if (getTime() < userGame.start) {
-			gameState = 'before';
-			initBeforeGame();
-		}
-		else if (getTime() < userGame.stop) {
-			gameState = 'during';
-		}
-		else {
-			gameState = 'after';
-		}
+	console.log("initMain");
+	if (gameState == 'before') {
+		initBeforeGame();
 	}
-	if (!gameState || gameState == 'during') {
+	else if (!gameState || gameState == 'during') {
 		$('#sidebar').show();
 		History.Adapter.bind(window, 'statechange', loadState);
 		loadState();

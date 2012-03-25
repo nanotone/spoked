@@ -32,6 +32,12 @@ $(function() {
 			}
 		});
 	});
+	$('#email-form').submit(function(e) {
+		e.preventDefault();
+		$.post(SERVER + 'emailbox', $('#email-form').serialize(), function(data) {});
+		$('#email-form').slideUp();
+		$('#email-submitted').slideDown();
+	});
 });
 </script>
 <link rel="stylesheet" href="css/style.css" media="screen" id="style" />
@@ -57,8 +63,19 @@ Password: <input name="password" type="password" /><br />
 
 <p>We’re currently in alpha. Give us your info, and we’ll spoke you when the time is right!</p>
 
-<p>[Email] [Dropdown choice: Just curious.../I want to host a game![] [Notes, questions, comments?] [SEND]
+<p>
+	<form id="email-form">
+		<input placeholder="Email" name="email" /><br />
+		<select name="disposition">
+			<option value="curious">Just curious...</option>
+			<option value="gamehost">I want to host a game!</option>
+		</select><br />
+		<textarea name="notes" placeholder="Notes, questions, comments?"></textarea><br />
+		<input type="submit" value="SEND" />
+	</form>
+	<div id="email-submitted" style="display:none">Thank you!</div>
 </p>
+
 			<h3>LET’S PLAY!</h3>
 			
 			<p>When you’re playing a SPOKED game, by tracking your rides with an iPhone or Android, you get to make snazzy patterns on a map with the color of your choice. You get to share the patterns and feel the wonderful social pressure by people around you to bike a little more than usual. You’ll also get encouraged in the currency “smiles” to bike consistently, and nudged on twitter when your bike is calling for you to get on the streets. Most importantly, you get to take part of a little two week adventure that just might change your lifestyle forever!</p>
