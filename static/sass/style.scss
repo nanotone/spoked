@@ -1065,10 +1065,34 @@ background-attachment:fixed;}
 	  	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .2);
 	}
 	#form {
-	 padding-top: 80px; 
+	 padding-top: 10px; 
 	 position: absolute; 
 	 z-index: 2500;
+	 width: 350px;
 	 right: 10px;
+	 margin-top: 10px;
+	 	input {
+	 		float: left;
+	 		position: relative;
+	 		margin-right: 10px;
+			height: 20px;
+			border : 1px solid #ccc;
+	 	}
+	 	.login-button {
+			width: 60px;
+			height: 23px;
+			float: left;
+	 		position: relative;
+			background-color: $yourColor;
+			color: #fff;
+			font-family: $vinyl;
+			text-transform: uppercase;
+			font-size: 16px;
+			border: none;
+			cursor: pointer;
+					
+		}
+	 	
 	}
 	#content {
 		width: 100%;
@@ -1152,7 +1176,7 @@ background-attachment:fixed;}
 					padding-left: 10px;
 			
 					.email-field {
-					top: 0;
+						top: 0;
 						width: 160px;
 						height: 25px;
 						float:left; 

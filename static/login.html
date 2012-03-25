@@ -46,14 +46,34 @@ $(function() {
 <link rel="stylesheet" href="css/style.css" media="screen" id="style" />
 </head>
 <body id="page-login" class="login">
+<div id="nav">
+
+<!-- 
+<div id="service-bar">
+</div>
+-->
+
+<div id="service-nav">
+	<!--<a href="main.html"><div id="logo" class="user-color">SPOKED</div></a>
+
+  <ul id="menu-nav">
+  	<li id="current-game" class="user-bottomcolor"><a href="main.html" class="user-color user-bottomcolor">Current game</a></li>
+    <li id="game-archive" class="user-bottomcolor"><a href="game-archive.html" class="user-color user-bottomcolor">Game archive</a></li>
+    <li id="how-to" class="user-bottomcolor"><a href="how-to.html" class="user-color user-bottomcolor">How to</a></li>
+  	<li id="about" class="user-bottomcolor"><a href="about.html" class="user-color user-bottomcolor">About</a></li>
+  </ul> -->
+
+<div id="user-nav">
+	<form id="form">
+	<input name="username" placeholder="Username"/>
+	<input name="password" placeholder="Password" type="password" />
+	<input class="login-button" type="submit" value="Get in" />	</form>
+	<div class="wrong" style="color:red;display:none">Wrong username or password, please try again.</div>
+</div><!-- end form-->
+</div> <!-- end service-nav -->
+</div> <!-- end nav -->
 
 
-<form id="form">
-Username: <input name="username" /><br />
-Password: <input name="password" type="password" /><br />
-<input type="submit" />
-</form>
-<div class="wrong" style="color:red;display:none">Wrong username or password, please try again.</div>
 
 
 <div id="content">
