@@ -183,9 +183,9 @@ function showUserStats(user, $col) {
 		}
 	}
 	rides = humanizeUnits(rides, 'ride');
-	var hours = Math.floor(user.fortnightDuration / 3600);
-	var minutes = Math.floor(user.fortnightDuration % 3600 / 60);
-	var dur = [humanizeUnits(hours, 'hour'), humanizeUnits(minutes, 'minute')].join(' and ');
+	var hours = humanizeUnits(Math.floor(user.fortnightDuration / 3600), 'hour');
+	var minutes = humanizeUnits(Math.floor(user.fortnightDuration % 3600 / 60), 'minute');
+	var dur = hours + (hours && minutes ? ' and ' : '') + minutes;
 
 	$col.find('.stats-duration').text('Spent ' + dur + ' on two wheels (' + rides + ')');
 }

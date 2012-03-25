@@ -77,29 +77,6 @@ function initInfo() {
 			var track = tracks[i];
 			track.isLastTrack = false;
 			tracksById[track.id] = track;
-			var userId = track.userid;
-			if (userId) {
-				var owner = usersById[userId];
-				track.user = owner;
-				owner.tracks.push(tracks[i]);
-				if (lastWeek <= track.time && track.time < thisWeek) {
-					owner.lastWeekDist += track.distance;
-				}
-				else if (thisWeek <= track.time) {
-					owner.thisWeekDist += track.distance;
-				}
-				if (lastWeek <= track.time) {
-					owner.fortnightDuration += track.duration;
-				}
-			}
-		}
-		for (var i = 0; i < users.length; i++) { // circle back now that users have tracks
-			var user = users[i];
-			if (user.tracks.length) {
-				var lastTrack = user.tracks[user.tracks.length - 1];
-				user.lastTrackEnd = lastTrack.time + lastTrack.duration;
-				lastTrack.isLastTrack = true;
-			}
 		}
 		deferred.resolve();
 	});
@@ -109,7 +86,6 @@ function initInfo() {
 ////////////////////////////////////////////////////////////////////////////////
 
 var gameState = ''
-var gamers = null;
 var userGame = null;
 
 function initUser() {
@@ -131,13 +107,49 @@ function initUser() {
 		if      (getTime() < userGame.start) { gameState = 'before'; }
 		else if (getTime() < userGame.stop ) { gameState = 'during'; }
 		else                                 { gameState = 'after' ; }
-		gamers = [];
+		gameUsers = [];
 		for (var i = 0; i < users.length; i++) {
-			if (users[i].game == userGame) {
-				gamers.push(users[i]);
+			var user = users[i];
+			if (user.game == userGame) {
+				gameUsers.push(user);
 			}
 		}
-		users = gamers;
+		users = gameUsers;
+		var gameTracks = [];
+		for (var i = 0; i < tracks.length; i++) {
+			var track = tracks[i];
+			if (userGame.start < track.time && track.time+track.duration < userGame.stop) {
+				gameTracks.push(track);
+			}
+		}
+		tracks = gameTracks;
+	}
+
+	for (var i = 0; i < tracks.length; i++) {
+		var track = tracks[i];
+		var userId = track.userid;
+		if (userId) {
+			var owner = usersById[userId];
+			track.user = owner;
+			owner.tracks.push(tracks[i]);
+			if (lastWeek <= track.time && track.time < thisWeek) {
+				owner.lastWeekDist += track.distance;
+			}
+			else if (thisWeek <= track.time) {
+				owner.thisWeekDist += track.distance;
+			}
+			if (lastWeek <= track.time) {
+				owner.fortnightDuration += track.duration;
+			}
+		}
+	}
+	for (var i = 0; i < users.length; i++) {
+		var user = users[i];
+		if (user.tracks.length) {
+			var lastTrack = user.tracks[user.tracks.length - 1];
+			user.lastTrackEnd = lastTrack.time + lastTrack.duration;
+			lastTrack.isLastTrack = true;
+		}
 	}
 }
 
