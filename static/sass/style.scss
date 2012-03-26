@@ -492,6 +492,31 @@ img.avatar {
 	}
 }
 
+/* GAME-NAME */
+#game-name {
+	bottom: 0;
+	display:block;
+	margin: -10px 0 0 10px;	
+	padding: 0 0 0 0;
+	z-index: 200;
+	position: relative;
+	height: 30px;
+	float:left;
+	.game-name {
+		color: #fff;
+		margin-right: 5px;
+		
+	}
+	.game-duration {
+		color: #fff;
+		text-transform: none;
+		font-family: $futura;
+		font-size: 18px;
+		
+	}
+
+}
+
 /* TIME-NAV */
 #time-nav {
 	bottom: 0;
@@ -1157,7 +1182,7 @@ background-attachment:fixed;}
 						img {
 							width: 265px;
 							float: left;
-							padding-right: 20px;
+							margin-right: 20px;
 						}
 						.feature-text {
 							width: 265px;
