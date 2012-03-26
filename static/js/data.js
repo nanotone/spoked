@@ -184,7 +184,7 @@ function initGame() {
 		}
 	}*/
 	$(function() {
-		$('.friendsLink').text(userGame.name);
+		$('.game-name').text(userGame.name);
 	});
 }
 
