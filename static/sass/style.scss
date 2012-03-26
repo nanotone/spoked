@@ -502,9 +502,14 @@ img.avatar {
 	position: relative;
 	height: 30px;
 	float:left;
+	
+	p {
+		a:hover {
+			border-bottom: 2px solid #fff;
+		}
+	}
 	.game-name {
 		color: #fff;
-		margin-right: 5px;
 		
 	}
 	.game-duration {
@@ -512,6 +517,7 @@ img.avatar {
 		text-transform: none;
 		font-family: $futura;
 		font-size: 18px;
+		margin-left: 10px;
 		
 	}
 
@@ -541,7 +547,7 @@ img.avatar {
 			a {
 				color: #fff;
 				text-decoration: none;
-				padding: 1px 4px 3px 4px;
+				padding: 2px 4px 3px 4px;
 			}
 			a.user-dark-bgcolor:hover {
 				background-color: darken($yourColor, 10%);
