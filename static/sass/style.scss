@@ -1117,7 +1117,15 @@ background-attachment:fixed;}
 			cursor: pointer;
 					
 		}
-	 	
+	}
+	.wrong {
+		display: none;
+		position: absolute;
+		right: 30px;
+		top: 45px;
+		width: 327px;
+		background-color: white;
+		color: red;
 	}
 	#content {
 		width: 100%;
