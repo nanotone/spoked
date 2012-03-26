@@ -1088,51 +1088,92 @@ content: url(../img/btn/play-animation-20x20.png);
 /* PAGE LOGIN */
 
 /* MAP bg body#page-login { background: url(../img/map/streets.png); }*/
-body#page-login { background: url(../img/login/biking_1680x1255.jpg); background-repeat:no-repeat;
-background-attachment:fixed;}
+body#page-login { 
+	background: url(../img/login/bike-bk.jpg); 
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	}
 
 #page-login {
-	#service-bar {
-		-moz-box-shadow: 3px 3px 7px rgba(0,0,0, .2);
-	  	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .2);
-	}
-	#form {
-	 padding-top: 10px; 
-	 position: absolute; 
-	 z-index: 2500;
-	 width: 350px;
-	 right: 10px;
-	 margin-top: 10px;
-	 	input {
-	 		float: left;
-	 		position: relative;
-	 		margin-right: 10px;
-			height: 20px;
-			border : 1px solid #ccc;
-	 	}
-	 	.login-button {
-			width: 60px;
-			height: 23px;
-			float: left;
-	 		position: relative;
-			background-color: $yourColor;
-			color: #fff;
-			font-family: $vinyl;
-			text-transform: uppercase;
-			font-size: 16px;
-			border: none;
-			cursor: pointer;
-					
-		}
-	}
-	.wrong {
-		display: none;
+	#nav-login {
 		position: absolute;
-		right: 30px;
-		top: 45px;
-		width: 327px;
-		background-color: white;
-		color: red;
+		width: 100%;
+		margin: 0;
+		
+		#service-bar-login {
+			-moz-box-shadow: 3px 3px 7px rgba(0,0,0, .2);
+		  	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .2);
+			background-color: #fff;
+			width: 100%;
+			height: 35px;
+			opacity: 0.6;
+			margin: 0 0 0 0;
+			position: absolute;
+			z-index: 200;
+			/*-moz-box-shadow: 3px 3px 7px rgba(0,0,0, .3);
+		  	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .3);*/
+		}
+	
+		#service-nav-login {
+			font-family: $futura;
+			font-weight: 400;
+			font-size: 22px;
+			width: 100%;
+			position: absolute;
+			z-index: 200;
+			margin: 0 0 0 20px;
+			padding: 0;
+			
+			#user-nav {
+				font-family: $vinyl;
+				font-size: 16px;
+				text-transform: uppercase;
+				line-height: 20px;
+				position: absolute;
+				margin: -14px 10px 0 0;
+				padding: 0;
+				right: 0px;	
+			}
+		}
+		#form {
+		 padding-top: 10px; 
+		 position: absolute; 
+		 z-index: 2500;
+		 width: 350px;
+		 right: 10px;
+		 margin-top: 10px;
+		 
+		 	input {
+		 		float: left;
+		 		position: relative;
+		 		margin-right: 10px;
+				height: 20px;
+				border : 1px solid #ccc;
+		 	}
+		 	.login-button {
+				width: 60px;
+				height: 23px;
+				float: left;
+		 		position: relative;
+				background-color: $yourColor;
+				color: #fff;
+				font-family: $vinyl;
+				text-transform: uppercase;
+				font-size: 16px;
+				border: none;
+				cursor: pointer;
+						
+			}
+		}
+		.wrong {
+			display: none;
+			position: absolute;
+			right: 30px;
+			top: 45px;
+			width: 327px;
+			background-color: white;
+			color: red;
+		}
 	}
 	#content {
 		width: 100%;
@@ -1153,7 +1194,7 @@ background-attachment:fixed;}
 				
 				h1 {
 					font-size: 200px;
-					margin-top: 30px;
+					margin-top: 40px;
 					margin-bottom: 80px;
 					text-align: center;
 					}				

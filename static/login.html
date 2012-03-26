@@ -46,31 +46,31 @@ $(function() {
 <link rel="stylesheet" href="css/style.css" media="screen" id="style" />
 </head>
 <body id="page-login" class="login">
-<div id="nav">
+<div id="nav-login">
 
-<!-- 
-<div id="service-bar">
-</div>
--->
-
-<div id="service-nav">
-	<!--<a href="main.html"><div id="logo" class="user-color">SPOKED</div></a>
-
-  <ul id="menu-nav">
-  	<li id="current-game" class="user-bottomcolor"><a href="main.html" class="user-color user-bottomcolor">Current game</a></li>
-    <li id="game-archive" class="user-bottomcolor"><a href="game-archive.html" class="user-color user-bottomcolor">Game archive</a></li>
-    <li id="how-to" class="user-bottomcolor"><a href="how-to.html" class="user-color user-bottomcolor">How to</a></li>
-  	<li id="about" class="user-bottomcolor"><a href="about.html" class="user-color user-bottomcolor">About</a></li>
-  </ul> -->
-
-<div id="user-nav">
-	<form id="form">
-	<input name="username" placeholder="Username"/>
-	<input name="password" placeholder="Password" type="password" />
-	<input class="login-button" type="submit" value="Get in" />	</form>
-	<div class="wrong">Wrong username or password, please try again.</div>
-</div><!-- end form-->
-</div> <!-- end service-nav -->
+	<div id="service-bar-login">
+	</div>
+	
+	
+	<div id="service-nav-login">
+		<!--<a href="main.html"><div id="logo" class="user-color">SPOKED</div></a>
+	
+	  <ul id="menu-nav">
+	  	<li id="current-game" class="user-bottomcolor"><a href="main.html" class="user-color user-bottomcolor">Current game</a></li>
+	    <li id="game-archive" class="user-bottomcolor"><a href="game-archive.html" class="user-color user-bottomcolor">Game archive</a></li>
+	    <li id="how-to" class="user-bottomcolor"><a href="how-to.html" class="user-color user-bottomcolor">How to</a></li>
+	  	<li id="about" class="user-bottomcolor"><a href="about.html" class="user-color user-bottomcolor">About</a></li>
+	  </ul> -->
+	
+		<div id="user-nav">
+			<form id="form">
+			<input name="username" placeholder="Username"/>
+			<input name="password" placeholder="Password" type="password" />
+			<input class="login-button" type="submit" value="Get in" />	</form>
+			<div class="wrong">Wrong username or password, please try again.</div>
+		</div><!-- end form-->
+	</div> <!-- end service-nav -->
+	
 </div> <!-- end nav -->
 
 
@@ -85,8 +85,7 @@ $(function() {
 			<!--<h3>CURIOUS?</h3>-->
 
 				<form id="email-form">
-					<p>Curious? Follow us <a href="https://twitter.com/#!/iamspoked">@iamspoked</a> to see what we're up to. </br>We are currently made for New York and in private beta. If you have an interest in hosting a game or want to keep up to date, get in touch below.</p>
-			
+					<p>We are currently made for New York and in private beta. If you have an interest in hosting a game or want to keep up to date, get in touch below.</p>			
 			<p>
 					<input class="email-field" placeholder="Email" name="email" />
 					<select class="dropdown-field" name="disposition">
@@ -114,7 +113,7 @@ $(function() {
 					<div class="feature-text">
 						<h3 class="title">Bike for smiles</h3>
 						<p class="body-text">
-						Pedal up smiles by riding miles. One miles equals one smile. You get extra smiles for being loyal to your bike seat. If you ride for 3 consecutive days, your third day is a super-spoked day. You get double the smiles for your miles gained that day. The winner is the one who ramps up the most smiles!</p>
+						Pedal up smiles by riding miles. One mile equals one smile. You get extra smiles for being loyal to your bike seat. If you ride for 3 consecutive days, your third day is a super-spoked day. You get double the smiles for your miles gained that day. The winner is the one who ramps up the most smiles!</p>
 					</div>
 				</div>
 				<div class="feature">
@@ -122,8 +121,7 @@ $(function() {
 					<div class="feature-text">
 						<h3 class="title">Compare with rivals</h3>
 						<p class="body-text">
-						Compare with your closest rivals on the game board. You can see how much they've been riding each day and how ambitious they are on their super-spoked days! See your rides piled on top of each other and discover just how fair or unfair it is that your commute distances are so different.
-						</p>
+						Match your closest rivals up against you on the game board, and feel the wonderful social pressure. Compare how much they have been riding each day, and how ambitious they are on their super-spoked days! 						</p>
 					</div>
 				</div>
 				<div class="feature">
@@ -148,47 +146,22 @@ $(function() {
 			<h3>What you need</h3>
 	
 			<p>
-You will need 6-12 spoked friends with intelligent phones and bicycles (owned or borrowed). Each player need a tracking app—MotionX GPS for iPhone ($1) or MyTracks for Android (free). We hope to make our own app in the future, but for now these work very well with our SPOKED web interface. Here's how you set up the iPhone to get the data to us. </a></p>
+You will need 6-12 spoked friends with intelligent phones and bicycles (owned or borrowed). Each player need a tracking app—<a href="http://itunes.apple.com/us/app/motionx-sleep/id505074676?mt=8">MotionX GPS for iPhone</a> ($1) or <a href="https://play.google.com/store/apps/details?id=com.google.android.maps.mytracks&hl=en">MyTracks for Android</a> (free). We hope to make our own app in the future, but for now these work very well with our SPOKED web interface. <a href="http://leatherducking.com/tracking-instructions-motionx/">Here's how you set up the iPhone</a> to get the data to us. </a></p>
 
 			<p>If you want to get really excited during the game, you probably should have a Twitter account so we can talk to you.</p>
- 
-				<!--<div class="feature">
-					<div class="feature-text-full-width">
-					<h3 class="title">What you need</h3>
-						<p class="body-text">
-6-12 spoked people with intelligent phones. MotionX GPS for iPhone ($1) or MyTracks for Android (free). We hope to make our own app in the future, but for now these work very well with our SPOKED web interface. <a href="http://leatherducking.com/tracking-instructions-motionx/">Here's how you set up the iPhone to get the data to us.</a></p>
-						<p>If you want to get really excited during the game, you probably should have a Twitter account so we can talk to you. And right now, while you're busy gathering spoked people to form a team of friends and rivals, you could also consider following <a href="https://twitter.com/#!/iamspoked">@iamspoked</a> to see what we're up to!</p>
-					</div>
-				</div>-->
-			<!--<h3>LET’S PLAY!</h3>
 			
-			<p>When you’re playing a SPOKED game, by tracking your rides with an iPhone or Android, you get to make snazzy patterns on a map with the color of your choice. You get to share the patterns and feel the wonderful social pressure by people around you to bike a little more than usual. You’ll also get encouraged in the currency “smiles” to bike consistently, and nudged on twitter when your bike is calling for you to get on the streets. Most importantly, you get to take part of a little two week adventure that just might change your lifestyle forever!</p>
-	
-			<h3>GAME BOARD</h3>
-			<p>(screenshot)</p>
-			
-			<p>Compare with your closest rivals and see everyone’s snazzy patterns emerge on the city map.</p>
-	
-			<h3>HOW TO PLAY</h3>
+			<h3>The people behind SPOKED</h3>
 	
 			<p>
-			Pedal up smiles, by riding miles. 1 mile  = 1 smile. You get extra smiles for riding consistently. If you ride for 3 consecutive days, your third day is a super-spoked day. You get double the smiles for your miles gained that day. The counter for consecutive days resets on day 4. The winner is the one who ramps up the most smiles!</p>
-			
-			<p>(Track every single bike ride during the game with your phone, # of contestants, Duration)
-			</p>
-	
-			<h3>APP REQUIREMENTS</h3>
-	
-			<p>MotionX GPS for iPhone ($1) or MyTracks for Android (free). We hope to make our own app in the future, but for now these work very well with our SPOKED web interface.</p>
-			-->
-	
+Hello! We are <a href="https://twitter.com/#!/dietrovetro">Kristin</a> and <a href="https://twitter.com/#!/carriestiens">Carrie</a>, and we are on a mission to help you build bike cultures. We've been riding together throughout our 2 years spent at the SVA Interaction Design program in New York. Now, we are ready to spread the bike love far and wide.</p>
+
+<p>Thanks to <a href="https://twitter.com/#!/quarklet">Yang Yang</a>, our code mastermind, for helping us with the nuts and bolts of SPOKED. It's happening!</p>	
+
+<p>Follow us on <a href="https://twitter.com/#!/iamspoked">@iamspoked</a>, or just get off of the internets, and onto your bike. Right now :)</p>
 		</div>		
 	</div>
 </div>
 
 
-<div id="bottom-nav">
-<div id="bottom-bar" class="user-bgcolor"></div>
-</div> <!-- end bottom-nav -->
 </body>
 </html>
