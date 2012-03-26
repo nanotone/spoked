@@ -13,7 +13,7 @@ function initSession() {
 	var deferred = $.Deferred();
 	auth = $.cookie('spokedAuth');
 	if (auth) {
-		$.get(SERVER + 'auth', {'username': auth}, function(data) {
+		$.getJSON(SERVER + 'auth', {'username': auth}, function(data) {
 			if (data.auth) {
 				authUserId = data.auth;
 				deferred.resolve();
@@ -49,7 +49,7 @@ function getRandomPjsColor() {
 
 function initInfo() {
 	var deferred = $.Deferred();
-	$.get(SERVER + 'info', {'auth': auth}, function(data) {
+	$.getJSON(SERVER + 'info', {'auth': auth}, function(data) {
 		tracks = data.tracks;
 		users = data.users;
 		games = data.games;
@@ -183,6 +183,9 @@ function initGame() {
 			user.tracksByDate.push(dateTracks);
 		}
 	}*/
+	$(function() {
+		$('.friendsLink').text(userGame.name);
+	});
 }
 
 function darken(color) {
@@ -205,7 +208,7 @@ function fetchTracks(tracks) {
 	}
 	if (trackIdsToLoad.length) {
 		query = {'auth': auth, 'ids': trackIdsToLoad.join(',')};
-		$.get(SERVER + 'tracks', query, function(data) {
+		$.getJSON(SERVER + 'tracks', query, function(data) {
 			for (var trackId in data) {
 				tracksById[trackId].points = data[trackId];
 			}
