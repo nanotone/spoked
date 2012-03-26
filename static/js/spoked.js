@@ -44,7 +44,8 @@ function showPortraits() {
 		instance.find('.avatar').attr('src', user.avatarSrc).css({borderColor: color});
 		instance.find('.pop').css({backgroundColor: color});
 		instance.find('.name').text(user.name);
-		instance.find('.last-ride').text(humanizeAgo(getTime() - user.lastTrackEnd));
+		instance.find('.last-ride').text(user.lastTrackEnd ? "biked " + humanizeAgo(getTime() - user.lastTrackEnd)
+		                                                   : "has not biked yet");
 		template.parent().append(instance);
 		user.portrait = instance;
 	}
