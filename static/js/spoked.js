@@ -108,6 +108,12 @@ function loadState() {
 	$('.sidebar-content').addClass('hidden');
 	$('.portrait').removeClass('selected');
 	currentUser = null;
+	if (title == 'autoreload') {
+		setTimeout(function() {
+			window.location = 'main.html?autoreload';
+		}, 60000);
+		title = 'friends';
+	}
 	if (title == 'friends') {
 		$('.friendsLink').closest('li').addClass('selectedLink');
 		$('#leaderboard').removeClass('hidden');
