@@ -185,6 +185,13 @@ function initGame() {
 	}*/
 	$(function() {
 		$('.game-name').text(userGame.name);
+		var startDate = new Date(userGame.start * 1000);
+		var stopDate = new Date((userGame.stop - 3) * 1000);
+		var startFmt = formatDay(startDate);
+		if (startDate.getYear() != stopDate.getYear()) {
+			startFmt += " " + startDate.getFullYear();
+		}
+		$('.game-duration').text(startFmt + " - " + formatDay(stopDate) + " " + stopDate.getFullYear());
 	});
 }
 
