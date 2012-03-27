@@ -1185,7 +1185,7 @@ body#page-login {
 			
 			.page-content {
 				margin: 0px auto 0px auto;
-				padding: 70px 45px;
+				padding: 70px 45px 0 45px;
 				left: 0;
 				width: 550px;
 				background-color: rgba(255, 255, 255, .9);
@@ -1205,43 +1205,52 @@ body#page-login {
 				.intro {
 					font-family: $serif;
 					font-size: 18px;
-					padding-bottom: 20px;
+					padding-top: 15px;
+					padding-bottom: 5px;
 					}					
 				h3 {
 					text-transform: uppercase;
 					font-family: $vinyl;
-					font-size: 30px;
+					font-size: 26px;
+					font-weight: 400;
 					margin: 0;
 					}
 				p {
 					font-family: $serif;
-					font-size: 13px;				
+					font-size: 13px;	
+					margin-top:0px;			
+				}
+				a {
+					color: $black;
+					border-bottom: 1px solid $black; 
 				}
 				#features {
 					width: 550px;
 					display: block;
 					float:left;
 					padding-bottom: 20px;
-					
+					margin-bottom: 10px;
+							
 					.feature {
 						margin-top: 40px;
-						height: 265px;
+						height: 310px;
 		
 						img {
-							width: 265px;
+							width: 320px;
 							float: left;
 							margin-right: 20px;
 						}
 						.feature-text {
-							width: 265px;
+							width: 210px;
 							float: left;
 							
 							.title {
 								text-transform: uppercase;
 								font-family: $vinyl;
 								color: $black;
-								font-size: 30px;
+								font-size: 40px;
 								margin: 0;
+								font-weight: 400;
 							}
 							.body-text {
 								font-family: $serif;
@@ -1249,16 +1258,37 @@ body#page-login {
 						}	
 					}
 				}
+				#footer-login {
+					background-color: #3D3D3D;
+					margin: 40px -45px 0 -45px;
+					padding: 30px 45px 20px 45px;
+					color: white;
+					a{
+					color: $yourColor;
+					}
+					
+					img {
+						width: 100px;
+						position: relative;
+						float: left;
+						padding: 5px 20px 10px 0px;
+					}
+					#twitter-follow {
+						font-family: $vinyl;
+						text-transform: uppercase;
+						font-size: 18px;
+					}
+				}
 				#email-form {
-					width: 540px;
+					width: 530px;
 					display: block;
 					float: left;
 					background-color: lighten($yourColor, 25%);
-					padding-left: 10px;
+					padding: 10px;
 			
 					.email-field {
 						top: 0;
-						width: 160px;
+						width: 200px;
 						height: 25px;
 						float:left; 
 						position:relative;
@@ -1269,10 +1299,10 @@ body#page-login {
 					.dropdown-field {
 						top: 0;
 						display: block;
-						width: 150px;
+						width: 200px;
 						float:left; 
 						position:relative;
-						margin-right: 10px;
+						margin-right: 0px;
 					}
 					select  {
 					  outline: 0;
@@ -1297,7 +1327,8 @@ body#page-login {
 					.send-button {
 						width: 100px;
 						float: right;
-						margin: 10px;
+						margin: 5px;
+						margin-left: 10px;
 						background-color: $yourColor;
 						color: #fff;
 						font-family: $vinyl;
