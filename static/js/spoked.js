@@ -220,7 +220,7 @@ function calculateAndShowUserSmiles(user, $col) {
 
 		html += '<td class="user-color user-bgcolor ' + bikedClass + ssClass + beginClass + '">' + gameDay.day;
 		if (dayDist > 0) {
-			html += '<div class="pop-day user-bgcolor">' + humanUnits(Math.floor(dayDist/M_PER_MI + 0.25), 'smile', true);
+			html += '<div class="pop-day user-bgcolor">' + humanUnits(Math.round(dayDist/M_PER_MI), 'smile', true);
 			if (ssClass) { html += ' x2 Super-Spoked!'; }
 			html += '</div>';
 		}
