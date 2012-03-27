@@ -1089,9 +1089,10 @@ content: url(../img/btn/play-animation-20x20.png);
 
 /* MAP bg body#page-login { background: url(../img/map/streets.png); }*/
 body#page-login { 
-	background: url(../img/login/bike-bk.jpg); 
+	background: url(../img/login/bike-bk.jpg) top center; 
 	background-repeat:no-repeat;
 	background-attachment:fixed;
+	
 	}
 
 #page-login {
