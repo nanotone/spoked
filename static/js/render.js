@@ -55,6 +55,7 @@ var rideCanvas = {
 		else {
 			var self = this;
 			var i = 0;
+			this.tracks.sort(function(a, b) { return a.time - b.time; });
 			var drawFrame = function() {
 				self.drawFrameTimeout = null;
 				var begin = getTime();
