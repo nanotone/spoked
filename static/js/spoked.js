@@ -259,7 +259,7 @@ $(function() {
 	$('.your-profile').click(makeLinkHandler('you'));
 	$('.logout').click(sessionLogout);
 
-	$('.friendsLink').click(makeLinkHandler('friends'));
+	$('.game-name').click(makeLinkHandler('friends'));
 	$('.youLink').click(makeLinkHandler('you'));
 
 	$('.mapSelect').click(mapHandler).eq(0).click(); // streets is default map
