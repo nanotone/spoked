@@ -133,6 +133,10 @@ function initUser() {
 			lastTrack.isLastTrack = true;
 		}
 	}
+
+	if (userGame) {
+		aggregateGameTrackData();
+	}
 }
 
 var gameDays = null;
@@ -193,6 +197,41 @@ function initGame() {
 		}
 		$('.game-duration').text(startFmt + " - " + formatDay(stopDate) + " " + stopDate.getFullYear());
 	});
+}
+
+function aggregateGameTrackData() {
+	console.log("aggregateGameTrackData");
+	for (var i = 0; i < users.length; i++) {
+		var user = users[i];
+		user.lastWeekSmiles = user.thisWeekSmiles = user.totalDist = user.totalSmiles = 0;
+		user.gameDays = [];
+		var trackIndex = 0;
+		for (var j = 0; j < gameDays.length; j++) {
+			var gameDay = gameDays[j];
+			var userGameDay = {'distance': 0, 'buildup': false, 'ss': false};
+			for (; trackIndex < user.tracks.length && user.tracks[trackIndex].time < gameDay.stop; trackIndex++) {
+				userGameDay.distance += user.tracks[trackIndex].distance;
+			}
+			if (userGameDay.distance > 0) {
+				if (user.gameDays.length >= 2 && user.gameDays[user.gameDays.length - 2].buildup &&
+				                                 user.gameDays[user.gameDays.length - 1].buildup) {
+					userGameDay.ss = true;
+				}
+				else {
+					userGameDay.buildup = true;
+				}
+			}
+			var smiles = userGameDay.distance * (userGameDay.ss ? 2 : 1);
+			if (lastWeek <= gameDay.start) {
+				var field = (gameDay.start < thisWeek ? 'last' : 'this') + 'WeekSmiles';
+				user[field] += smiles;
+			}
+			user.totalSmiles += smiles;
+			user.totalDist += userGameDay.distance;
+
+			user.gameDays.push(userGameDay);
+		}
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -40,7 +40,12 @@ function showPortraits() {
 	}
 
 	template = $('#leaderboard-template');
-	users.sort(function(a, b) { return (b.lastWeekDist + b.thisWeekDist) - (a.lastWeekDist + a.thisWeekDist); });
+	if (userGame) {
+		users.sort(function(a, b) { return b.totalSmiles - a.totalSmiles; });
+	}
+	else {
+		users.sort(function(a, b) { return (b.lastWeekDist + b.thisWeekDist) - (a.lastWeekDist + a.thisWeekDist); });
+	}
 	for (var i = 0; i < users.length; i++) {
 		var user = users[i];
 		var instance = template.clone().removeClass('template').attr('id', null).css({display: ''});
@@ -49,7 +54,6 @@ function showPortraits() {
 		instance.find('th').css({borderBottomColor: '#' + user.color});
 		instance.find('td').css({borderTopColor: '#' + user.color});
 
-		calculateAndShowUserSmiles(user);
 		showUserSmiles(user, instance);
 		template.parent().append(instance);
 	}
@@ -186,48 +190,25 @@ function showUserStats(user, $col) {
 
 	$col.find('.stats-duration').text('Spent ' + dur + ' on two wheels (' + rides + ')');
 
-	calculateAndShowUserSmiles(user, $col);
+	showUserWeek(user, $col);
 	showUserSmiles(user, $col);
 }
-function calculateAndShowUserSmiles(user, $col) {
-	user.lastWeekSmiles = user.thisWeekSmiles = user.totalDist = 0;
-	var buildupDays = [];
-	var tIdx = 0; // index of user's next un-processed track
+function showUserWeek(user, $col) {
 	var html = '';
 	for (var i = 0; i < gameDays.length; i++) {
 		var gameDay = gameDays[i];
-		var ssClass = '', beginClass = '', isBuildup = false;
-		var bikedClass = (getTime() >= gameDay.stop ? 'rest' : '');
+		var userGameDay = user.gameDays[i];
+		var beginCls = '';
 		if (i % 7 == 0) {
 			//html += '<tr>';
-			beginClass = ' begin-week-' + ['one','two','three'][Math.floor(i/7)]; //TODO?
+			beginCls = ' begin-week-' + ['one','two','three'][Math.floor(i/7)]; //TODO?
 		}
-		var dayDist = 0;
-		for (; tIdx < user.tracks.length && user.tracks[tIdx].time < gameDay.stop; tIdx++) {
-			dayDist += user.tracks[tIdx].distance;
-		}
-		if (dayDist > 0) {
-			bikedClass = 'biked';
-			if (buildupDays.length >= 2 && buildupDays[buildupDays.length - 2] && buildupDays[buildupDays.length - 1]) {
-				ssClass = ' super-spoked';
-			}
-			else {
-				isBuildup = true;
-			}
-		}
-		buildupDays.push(isBuildup);
-		var week = null;
-		if      (lastWeek <= gameDay.start && gameDay.start < thisWeek ) { week = 'last'; }
-		else if (thisWeek <= gameDay.start && gameDay.start < getTime()) { week = 'this'; }
-		if (week) {
-			user[week + 'WeekSmiles'] += dayDist * (ssClass ? 2 : 1);
-		}
-		user.totalDist += dayDist;
-
-		html += '<td class="user-color user-bgcolor ' + bikedClass + ssClass + beginClass + '">' + gameDay.day;
-		if (dayDist > 0) {
-			html += '<div class="pop-day user-bgcolor">' + humanUnits(Math.round(dayDist/M_PER_MI), 'smile', true);
-			if (ssClass) { html += ' x2 Super-Spoked!'; }
+		var bikedCls = (userGameDay.distance ? 'biked' : (gameDay.stop < getTime() ? 'rest' : ''));
+		var ssCls = (userGameDay.ss ? 'super-spoked' : '');
+		html += '<td class="user-color user-bgcolor ' + [bikedCls, ssCls, beginCls].join(' ') + '">' + gameDay.day;
+		if (userGameDay.distance) {
+			html += '<div class="pop-day user-bgcolor">' + humanUnits(Math.round(userGameDay.distance / M_PER_MI), 'smile', true);
+			if (userGameDay.ss) { html += ' x2 Super-Spoked!'; }
 			html += '</div>';
 		}
 		html += '</td>';
@@ -242,11 +223,9 @@ function calculateAndShowUserSmiles(user, $col) {
 	}
 }
 function showUserSmiles(user, $col) {
-	var lastWeekDist = user.lastWeekSmiles / M_PER_MI;
-	var thisWeekDist = user.thisWeekSmiles / M_PER_MI;
-	$col.find('.stats-last-week').text(Math.round(lastWeekDist));
-	$col.find('.stats-this-week').text(Math.round(thisWeekDist));
-	$col.find('.stats-total-miles').text(Math.round(lastWeekDist + thisWeekDist));
+	$col.find('.stats-last-week').text(Math.round(user.lastWeekSmiles / M_PER_MI));
+	$col.find('.stats-this-week').text(Math.round(user.thisWeekSmiles / M_PER_MI));
+	$col.find('.stats-total-miles').text(Math.round(user.totalSmiles / M_PER_MI));
 	$col.find('.convert-total-miles').text(humanUnits(Math.round(user.totalDist / M_PER_MI), 'mile'));
 }
 
