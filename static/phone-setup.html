@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="http://use.typekit.com/prg6crm.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script type="text/javascript">
+function gotoMain() {
+	window.location.replace('main.html');
+}
+$(function() {
+	var auth = $.cookie('spokedAuth');
+	if (auth) {
+		$.getJSON(SERVER + 'auth', {'username': auth}, function(data) {
+			if (data.auth) {
+				gotoMain();
+			}
+			else {
+				$.cookie('spokedAuth', '');
+			}
+		});
+	}
+	$('#form').submit(function(e) {
+		e.preventDefault();
+		$.getJSON(SERVER + 'auth', $('#form').serialize(), function(data) {
+			if (data.auth) {
+				$.cookie('spokedAuth', data.auth);
+				gotoMain();
+			}
+			else {
+				$('.wrong').show();
+			}
+		});
+	});
+	$('#email-form').submit(function(e) {
+		e.preventDefault();
+		$.post(SERVER + 'emailbox', $('#email-form').serialize(), function(data) {});
+		$('#email-form').slideUp();
+		$('#email-submitted').slideDown();
+	});
+});
+</script>
+<link rel="stylesheet" href="css/style.css" media="screen" id="style" />
+</head>
+<body id="page-login" class="login">
+<div id="nav-login">
+
+	<div id="service-bar-login">
+	</div>
+	
+	
+	<div id="service-nav-login">
+		<a href="main.html"><div id="logo" class="user-color">SPOKED</div></a>
+		<ul id="menu-nav">
+			<li id="login" class="user-bottomcolor"><a href="login.html" class="user-color user-bottomcolor">Home</a></li>
+			<li id="game-rules" class="user-bottomcolor"><a href="game-rules.html" class="user-color user-bottomcolor">Game rules</a></li>
+			<li id="phone-setup" class="user-bottomcolor"><a href="phone-setup.html" class="user-color user-bottomcolor">Phone setup</a></li>
+		</ul>
+	
+		<div id="user-nav">
+			<form id="form">
+			<input name="username" placeholder="Username"/>
+			<input name="password" placeholder="Password" type="password" />
+			<input class="login-button" type="submit" value="Get in" />	</form>
+			<div class="wrong">Wrong username or password, please try again.</div>
+		</div><!-- end form-->
+	</div> <!-- end service-nav -->
+	
+</div> <!-- end nav -->
+
+
+
+
+<div id="content">
+	<div id="box">
+		<div class="page-content">
+			<h2>Phone Setup</h2>
+			
+	
+			<p class="intro">Your phones need to be somewhat intelligent to be a part of this game. iPhones and Androids are very welcome to play.</p>
+
+			<h3>iPhone setup with MotionX-GPS</h3>
+			<p>Lorem ipsum</p>			
+			
+			<h3>Android setup with My Tracks</h3>
+			<p>Lorem ipsum</p>			
+			
+			<div id="footer-login">		
+				<h3>The faces behind SPOKED</h3>
+				<img src="img/login/faces_behind.jpg"/>
+
+				<p>Hello! We are <a href="https://twitter.com/#!/dietrovetro">Kristin</a> and <a href="https://twitter.com/#!/carriestiens">Carrie</a>, and we are on a mission to help you build bike cultures. We've been riding together for two years while studying Interaction Design at SVA in New York. With the help of <a href="https://twitter.com/#!/quarklet">Yang</a>, our code mastermind, we are now ready to spread the bike love far and wide!</p>	
+	
+	<p id="twitter-follow">Follow us on <a href="https://twitter.com/#!/iamspoked">@iamspoked</a>, or just get off the internet and on your bike!</p>
+		</div>
+		</div>		
+	</div>
+</div>
+
+
+</body>
+</html>

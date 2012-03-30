@@ -109,13 +109,13 @@ a { text-decoration: none; }
 	float: left;
 	position: relative;
 	z-index: 300;
-	margin: 3px 0 0 0;
+	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 	/*border-top: 10px solid $yourColor;*/
 	/*border-bottom: 20px solid $yourColor;*/
 	/*padding: .5em 2em 0 2em;*/
 	/*background-color: $yourColor; */
-/*	color: $yourColor;*/
+	color: $yourColor;
 	font-family: $vinyl;
 	font-weight: 500;
 	font-size: 35px;
@@ -1124,7 +1124,35 @@ body#page-login {
 			z-index: 200;
 			margin: 0 0 0 20px;
 			padding: 0;
-			
+
+			ul { 
+				li {
+					display: block;
+					padding-top: 0;
+					float: left;
+					a { text-decoration: none; }
+				}
+				li.user-bottomcolor.selectedLink {
+					border-bottom: 2px solid;
+					border-bottom-color: $yourColor;
+				}
+			}
+			#menu-nav {
+				padding-top: 0px;
+				margin-top: 4px;
+				margin-left: 80px;
+				position: relative;
+				li {
+					margin: 0 25px 0 0;
+					a.user-color {
+						color: $yourColor; 
+					}
+					a.user-bottomcolor:hover {
+						border-bottom: 2px solid;
+						border-bottom-color: $yourColor;
+					}
+				}
+			}			
 			#user-nav {
 				font-family: $vinyl;
 				font-size: 16px;
@@ -1134,16 +1162,18 @@ body#page-login {
 				margin: -14px 10px 0 0;
 				padding: 0;
 				right: 0px;	
+				width: 400px;
 			}
+
 		}
 		#form {
-		 padding-top: 10px; 
-		 position: absolute; 
-		 z-index: 2500;
-		 width: 350px;
-		 right: 10px;
-		 margin-top: 10px;
-		 
+			padding-top: 0px;
+			position: absolute;
+			z-index: 2500;
+			right: 10px;
+			margin-top: 0px;
+			margin-right: 20px;
+					 
 		 	input {
 		 		float: left;
 		 		position: relative;
@@ -1163,7 +1193,7 @@ body#page-login {
 				font-size: 16px;
 				border: none;
 				cursor: pointer;
-						
+										
 			}
 		}
 		.wrong {
