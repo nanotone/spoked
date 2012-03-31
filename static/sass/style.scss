@@ -109,13 +109,13 @@ a { text-decoration: none; }
 	float: left;
 	position: relative;
 	z-index: 300;
-	margin: 0 0 0 0;
+	margin: 0px 0 0 0;
 	padding: 0 0 0 0;
 	/*border-top: 10px solid $yourColor;*/
 	/*border-bottom: 20px solid $yourColor;*/
 	/*padding: .5em 2em 0 2em;*/
 	/*background-color: $yourColor; */
-	color: $yourColor;
+	color: $black;
 	font-family: $vinyl;
 	font-weight: 500;
 	font-size: 35px;
@@ -157,11 +157,11 @@ a#logo.user-color {
 		li {
 			margin: 0 25px 0 0;
 			a.user-color {
-				color: $yourColor; 
+				color: $black; 
 			}
 			a.user-bottomcolor:hover {
 				border-bottom: 2px solid;
-				border-bottom-color: $yourColor;
+				border-bottom-color: $black;
 			}
 		}
 	}
@@ -192,7 +192,6 @@ a#logo.user-color {
 				float: left;
 				padding: 0px;
 				color: $black;
-				/*background-color: $yourColor;*/
 				line-height: 20px;
 				&:hover { border-bottom: 2px solid $black; }
 			}
@@ -1134,7 +1133,7 @@ body#page-login {
 				}
 				li.user-bottomcolor.selectedLink {
 					border-bottom: 2px solid;
-					border-bottom-color: $yourColor;
+					border-bottom-color: $black;
 				}
 			}
 			#menu-nav {
@@ -1145,11 +1144,11 @@ body#page-login {
 				li {
 					margin: 0 25px 0 0;
 					a.user-color {
-						color: $yourColor; 
+						color: $black; 
 					}
 					a.user-bottomcolor:hover {
 						border-bottom: 2px solid;
-						border-bottom-color: $yourColor;
+						border-bottom-color: $black;
 					}
 				}
 			}			
@@ -1314,7 +1313,7 @@ body#page-login {
 					width: 530px;
 					display: block;
 					float: left;
-					background-color: lighten($yourColor, 25%);
+					background-color: lighten($yourColor, 30%);
 					padding: 10px;
 			
 					.email-field {

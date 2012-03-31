@@ -55,7 +55,6 @@ $(function() {
 	<div id="service-nav-login">
 		<a href="main.html"><div id="logo" class="user-color">SPOKED</div></a>
 		<ul id="menu-nav">
-			<li id="login" class="user-bottomcolor"><a href="login.html" class="user-color user-bottomcolor">Home</a></li>
 			<li id="game-rules" class="user-bottomcolor"><a href="game-rules.html" class="user-color user-bottomcolor">Game rules</a></li>
 			<li id="phone-setup" class="user-bottomcolor"><a href="phone-setup.html" class="user-color user-bottomcolor">Phone setup</a></li>
 		</ul>
@@ -82,8 +81,8 @@ $(function() {
 			<p class="intro">You are happier when you ride a bike. Spoked helps you and your friends get on your bikes more often through a two week bike battle. <!--Dare to challenge your friends in a two-week bike game to get those wheels rolling.--></p>
 
 				<form id="email-form">
-					<p>SPOKED is currently made for New York and in private beta. If you have an interest in starting a battle or want to keep up to date, get in touch below.</p>			
-			<p>
+					<!-- <p>SPOKED is currently made for New York and in private beta. If you have an interest in starting a battle or want to keep up to date, get in touch below.</p>	-->		
+					<p>
 					<input class="email-field" placeholder="Email" name="email" />
 					<select class="dropdown-field" name="disposition">
 						<option value="curious">I'm just curious...</option>
@@ -91,9 +90,9 @@ $(function() {
 					</select>
 					<!--<textarea class="notes-field" name="notes" placeholder="Notes, questions, comments?"></textarea>-->
 					<input class="send-button" type="submit" value="SEND" />
+					</p>
 				</form>
 				<div id="email-submitted" style="display:none"><p style="font-size: 16px;">Thank you!</p></div>
-			</p>
 			
 			<div id="features">
 				<div class="feature">
@@ -148,13 +147,33 @@ $(function() {
 						</p>
 					</div>
 				</div>
-			</div>			
-			<h3>What you need</h3>
+			</div>	
+			<h3>Spoke your friends</h3>
+			<div>
+							<form id="email-form">
+					<!--<p>SPOKED is currently made for New York and in private beta. If you have an interest in starting a battle or want to keep up to date, get in touch below.</p> -->			
+					
+					<p>
+					<input class="email-field" placeholder="Email" name="email" />
+					<select class="dropdown-field" name="disposition">
+						<option value="gamehost">I want to start a battle!</option>
+						<option value="curious">I'm just curious...</option>
+					</select>
+					<!--<textarea class="notes-field" name="notes" placeholder="Notes, questions, comments?"></textarea>-->
+					<input class="send-button" type="submit" value="SEND" />
+					</p>
+				</form>
+				<div id="email-submitted" style="display:none"><p style="font-size: 16px;">Thank you!</p></div>
+			</p>
+			</div>
+			<p>SPOKED is currently made for New York and in private beta. Get in touch and you'll be first in line to get a battle started.</p>						<!--			<h3>What you need</h3>
 	
 			<p>
 You will need 4-12 spoked friends with intelligent phones and bicycles (owned or borrowed). Each player needs a tracking app—<a href="http://itunes.apple.com/us/app/motionx-gps/id299949744?mt=8#">MotionX-GPS</a> ($1) for iPhone or <a href="https://play.google.com/store/apps/details?id=com.google.android.maps.mytracks&hl=en">My Tracks</a> (free) for Android. A SPOKED app is on the roadmap, but for now the mentioned apps work very well with the SPOKED web interface. <a href="phone-setup.html">Here's how you set up your phone</a> to get the data to us. </a></p>
 
 			<p>If you want to get really excited during the game, you probably should have a Twitter account so SPOKED can talk to you.</p>
+			-->
+			
 			<div id="footer-login">		
 				<h3>The faces behind SPOKED</h3>
 				<img src="img/login/faces_behind.jpg"/>
