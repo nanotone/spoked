@@ -1121,8 +1121,9 @@ body#page-login {
 			width: 100%;
 			position: absolute;
 			z-index: 200;
-			margin: 0 0 0 20px;
-			padding: 0;
+			margin: 0px;
+			padding: 0px 0px 0px 20px;
+			box-sizing: border-box;
 
 			ul { 
 				li {
