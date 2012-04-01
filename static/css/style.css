@@ -186,7 +186,7 @@ a#logo.user-color {
 }
 /* line 162, ../sass/style.scss */
 #service-nav #menu-nav li a.user-bottomcolor:hover {
-  border-bottom: 2px solid;
+  border-bottom: 3px solid;
   border-bottom-color: #414042;
 }
 /* line 169, ../sass/style.scss */
@@ -1248,7 +1248,7 @@ body#page-login {
 }
 /* line 1150, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav li a.user-bottomcolor:hover {
-  border-bottom: 2px solid;
+  border-bottom: 3px solid;
   border-bottom-color: #414042;
 }
 /* line 1156, ../sass/style.scss */
@@ -1351,7 +1351,7 @@ body#page-login {
   font-family: "vinyl", sans-serif;
   font-size: 26px;
   font-weight: 400;
-  margin: 0;
+  margin: 32px 0 0 0;
 }
 /* line 1251, ../sass/style.scss */
 #page-login #content #box .page-content p {
@@ -1425,7 +1425,11 @@ body#page-login {
   text-transform: uppercase;
   font-size: 18px;
 }
-/* line 1315, ../sass/style.scss */
+/* line 1314, ../sass/style.scss */
+#page-login #content #box .page-content #footer-login h3 {
+  margin-top: 0px;
+}
+/* line 1318, ../sass/style.scss */
 #page-login #content #box .page-content #email-form {
   width: 530px;
   display: block;
@@ -1433,7 +1437,7 @@ body#page-login {
   background-color: #fae19b;
   padding: 10px;
 }
-/* line 1322, ../sass/style.scss */
+/* line 1325, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .email-field {
   top: 0;
   width: 200px;
@@ -1443,7 +1447,7 @@ body#page-login {
   margin: 0 10px 0 0;
   border: 1px solid #ccc;
 }
-/* line 1332, ../sass/style.scss */
+/* line 1335, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .dropdown-field {
   top: 0;
   display: block;
@@ -1453,7 +1457,7 @@ body#page-login {
   margin-right: 0px;
   height: 29px;
 }
-/* line 1341, ../sass/style.scss */
+/* line 1344, ../sass/style.scss */
 #page-login #content #box .page-content #email-form select {
   outline: 0;
   overflow: hidden;
@@ -1466,7 +1470,7 @@ body#page-login {
   -webkit-border-radius: 6px;
   border-radius: 10px;
 }
-/* line 1354, ../sass/style.scss */
+/* line 1357, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .notes-field {
   width: 190px;
   height: 25px;
@@ -1474,7 +1478,7 @@ body#page-login {
   position: relative;
   border: 1px solid #ccc;
 }
-/* line 1361, ../sass/style.scss */
+/* line 1364, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .send-button {
   width: 100px;
   float: right;
@@ -1488,7 +1492,7 @@ body#page-login {
   border: none;
   cursor: pointer;
 }
-/* line 1376, ../sass/style.scss */
+/* line 1379, ../sass/style.scss */
 #page-login #content #box .page-content #description {
   margin-top: 70px;
 }

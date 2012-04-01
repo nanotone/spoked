@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="http://use.typekit.com/prg6crm.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script type="text/javascript">
+function gotoMain() {
+	window.location.replace('main.html');
+}
+$(function() {
+	var auth = $.cookie('spokedAuth');
+	if (auth) {
+		$.getJSON(SERVER + 'auth', {'username': auth}, function(data) {
+			if (data.auth) {
+				gotoMain();
+			}
+			else {
+				$.cookie('spokedAuth', '');
+			}
+		});
+	}
+	$('#form').submit(function(e) {
+		e.preventDefault();
+		$.getJSON(SERVER + 'auth', $('#form').serialize(), function(data) {
+			if (data.auth) {
+				$.cookie('spokedAuth', data.auth);
+				gotoMain();
+			}
+			else {
+				$('.wrong').show();
+			}
+		});
+	});
+	$('#email-form').submit(function(e) {
+		e.preventDefault();
+		$.post(SERVER + 'emailbox', $('#email-form').serialize(), function(data) {});
+		$('#email-form').slideUp();
+		$('#email-submitted').slideDown();
+	});
+});
+</script>
+<link rel="stylesheet" href="css/style.css" media="screen" id="style" />
+</head>
+<body id="page-login" class="login">
+<div id="nav-login">
+
+	<div id="service-bar-login">
+	</div>
+	
+	
+	<div id="service-nav-login">
+		<a href="login.html"><div id="logo" class="user-color">SPOKED</div></a>
+		<ul id="menu-nav">
+			<li id="how-to-play" class="user-bottomcolor"><a href="how-to-play.html" class="user-color user-bottomcolor">How to play</a></li>
+			<li id="faq" class="user-bottomcolor"><a href="faq.html" class="user-color user-bottomcolor">FAQ</a></li>
+		</ul>
+	
+		<div id="user-nav">
+			<form id="form">
+			<input name="username" placeholder="Username"/>
+			<input name="password" placeholder="Password" type="password" />
+			<input class="login-button" type="submit" value="Get in" />	</form>
+			<div class="wrong">Wrong username or password, please try again.</div>
+		</div><!-- end form-->
+	</div> <!-- end service-nav -->
+	
+</div> <!-- end nav -->
+
+
+<div id="content">
+	<div id="box">
+		<div class="page-content">
+			<h2>FAQ</h2>
+			<p class="intro">Questions that have been asked somewhat frequently about tracking.</p>
+			
+			<h3>Will tracking drain my battery?</h3>
+			<p>Maybe, but you should still be able to get through the day (depending on your internet usage). It's been fine for us as long as we charge up every night. Remember that you can press the sleep button on your phone after you start tracking to preserve the battery.</p>
+
+			<h3>What happens if I forget to track?</h3>
+			<p>Start as soon as you remember. Your rides must be tracked to be counted. There's not other way of adding more smiles to your account, than for you to ride, track and share. </p>
+			
+			<h3>What if I don't remember if I shared my ride?</h3> 
+			<p>We encourage you to set up your phone so you send your ride to yourself as well as yes@iamspoked.com. If you do not remember whether you sent a ride or not, check your own email before sending the ride again. If you happen to send a ride twice, please let us know through email. We are working out a few kinks in this area right now, and will be able to detect twin rides in the future.</p>
+						
+			<h3>What if the app stops tracking in the middle of a ride?</h3>
+			<p>That sucks. Especially if you were about to make some really snazzy patterns on that map. MotionX and MyTracks are stable. However, we have seen this happen. Unfortunately, we can do nothing about it...</p>
+			
+			<h3>What if I stop along my ride?</h3>
+			<p>If you stop for coffee or to take a photo, keep tracking. If you're stopping for more than 10 minutes, we recommend that you send your rides in splits. For example, bike to the first place, then stop recording and send your ride to us. Start recording again once your wheels are rolling (or preferably a tiny bit before so you don't hit a pot hole while staring at your phone). MotionX has a tendency to time out if you're indoors and idle for too long.</p>
+			
+			<h3>Can I bike outside of New York City?</h3>
+			<p>If you bike off the map, please don't send these rides to us. Only rides taken in New York City count in the battle!</p>
+			
+			<h3>What if I bike at midnight?</h3> 
+			<p>A ride belongs to the day where the tracking is started. This means that on a Monday night, your ride will count for the Monday if the tracking starts Monday <em>before</em> midnight, and will count for the Tuesday if it is started after midnight.</p>
+			
+			<h3>What if I forget to reset MotionX?</h3>
+			<p>Unfortunately, this mistake is easy to make in MotionX. Try to remember to hit <em>Reset Track</em> and see all the zeroes every time before hitting <em>Start Track</em>. However, if you happen to send a ride that wasn't reset, it means you sent that ride together with the ride before. Please let us know through email which rides this involves, and we can try to delete the one ride before the "double-ride".
+			</p>
+			
+			<h3>Can that woman keep her voice down? (MotionX)</h3>
+			<p>Depending on how often you want the sexy woman to update you on your pace etc, change settings here: <em>Menu > Setup > Voice Coaching</em>. The 3,2,1 countdown is kinda entertaining, so leave it on if you want to feel like a rocket ready to launch every time you jump on your bike!</p>
+
+<!-- start footer -->
+			<div id="footer-login">		
+				<p id="twitter-follow">Follow us on <a href="https://twitter.com/#!/iamspoked">@iamspoked</a>, or just get off the internet and on your bike!</p> 
+			</div>
+<!-- end footer -->
+		
+		</div>		
+	</div>
+</div>
+
+</body>
+</html>

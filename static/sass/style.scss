@@ -160,7 +160,7 @@ a#logo.user-color {
 				color: $black; 
 			}
 			a.user-bottomcolor:hover {
-				border-bottom: 2px solid;
+				border-bottom: 3px solid;
 				border-bottom-color: $black;
 			}
 		}
@@ -1148,7 +1148,7 @@ body#page-login {
 						color: $black; 
 					}
 					a.user-bottomcolor:hover {
-						border-bottom: 2px solid;
+						border-bottom: 3px solid;
 						border-bottom-color: $black;
 					}
 				}
@@ -1246,7 +1246,7 @@ body#page-login {
 					font-family: $vinyl;
 					font-size: 26px;
 					font-weight: 400;
-					margin: 0;
+					margin: 32px 0 0 0;
 					}
 				p {
 					font-family: $serif;
@@ -1310,6 +1310,9 @@ body#page-login {
 						font-family: $vinyl;
 						text-transform: uppercase;
 						font-size: 18px;
+					}
+					h3 {
+						margin-top:0px;
 					}
 				}
 				#email-form {
