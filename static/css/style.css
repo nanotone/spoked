@@ -106,6 +106,8 @@ a {
 /*SERVICE NAV (TOP)*/
 /* line 95, ../sass/style.scss */
 #service-bar {
+  -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   width: 100%;
   height: 35px;
@@ -113,8 +115,6 @@ a {
   margin: 0 0 0 0;
   position: absolute;
   z-index: 200;
-  	/*-moz-box-shadow: 3px 3px 7px rgba(0,0,0, .3);
-    	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .3);*/
 }
 
 /* line 107, ../sass/style.scss */
@@ -129,7 +129,7 @@ a {
   /*border-bottom: 20px solid $yourColor;*/
   /*padding: .5em 2em 0 2em;*/
   /*background-color: $yourColor; */
-  color: #3d3d3d;
+  color: #414042;
   font-family: "vinyl", sans-serif;
   font-weight: 500;
   font-size: 35px;
@@ -139,7 +139,7 @@ a {
 
 /* line 125, ../sass/style.scss */
 a#logo.user-color {
-  color: #3d3d3d;
+  color: #414042;
   text-decoration: none;
 }
 
@@ -182,12 +182,12 @@ a#logo.user-color {
 }
 /* line 159, ../sass/style.scss */
 #service-nav #menu-nav li a.user-color {
-  color: #3d3d3d;
+  color: #414042;
 }
 /* line 162, ../sass/style.scss */
 #service-nav #menu-nav li a.user-bottomcolor:hover {
   border-bottom: 2px solid;
-  border-bottom-color: #3d3d3d;
+  border-bottom-color: #414042;
 }
 /* line 169, ../sass/style.scss */
 #service-nav #user-nav {
@@ -219,12 +219,12 @@ a#logo.user-color {
   position: relative;
   float: left;
   padding: 0px;
-  color: #3d3d3d;
+  color: #414042;
   line-height: 20px;
 }
 /* line 196, ../sass/style.scss */
 #service-nav #user-nav .you .menu-link:hover {
-  border-bottom: 2px solid #3d3d3d;
+  border-bottom: 2px solid #414042;
 }
 /* line 199, ../sass/style.scss */
 #service-nav #user-nav .you #login-form {
@@ -281,7 +281,7 @@ a#logo.user-color {
   padding: 5px;
   background-color: #fff;
   opacity: 0.6;
-  color: #3d3d3d;
+  color: #414042;
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
 }
@@ -859,7 +859,7 @@ img.avatar {
   vertical-align: bottom;
   padding-right: 0px;
   width: 80px;
-  border-right: 0px solid #3d3d3d;
+  border-right: 0px solid #414042;
 }
 /* line 790, ../sass/style.scss */
 .sidebar-content table tbody tr .emph {
@@ -1049,7 +1049,7 @@ img.avatar {
   position: fixed;
   background-color: #fff;
   opacity: 0.8;
-  color: #3d3d3d;
+  color: #414042;
   font-family: "vinyl", sans-serif;
   font-size: 48px;
   top: 250px;
@@ -1067,8 +1067,8 @@ img.avatar {
 }
 /* line 985, ../sass/style.scss */
 #before-game #before-game-text a {
-  color: #3d3d3d;
-  border-bottom: 1px solid #3d3d3d;
+  color: #414042;
+  border-bottom: 1px solid #414042;
 }
 
 /* line 991, ../sass/style.scss */
@@ -1229,7 +1229,7 @@ body#page-login {
 /* line 1135, ../sass/style.scss */
 #page-login #nav-login #service-nav-login ul li.user-bottomcolor.selectedLink {
   border-bottom: 2px solid;
-  border-bottom-color: #3d3d3d;
+  border-bottom-color: #414042;
 }
 /* line 1140, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav {
@@ -1244,12 +1244,12 @@ body#page-login {
 }
 /* line 1147, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav li a.user-color {
-  color: #3d3d3d;
+  color: #414042;
 }
 /* line 1150, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav li a.user-bottomcolor:hover {
   border-bottom: 2px solid;
-  border-bottom-color: #3d3d3d;
+  border-bottom-color: #414042;
 }
 /* line 1156, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #user-nav {
@@ -1277,24 +1277,26 @@ body#page-login {
   float: left;
   position: relative;
   margin-right: 10px;
-  height: 20px;
+  height: 24px;
   border: 1px solid #ccc;
+  margin-top: -5px;
 }
-/* line 1184, ../sass/style.scss */
+/* line 1185, ../sass/style.scss */
 #page-login #nav-login #form .login-button {
+  margin-top: -4px;
   width: 60px;
-  height: 23px;
+  height: 26px;
   float: left;
   position: relative;
   background-color: #f0b50c;
   color: #fff;
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 18px;
   border: none;
   cursor: pointer;
 }
-/* line 1199, ../sass/style.scss */
+/* line 1201, ../sass/style.scss */
 #page-login #nav-login .wrong {
   display: none;
   position: absolute;
@@ -1304,17 +1306,17 @@ body#page-login {
   background-color: white;
   color: red;
 }
-/* line 1209, ../sass/style.scss */
+/* line 1211, ../sass/style.scss */
 #page-login #content {
   width: 100%;
   padding: 0px 0 0;
   position: relative;
 }
-/* line 1214, ../sass/style.scss */
+/* line 1216, ../sass/style.scss */
 #page-login #content #box {
   margin: 0px auto 0px;
 }
-/* line 1217, ../sass/style.scss */
+/* line 1219, ../sass/style.scss */
 #page-login #content #box .page-content {
   margin: 0px auto 0px auto;
   padding: 70px 45px 0 45px;
@@ -1322,28 +1324,28 @@ body#page-login {
   width: 550px;
   background-color: rgba(255, 255, 255, 0.9);
   position: relative;
-  color: #3d3d3d;
+  color: #414042;
 }
-/* line 1226, ../sass/style.scss */
+/* line 1228, ../sass/style.scss */
 #page-login #content #box .page-content h1 {
   font-size: 200px;
   margin-top: 50px;
   margin-bottom: 80px;
   text-align: center;
 }
-/* line 1232, ../sass/style.scss */
+/* line 1234, ../sass/style.scss */
 #page-login #content #box .page-content h2 {
   font-size: 52px;
   text-align: center;
 }
-/* line 1236, ../sass/style.scss */
+/* line 1238, ../sass/style.scss */
 #page-login #content #box .page-content .intro {
   font-family: "ff-tisa-web-pro", Georgia, serif;
   font-size: 18px;
   padding-top: 15px;
   padding-bottom: 5px;
 }
-/* line 1242, ../sass/style.scss */
+/* line 1244, ../sass/style.scss */
 #page-login #content #box .page-content h3 {
   text-transform: uppercase;
   font-family: "vinyl", sans-serif;
@@ -1351,18 +1353,18 @@ body#page-login {
   font-weight: 400;
   margin: 0;
 }
-/* line 1249, ../sass/style.scss */
+/* line 1251, ../sass/style.scss */
 #page-login #content #box .page-content p {
   font-family: "ff-tisa-web-pro", Georgia, serif;
   font-size: 13px;
   margin-top: 0px;
 }
-/* line 1254, ../sass/style.scss */
+/* line 1256, ../sass/style.scss */
 #page-login #content #box .page-content a {
-  color: #3d3d3d;
-  border-bottom: 1px solid #3d3d3d;
+  color: #414042;
+  border-bottom: 1px solid #414042;
 }
-/* line 1258, ../sass/style.scss */
+/* line 1260, ../sass/style.scss */
 #page-login #content #box .page-content #features {
   width: 550px;
   display: block;
@@ -1370,60 +1372,60 @@ body#page-login {
   padding-bottom: 20px;
   margin-bottom: 10px;
 }
-/* line 1265, ../sass/style.scss */
+/* line 1267, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature {
   margin-top: 40px;
   height: 310px;
 }
-/* line 1269, ../sass/style.scss */
+/* line 1271, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature img {
   width: 320px;
   float: left;
   margin-right: 20px;
 }
-/* line 1274, ../sass/style.scss */
+/* line 1276, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text {
   width: 210px;
   float: left;
 }
-/* line 1278, ../sass/style.scss */
+/* line 1280, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text .title {
   text-transform: uppercase;
   font-family: "vinyl", sans-serif;
-  color: #3d3d3d;
+  color: #414042;
   font-size: 40px;
   margin: 0;
   font-weight: 400;
 }
-/* line 1286, ../sass/style.scss */
+/* line 1288, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text .body-text {
   font-family: "ff-tisa-web-pro", Georgia, serif;
 }
-/* line 1292, ../sass/style.scss */
+/* line 1294, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login {
   background-color: #3D3D3D;
-  margin: 40px -45px 0 -45px;
+  margin: 30px -45px 0 -45px;
   padding: 30px 45px 20px 45px;
   color: white;
 }
-/* line 1297, ../sass/style.scss */
+/* line 1299, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login a {
   color: #f0b50c;
 }
-/* line 1301, ../sass/style.scss */
+/* line 1303, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login img {
   width: 100px;
   position: relative;
   float: left;
   padding: 5px 20px 10px 0px;
 }
-/* line 1307, ../sass/style.scss */
+/* line 1309, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login #twitter-follow {
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
   font-size: 18px;
 }
-/* line 1313, ../sass/style.scss */
+/* line 1315, ../sass/style.scss */
 #page-login #content #box .page-content #email-form {
   width: 530px;
   display: block;
@@ -1431,7 +1433,7 @@ body#page-login {
   background-color: #fae19b;
   padding: 10px;
 }
-/* line 1320, ../sass/style.scss */
+/* line 1322, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .email-field {
   top: 0;
   width: 200px;
@@ -1441,7 +1443,7 @@ body#page-login {
   margin: 0 10px 0 0;
   border: 1px solid #ccc;
 }
-/* line 1330, ../sass/style.scss */
+/* line 1332, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .dropdown-field {
   top: 0;
   display: block;
@@ -1449,21 +1451,22 @@ body#page-login {
   float: left;
   position: relative;
   margin-right: 0px;
+  height: 29px;
 }
-/* line 1338, ../sass/style.scss */
+/* line 1341, ../sass/style.scss */
 #page-login #content #box .page-content #email-form select {
   outline: 0;
   overflow: hidden;
   height: 30px;
   background: #fff;
-  color: #3d3d3d;
+  color: #414042;
   border: 1px solid #ccc;
   padding: 5px 3px 5px 10px;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 10px;
 }
-/* line 1351, ../sass/style.scss */
+/* line 1354, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .notes-field {
   width: 190px;
   height: 25px;
@@ -1471,16 +1474,21 @@ body#page-login {
   position: relative;
   border: 1px solid #ccc;
 }
-/* line 1358, ../sass/style.scss */
+/* line 1361, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .send-button {
   width: 100px;
   float: right;
-  margin: 5px;
+  margin: 1px;
+  height: 27px;
   margin-left: 10px;
   background-color: #f0b50c;
   color: #fff;
   font-family: "vinyl", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   border: none;
   cursor: pointer;
+}
+/* line 1376, ../sass/style.scss */
+#page-login #content #box .page-content #description {
+  margin-top: 70px;
 }
