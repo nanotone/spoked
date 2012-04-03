@@ -196,6 +196,8 @@ function initGame() {
 			startFmt += " " + startDate.getFullYear();
 		}
 		$('.game-duration').text(startFmt + " - " + formatDay(stopDate) + " " + stopDate.getFullYear());
+		$('.col0').text("Week 1");
+		$('.col1').text("Week 2");
 	});
 }
 
@@ -204,6 +206,7 @@ function aggregateGameTrackData() {
 	for (var i = 0; i < users.length; i++) {
 		var user = users[i];
 		user.lastWeekSmiles = user.thisWeekSmiles = user.totalDist = user.totalSmiles = 0;
+		user.smilesByWeek = [0, 0, 0];
 		user.gameDays = [];
 		var trackIndex = 0;
 		for (var j = 0; j < gameDays.length; j++) {
@@ -226,6 +229,7 @@ function aggregateGameTrackData() {
 				var field = (gameDay.start < thisWeek ? 'last' : 'this') + 'WeekSmiles';
 				user[field] += smiles;
 			}
+			user.smilesByWeek[Math.floor(j / 7)] += smiles;
 			user.totalSmiles += smiles;
 			user.totalDist += userGameDay.distance;
 

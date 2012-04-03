@@ -223,8 +223,14 @@ function showUserWeek(user, $col) {
 	}
 }
 function showUserSmiles(user, $col) {
-	$col.find('.stats-last-week').text(Math.round(user.lastWeekSmiles / M_PER_MI));
-	$col.find('.stats-this-week').text(Math.round(user.thisWeekSmiles / M_PER_MI));
+	if (gameState) {
+		$col.find('.stats-col0').text(Math.round(user.smilesByWeek[0] / M_PER_MI));
+		$col.find('.stats-col1').text(Math.round(user.smilesByWeek[1] / M_PER_MI));
+	}
+	else {
+		$col.find('.stats-col0').text(Math.round(user.lastWeekSmiles / M_PER_MI));
+		$col.find('.stats-col1').text(Math.round(user.thisWeekSmiles / M_PER_MI));
+	}
 	$col.find('.stats-total-miles').text(Math.round(user.totalSmiles / M_PER_MI));
 	$col.find('.convert-total-miles').text(humanUnits(Math.round(user.totalDist / M_PER_MI), 'mile'));
 }
