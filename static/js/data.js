@@ -159,6 +159,8 @@ function initGame() {
 		d.setDate(d.getDate() + 1);
 		gameDays.push({'start': start, 'stop': d.getTime() / 1000, 'day': day});
 	}
+	lastWeek = gameDays[0].start;
+	thisWeek = lastWeek + 7 * 86400;
 
 	// filter out all non-game data from global users and tracks!
 	gameUsers = [];
