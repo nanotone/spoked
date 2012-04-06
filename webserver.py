@@ -32,11 +32,13 @@ def emailbox():
 	db.emailbox.insert(doc)
 	return 'OK'
 
-@bottle.route('/auth')
+@bottle.route('/auth', method=['GET', 'POST'])
 def auth():
 	crossorigin()
 	mimetype_json()
 	query = bottle.request.query
+	if bottle.request.method == 'POST':
+		query = bottle.request.forms
 	auth_key = query.username.lower()
 	try:
 		spec = {'_id': bson.objectid.ObjectId(auth_key)}
@@ -52,11 +54,6 @@ def auth():
 @bottle.route('/')
 def index():
 	bottle.redirect('/static/main.html')
-	return ('<div><a href="/static/everything.tar.gz">ALL THE CSVs!</a></div>'
-		+ ''.join('<div>%s - %s [<a href="/static/csv/%s.csv">csv</a>] [<a href="/track/%s">json</a>]</div>'
-		          % (' '.join(f['sender']), time.ctime(f['time']), f['_id'], f['_id'])
-		          for f in db.tracks.find())
-	)
 
 @bottle.route('/tracks')
 def tracks():
@@ -66,7 +63,7 @@ def tracks():
 	for (i, t) in enumerate(bottle.request.query.ids.split(',')):
 		if i: yield ','
 		yield '"%s":' % t
-		yield open('static/json-sparse/%s.json' % t).read()
+		yield open('data/json-sparse/%s.json' % t).read()
 	yield '}'
 
 @bottle.route('/info')
