@@ -1157,48 +1157,95 @@ body#page-inside {
 					h4.team-name {
 						float: left;
 						width: 80px;
+						height: 20px;
 						display: block;
+						font-weight: normal;
+						border-bottom: 1px solid $black;
+						margin: 10px 0 3px 0;
+						
+						img {
+					
+							float: left;
+							display: block;
+							height: 22px;
+							width:22px;
+							margin-right: 5px;
+							margin-top: -4px;
+						}
+
 					}
 					h4.team-smiles {
 						float: right;
-						width: 100px;
-						display: block;					}		
+						width: 110px;
+						display: block;						
+						text-align: right;	
+						font-weight: normal;
+						height: 20px;
+						border-bottom: 1px solid $black;
+						margin: 10px 0 3px 0;
+						font-style: italic;
+						font-family: $serif;
+						font-size: 13px;
+						text-align: bottom;
+						}
 					.game {
 						margin-top: 20px;
-						height: 120px;
+						height: 110px;
 						background-color: #CCC;
 						padding: 10px;
 						img {
-							width: 120px;
+							width: 110px;
 							float: left;
-							margin-right: 20px;
+							margin-right: 15px;
 						}
 						img.avatar {
-							height: 30px;
-							width: 30px;
-							margin: 0;
+							height: 29px;
+							width: 29px;
+							margin: 0 2px 0 0;
 							border: none;
 						}
 						.team {
-							width: 180px;
+							width: 190px;
 							float: left;
 							display: block;
 							margin: 0;
 							padding: 0;
-							margin-right: 10px
+							margin-right: 0px
 							
 						}
+						.hubs {
+							margin-right: 15px;
+						}
 						.game-text {
-							width: 390px;
+							width: 400px;
 							float: left;
+							line-height: 1;
 							
-							.title {
+							.game-name {
 								text-transform: uppercase;
 								font-family: $vinyl;
 								color: $black;
 								font-size: 22px;
 								margin: 0;
+								padding: 0;
 								font-weight: 400;
+								float: left;
+								width: 180px;
+								display: block;
+										
+							}
+							.game-smiles {
+								text-transform: uppercase;
+								font-family: $vinyl;
+								color: $black;
+								font-size: 22px;
+								margin: 0;
+								padding: 0;
+								font-weight: 400;
+								float: right;
+								width: 200px;
+								display: block;
+								text-align: right;	
 							}
 							.body-text {
 								font-family: $serif;
