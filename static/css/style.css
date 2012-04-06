@@ -1248,25 +1248,59 @@ body#page-inside {
   padding-bottom: 20px;
   margin-bottom: 10px;
 }
-/* line 1153, ../sass/style.scss */
+/* line 1152, ../sass/style.scss */
+#page-inside #content #box .page-content #games h4 {
+  text-transform: uppercase;
+  font-family: "vinyl", sans-serif;
+  margin: 0;
+}
+/* line 1157, ../sass/style.scss */
+#page-inside #content #box .page-content #games h4.team-name {
+  float: left;
+  width: 80px;
+  display: block;
+}
+/* line 1162, ../sass/style.scss */
+#page-inside #content #box .page-content #games h4.team-smiles {
+  float: right;
+  width: 100px;
+  display: block;
+}
+/* line 1166, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game {
   margin-top: 20px;
   height: 120px;
   background-color: #CCC;
   padding: 10px;
 }
-/* line 1158, ../sass/style.scss */
+/* line 1171, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game img {
   width: 120px;
   float: left;
   margin-right: 20px;
 }
-/* line 1163, ../sass/style.scss */
+/* line 1176, ../sass/style.scss */
+#page-inside #content #box .page-content #games .game img.avatar {
+  height: 30px;
+  width: 30px;
+  margin: 0;
+  border: none;
+}
+/* line 1182, ../sass/style.scss */
+#page-inside #content #box .page-content #games .game .team {
+  width: 180px;
+  float: left;
+  display: block;
+  margin: 0;
+  padding: 0;
+  margin-right: 10px;
+}
+/* line 1191, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game .game-text {
   width: 390px;
   float: left;
 }
-/* line 1167, ../sass/style.scss */
+/* line 1195, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game .game-text .title {
   text-transform: uppercase;
   font-family: "vinyl", sans-serif;
@@ -1275,58 +1309,58 @@ body#page-inside {
   margin: 0;
   font-weight: 400;
 }
-/* line 1175, ../sass/style.scss */
+/* line 1203, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game .game-text .body-text {
   font-family: "ff-tisa-web-pro", Georgia, serif;
 }
-/* line 1181, ../sass/style.scss */
+/* line 1209, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside {
   background-color: #3D3D3D;
   margin: 30px -45px 0 -45px;
   padding: 30px 45px 20px 45px;
   color: white;
 }
-/* line 1186, ../sass/style.scss */
+/* line 1214, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside a {
   color: #f0b50c;
 }
-/* line 1190, ../sass/style.scss */
+/* line 1218, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside img {
   width: 100px;
   position: relative;
   float: left;
   padding: 5px 20px 10px 0px;
 }
-/* line 1196, ../sass/style.scss */
+/* line 1224, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside #twitter-follow {
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
   font-size: 18px;
 }
-/* line 1201, ../sass/style.scss */
+/* line 1229, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside h3 {
   margin-top: 0px;
 }
-/* line 1206, ../sass/style.scss */
+/* line 1234, ../sass/style.scss */
 #page-inside #content #box .page-content #description {
   margin-top: 70px;
 }
 
 /* PAGE BEFORE LOGIN */
-/* line 1215, ../sass/style.scss */
+/* line 1243, ../sass/style.scss */
 body#page-login {
   background: url(../img/login/bike-bk.jpg) top center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-/* line 1222, ../sass/style.scss */
+/* line 1250, ../sass/style.scss */
 #page-login #nav-login {
   position: absolute;
   width: 100%;
   margin: 0;
 }
-/* line 1227, ../sass/style.scss */
+/* line 1255, ../sass/style.scss */
 #page-login #nav-login #service-bar-login {
   -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
@@ -1340,7 +1374,7 @@ body#page-login {
   	/*-moz-box-shadow: 3px 3px 7px rgba(0,0,0, .3);
     	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .3);*/
 }
-/* line 1241, ../sass/style.scss */
+/* line 1269, ../sass/style.scss */
 #page-login #nav-login #service-nav-login {
   font-family: "futura-pt-condensed";
   font-weight: 400;
@@ -1352,42 +1386,42 @@ body#page-login {
   padding: 0px 0px 0px 20px;
   box-sizing: border-box;
 }
-/* line 1253, ../sass/style.scss */
+/* line 1281, ../sass/style.scss */
 #page-login #nav-login #service-nav-login ul li {
   display: block;
   padding-top: 0;
   float: left;
 }
-/* line 1257, ../sass/style.scss */
+/* line 1285, ../sass/style.scss */
 #page-login #nav-login #service-nav-login ul li a {
   text-decoration: none;
 }
-/* line 1259, ../sass/style.scss */
+/* line 1287, ../sass/style.scss */
 #page-login #nav-login #service-nav-login ul li.user-bottomcolor.selectedLink {
   border-bottom: 2px solid;
   border-bottom-color: #414042;
 }
-/* line 1264, ../sass/style.scss */
+/* line 1292, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav {
   padding-top: 0px;
   margin-top: 4px;
   margin-left: 80px;
   position: relative;
 }
-/* line 1269, ../sass/style.scss */
+/* line 1297, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav li {
   margin: 0 25px 0 0;
 }
-/* line 1271, ../sass/style.scss */
+/* line 1299, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav li a.user-color {
   color: #414042;
 }
-/* line 1274, ../sass/style.scss */
+/* line 1302, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav li a.user-bottomcolor:hover {
   border-bottom: 3px solid;
   border-bottom-color: #414042;
 }
-/* line 1280, ../sass/style.scss */
+/* line 1308, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #user-nav {
   font-family: "vinyl", sans-serif;
   font-size: 16px;
@@ -1399,7 +1433,7 @@ body#page-login {
   right: 0px;
   width: 400px;
 }
-/* line 1293, ../sass/style.scss */
+/* line 1321, ../sass/style.scss */
 #page-login #nav-login #form {
   padding-top: 0px;
   position: absolute;
@@ -1408,7 +1442,7 @@ body#page-login {
   margin-top: 0px;
   margin-right: 20px;
 }
-/* line 1301, ../sass/style.scss */
+/* line 1329, ../sass/style.scss */
 #page-login #nav-login #form input {
   float: left;
   position: relative;
@@ -1417,7 +1451,7 @@ body#page-login {
   border: 1px solid #ccc;
   margin-top: -5px;
 }
-/* line 1309, ../sass/style.scss */
+/* line 1337, ../sass/style.scss */
 #page-login #nav-login #form .login-button {
   margin-top: -4px;
   width: 60px;
@@ -1432,7 +1466,7 @@ body#page-login {
   border: none;
   cursor: pointer;
 }
-/* line 1325, ../sass/style.scss */
+/* line 1353, ../sass/style.scss */
 #page-login #nav-login .wrong {
   display: none;
   position: absolute;
@@ -1442,17 +1476,17 @@ body#page-login {
   background-color: white;
   color: red;
 }
-/* line 1335, ../sass/style.scss */
+/* line 1363, ../sass/style.scss */
 #page-login #content {
   width: 100%;
   padding: 0px 0 0;
   position: relative;
 }
-/* line 1340, ../sass/style.scss */
+/* line 1368, ../sass/style.scss */
 #page-login #content #box {
   margin: 0px auto 0px;
 }
-/* line 1343, ../sass/style.scss */
+/* line 1371, ../sass/style.scss */
 #page-login #content #box .page-content {
   margin: 0px auto 0px auto;
   padding: 70px 45px 0 45px;
@@ -1462,26 +1496,26 @@ body#page-login {
   position: relative;
   color: #414042;
 }
-/* line 1352, ../sass/style.scss */
+/* line 1380, ../sass/style.scss */
 #page-login #content #box .page-content h1 {
   font-size: 200px;
   margin-top: 50px;
   margin-bottom: 80px;
   text-align: center;
 }
-/* line 1358, ../sass/style.scss */
+/* line 1386, ../sass/style.scss */
 #page-login #content #box .page-content h2 {
   font-size: 52px;
   text-align: center;
 }
-/* line 1362, ../sass/style.scss */
+/* line 1390, ../sass/style.scss */
 #page-login #content #box .page-content .intro {
   font-family: "ff-tisa-web-pro", Georgia, serif;
   font-size: 18px;
   padding-top: 15px;
   padding-bottom: 5px;
 }
-/* line 1368, ../sass/style.scss */
+/* line 1396, ../sass/style.scss */
 #page-login #content #box .page-content h3 {
   text-transform: uppercase;
   font-family: "vinyl", sans-serif;
@@ -1489,18 +1523,18 @@ body#page-login {
   font-weight: 400;
   margin: 32px 0 0 0;
 }
-/* line 1375, ../sass/style.scss */
+/* line 1403, ../sass/style.scss */
 #page-login #content #box .page-content p {
   font-family: "ff-tisa-web-pro", Georgia, serif;
   font-size: 13px;
   margin-top: 0px;
 }
-/* line 1380, ../sass/style.scss */
+/* line 1408, ../sass/style.scss */
 #page-login #content #box .page-content a {
   color: #414042;
   border-bottom: 1px solid #414042;
 }
-/* line 1384, ../sass/style.scss */
+/* line 1412, ../sass/style.scss */
 #page-login #content #box .page-content #features {
   width: 550px;
   display: block;
@@ -1508,23 +1542,23 @@ body#page-login {
   padding-bottom: 20px;
   margin-bottom: 10px;
 }
-/* line 1391, ../sass/style.scss */
+/* line 1419, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature {
   margin-top: 40px;
   height: 310px;
 }
-/* line 1395, ../sass/style.scss */
+/* line 1423, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature img {
   width: 320px;
   float: left;
   margin-right: 20px;
 }
-/* line 1400, ../sass/style.scss */
+/* line 1428, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text {
   width: 210px;
   float: left;
 }
-/* line 1404, ../sass/style.scss */
+/* line 1432, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text .title {
   text-transform: uppercase;
   font-family: "vinyl", sans-serif;
@@ -1533,39 +1567,39 @@ body#page-login {
   margin: 0;
   font-weight: 400;
 }
-/* line 1412, ../sass/style.scss */
+/* line 1440, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text .body-text {
   font-family: "ff-tisa-web-pro", Georgia, serif;
 }
-/* line 1418, ../sass/style.scss */
+/* line 1446, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login {
   background-color: #3D3D3D;
   margin: 30px -45px 0 -45px;
   padding: 30px 45px 20px 45px;
   color: white;
 }
-/* line 1423, ../sass/style.scss */
+/* line 1451, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login a {
   color: #f0b50c;
 }
-/* line 1427, ../sass/style.scss */
+/* line 1455, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login img {
   width: 100px;
   position: relative;
   float: left;
   padding: 5px 20px 10px 0px;
 }
-/* line 1433, ../sass/style.scss */
+/* line 1461, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login #twitter-follow {
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
   font-size: 18px;
 }
-/* line 1438, ../sass/style.scss */
+/* line 1466, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login h3 {
   margin-top: 0px;
 }
-/* line 1442, ../sass/style.scss */
+/* line 1470, ../sass/style.scss */
 #page-login #content #box .page-content #email-form {
   width: 530px;
   display: block;
@@ -1573,7 +1607,7 @@ body#page-login {
   background-color: #fae19b;
   padding: 10px;
 }
-/* line 1449, ../sass/style.scss */
+/* line 1477, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .email-field {
   top: 0;
   width: 200px;
@@ -1583,7 +1617,7 @@ body#page-login {
   margin: 0 10px 0 0;
   border: 1px solid #ccc;
 }
-/* line 1459, ../sass/style.scss */
+/* line 1487, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .dropdown-field {
   top: 0;
   display: block;
@@ -1593,7 +1627,7 @@ body#page-login {
   margin-right: 0px;
   height: 29px;
 }
-/* line 1468, ../sass/style.scss */
+/* line 1496, ../sass/style.scss */
 #page-login #content #box .page-content #email-form select {
   outline: 0;
   overflow: hidden;
@@ -1606,7 +1640,7 @@ body#page-login {
   -webkit-border-radius: 6px;
   border-radius: 10px;
 }
-/* line 1481, ../sass/style.scss */
+/* line 1509, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .notes-field {
   width: 190px;
   height: 25px;
@@ -1614,7 +1648,7 @@ body#page-login {
   position: relative;
   border: 1px solid #ccc;
 }
-/* line 1488, ../sass/style.scss */
+/* line 1516, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .send-button {
   width: 100px;
   float: right;
@@ -1628,7 +1662,7 @@ body#page-login {
   border: none;
   cursor: pointer;
 }
-/* line 1503, ../sass/style.scss */
+/* line 1531, ../sass/style.scss */
 #page-login #content #box .page-content #description {
   margin-top: 70px;
 }

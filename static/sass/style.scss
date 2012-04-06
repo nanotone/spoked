@@ -1149,7 +1149,20 @@ body#page-inside {
 					float:left;
 					padding-bottom: 20px;
 					margin-bottom: 10px;
-							
+					h4 {
+						text-transform: uppercase;
+						font-family: $vinyl;
+						margin: 0;
+						}
+					h4.team-name {
+						float: left;
+						width: 80px;
+						display: block;
+					}
+					h4.team-smiles {
+						float: right;
+						width: 100px;
+						display: block;					}		
 					.game {
 						margin-top: 20px;
 						height: 120px;
@@ -1159,6 +1172,21 @@ body#page-inside {
 							width: 120px;
 							float: left;
 							margin-right: 20px;
+						}
+						img.avatar {
+							height: 30px;
+							width: 30px;
+							margin: 0;
+							border: none;
+						}
+						.team {
+							width: 180px;
+							float: left;
+							display: block;
+							margin: 0;
+							padding: 0;
+							margin-right: 10px
+							
 						}
 						.game-text {
 							width: 390px;
