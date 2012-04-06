@@ -8,8 +8,9 @@ import pymongo
 db = pymongo.Connection().spoked
 
 def crossorigin():
-	if bottle.request.headers.get('Origin') == 'http://localhost':
-		bottle.response.set_header('Access-Control-Allow-Origin', 'http://localhost')
+	origin = bottle.request.headers.get('Origin')
+	if origin in ('http://localhost', 'http://iamspoked.com', 'https://iamspoked.com'):
+		bottle.response.set_header('Access-Control-Allow-Origin', origin)
 
 def mimetype_json():
 	bottle.response.set_header('Content-Type', 'application/json')
