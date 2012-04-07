@@ -105,17 +105,13 @@ a { text-decoration: none; }
 	z-index: 200;
   	}
 
-#logo.user-color {
+#logo {
 	display: block;
 	float: left;
 	position: relative;
 	z-index: 300;
 	margin: 0px 0 0 0;
 	padding: 0 0 0 0;
-	/*border-top: 10px solid $yourColor;*/
-	/*border-bottom: 20px solid $yourColor;*/
-	/*padding: .5em 2em 0 2em;*/
-	/*background-color: $yourColor; */
 	color: $black;
 	font-family: $vinyl;
 	font-weight: 500;
@@ -123,7 +119,7 @@ a { text-decoration: none; }
 	line-height: 38px;
 	text-align: center;
   	}
-a#logo.user-color {
+a#logo {
 	color: $black;
 	text-decoration: none;
 }
@@ -166,7 +162,83 @@ a#logo.user-color {
 			}
 		}
 	}
-	
+	#game-nav {
+		font-family: $vinyl;
+		font-size: 16px;
+		text-transform: uppercase;
+		line-height: 20px;
+		position: absolute;
+		margin: -14px 10px 0 0;
+		padding: 0;
+		right: 200px;	
+		width: 190px;	
+		
+		.games {
+			margin: -3px 20px 0px 0px;
+			padding: 3px 3px 30px 0px;
+			
+			.game-name {
+				float:left;
+				position: relative;
+			}
+			.menu-link {
+				position: relative;
+				float: left;
+				padding: 0px;
+				color: $black;
+				line-height: 20px;
+				&:hover { border-bottom: 2px solid $black; }
+			}
+			img.dropdown-arrow {
+				padding: 3px 5px;
+				margin-left: 8px;
+				border-left: 1px solid $black;
+				margin-top: -3px;
+				float:left;
+				position: relative;
+			}
+			img.dropdown-arrow:hover {
+				background-color: $sidebar;
+			}
+			.more-games {
+				padding-bottom: 5px; 
+				height: 30px;
+				
+				&:hover .dropdown { display: block; }
+				.dropdown {
+					display: none;
+					position: absolute;
+					top: 17px; 
+					right: 10px;
+					margin-top: 10px;
+					width: 187px;
+					.menu-item {      /*.menu-item.user-bgcolor {*/
+						clear: both;
+						cursor: pointer;
+						margin: 0px;
+						border-bottom: 1px solid rgba(255,255,255, .2);
+						padding: 4px 7px;
+						width: 100%;
+						background-color: darken($sidebar, 12%);
+						color: $black;
+						font-size: 18px;
+						text-transform: none;
+						font-weight: normal;
+						font-family: $futura;
+					}
+					.menu-item:hover {       /*.menu-item.user-dark-bgcolor:hover {*/
+						background-color: lighten($yourColor, 30%);
+					}
+					.menu-item.current-game {
+						font-family: $vinyl;
+						text-transform: uppercase;
+						font-size: 16px;
+					}
+				}
+			}	
+
+		}
+	}
 	#user-nav {
 		font-family: $vinyl;
 		font-size: 16px;
@@ -210,22 +282,22 @@ a#logo.user-color {
 				top: 17px; 
 				right: 10px;
 				margin-top: 10px;
-				width: 125px;
-				.menu-item.user-bgcolor {
+				width: 180px;
+				.menu-item {  /*.menu-item.user-bgcolor {*/
 					clear: both;
 					cursor: pointer;
 					margin: 0px;
 					border-bottom: 1px solid rgba(255,255,255, .2);
 					padding: 4px 7px;
 					width: 100%;
-					background-color: $yourColor;
-					color: white;
+					background-color: darken($sidebar, 12%);
+					color: $black;
 					font-size: 18px;
 					text-transform:none;
 					font-family: $futura;
 				}
-				.menu-item.user-dark-bgcolor:hover {
-					background-color: darken($yourColor, 10%);
+				.menu-item:hover{ /*.menu-item.user-dark-bgcolor:hover {*/
+					background-color: lighten($yourColor, 30%);
 				}
 			}
 		}
@@ -393,7 +465,7 @@ img.avatar {
 	}
 
 .pop-nav.user-dark-bgcolor:hover, .profileLink.user-dark-bgcolor:hover {
-		background-color: darken(#ccc, 10%);
+		background-color: darken($sidebar, 20%);
 	}
 
 /*MAP NAV*/

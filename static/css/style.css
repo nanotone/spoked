@@ -118,17 +118,13 @@ a {
 }
 
 /* line 108, ../sass/style.scss */
-#logo.user-color {
+#logo {
   display: block;
   float: left;
   position: relative;
   z-index: 300;
   margin: 0px 0 0 0;
   padding: 0 0 0 0;
-  /*border-top: 10px solid $yourColor;*/
-  /*border-bottom: 20px solid $yourColor;*/
-  /*padding: .5em 2em 0 2em;*/
-  /*background-color: $yourColor; */
   color: #414042;
   font-family: "vinyl", sans-serif;
   font-weight: 500;
@@ -137,13 +133,13 @@ a {
   text-align: center;
 }
 
-/* line 126, ../sass/style.scss */
-a#logo.user-color {
+/* line 122, ../sass/style.scss */
+a#logo {
   color: #414042;
   text-decoration: none;
 }
 
-/* line 131, ../sass/style.scss */
+/* line 127, ../sass/style.scss */
 #service-nav {
   font-family: "futura-pt-condensed";
   font-weight: 400;
@@ -154,42 +150,134 @@ a#logo.user-color {
   margin: 0 0 0 20px;
   padding: 0;
 }
-/* line 142, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 #service-nav ul li {
   display: block;
   padding-top: 0;
   float: left;
 }
-/* line 146, ../sass/style.scss */
+/* line 142, ../sass/style.scss */
 #service-nav ul li a {
   text-decoration: none;
 }
-/* line 148, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 #service-nav ul li.user-bottomcolor.selectedLink {
   border-bottom: 2px solid;
   border-bottom-color: #f0b50c;
 }
-/* line 153, ../sass/style.scss */
+/* line 149, ../sass/style.scss */
 #service-nav #menu-nav {
   padding-top: 0px;
   margin-top: 4px;
   margin-left: 80px;
   position: relative;
 }
-/* line 158, ../sass/style.scss */
+/* line 154, ../sass/style.scss */
 #service-nav #menu-nav li {
   margin: 0 25px 0 0;
 }
-/* line 160, ../sass/style.scss */
+/* line 156, ../sass/style.scss */
 #service-nav #menu-nav li a.user-color {
   color: #414042;
 }
-/* line 163, ../sass/style.scss */
+/* line 159, ../sass/style.scss */
 #service-nav #menu-nav li a.user-bottomcolor:hover {
   border-bottom: 3px solid;
   border-bottom-color: #414042;
 }
-/* line 170, ../sass/style.scss */
+/* line 165, ../sass/style.scss */
+#service-nav #game-nav {
+  font-family: "vinyl", sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 20px;
+  position: absolute;
+  margin: -14px 10px 0 0;
+  padding: 0;
+  right: 200px;
+  width: 190px;
+}
+/* line 176, ../sass/style.scss */
+#service-nav #game-nav .games {
+  margin: -3px 20px 0px 0px;
+  padding: 3px 3px 30px 0px;
+}
+/* line 180, ../sass/style.scss */
+#service-nav #game-nav .games .game-name {
+  float: left;
+  position: relative;
+}
+/* line 184, ../sass/style.scss */
+#service-nav #game-nav .games .menu-link {
+  position: relative;
+  float: left;
+  padding: 0px;
+  color: #414042;
+  line-height: 20px;
+}
+/* line 190, ../sass/style.scss */
+#service-nav #game-nav .games .menu-link:hover {
+  border-bottom: 2px solid #414042;
+}
+/* line 192, ../sass/style.scss */
+#service-nav #game-nav .games img.dropdown-arrow {
+  padding: 3px 5px;
+  margin-left: 8px;
+  border-left: 1px solid #414042;
+  margin-top: -3px;
+  float: left;
+  position: relative;
+}
+/* line 200, ../sass/style.scss */
+#service-nav #game-nav .games img.dropdown-arrow:hover {
+  background-color: #e3e3da;
+}
+/* line 203, ../sass/style.scss */
+#service-nav #game-nav .games .more-games {
+  padding-bottom: 5px;
+  height: 30px;
+}
+/* line 207, ../sass/style.scss */
+#service-nav #game-nav .games .more-games:hover .dropdown {
+  display: block;
+}
+/* line 208, ../sass/style.scss */
+#service-nav #game-nav .games .more-games .dropdown {
+  display: none;
+  position: absolute;
+  top: 17px;
+  right: 10px;
+  margin-top: 10px;
+  width: 187px;
+}
+/* line 215, ../sass/style.scss */
+#service-nav #game-nav .games .more-games .dropdown .menu-item {
+  /*.menu-item.user-bgcolor {*/
+  clear: both;
+  cursor: pointer;
+  margin: 0px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 4px 7px;
+  width: 100%;
+  background-color: #c9c9b7;
+  color: #414042;
+  font-size: 18px;
+  text-transform: none;
+  font-weight: normal;
+  font-family: "futura-pt-condensed";
+}
+/* line 229, ../sass/style.scss */
+#service-nav #game-nav .games .more-games .dropdown .menu-item:hover {
+  /*.menu-item.user-dark-bgcolor:hover {*/
+  background-color: #fae19b;
+}
+/* line 232, ../sass/style.scss */
+#service-nav #game-nav .games .more-games .dropdown .menu-item.current-game {
+  font-family: "vinyl", sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+/* line 242, ../sass/style.scss */
 #service-nav #user-nav {
   font-family: "vinyl", sans-serif;
   font-size: 16px;
@@ -200,12 +288,12 @@ a#logo.user-color {
   padding: 0;
   right: 0px;
 }
-/* line 180, ../sass/style.scss */
+/* line 252, ../sass/style.scss */
 #service-nav #user-nav .you {
   margin: -3px 20px 0px 10px;
   padding: 3px 3px 30px 3px;
 }
-/* line 183, ../sass/style.scss */
+/* line 255, ../sass/style.scss */
 #service-nav #user-nav .you .user-avatar {
   display: block;
   float: left;
@@ -214,7 +302,7 @@ a#logo.user-color {
   width: 20px;
   height: 20px;
 }
-/* line 191, ../sass/style.scss */
+/* line 263, ../sass/style.scss */
 #service-nav #user-nav .you .menu-link {
   position: relative;
   float: left;
@@ -222,55 +310,57 @@ a#logo.user-color {
   color: #414042;
   line-height: 20px;
 }
-/* line 197, ../sass/style.scss */
+/* line 269, ../sass/style.scss */
 #service-nav #user-nav .you .menu-link:hover {
   border-bottom: 2px solid #414042;
 }
-/* line 200, ../sass/style.scss */
+/* line 272, ../sass/style.scss */
 #service-nav #user-nav .you #login-form {
   display: none;
   clear: both;
   background-color: white;
 }
-/* line 206, ../sass/style.scss */
+/* line 278, ../sass/style.scss */
 #service-nav #user-nav .you:hover .dropdown {
   display: block;
 }
-/* line 207, ../sass/style.scss */
+/* line 279, ../sass/style.scss */
 #service-nav #user-nav .you .dropdown {
   display: none;
   position: absolute;
   top: 17px;
   right: 10px;
   margin-top: 10px;
-  width: 125px;
+  width: 180px;
 }
-/* line 214, ../sass/style.scss */
-#service-nav #user-nav .you .dropdown .menu-item.user-bgcolor {
+/* line 286, ../sass/style.scss */
+#service-nav #user-nav .you .dropdown .menu-item {
+  /*.menu-item.user-bgcolor {*/
   clear: both;
   cursor: pointer;
   margin: 0px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 4px 7px;
   width: 100%;
-  background-color: #f0b50c;
-  color: white;
+  background-color: #c9c9b7;
+  color: #414042;
   font-size: 18px;
   text-transform: none;
   font-family: "futura-pt-condensed";
 }
-/* line 227, ../sass/style.scss */
-#service-nav #user-nav .you .dropdown .menu-item.user-dark-bgcolor:hover {
-  background-color: #bf900a;
+/* line 299, ../sass/style.scss */
+#service-nav #user-nav .you .dropdown .menu-item:hover {
+  /*.menu-item.user-dark-bgcolor:hover {*/
+  background-color: #fae19b;
 }
 
-/* line 235, ../sass/style.scss */
+/* line 307, ../sass/style.scss */
 .wrong-login {
   color: red;
   display: none;
 }
 
-/* line 240, ../sass/style.scss */
+/* line 312, ../sass/style.scss */
 #animation-clock {
   position: fixed;
   z-index: 200;
@@ -287,7 +377,7 @@ a#logo.user-color {
 }
 
 /*BOTTOM NAV*/
-/* line 257, ../sass/style.scss */
+/* line 329, ../sass/style.scss */
 #bottom-nav {
   bottom: 0;
   height: 35px;
@@ -297,7 +387,7 @@ a#logo.user-color {
   font-size: 16px;
 }
 
-/* line 265, ../sass/style.scss */
+/* line 337, ../sass/style.scss */
 #bottom-bar.user-bgcolor {
   height: 35px;
   bottom: 0;
@@ -311,7 +401,7 @@ a#logo.user-color {
 }
 
 /*PORTRAIT NAV*/
-/* line 280, ../sass/style.scss */
+/* line 352, ../sass/style.scss */
 #portrait-nav {
   bottom: 30px;
   height: 65px;
@@ -325,7 +415,7 @@ a#logo.user-color {
   	margin-top: -1.5em;
   }*/
 }
-/* line 287, ../sass/style.scss */
+/* line 359, ../sass/style.scss */
 #portrait-nav ul {
   position: relative;
   list-style-type: normal;
@@ -334,7 +424,7 @@ a#logo.user-color {
   margin-top: 0;
   margin-left: 0;
 }
-/* line 294, ../sass/style.scss */
+/* line 366, ../sass/style.scss */
 #portrait-nav ul .portrait {
   display: block;
   float: left;
@@ -342,12 +432,12 @@ a#logo.user-color {
   padding-right: 8px;
   padding-top: 10px;
 }
-/* line 300, ../sass/style.scss */
+/* line 372, ../sass/style.scss */
 #portrait-nav ul .portrait a {
   color: #ffffff;
   text-decoration: none;
 }
-/* line 304, ../sass/style.scss */
+/* line 376, ../sass/style.scss */
 #portrait-nav ul .portrait .filter {
   position: absolute;
   width: 45px;
@@ -356,24 +446,24 @@ a#logo.user-color {
   opacity: .6;
   z-index: 102;
 }
-/* line 312, ../sass/style.scss */
+/* line 384, ../sass/style.scss */
 #portrait-nav ul .portrait:hover .filter {
   display: none;
 }
-/* line 313, ../sass/style.scss */
+/* line 385, ../sass/style.scss */
 #portrait-nav ul .portrait:hover .pop {
   display: block;
 }
-/* line 314, ../sass/style.scss */
+/* line 386, ../sass/style.scss */
 #portrait-nav ul .portrait a.disabled {
   cursor: default;
 }
-/* line 318, ../sass/style.scss */
+/* line 390, ../sass/style.scss */
 #portrait-nav ul .portrait.selected .filter {
   display: none;
 }
 
-/* line 327, ../sass/style.scss */
+/* line 399, ../sass/style.scss */
 img.avatar {
   position: relative;
   display: block;
@@ -390,7 +480,7 @@ img.avatar {
   border-top: .5em solid #fff;
 }
 
-/* line 343, ../sass/style.scss */
+/* line 415, ../sass/style.scss */
 .pop {
   display: none;
   position: absolute;
@@ -410,7 +500,7 @@ img.avatar {
     	-webkit-border-bottom-right-radius: .8em;*/
 }
 
-/* line 362, ../sass/style.scss */
+/* line 434, ../sass/style.scss */
 .pop a.name {
   font-family: "vinyl", sans-serif;
   font-size: 16px;
@@ -419,7 +509,7 @@ img.avatar {
   line-height: 18px;
 }
 
-/* line 369, ../sass/style.scss */
+/* line 441, ../sass/style.scss */
 .profileLink {
   text-transform: none;
   clear: both;
@@ -433,7 +523,7 @@ img.avatar {
   font-weight: normal;
 }
 
-/* line 382, ../sass/style.scss */
+/* line 454, ../sass/style.scss */
 .pop-nav {
   text-transform: none;
   clear: both;
@@ -447,13 +537,13 @@ img.avatar {
   font-weight: normal;
 }
 
-/* line 395, ../sass/style.scss */
+/* line 467, ../sass/style.scss */
 .pop-nav.user-dark-bgcolor:hover, .profileLink.user-dark-bgcolor:hover {
-  background-color: #b3b3b3;
+  background-color: #b7b7a0;
 }
 
 /*MAP NAV*/
-/* line 401, ../sass/style.scss */
+/* line 473, ../sass/style.scss */
 #map-nav {
   bottom: 0;
   display: block;
@@ -464,15 +554,15 @@ img.avatar {
   height: 35px;
   float: right;
 }
-/* line 411, ../sass/style.scss */
+/* line 483, ../sass/style.scss */
 #map-nav ul {
   padding-right: 5px;
 }
-/* line 414, ../sass/style.scss */
+/* line 486, ../sass/style.scss */
 #map-nav ul li:first-child {
   border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
-/* line 418, ../sass/style.scss */
+/* line 490, ../sass/style.scss */
 #map-nav ul li {
   display: block;
   border-right: 1px solid rgba(255, 255, 255, 0.2);
@@ -482,12 +572,12 @@ img.avatar {
   padding-top: 0;
   margin-top: 0;
 }
-/* line 427, ../sass/style.scss */
+/* line 499, ../sass/style.scss */
 #map-nav ul li a.user-color {
   color: #f0b50c;
   text-decoration: none;
 }
-/* line 431, ../sass/style.scss */
+/* line 503, ../sass/style.scss */
 #map-nav ul li a.user-color img.mapbtn {
   position: relative;
   display: block;
@@ -498,27 +588,27 @@ img.avatar {
   width: 35px;
   border: none;
 }
-/* line 441, ../sass/style.scss */
+/* line 513, ../sass/style.scss */
 #map-nav ul li a.user-color img.mapbtn.user-dark-bgcolor:hover {
   background-color: #bf900a;
 }
-/* line 446, ../sass/style.scss */
+/* line 518, ../sass/style.scss */
 #map-nav ul li .pop {
   padding: 5px 8px;
   margin-bottom: -10px;
   width: 80px;
 }
-/* line 452, ../sass/style.scss */
+/* line 524, ../sass/style.scss */
 #map-nav ul li.selected img.mapbtn.user-dark-bgcolor {
   background-color: #bf900a;
 }
-/* line 455, ../sass/style.scss */
+/* line 527, ../sass/style.scss */
 #map-nav ul li:hover .pop {
   display: block;
 }
 
 /* PORTRAIT-CONTROL-NAV */
-/* line 462, ../sass/style.scss */
+/* line 534, ../sass/style.scss */
 #portrait-control-nav {
   bottom: 0;
   display: block;
@@ -529,34 +619,34 @@ img.avatar {
   height: 30px;
   float: left;
 }
-/* line 472, ../sass/style.scss */
+/* line 544, ../sass/style.scss */
 #portrait-control-nav ul {
   padding-left: 0;
 }
-/* line 475, ../sass/style.scss */
+/* line 547, ../sass/style.scss */
 #portrait-control-nav ul li {
   display: block;
   float: left;
   padding: 0 0;
   margin: 0 0 0 8px;
 }
-/* line 480, ../sass/style.scss */
+/* line 552, ../sass/style.scss */
 #portrait-control-nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 1px 4px 3px 4px;
 }
-/* line 486, ../sass/style.scss */
+/* line 558, ../sass/style.scss */
 #portrait-control-nav ul li.user-dark-bgcolor.selectedLink {
   background-color: #bf900a;
 }
-/* line 489, ../sass/style.scss */
+/* line 561, ../sass/style.scss */
 #portrait-control-nav ul li.user-dark-bgcolor:hover {
   background-color: #bf900a;
 }
 
 /* GAME-NAME */
-/* line 496, ../sass/style.scss */
+/* line 568, ../sass/style.scss */
 #game-name {
   bottom: 0;
   display: block;
@@ -567,15 +657,15 @@ img.avatar {
   height: 30px;
   float: left;
 }
-/* line 507, ../sass/style.scss */
+/* line 579, ../sass/style.scss */
 #game-name p a:hover {
   border-bottom: 2px solid #fff;
 }
-/* line 511, ../sass/style.scss */
+/* line 583, ../sass/style.scss */
 #game-name .game-name {
   color: #fff;
 }
-/* line 515, ../sass/style.scss */
+/* line 587, ../sass/style.scss */
 #game-name .game-duration {
   color: #fff;
   text-transform: none;
@@ -585,7 +675,7 @@ img.avatar {
 }
 
 /* TIME-NAV */
-/* line 527, ../sass/style.scss */
+/* line 599, ../sass/style.scss */
 #time-nav {
   bottom: 0;
   display: block;
@@ -596,34 +686,34 @@ img.avatar {
   height: 35px;
   float: right;
 }
-/* line 537, ../sass/style.scss */
+/* line 609, ../sass/style.scss */
 #time-nav ul {
   padding-left: 15px;
   padding-right: 5px;
 }
-/* line 541, ../sass/style.scss */
+/* line 613, ../sass/style.scss */
 #time-nav ul li {
   display: block;
   float: left;
   padding: 0px 28px 0px 0px;
 }
-/* line 546, ../sass/style.scss */
+/* line 618, ../sass/style.scss */
 #time-nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 2px 4px 3px 4px;
 }
-/* line 551, ../sass/style.scss */
+/* line 623, ../sass/style.scss */
 #time-nav ul li a.user-dark-bgcolor:hover {
   background-color: #bf900a;
 }
-/* line 554, ../sass/style.scss */
+/* line 626, ../sass/style.scss */
 #time-nav ul li a.user-dark-bgcolor.selected {
   background-color: #bf900a;
 }
 
 /* CHECKBOXES */
-/* line 563, ../sass/style.scss */
+/* line 635, ../sass/style.scss */
 #time-nav ul li a.selected:before {
   content: url(../img/btn/checkbox-sq-checked-20x20.png);
   margin-right: 7px;
@@ -631,7 +721,7 @@ img.avatar {
   top: 5px;
 }
 
-/* line 569, ../sass/style.scss */
+/* line 641, ../sass/style.scss */
 #time-nav ul li a:before {
   content: url(../img/btn/checkbox-sq-20x20.png);
   margin-right: 7px;
@@ -639,13 +729,13 @@ img.avatar {
   top: 5px;
 }
 
-/* line 575, ../sass/style.scss */
+/* line 647, ../sass/style.scss */
 #time-nav ul li a#animate:before {
   content: url(../img/btn/play-animation-20x20.png);
 }
 
 /* SIDEBAR */
-/* line 581, ../sass/style.scss */
+/* line 653, ../sass/style.scss */
 #sidebar {
   color: #1f1f1f;
   position: fixed;
@@ -671,70 +761,70 @@ img.avatar {
   transition-timing-function: ease;
 }
 
-/* line 604, ../sass/style.scss */
+/* line 676, ../sass/style.scss */
 #sidebar.hidden {
   right: -400px;
 }
 
-/* line 608, ../sass/style.scss */
+/* line 680, ../sass/style.scss */
 #sidebar-nav ul {
   margin: 55px auto auto -70px;
   list-style-type: none;
 }
-/* line 611, ../sass/style.scss */
+/* line 683, ../sass/style.scss */
 #sidebar-nav ul li {
   margin-top: 15px;
 }
-/* line 613, ../sass/style.scss */
+/* line 685, ../sass/style.scss */
 #sidebar-nav ul li a img.user-bgcolor {
   width: 30px;
   height: 30px;
   background-color: #f0b50c;
 }
-/* line 618, ../sass/style.scss */
+/* line 690, ../sass/style.scss */
 #sidebar-nav ul li a img.user-dark-bgcolor:hover {
   background-color: #bf900a;
 }
 
-/* line 623, ../sass/style.scss */
+/* line 695, ../sass/style.scss */
 .sidebar-content {
   position: absolute;
   top: 55px;
   margin: 0 10px 50px 20px;
 }
 
-/* line 629, ../sass/style.scss */
+/* line 701, ../sass/style.scss */
 #sidebar .title {
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
   font-size: 34px;
 }
-/* line 634, ../sass/style.scss */
+/* line 706, ../sass/style.scss */
 #sidebar .sub-title {
   font-family: Georgia;
   font-size: 1em;
   padding-bottom: 20px;
 }
-/* line 639, ../sass/style.scss */
+/* line 711, ../sass/style.scss */
 #sidebar #stats-profile img.stats-avatar {
   width: 87px;
   height: 87px;
   margin-bottom: -5px;
 }
-/* line 640, ../sass/style.scss */
+/* line 712, ../sass/style.scss */
 #sidebar #stats-versus img.stats-avatar {
   width: 87px;
   height: 87px;
   margin-bottom: -5px;
 }
-/* line 641, ../sass/style.scss */
+/* line 713, ../sass/style.scss */
 #sidebar .stats-color {
   height: 5px;
   width: 368px;
   margin-left: 2px;
   margin-top: -11px;
 }
-/* line 647, ../sass/style.scss */
+/* line 719, ../sass/style.scss */
 #sidebar .stats-duration {
   /*text-transform: normal;
   font-family: $futura;
@@ -745,23 +835,23 @@ img.avatar {
 }
 
 /* LEADERBOARD */
-/* line 685, ../sass/style.scss */
+/* line 757, ../sass/style.scss */
 .sidebar-content {
   /*End table*/
 }
-/* line 686, ../sass/style.scss */
+/* line 758, ../sass/style.scss */
 .sidebar-content table {
   border-spacing: 2px;
   margin-top: 0px;
   /* End tbody*/
 }
-/* line 690, ../sass/style.scss */
+/* line 762, ../sass/style.scss */
 .sidebar-content table thead {
   margin-top: 5px;
   width: 360px;
   display: block;
 }
-/* line 697, ../sass/style.scss */
+/* line 769, ../sass/style.scss */
 .sidebar-content table thead tr td {
   width: 90px;
   font-family: "vinyl", sans-serif;
@@ -774,7 +864,7 @@ img.avatar {
   display: table-cell;
   text-align: right;
 }
-/* line 709, ../sass/style.scss */
+/* line 781, ../sass/style.scss */
 .sidebar-content table thead tr th {
   font-family: "vinyl", sans-serif;
   text-transform: none;
@@ -789,17 +879,17 @@ img.avatar {
   margin: 0;
   border-top: 0;
 }
-/* line 725, ../sass/style.scss */
+/* line 797, ../sass/style.scss */
 .sidebar-content table tbody {
   /* End tr*/
 }
-/* line 726, ../sass/style.scss */
+/* line 798, ../sass/style.scss */
 .sidebar-content table tbody tr {
   width: 360px;
   margin: 0;
   padding: 0;
 }
-/* line 731, ../sass/style.scss */
+/* line 803, ../sass/style.scss */
 .sidebar-content table tbody tr th {
   font-family: "vinyl", sans-serif;
   text-transform: none;
@@ -816,7 +906,7 @@ img.avatar {
   margin-top: 5px;
   border-bottom: 3px solid #ccc;
 }
-/* line 747, ../sass/style.scss */
+/* line 819, ../sass/style.scss */
 .sidebar-content table tbody tr th p.stats-name {
   margin-top: 3px;
   margin-bottom: -5px;
@@ -825,7 +915,7 @@ img.avatar {
   text-transform: uppercase;
   line-height: 10px;
 }
-/* line 756, ../sass/style.scss */
+/* line 828, ../sass/style.scss */
 .sidebar-content table tbody tr td {
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
@@ -847,12 +937,12 @@ img.avatar {
   padding-bottom: 0px;
   padding-right: 8px;
 }
-/* line 778, ../sass/style.scss */
+/* line 850, ../sass/style.scss */
 .sidebar-content table tbody tr td.stats-col0 {
   display: table-cell;
   width: 180px;
 }
-/* line 782, ../sass/style.scss */
+/* line 854, ../sass/style.scss */
 .sidebar-content table tbody tr td.stats-total-miles {
   margin-top: -44px;
   vertical-align: bottom;
@@ -860,7 +950,7 @@ img.avatar {
   width: 80px;
   border-right: 0px solid #414042;
 }
-/* line 790, ../sass/style.scss */
+/* line 862, ../sass/style.scss */
 .sidebar-content table tbody tr .emph {
   font-size: 36px;
   text-align: right;
@@ -868,7 +958,7 @@ img.avatar {
   padding-bottom: 5px;
   line-height: 45px;
 }
-/* line 800, ../sass/style.scss */
+/* line 872, ../sass/style.scss */
 .sidebar-content table .avatar {
   border: none;
   padding: 0;
@@ -879,31 +969,31 @@ img.avatar {
 }
 
 /*End leaderboard*/
-/* line 811, ../sass/style.scss */
+/* line 883, ../sass/style.scss */
 #leaderboard.hidden {
   visibility: hidden;
 }
 
 /* STATS PROFILE */
-/* line 818, ../sass/style.scss */
+/* line 890, ../sass/style.scss */
 #stats-profile.hidden {
   visibility: hidden;
 }
 
-/* line 821, ../sass/style.scss */
+/* line 893, ../sass/style.scss */
 #stats-profile.sidebar-content table tbody tr th {
   margin-bottom: 0px;
   padding-bottom: 0px;
   border-bottom: none;
 }
 
-/* line 829, ../sass/style.scss */
+/* line 901, ../sass/style.scss */
 #convert-to-miles table thead {
   margin-top: -2px;
   width: 370px;
   display: block;
 }
-/* line 834, ../sass/style.scss */
+/* line 906, ../sass/style.scss */
 #convert-to-miles table thead tr th {
   width: 270px;
   font-family: "futura-pt-condensed";
@@ -917,7 +1007,7 @@ img.avatar {
   display: table-cell;
   text-align: left;
 }
-/* line 847, ../sass/style.scss */
+/* line 919, ../sass/style.scss */
 #convert-to-miles table thead tr td {
   width: 90px;
   font-family: "futura-pt-condensed";
@@ -932,7 +1022,7 @@ img.avatar {
   text-align: right;
 }
 
-/* line 865, ../sass/style.scss */
+/* line 937, ../sass/style.scss */
 .week-chart .super-spoked-title {
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
@@ -940,13 +1030,13 @@ img.avatar {
   margin-left: 2px;
   margin-top: 20px;
 }
-/* line 873, ../sass/style.scss */
+/* line 945, ../sass/style.scss */
 .week-chart table tbody {
   margin-top: 5px;
   width: 370px;
   display: block;
 }
-/* line 878, ../sass/style.scss */
+/* line 950, ../sass/style.scss */
 .week-chart table tbody tr td {
   position: relative;
   width: 25px;
@@ -969,7 +1059,7 @@ img.avatar {
   text-align: center;
   pointer: cursor;
 }
-/* line 900, ../sass/style.scss */
+/* line 972, ../sass/style.scss */
 .week-chart table tbody tr td .pop-day {
   text-align: left;
   display: none;
@@ -984,42 +1074,42 @@ img.avatar {
   opacity: 0.9;
   z-index: 2000;
 }
-/* line 914, ../sass/style.scss */
+/* line 986, ../sass/style.scss */
 .week-chart table tbody tr td:hover .pop-day {
   display: block;
 }
-/* line 916, ../sass/style.scss */
+/* line 988, ../sass/style.scss */
 .week-chart table tbody tr td.biked.user-color {
   /*color: $yourColor; Overridden in JavaScript */
   background-color: #fff;
 }
-/* line 920, ../sass/style.scss */
+/* line 992, ../sass/style.scss */
 .week-chart table tbody tr td.biked.super-spoked.user-bgcolor {
   /*background-color: $yourColor; Overridden in JavaScript */
   color: #fff;
 }
-/* line 923, ../sass/style.scss */
+/* line 995, ../sass/style.scss */
 .week-chart table tbody tr td.biked.super-spoked.user-bgcolor .pop-day.user-bgcolor {
   width: 65px;
   /*background-color: $yourColor; Overridden in JavaScript */
   color: #fff;
 }
-/* line 929, ../sass/style.scss */
+/* line 1001, ../sass/style.scss */
 .week-chart table tbody tr td.rest {
   color: #ccc;
 }
-/* line 932, ../sass/style.scss */
+/* line 1004, ../sass/style.scss */
 .week-chart table tbody tr td.begin-week-one {
   border-left: 1px solid #ccc;
 }
 
 /* STATS PROFILE VS PROFILE */
-/* line 943, ../sass/style.scss */
+/* line 1015, ../sass/style.scss */
 #stats-versus.hidden {
   visibility: hidden;
 }
 
-/* line 947, ../sass/style.scss */
+/* line 1019, ../sass/style.scss */
 #stats-versus.sidebar-content table tbody tr th {
   margin-bottom: 0px;
   padding-bottom: 0px;
@@ -1027,7 +1117,7 @@ img.avatar {
 }
 
 /* COMMENTARY */
-/* line 954, ../sass/style.scss */
+/* line 1026, ../sass/style.scss */
 #commentary.user-color {
   /*background-color: #fff;*/
   font-family: "ff-tisa-web-pro", Georgia, serif;
@@ -1043,7 +1133,7 @@ img.avatar {
   line-height: 30px;
 }
 
-/* line 968, ../sass/style.scss */
+/* line 1040, ../sass/style.scss */
 #before-game {
   position: fixed;
   background-color: #fff;
@@ -1060,17 +1150,17 @@ img.avatar {
   text-align: center;
   text-transform: uppercase;
 }
-/* line 983, ../sass/style.scss */
+/* line 1055, ../sass/style.scss */
 #before-game #before-game-text {
   font-size: 25px;
 }
-/* line 985, ../sass/style.scss */
+/* line 1057, ../sass/style.scss */
 #before-game #before-game-text a {
   color: #414042;
   border-bottom: 1px solid #414042;
 }
 
-/* line 991, ../sass/style.scss */
+/* line 1063, ../sass/style.scss */
 #twitter-bar {
   font-family: "atrament-web", sans-serif;
   font-size: 22px;
@@ -1079,25 +1169,25 @@ img.avatar {
   padding-bottom: 0px;
 }
 
-/* line 998, ../sass/style.scss */
+/* line 1070, ../sass/style.scss */
 #twitter-bar a.user-color {
   color: #f0b50c;
   font-style: normal;
 }
 
-/* line 1002, ../sass/style.scss */
+/* line 1074, ../sass/style.scss */
 #commentary ul {
   list-style-type: none;
   padding-left: 0;
 }
 
 /* END RIDE HOVER */
-/* line 1008, ../sass/style.scss */
+/* line 1080, ../sass/style.scss */
 #end-ride.hidden {
   visibility: hidden;
 }
 
-/* line 1011, ../sass/style.scss */
+/* line 1083, ../sass/style.scss */
 #end-ride {
   background-color: #f0b50c;
   /*The color of the ride you hover over*/
@@ -1113,49 +1203,49 @@ img.avatar {
   z-index: 1000;
   padding: 5px 8px;
 }
-/* line 1025, ../sass/style.scss */
+/* line 1097, ../sass/style.scss */
 #end-ride .name {
   color: white;
   font: 16px "vinyl", sans-serif;
   text-decoration: none;
 }
-/* line 1030, ../sass/style.scss */
+/* line 1102, ../sass/style.scss */
 #end-ride .end-ride-stats {
   padding-top: 5px;
   font: 16px "vinyl", sans-serif;
   text-transform: uppercase;
   color: #fff;
 }
-/* line 1037, ../sass/style.scss */
+/* line 1109, ../sass/style.scss */
 #end-ride .end-ride-stats small {
   font-size: 10px;
 }
 
 /* MAP */
-/* line 1043, ../sass/style.scss */
+/* line 1115, ../sass/style.scss */
 #map {
   height: 2750px;
 }
 
 /* PAGE ABOUT */
-/* line 1049, ../sass/style.scss */
+/* line 1121, ../sass/style.scss */
 #page-about #service-bar, #page-howto #service-bar {
   -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
 }
-/* line 1053, ../sass/style.scss */
+/* line 1125, ../sass/style.scss */
 #page-about #content, #page-howto #content {
   width: 100%;
   padding: 10px 0 0;
   position: relative;
 }
-/* line 1058, ../sass/style.scss */
+/* line 1130, ../sass/style.scss */
 #page-about #content #box, #page-howto #content #box {
   border: 1px solid #D4D4D4;
   margin: 60px auto 20px;
   width: 900px;
 }
-/* line 1063, ../sass/style.scss */
+/* line 1135, ../sass/style.scss */
 #page-about #content #box .page-content, #page-howto #content #box .page-content {
   border: 1px solid #D4D4D4;
   margin: 10px auto 10px 0px;
@@ -1165,7 +1255,7 @@ img.avatar {
   position: relative;
   padding: 0 10px;
 }
-/* line 1076, ../sass/style.scss */
+/* line 1148, ../sass/style.scss */
 #page-about #content #box .sidebar, #page-howto #content #box .sidebar {
   border: 1px solid #D4D4D4;
   margin: 10px 0px 10px auto;
@@ -1175,24 +1265,24 @@ img.avatar {
 }
 
 /* PAGE INSIDE (AFTER LOGIN) */
-/* line 1090, ../sass/style.scss */
+/* line 1162, ../sass/style.scss */
 body#page-inside {
   background: url(../img/map/streets.png) top center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-/* line 1098, ../sass/style.scss */
+/* line 1170, ../sass/style.scss */
 #page-inside #content {
   width: 100%;
   padding: 0px 0 0;
   position: relative;
 }
-/* line 1103, ../sass/style.scss */
+/* line 1175, ../sass/style.scss */
 #page-inside #content #box {
   margin: 0px auto 0px;
 }
-/* line 1106, ../sass/style.scss */
+/* line 1178, ../sass/style.scss */
 #page-inside #content #box .page-content {
   margin: 0px auto 0px auto;
   padding: 70px 45px 0 45px;
@@ -1202,26 +1292,26 @@ body#page-inside {
   position: relative;
   color: #414042;
 }
-/* line 1115, ../sass/style.scss */
+/* line 1187, ../sass/style.scss */
 #page-inside #content #box .page-content h1 {
   font-size: 200px;
   margin-top: 50px;
   margin-bottom: 80px;
   text-align: center;
 }
-/* line 1121, ../sass/style.scss */
+/* line 1193, ../sass/style.scss */
 #page-inside #content #box .page-content h2 {
   font-size: 52px;
   text-align: center;
 }
-/* line 1125, ../sass/style.scss */
+/* line 1197, ../sass/style.scss */
 #page-inside #content #box .page-content .intro {
   font-family: "ff-tisa-web-pro", Georgia, serif;
   font-size: 18px;
   padding-top: 15px;
   padding-bottom: 5px;
 }
-/* line 1131, ../sass/style.scss */
+/* line 1203, ../sass/style.scss */
 #page-inside #content #box .page-content h3 {
   text-transform: uppercase;
   font-family: "vinyl", sans-serif;
@@ -1229,18 +1319,18 @@ body#page-inside {
   font-weight: 400;
   margin: 32px 0 0 0;
 }
-/* line 1138, ../sass/style.scss */
+/* line 1210, ../sass/style.scss */
 #page-inside #content #box .page-content p {
   font-family: "ff-tisa-web-pro", Georgia, serif;
   font-size: 13px;
   margin-top: 0px;
 }
-/* line 1143, ../sass/style.scss */
+/* line 1215, ../sass/style.scss */
 #page-inside #content #box .page-content a {
   color: #414042;
   border-bottom: 1px solid #414042;
 }
-/* line 1147, ../sass/style.scss */
+/* line 1219, ../sass/style.scss */
 #page-inside #content #box .page-content #games {
   width: 550px;
   display: block;
@@ -1248,13 +1338,13 @@ body#page-inside {
   padding-bottom: 20px;
   margin-bottom: 0px;
 }
-/* line 1154, ../sass/style.scss */
+/* line 1226, ../sass/style.scss */
 #page-inside #content #box .page-content #games h4 {
   text-transform: uppercase;
   font-family: "vinyl", sans-serif;
   margin: 0;
 }
-/* line 1159, ../sass/style.scss */
+/* line 1231, ../sass/style.scss */
 #page-inside #content #box .page-content #games h4.team-name {
   float: left;
   width: 80px;
@@ -1265,7 +1355,7 @@ body#page-inside {
   margin: 10px 0 3px 0;
   line-height: 1;
 }
-/* line 1169, ../sass/style.scss */
+/* line 1241, ../sass/style.scss */
 #page-inside #content #box .page-content #games h4.team-name img {
   float: left;
   display: block;
@@ -1274,35 +1364,35 @@ body#page-inside {
   margin-right: 3px;
   margin-top: -4px;
 }
-/* line 1180, ../sass/style.scss */
+/* line 1252, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game {
   margin-bottom: 20px;
   height: 110px;
   background-color: #e3e3da;
   padding: 10px;
 }
-/* line 1185, ../sass/style.scss */
+/* line 1257, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game:hover {
   background-color: #fae19b;
 }
-/* line 1186, ../sass/style.scss */
+/* line 1258, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game img {
   width: 110px;
   float: left;
   margin-right: 15px;
 }
-/* line 1191, ../sass/style.scss */
+/* line 1263, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game img.avatar {
   height: 29px;
   width: 29px;
   margin: 0 2px 0 0;
   border: none;
 }
-/* line 1197, ../sass/style.scss */
+/* line 1269, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game img.individual-winner:before {
   content: url(../img/icon/crown.png);
 }
-/* line 1201, ../sass/style.scss */
+/* line 1273, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game .team {
   width: 190px;
   float: left;
@@ -1311,7 +1401,7 @@ body#page-inside {
   padding: 0;
   margin-right: 0px;
 }
-/* line 1210, ../sass/style.scss */
+/* line 1282, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game h4.team-smiles {
   float: right;
   width: 105px;
@@ -1327,24 +1417,24 @@ body#page-inside {
   text-align: bottom;
   line-height: 1.3;
 }
-/* line 1225, ../sass/style.scss */
+/* line 1297, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game h4.team-winner:after {
   padding-left: 3px;
   width: 22px;
   height: 22px;
   content: url(../img/icon/crown.png);
 }
-/* line 1231, ../sass/style.scss */
+/* line 1303, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game h4.team-winner {
   padding-top: -22px;
   margin-top: 1px;
   height: 27px;
 }
-/* line 1236, ../sass/style.scss */
+/* line 1308, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game .individuals {
   margin-top: 45px;
 }
-/* line 1241, ../sass/style.scss */
+/* line 1313, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game .individual-winner:before {
   content: url(../img/icon/crown.png);
   float: left;
@@ -1352,17 +1442,17 @@ body#page-inside {
   margin-left: 3px;
   width: 0px;
 }
-/* line 1250, ../sass/style.scss */
+/* line 1322, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game .hubs {
   margin-right: 20px;
 }
-/* line 1253, ../sass/style.scss */
+/* line 1325, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game .game-text {
   width: 400px;
   float: left;
   line-height: 1;
 }
-/* line 1258, ../sass/style.scss */
+/* line 1330, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game .game-text .game-name {
   text-transform: uppercase;
   font-family: "vinyl", sans-serif;
@@ -1375,7 +1465,7 @@ body#page-inside {
   width: 180px;
   display: block;
 }
-/* line 1271, ../sass/style.scss */
+/* line 1343, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game .game-text .game-smiles {
   text-transform: uppercase;
   font-family: "vinyl", sans-serif;
@@ -1389,58 +1479,58 @@ body#page-inside {
   display: block;
   text-align: right;
 }
-/* line 1284, ../sass/style.scss */
+/* line 1356, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game .game-text .body-text {
   font-family: "ff-tisa-web-pro", Georgia, serif;
 }
-/* line 1290, ../sass/style.scss */
+/* line 1362, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside {
   background-color: #3D3D3D;
   margin: 30px -45px 0 -45px;
   padding: 30px 45px 20px 45px;
   color: white;
 }
-/* line 1295, ../sass/style.scss */
+/* line 1367, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside a {
   color: #f0b50c;
 }
-/* line 1299, ../sass/style.scss */
+/* line 1371, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside img {
   width: 100px;
   position: relative;
   float: left;
   padding: 5px 20px 10px 0px;
 }
-/* line 1305, ../sass/style.scss */
+/* line 1377, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside #twitter-follow {
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
   font-size: 18px;
 }
-/* line 1310, ../sass/style.scss */
+/* line 1382, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside h3 {
   margin-top: 0px;
 }
-/* line 1315, ../sass/style.scss */
+/* line 1387, ../sass/style.scss */
 #page-inside #content #box .page-content #description {
   margin-top: 70px;
 }
 
 /* PAGE BEFORE LOGIN */
-/* line 1324, ../sass/style.scss */
+/* line 1396, ../sass/style.scss */
 body#page-login {
   background: url(../img/login/bike-bk.jpg) top center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-/* line 1331, ../sass/style.scss */
+/* line 1403, ../sass/style.scss */
 #page-login #nav-login {
   position: absolute;
   width: 100%;
   margin: 0;
 }
-/* line 1336, ../sass/style.scss */
+/* line 1408, ../sass/style.scss */
 #page-login #nav-login #service-bar-login {
   -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
@@ -1454,7 +1544,7 @@ body#page-login {
   	/*-moz-box-shadow: 3px 3px 7px rgba(0,0,0, .3);
     	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .3);*/
 }
-/* line 1350, ../sass/style.scss */
+/* line 1422, ../sass/style.scss */
 #page-login #nav-login #service-nav-login {
   font-family: "futura-pt-condensed";
   font-weight: 400;
@@ -1467,42 +1557,42 @@ body#page-login {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-/* line 1363, ../sass/style.scss */
+/* line 1435, ../sass/style.scss */
 #page-login #nav-login #service-nav-login ul li {
   display: block;
   padding-top: 0;
   float: left;
 }
-/* line 1367, ../sass/style.scss */
+/* line 1439, ../sass/style.scss */
 #page-login #nav-login #service-nav-login ul li a {
   text-decoration: none;
 }
-/* line 1369, ../sass/style.scss */
+/* line 1441, ../sass/style.scss */
 #page-login #nav-login #service-nav-login ul li.user-bottomcolor.selectedLink {
   border-bottom: 2px solid;
   border-bottom-color: #414042;
 }
-/* line 1374, ../sass/style.scss */
+/* line 1446, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav {
   padding-top: 0px;
   margin-top: 4px;
   margin-left: 80px;
   position: relative;
 }
-/* line 1379, ../sass/style.scss */
+/* line 1451, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav li {
   margin: 0 25px 0 0;
 }
-/* line 1381, ../sass/style.scss */
+/* line 1453, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav li a.user-color {
   color: #414042;
 }
-/* line 1384, ../sass/style.scss */
+/* line 1456, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav li a.user-bottomcolor:hover {
   border-bottom: 3px solid;
   border-bottom-color: #414042;
 }
-/* line 1390, ../sass/style.scss */
+/* line 1462, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #user-nav {
   font-family: "vinyl", sans-serif;
   font-size: 16px;
@@ -1514,7 +1604,7 @@ body#page-login {
   right: 0px;
   width: 400px;
 }
-/* line 1403, ../sass/style.scss */
+/* line 1475, ../sass/style.scss */
 #page-login #nav-login #form {
   padding-top: 0px;
   position: absolute;
@@ -1523,7 +1613,7 @@ body#page-login {
   margin-top: 0px;
   margin-right: 20px;
 }
-/* line 1411, ../sass/style.scss */
+/* line 1483, ../sass/style.scss */
 #page-login #nav-login #form input {
   float: left;
   position: relative;
@@ -1532,7 +1622,7 @@ body#page-login {
   border: 1px solid #ccc;
   margin-top: -5px;
 }
-/* line 1419, ../sass/style.scss */
+/* line 1491, ../sass/style.scss */
 #page-login #nav-login #form .login-button {
   margin-top: -4px;
   width: 60px;
@@ -1547,7 +1637,7 @@ body#page-login {
   border: none;
   cursor: pointer;
 }
-/* line 1435, ../sass/style.scss */
+/* line 1507, ../sass/style.scss */
 #page-login #nav-login .wrong {
   display: none;
   position: absolute;
@@ -1557,17 +1647,17 @@ body#page-login {
   background-color: white;
   color: red;
 }
-/* line 1445, ../sass/style.scss */
+/* line 1517, ../sass/style.scss */
 #page-login #content {
   width: 100%;
   padding: 0px 0 0;
   position: relative;
 }
-/* line 1450, ../sass/style.scss */
+/* line 1522, ../sass/style.scss */
 #page-login #content #box {
   margin: 0px auto 0px;
 }
-/* line 1453, ../sass/style.scss */
+/* line 1525, ../sass/style.scss */
 #page-login #content #box .page-content {
   margin: 0px auto 0px auto;
   padding: 70px 45px 0 45px;
@@ -1577,26 +1667,26 @@ body#page-login {
   position: relative;
   color: #414042;
 }
-/* line 1462, ../sass/style.scss */
+/* line 1534, ../sass/style.scss */
 #page-login #content #box .page-content h1 {
   font-size: 200px;
   margin-top: 50px;
   margin-bottom: 80px;
   text-align: center;
 }
-/* line 1468, ../sass/style.scss */
+/* line 1540, ../sass/style.scss */
 #page-login #content #box .page-content h2 {
   font-size: 52px;
   text-align: center;
 }
-/* line 1472, ../sass/style.scss */
+/* line 1544, ../sass/style.scss */
 #page-login #content #box .page-content .intro {
   font-family: "ff-tisa-web-pro", Georgia, serif;
   font-size: 18px;
   padding-top: 15px;
   padding-bottom: 5px;
 }
-/* line 1478, ../sass/style.scss */
+/* line 1550, ../sass/style.scss */
 #page-login #content #box .page-content h3 {
   text-transform: uppercase;
   font-family: "vinyl", sans-serif;
@@ -1604,18 +1694,18 @@ body#page-login {
   font-weight: 400;
   margin: 32px 0 0 0;
 }
-/* line 1485, ../sass/style.scss */
+/* line 1557, ../sass/style.scss */
 #page-login #content #box .page-content p {
   font-family: "ff-tisa-web-pro", Georgia, serif;
   font-size: 13px;
   margin-top: 0px;
 }
-/* line 1490, ../sass/style.scss */
+/* line 1562, ../sass/style.scss */
 #page-login #content #box .page-content a {
   color: #414042;
   border-bottom: 1px solid #414042;
 }
-/* line 1494, ../sass/style.scss */
+/* line 1566, ../sass/style.scss */
 #page-login #content #box .page-content #features {
   width: 550px;
   display: block;
@@ -1623,23 +1713,23 @@ body#page-login {
   padding-bottom: 20px;
   margin-bottom: 10px;
 }
-/* line 1501, ../sass/style.scss */
+/* line 1573, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature {
   margin-top: 40px;
   height: 310px;
 }
-/* line 1505, ../sass/style.scss */
+/* line 1577, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature img {
   width: 320px;
   float: left;
   margin-right: 20px;
 }
-/* line 1510, ../sass/style.scss */
+/* line 1582, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text {
   width: 210px;
   float: left;
 }
-/* line 1514, ../sass/style.scss */
+/* line 1586, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text .title {
   text-transform: uppercase;
   font-family: "vinyl", sans-serif;
@@ -1648,39 +1738,39 @@ body#page-login {
   margin: 0;
   font-weight: 400;
 }
-/* line 1522, ../sass/style.scss */
+/* line 1594, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text .body-text {
   font-family: "ff-tisa-web-pro", Georgia, serif;
 }
-/* line 1528, ../sass/style.scss */
+/* line 1600, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login {
   background-color: #3D3D3D;
   margin: 30px -45px 0 -45px;
   padding: 30px 45px 20px 45px;
   color: white;
 }
-/* line 1533, ../sass/style.scss */
+/* line 1605, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login a {
   color: #f0b50c;
 }
-/* line 1537, ../sass/style.scss */
+/* line 1609, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login img {
   width: 100px;
   position: relative;
   float: left;
   padding: 5px 20px 10px 0px;
 }
-/* line 1543, ../sass/style.scss */
+/* line 1615, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login #twitter-follow {
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
   font-size: 18px;
 }
-/* line 1548, ../sass/style.scss */
+/* line 1620, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login h3 {
   margin-top: 0px;
 }
-/* line 1552, ../sass/style.scss */
+/* line 1624, ../sass/style.scss */
 #page-login #content #box .page-content #email-form {
   width: 530px;
   display: block;
@@ -1688,7 +1778,7 @@ body#page-login {
   background-color: #fae19b;
   padding: 10px;
 }
-/* line 1559, ../sass/style.scss */
+/* line 1631, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .email-field {
   top: 0;
   width: 200px;
@@ -1698,7 +1788,7 @@ body#page-login {
   margin: 0 10px 0 0;
   border: 1px solid #ccc;
 }
-/* line 1569, ../sass/style.scss */
+/* line 1641, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .dropdown-field {
   top: 0;
   display: block;
@@ -1708,7 +1798,7 @@ body#page-login {
   margin-right: 0px;
   height: 29px;
 }
-/* line 1578, ../sass/style.scss */
+/* line 1650, ../sass/style.scss */
 #page-login #content #box .page-content #email-form select {
   outline: 0;
   overflow: hidden;
@@ -1721,7 +1811,7 @@ body#page-login {
   -webkit-border-radius: 6px;
   border-radius: 10px;
 }
-/* line 1591, ../sass/style.scss */
+/* line 1663, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .notes-field {
   width: 190px;
   height: 25px;
@@ -1729,7 +1819,7 @@ body#page-login {
   position: relative;
   border: 1px solid #ccc;
 }
-/* line 1598, ../sass/style.scss */
+/* line 1670, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .send-button {
   width: 100px;
   float: right;
@@ -1743,7 +1833,7 @@ body#page-login {
   border: none;
   cursor: pointer;
 }
-/* line 1613, ../sass/style.scss */
+/* line 1685, ../sass/style.scss */
 #page-login #content #box .page-content #description {
   margin-top: 70px;
 }
