@@ -1274,8 +1274,45 @@ body#page-inside {
   margin-right: 3px;
   margin-top: -4px;
 }
-/* line 1179, ../sass/style.scss */
-#page-inside #content #box .page-content #games h4.team-smiles {
+/* line 1180, ../sass/style.scss */
+#page-inside #content #box .page-content #games .game {
+  margin-bottom: 20px;
+  height: 110px;
+  background-color: #e3e3da;
+  padding: 10px;
+}
+/* line 1185, ../sass/style.scss */
+#page-inside #content #box .page-content #games .game:hover {
+  background-color: #fae19b;
+}
+/* line 1186, ../sass/style.scss */
+#page-inside #content #box .page-content #games .game img {
+  width: 110px;
+  float: left;
+  margin-right: 15px;
+}
+/* line 1191, ../sass/style.scss */
+#page-inside #content #box .page-content #games .game img.avatar {
+  height: 29px;
+  width: 29px;
+  margin: 0 2px 0 0;
+  border: none;
+}
+/* line 1197, ../sass/style.scss */
+#page-inside #content #box .page-content #games .game img.individual-winner:before {
+  content: url(../img/icon/crown.png);
+}
+/* line 1201, ../sass/style.scss */
+#page-inside #content #box .page-content #games .game .team {
+  width: 190px;
+  float: left;
+  display: block;
+  margin: 0;
+  padding: 0;
+  margin-right: 0px;
+}
+/* line 1210, ../sass/style.scss */
+#page-inside #content #box .page-content #games .game h4.team-smiles {
   float: right;
   width: 105px;
   display: block;
@@ -1290,56 +1327,42 @@ body#page-inside {
   text-align: bottom;
   line-height: 1.3;
 }
-/* line 1194, ../sass/style.scss */
-#page-inside #content #box .page-content #games h4.team-smiles:before {
+/* line 1225, ../sass/style.scss */
+#page-inside #content #box .page-content #games .game h4.team-winner:after {
+  padding-left: 3px;
   width: 22px;
   height: 22px;
   content: url(../img/icon/crown.png);
 }
-/* line 1200, ../sass/style.scss */
-#page-inside #content #box .page-content #games .game {
-  margin-bottom: 20px;
-  height: 110px;
-  background-color: #e3e3da;
-  padding: 10px;
+/* line 1231, ../sass/style.scss */
+#page-inside #content #box .page-content #games .game h4.team-winner {
+  padding-top: -22px;
+  margin-top: 1px;
+  height: 27px;
 }
-/* line 1205, ../sass/style.scss */
-#page-inside #content #box .page-content #games .game:hover {
-  background-color: #fae19b;
+/* line 1236, ../sass/style.scss */
+#page-inside #content #box .page-content #games .game .individuals {
+  margin-top: 45px;
 }
-/* line 1206, ../sass/style.scss */
-#page-inside #content #box .page-content #games .game img {
-  width: 110px;
+/* line 1241, ../sass/style.scss */
+#page-inside #content #box .page-content #games .game .individual-winner:before {
+  content: url(../img/icon/crown.png);
   float: left;
-  margin-right: 15px;
+  margin-top: -25px;
+  margin-left: 3px;
+  width: 0px;
 }
-/* line 1211, ../sass/style.scss */
-#page-inside #content #box .page-content #games .game img.avatar {
-  height: 29px;
-  width: 29px;
-  margin: 0 2px 0 0;
-  border: none;
-}
-/* line 1218, ../sass/style.scss */
-#page-inside #content #box .page-content #games .game .team {
-  width: 190px;
-  float: left;
-  display: block;
-  margin: 0;
-  padding: 0;
-  margin-right: 0px;
-}
-/* line 1227, ../sass/style.scss */
+/* line 1250, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game .hubs {
-  margin-right: 15px;
+  margin-right: 20px;
 }
-/* line 1230, ../sass/style.scss */
+/* line 1253, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game .game-text {
   width: 400px;
   float: left;
   line-height: 1;
 }
-/* line 1235, ../sass/style.scss */
+/* line 1258, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game .game-text .game-name {
   text-transform: uppercase;
   font-family: "vinyl", sans-serif;
@@ -1352,7 +1375,7 @@ body#page-inside {
   width: 180px;
   display: block;
 }
-/* line 1248, ../sass/style.scss */
+/* line 1271, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game .game-text .game-smiles {
   text-transform: uppercase;
   font-family: "vinyl", sans-serif;
@@ -1366,58 +1389,58 @@ body#page-inside {
   display: block;
   text-align: right;
 }
-/* line 1261, ../sass/style.scss */
+/* line 1284, ../sass/style.scss */
 #page-inside #content #box .page-content #games .game .game-text .body-text {
   font-family: "ff-tisa-web-pro", Georgia, serif;
 }
-/* line 1267, ../sass/style.scss */
+/* line 1290, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside {
   background-color: #3D3D3D;
   margin: 30px -45px 0 -45px;
   padding: 30px 45px 20px 45px;
   color: white;
 }
-/* line 1272, ../sass/style.scss */
+/* line 1295, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside a {
   color: #f0b50c;
 }
-/* line 1276, ../sass/style.scss */
+/* line 1299, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside img {
   width: 100px;
   position: relative;
   float: left;
   padding: 5px 20px 10px 0px;
 }
-/* line 1282, ../sass/style.scss */
+/* line 1305, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside #twitter-follow {
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
   font-size: 18px;
 }
-/* line 1287, ../sass/style.scss */
+/* line 1310, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside h3 {
   margin-top: 0px;
 }
-/* line 1292, ../sass/style.scss */
+/* line 1315, ../sass/style.scss */
 #page-inside #content #box .page-content #description {
   margin-top: 70px;
 }
 
 /* PAGE BEFORE LOGIN */
-/* line 1301, ../sass/style.scss */
+/* line 1324, ../sass/style.scss */
 body#page-login {
   background: url(../img/login/bike-bk.jpg) top center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-/* line 1308, ../sass/style.scss */
+/* line 1331, ../sass/style.scss */
 #page-login #nav-login {
   position: absolute;
   width: 100%;
   margin: 0;
 }
-/* line 1313, ../sass/style.scss */
+/* line 1336, ../sass/style.scss */
 #page-login #nav-login #service-bar-login {
   -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
@@ -1431,7 +1454,7 @@ body#page-login {
   	/*-moz-box-shadow: 3px 3px 7px rgba(0,0,0, .3);
     	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .3);*/
 }
-/* line 1327, ../sass/style.scss */
+/* line 1350, ../sass/style.scss */
 #page-login #nav-login #service-nav-login {
   font-family: "futura-pt-condensed";
   font-weight: 400;
@@ -1444,42 +1467,42 @@ body#page-login {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-/* line 1340, ../sass/style.scss */
+/* line 1363, ../sass/style.scss */
 #page-login #nav-login #service-nav-login ul li {
   display: block;
   padding-top: 0;
   float: left;
 }
-/* line 1344, ../sass/style.scss */
+/* line 1367, ../sass/style.scss */
 #page-login #nav-login #service-nav-login ul li a {
   text-decoration: none;
 }
-/* line 1346, ../sass/style.scss */
+/* line 1369, ../sass/style.scss */
 #page-login #nav-login #service-nav-login ul li.user-bottomcolor.selectedLink {
   border-bottom: 2px solid;
   border-bottom-color: #414042;
 }
-/* line 1351, ../sass/style.scss */
+/* line 1374, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav {
   padding-top: 0px;
   margin-top: 4px;
   margin-left: 80px;
   position: relative;
 }
-/* line 1356, ../sass/style.scss */
+/* line 1379, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav li {
   margin: 0 25px 0 0;
 }
-/* line 1358, ../sass/style.scss */
+/* line 1381, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav li a.user-color {
   color: #414042;
 }
-/* line 1361, ../sass/style.scss */
+/* line 1384, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav li a.user-bottomcolor:hover {
   border-bottom: 3px solid;
   border-bottom-color: #414042;
 }
-/* line 1367, ../sass/style.scss */
+/* line 1390, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #user-nav {
   font-family: "vinyl", sans-serif;
   font-size: 16px;
@@ -1491,7 +1514,7 @@ body#page-login {
   right: 0px;
   width: 400px;
 }
-/* line 1380, ../sass/style.scss */
+/* line 1403, ../sass/style.scss */
 #page-login #nav-login #form {
   padding-top: 0px;
   position: absolute;
@@ -1500,7 +1523,7 @@ body#page-login {
   margin-top: 0px;
   margin-right: 20px;
 }
-/* line 1388, ../sass/style.scss */
+/* line 1411, ../sass/style.scss */
 #page-login #nav-login #form input {
   float: left;
   position: relative;
@@ -1509,7 +1532,7 @@ body#page-login {
   border: 1px solid #ccc;
   margin-top: -5px;
 }
-/* line 1396, ../sass/style.scss */
+/* line 1419, ../sass/style.scss */
 #page-login #nav-login #form .login-button {
   margin-top: -4px;
   width: 60px;
@@ -1524,7 +1547,7 @@ body#page-login {
   border: none;
   cursor: pointer;
 }
-/* line 1412, ../sass/style.scss */
+/* line 1435, ../sass/style.scss */
 #page-login #nav-login .wrong {
   display: none;
   position: absolute;
@@ -1534,17 +1557,17 @@ body#page-login {
   background-color: white;
   color: red;
 }
-/* line 1422, ../sass/style.scss */
+/* line 1445, ../sass/style.scss */
 #page-login #content {
   width: 100%;
   padding: 0px 0 0;
   position: relative;
 }
-/* line 1427, ../sass/style.scss */
+/* line 1450, ../sass/style.scss */
 #page-login #content #box {
   margin: 0px auto 0px;
 }
-/* line 1430, ../sass/style.scss */
+/* line 1453, ../sass/style.scss */
 #page-login #content #box .page-content {
   margin: 0px auto 0px auto;
   padding: 70px 45px 0 45px;
@@ -1554,26 +1577,26 @@ body#page-login {
   position: relative;
   color: #414042;
 }
-/* line 1439, ../sass/style.scss */
+/* line 1462, ../sass/style.scss */
 #page-login #content #box .page-content h1 {
   font-size: 200px;
   margin-top: 50px;
   margin-bottom: 80px;
   text-align: center;
 }
-/* line 1445, ../sass/style.scss */
+/* line 1468, ../sass/style.scss */
 #page-login #content #box .page-content h2 {
   font-size: 52px;
   text-align: center;
 }
-/* line 1449, ../sass/style.scss */
+/* line 1472, ../sass/style.scss */
 #page-login #content #box .page-content .intro {
   font-family: "ff-tisa-web-pro", Georgia, serif;
   font-size: 18px;
   padding-top: 15px;
   padding-bottom: 5px;
 }
-/* line 1455, ../sass/style.scss */
+/* line 1478, ../sass/style.scss */
 #page-login #content #box .page-content h3 {
   text-transform: uppercase;
   font-family: "vinyl", sans-serif;
@@ -1581,18 +1604,18 @@ body#page-login {
   font-weight: 400;
   margin: 32px 0 0 0;
 }
-/* line 1462, ../sass/style.scss */
+/* line 1485, ../sass/style.scss */
 #page-login #content #box .page-content p {
   font-family: "ff-tisa-web-pro", Georgia, serif;
   font-size: 13px;
   margin-top: 0px;
 }
-/* line 1467, ../sass/style.scss */
+/* line 1490, ../sass/style.scss */
 #page-login #content #box .page-content a {
   color: #414042;
   border-bottom: 1px solid #414042;
 }
-/* line 1471, ../sass/style.scss */
+/* line 1494, ../sass/style.scss */
 #page-login #content #box .page-content #features {
   width: 550px;
   display: block;
@@ -1600,23 +1623,23 @@ body#page-login {
   padding-bottom: 20px;
   margin-bottom: 10px;
 }
-/* line 1478, ../sass/style.scss */
+/* line 1501, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature {
   margin-top: 40px;
   height: 310px;
 }
-/* line 1482, ../sass/style.scss */
+/* line 1505, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature img {
   width: 320px;
   float: left;
   margin-right: 20px;
 }
-/* line 1487, ../sass/style.scss */
+/* line 1510, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text {
   width: 210px;
   float: left;
 }
-/* line 1491, ../sass/style.scss */
+/* line 1514, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text .title {
   text-transform: uppercase;
   font-family: "vinyl", sans-serif;
@@ -1625,39 +1648,39 @@ body#page-login {
   margin: 0;
   font-weight: 400;
 }
-/* line 1499, ../sass/style.scss */
+/* line 1522, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text .body-text {
   font-family: "ff-tisa-web-pro", Georgia, serif;
 }
-/* line 1505, ../sass/style.scss */
+/* line 1528, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login {
   background-color: #3D3D3D;
   margin: 30px -45px 0 -45px;
   padding: 30px 45px 20px 45px;
   color: white;
 }
-/* line 1510, ../sass/style.scss */
+/* line 1533, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login a {
   color: #f0b50c;
 }
-/* line 1514, ../sass/style.scss */
+/* line 1537, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login img {
   width: 100px;
   position: relative;
   float: left;
   padding: 5px 20px 10px 0px;
 }
-/* line 1520, ../sass/style.scss */
+/* line 1543, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login #twitter-follow {
   font-family: "vinyl", sans-serif;
   text-transform: uppercase;
   font-size: 18px;
 }
-/* line 1525, ../sass/style.scss */
+/* line 1548, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login h3 {
   margin-top: 0px;
 }
-/* line 1529, ../sass/style.scss */
+/* line 1552, ../sass/style.scss */
 #page-login #content #box .page-content #email-form {
   width: 530px;
   display: block;
@@ -1665,7 +1688,7 @@ body#page-login {
   background-color: #fae19b;
   padding: 10px;
 }
-/* line 1536, ../sass/style.scss */
+/* line 1559, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .email-field {
   top: 0;
   width: 200px;
@@ -1675,7 +1698,7 @@ body#page-login {
   margin: 0 10px 0 0;
   border: 1px solid #ccc;
 }
-/* line 1546, ../sass/style.scss */
+/* line 1569, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .dropdown-field {
   top: 0;
   display: block;
@@ -1685,7 +1708,7 @@ body#page-login {
   margin-right: 0px;
   height: 29px;
 }
-/* line 1555, ../sass/style.scss */
+/* line 1578, ../sass/style.scss */
 #page-login #content #box .page-content #email-form select {
   outline: 0;
   overflow: hidden;
@@ -1698,7 +1721,7 @@ body#page-login {
   -webkit-border-radius: 6px;
   border-radius: 10px;
 }
-/* line 1568, ../sass/style.scss */
+/* line 1591, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .notes-field {
   width: 190px;
   height: 25px;
@@ -1706,7 +1729,7 @@ body#page-login {
   position: relative;
   border: 1px solid #ccc;
 }
-/* line 1575, ../sass/style.scss */
+/* line 1598, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .send-button {
   width: 100px;
   float: right;
@@ -1720,7 +1743,7 @@ body#page-login {
   border: none;
   cursor: pointer;
 }
-/* line 1590, ../sass/style.scss */
+/* line 1613, ../sass/style.scss */
 #page-login #content #box .page-content #description {
   margin-top: 70px;
 }
