@@ -88,6 +88,7 @@ ArrayList rideAnimations = new ArrayList();
 //SETUP
 void setup() {
   size(1680, 2750);
+  //size(3360, 5500); // for printing
   background(0, 0, 0, 0);
   noLoop();
   frameRate(animatedFrameRate);
