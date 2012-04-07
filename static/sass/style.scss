@@ -15,6 +15,7 @@ $orange: #f08e21;
 $dkblue: #0aa5bb;
 $peach: #f6917f;
 $green: #8bb049;
+$sidebar: #E3E3DA;
 
 /*FONTS*/
 $sans: "atrament-web", sans-serif;
@@ -580,7 +581,7 @@ content: url(../img/btn/play-animation-20x20.png);
 #sidebar{
 	color: #1f1f1f;
 	position: fixed;
-	background-color: darken(#f9f9f7, 10%); /*darken(#EFECDF, 2%);darken(#fff, 25%);*/
+	background-color: $sidebar; /*darken(#EFECDF, 2%);darken(#fff, 25%);*/
 	border-left: 2px solid #ccc;
 	width: 400px;
 	height: 100%;
@@ -1148,7 +1149,8 @@ body#page-inside {
 					display: block;
 					float:left;
 					padding-bottom: 20px;
-					margin-bottom: 10px;
+					margin-bottom: 0px;
+					
 					h4 {
 						text-transform: uppercase;
 						font-family: $vinyl;
@@ -1157,42 +1159,50 @@ body#page-inside {
 					h4.team-name {
 						float: left;
 						width: 80px;
-						height: 20px;
+						height: 18px;
 						display: block;
 						font-weight: normal;
 						border-bottom: 1px solid $black;
 						margin: 10px 0 3px 0;
+						line-height: 1;
 						
 						img {
-					
 							float: left;
 							display: block;
 							height: 22px;
 							width:22px;
-							margin-right: 5px;
+							margin-right: 3px;
 							margin-top: -4px;
 						}
 
 					}
 					h4.team-smiles {
 						float: right;
-						width: 110px;
+						width: 105px;
 						display: block;						
 						text-align: right;	
 						font-weight: normal;
-						height: 20px;
+						height: 18px;
 						border-bottom: 1px solid $black;
-						margin: 10px 0 3px 0;
+						margin: 10px 5px 3px 0;
 						font-style: italic;
 						font-family: $serif;
 						font-size: 13px;
 						text-align: bottom;
+						line-height: 1.3;
+						&:before
+							{ 
+							width: 22px;
+							height: 22px;
+							content:url(../img/icon/crown.png);
+							}
 						}
 					.game {
-						margin-top: 20px;
+						margin-bottom: 20px;
 						height: 110px;
-						background-color: #CCC;
+						background-color: $sidebar;
 						padding: 10px;
+						&:hover { background-color: lighten($yourColor, 30%); }
 						img {
 							width: 110px;
 							float: left;
@@ -1204,6 +1214,7 @@ body#page-inside {
 							margin: 0 2px 0 0;
 							border: none;
 						}
+						
 						.team {
 							width: 190px;
 							float: left;
