@@ -83,7 +83,9 @@ h2 {
 .link { cursor: pointer; }
 .non-text { cursor: default; }
 
-a { text-decoration: none; }
+a { text-decoration: none;
+	color: $black;
+ }
 
 /* NAV TOP */	
 #nav, #bottom-nav {
@@ -268,7 +270,7 @@ a#logo {
 				line-height: 20px;
 				&:hover { border-bottom: 2px solid $black; }
 			}
-
+			
 			#login-form {
 				display: none;
 				clear: both;
