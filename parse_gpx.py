@@ -29,11 +29,6 @@ def gpx_to_json(src, dst):
 		f.write(','.join('[%s,%s,%d]' % (p[0], p[1], p[4]) for p in gen_gpx_points(src)))
 		f.write(']')
 
-def gpx_to_csv(src, dst):
-	with open(dst, 'w') as f:
-		for point in gen_gpx_points(src):
-			f.write('%s,%s,%s,%s,%d\n' % point)
-
 if __name__ == '__main__':
 	import sys
 	assert len(sys.argv) in (1, 2, 3)
@@ -49,6 +44,5 @@ if __name__ == '__main__':
 			assert len(sys.argv[1]) == 24, "first arg must be an ObjectId"
 			spec = {'_id': ObjectId(sys.argv[1])}
 		for t in db.tracks.find(spec):
-			gpxpath = 'static/gpx/%s.gpx' % t['_id']
-			gpx_to_csv (gpxpath, 'static/csv/%s.csv'   % t['_id'])
-			gpx_to_json(gpxpath, 'static/json/%s.json' % t['_id'])
+			gpxpath = 'data/gpx/%s.gpx' % t['_id']
+			gpx_to_json(gpxpath, 'data/json/%s.json' % t['_id'])
