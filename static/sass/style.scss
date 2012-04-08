@@ -884,6 +884,101 @@ content: url(../img/btn/play-animation-20x20.png);
 	visibility: hidden; 
 }
 
+/* TEAM LEADERBOARD */
+
+#team-leaderboard {
+	visibility: block; 
+	
+	.team {
+		width: 360px;
+		display: block;
+		margin-bottom: 30px;
+		
+		.team-title {
+			height: 45px;
+			width: 370px;
+			margin-bottom: 10px;
+			
+			img {
+				width: 44px;
+				height: 44px;
+				margin: -5px 8px 3px -5px;
+				float:left;
+				display: block;
+			}
+			.team-name{ 
+				height: 45px;
+				width: 100px;
+				float: left;
+				display: block;
+				
+			}
+			.team-smiles { 
+				height: 45px;
+				width: 200px;
+				float: right;
+				text-align: right;
+			}
+		
+			.smiles {
+				float: right;
+				display: block;
+				font-size: 12px;
+				font-family: $vinyl;
+				text-transform: uppercase;
+				padding: 0;
+				margin: 0;
+				line-height: 1;
+				margin-top: -8px;				
+			}
+		}
+		.contestant-list-item {
+			width: 360px;
+			height: 27px;
+			position:relative;
+			border-bottom: 1px solid #ccc;
+			/*border-bottom: 2px solid $yourColor;*/
+			border-left: 8px solid $yourColor;
+			margin-bottom: 10px;
+			
+			.contestant-info {
+					height: 30px;
+					width: 200px;
+					float: left;
+					display: block;
+					
+				.stats-name {
+					float: left;
+					display: block;
+					font-size: 16px;
+					font-family: $vinyl;
+					text-transform: uppercase;
+					padding: 8px 5px 0 5px;								
+				}
+				.rode-last {
+					float: left;
+					display: block;	
+					padding: 8px 0 0 0;
+					font-family: "futura-pt-condensed";
+					color: #999;
+					text-transform: none;
+					font-size: 14px;			
+				}
+			}
+			.stats-total-miles {
+				height: 30px;
+				width: 150px;
+				float: right;
+				text-align: right;
+				font-family: vinyl;
+				font-size: 24px;
+				padding-top: 2px;
+			}
+		}
+	}
+}
+
+
 
 /* STATS PROFILE */
 
