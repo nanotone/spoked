@@ -15,8 +15,7 @@ if __name__ == '__main__':
 	db = pymongo.Connection().spoked
 	user.db = db
 
-	subprocess.call(['mkdir', '-p', 'static/gpx'])
-	subprocess.call(['mkdir', '-p', 'static/csv'])
+	subprocess.call(['mkdir', '-p', 'data/gpx'])
 
 	seen_mailids = set(m.get('mailid') for m in db.tracks.find(None))
 
@@ -43,7 +42,7 @@ if __name__ == '__main__':
 		db.tracks.update({'mailid': mailid}, doc, upsert=True)
 
 		track_id = db.tracks.find_one({'mailid': mailid})['_id']
-		gpx_path = 'static/gpx/%s.gpx' % track_id
+		gpx_path = 'data/gpx/%s.gpx' % track_id
 
 		with open(gpx_path, 'w') as f:
 			f.write(gpx.get_payload(decode=True))
@@ -58,11 +57,6 @@ if __name__ == '__main__':
 			db.users.update({'_id': userid}, {'$inc': {'total_duration': track_result['duration']}})
 
 	yes.close()
-
-	if unseen_mailids:
-		pass
-		#subprocess.call(['tar', 'cvfz', 'everything.tar.gz', 'static/csv'])
-		#subprocess.call(['mv', 'everything.tar.gz', 'static/'])
 
 # if get_payload(decode=True) barfs on equal signs, it may be a CRLF issue. Look at
 # http://stackoverflow.com/questions/787739/python-email-get-payload-decode-fails-when-hitting-equal-sign

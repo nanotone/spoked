@@ -13,12 +13,10 @@ def pipeline(track, db):
 
 	print "Processing track", track['_id']
 
-	gpx_path = 'static/gpx/%s.gpx' % track['_id']
-	#csv_path = 'static/csv/%s.csv' % track['_id']
-	json_path = 'static/json/%s.json' % track['_id']
-	sparse_path = 'static/json-sparse/%s.json' % track['_id']
+	gpx_path = 'data/gpx/%s.gpx' % track['_id']
+	json_path = 'data/json/%s.json' % track['_id']
+	sparse_path = 'data/json-sparse/%s.json' % track['_id']
 
-	#parse_gpx.gpx_to_csv(gpx_path, csv_path)
 	parse_gpx.gpx_to_json(gpx_path, json_path)
 	track_compress.compress_track_file(json_path, sparse_path)
 
