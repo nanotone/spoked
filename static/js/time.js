@@ -13,6 +13,11 @@ function getTime() {
 	return (new Date().getTime()) / 1000;
 }
 
+function getDHMS(seconds) {
+	var d = new Date(seconds * 1000);
+	return [d.getUTCDate() - 1, d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds()];
+}
+
 var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 

@@ -21,10 +21,13 @@ var rideCanvas = {
 		mapPde.abortRideAnimations();
 		mapPde.background('#ffffff', 0);
 	},
-	update: function(options) {
+	setOptions: function(options) {
 		for (var key in options) {
 			this[key] = options[key];
 		}
+	},
+	update: function(options) {
+		this.setOptions(options);
 		this.tracks = [];
 		for (var i = 0; i < this.users.length; i++) {
 			var user = this.users[i];

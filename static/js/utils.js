@@ -6,6 +6,14 @@ function darken(color) {
 	return intColor.toString(16);
 }
 
+function lighten(color) {
+	var intColor = 0;
+	for (var i = 0; i < 3; i++) {
+		intColor += Math.round((255 - parseInt(color.substr(2*i, 2), 16)) * 0.8) * Math.pow(256, 2 - i);
+	}
+	return (0xffffff - intColor).toString(16);
+}
+
 function formatDay(d) {
 	return (["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][d.getDay()] + " " +
 		["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][d.getMonth()] + " " +
