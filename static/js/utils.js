@@ -1,3 +1,5 @@
+var M_PER_MI = 1609.344;
+
 function darken(color) {
 	var intColor = 0;
 	for (var i = 0; i < 3; i++) {

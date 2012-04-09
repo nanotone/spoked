@@ -1,4 +1,3 @@
-var M_PER_MI = 1609.344;
 var DEFAULT_SCROLL_LEFT = 20;
 var DEFAULT_SCROLL_TOP = 970;
 
@@ -180,13 +179,7 @@ function loadGame(game) {
 			instance.click(makeGameHandler(otherGame));
 			instance.insertAfter($('.other-game').last());
 		}
-		var startDate = new Date(game.start * 1000);
-		var stopDate = new Date((game.stop - 3) * 1000);
-		var startFmt = formatDay(startDate);
-		if (startDate.getYear() != stopDate.getYear()) {
-			startFmt += " " + startDate.getFullYear();
-		}
-		$('.game-duration').text(startFmt + " - " + formatDay(stopDate) + " " + stopDate.getFullYear());
+		$('.game-duration').text(game.humanDuration);
 		if (game.players[0].team) {
 			$('#team-leaderboard').show();
 			$('#individual-leaderboard').hide();
@@ -419,6 +412,7 @@ $(function() {
 	}
 
 	$('.your-profile').click(makeLinkHandler({view: 'user'}));
+	$('.game-archive').click(function() { window.location.href = 'game-archive.html'; });
 	$('.logout').click(sessionLogout);
 
 	$('.game-name').click(makeLinkHandler({view: 'all'}))
@@ -464,5 +458,13 @@ $(function() {
 function initMain() {
 	console.log("initMain");
 	History.Adapter.bind(window, 'statechange', loadState);
+	if (games.length && games[games.length - 1].stop > getTime()) {
+		for (var i = 0; i < games.length; i++) {
+			if (games[i].stop < getTime()) {
+				games.shift();
+				i--;
+			}
+		}
+	}
 	loadState();
 }
