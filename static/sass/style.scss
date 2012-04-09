@@ -1204,7 +1204,7 @@ content: url(../img/btn/play-animation-20x20.png);
 	height: 2750px;	
 }
 
-/* PAGE ABOUT */
+/* PAGE ABOUT 
 #page-about, #page-howto {
 	#service-bar {
 		-moz-box-shadow: 3px 3px 7px rgba(0,0,0, .2);
@@ -1243,6 +1243,7 @@ content: url(../img/btn/play-animation-20x20.png);
 		}
 	}
 }
+*/
 
 /* PAGE INSIDE (AFTER LOGIN) */
 
@@ -1304,6 +1305,9 @@ body#page-inside {
 					color: $black;
 					border-bottom: 1px solid $black; 
 				}
+				a.no-border {
+				 	border-bottom: 0px;
+				 }
 				#games {
 					width: 550px;
 					display: block;
@@ -1488,6 +1492,7 @@ body#page-login {
 	background-attachment:fixed;	
 	}
 
+
 #page-login {
 	#nav-login {
 		position: absolute;
@@ -1652,6 +1657,9 @@ body#page-login {
 					color: $black;
 					border-bottom: 1px solid $black; 
 				}
+				a.no-border {
+				 	border-bottom: 0px;
+				 }
 				#features {
 					width: 550px;
 					display: block;
@@ -1777,4 +1785,13 @@ body#page-login {
 			}
 		}
 	}
+}
+.poster {
+ width: 265px;
+ border: 1px solid #eee;
+ margin-right: 11px;
+ }
+ 
+.poster-last {
+	margin-right: 0px;
 }

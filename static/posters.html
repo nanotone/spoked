@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="http://use.typekit.com/prg6crm.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script type="text/javascript">
+function gotoMain() {
+	window.location.replace('main.html');
+}
+$(function() {
+	var auth = $.cookie('spokedAuth');
+	if (auth) {
+		$.getJSON(SERVER + 'auth', {'username': auth}, function(data) {
+			if (data.auth) {
+				gotoMain();
+			}
+			else {
+				$.cookie('spokedAuth', '');
+			}
+		});
+	}
+	$('#form').submit(function(e) {
+		e.preventDefault();
+		$.getJSON(SERVER + 'auth', $('#form').serialize(), function(data) {
+			if (data.auth) {
+				$.cookie('spokedAuth', data.auth);
+				gotoMain();
+			}
+			else {
+				$('.wrong').show();
+			}
+		});
+	});
+	$('#email-form').submit(function(e) {
+		e.preventDefault();
+		$.post(SERVER + 'emailbox', $('#email-form').serialize(), function(data) {});
+		$('#email-form').slideUp();
+		$('#email-submitted').slideDown();
+	});
+});
+</script>
+<link rel="stylesheet" href="css/style.css" media="screen" id="style" />
+</head>
+<body id="page-login" class="login">
+<div id="nav-login">
+
+	<div id="service-bar-login">
+	</div>
+	
+	
+	<div id="service-nav-login">
+		<a href="login.html"><div id="logo" class="user-color">SPOKED</div></a>
+		<ul id="menu-nav">
+			<li id="how-to-play" class="user-bottomcolor"><a href="how-to-play.html" class="user-color user-bottomcolor">How to play</a></li>
+			<li id="faq" class="user-bottomcolor"><a href="faq.html" class="user-color user-bottomcolor">FAQ</a></li>
+			<li id="posters" class="user-bottomcolor"><a href="posters.html" class="user-color user-bottomcolor">Posters</a></li>
+		</ul>
+	
+		<div id="user-nav">
+			<form id="form">
+			<input name="username" placeholder="Username"/>
+			<input name="password" placeholder="Password" type="password" />
+			<input class="login-button" type="submit" value="Get in" />	</form>
+			<div class="wrong">Wrong username or password, please try again.</div>
+		</div><!-- end form-->
+	</div> <!-- end service-nav -->
+	
+</div> <!-- end nav -->
+
+
+<div id="content">
+	<div id="box">
+		<div class="page-content">
+			<h2>Posters</h2>
+			<p class="intro">Some people have already made their moms proud. Look here!</p>
+			
+			<h3>Kickstand IxD battle</h3>
+			<a class="no-border" href="img/posters/kickstand-ixd/sarahadams.jpg" target="_blank"><img class="poster" src="img/posters/kickstand-ixd/sarahadams.jpg"/></a>
+			<a class="no-border" href="img/posters/kickstand-ixd/gurivenstad.jpg" target="_blank"><img class="poster poster-last" src="img/posters/kickstand-ixd/gurivenstad.jpg"/></a>
+
+<!-- start footer -->
+			<div id="footer-login">		
+				<p id="twitter-follow">Follow us on <a href="https://twitter.com/#!/iamspoked">@iamspoked</a>, or just get off the internet and on your bike!</p> 
+			</div>
+<!-- end footer -->
+		
+		</div>		
+	</div>
+</div>
+
+</body>
+</html>
