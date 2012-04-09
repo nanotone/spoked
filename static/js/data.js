@@ -160,6 +160,7 @@ function aggregateGameTrackData(game) {
 		user.smilesByWeek = [0, 0, 0];
 		user.gameDays = [];
 		var trackIndex = 0;
+		for (; trackIndex < user.tracks.length && user.tracks[trackIndex].time < game.days[0].start; trackIndex++);
 		for (var j = 0; j < game.days.length; j++) {
 			var gameDay = game.days[j];
 			var userGameDay = {'distance': 0, 'buildup': false, 'ss': false};
