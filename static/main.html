@@ -47,9 +47,8 @@
 	
 	<!-- LEADERBOARD -->
 	
-	<div id="leaderboard" class="sidebar-content">
+	<div id="individual-leaderboard" class="sidebar-content">
 		<div class="title">Battle of Happiness</div>
-		<!--<div class="sub-title">Friends leaderboard in miles</div>-->
 		<table>
 			<thead>
 				<tr>
@@ -68,6 +67,20 @@
 				</tr>
 			</tbody>
 		</table>
+	</div>
+
+	<!-- TEAM LEADERBOARD -->
+
+	<div id="team-leaderboard" class="sidebar-content">
+		<div id="team-leaderboard-template" class="team template">
+			<div class="team-title">
+				<img class="team-icon" src="img/icon/hubs.png"><div class="team-name title">Hubs</div><div class="team-smiles title">1,022</div>
+				<div class="smiles">smiles</div>
+			</div>
+		</div>
+		<div id="team-leaderboard-user-template" class="template contestant-list-item">
+			<div class="contestant-info"><span class="stats-name">Dave</span><span class="rode-last"> biked 4 hours ago</span></div><span class="stats-total-miles">134</span>
+		</div>
 	</div>
 	
 	
@@ -238,15 +251,16 @@
 		<div class="end-ride-stats">7.2 <small>mi</small> | 2 <small>hrs</small> 25 <small>min</small> | 8 <small>mph</small></div>
 </div>
 
-<canvas id="processing" data-processing-sources="spoked.pde"></canvas>
+<canvas id="processing" style="width:1680px; height:2750px" data-processing-sources="spoked.pde"></canvas>
 
 <!-- TO MAKE A .PNG OF THE PROCESSING CANVAS OF RIDES -->
 <script>
 /*var canvas = document.getElementById("processing");
-    
+	
 	canvas.onclick = function () {
   	window.location = canvas.toDataURL('image/png');
-};*/
+  	};*/
+  	  	
 </script>
 
 

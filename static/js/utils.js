@@ -1,9 +1,19 @@
+var M_PER_MI = 1609.344;
+
 function darken(color) {
 	var intColor = 0;
 	for (var i = 0; i < 3; i++) {
 		intColor += Math.round(parseInt(color.substr(2*i, 2), 16) * 0.8) * Math.pow(256, 2 - i);
 	}
 	return intColor.toString(16);
+}
+
+function lighten(color) {
+	var intColor = 0;
+	for (var i = 0; i < 3; i++) {
+		intColor += Math.round((255 - parseInt(color.substr(2*i, 2), 16)) * 0.8) * Math.pow(256, 2 - i);
+	}
+	return (0xffffff - intColor).toString(16);
 }
 
 function formatDay(d) {

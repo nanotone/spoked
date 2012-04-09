@@ -7,6 +7,9 @@ import pymongo
 
 db = pymongo.Connection().spoked
 
+################################################################################
+# json stuff
+
 def crossorigin():
 	origin = bottle.request.headers.get('Origin')
 	if origin in ('http://localhost', 'http://iamspoked.com', 'https://iamspoked.com'):
@@ -22,6 +25,24 @@ class JSONEncoder(json.JSONEncoder):
 		return json.JSONEncoder.default(self, o)
 json_encoder = JSONEncoder()
 
+def gameobj(g):
+	obj = {'id': g['_id']}
+	for field in ('name', 'start', 'stop', 'players'):
+		obj[field] = g.get(field)
+	return obj
+def userobj(u):
+	obj = {'id': u['_id']}
+	for field in ('name', 'color', 'duration'):
+		obj[field] = u.get(field)
+	return obj
+def trackobj(t):
+	obj = {'id': t['_id']}
+	for field in ('userid', 'distance', 'duration'):
+		obj[field] = t.get(field)
+	obj['time'] = t.get('start_time')
+	return obj
+
+################################################################################
 
 @bottle.post('/emailbox')
 def emailbox():
@@ -85,6 +106,30 @@ def info():
 		'games': list(gameobj(g) for g in db.games.find()),
 		'tracks': list({'id': t['_id'], 'time': t['start_time'], 'userid': t['userid'], 'distance': t['distance'], 'duration': t['duration']} for t in db.tracks.find({'start_time': {'$gt': time.time() - 86400*14}})),
 		'users': list(userobj(u) for u in db.users.find())
+	})
+
+@bottle.route('/gameinfo')
+def gameinfo():
+	crossorigin()
+	mimetype_json()
+	userid = bottle.request.query.get('auth')
+	if not userid: return "no userid"
+	userid = bson.objectid.ObjectId(userid)
+	games = []
+	userids = set()
+	for g in db.games.find():
+		for player in g.get('players', ()):
+			if player['userid'] == userid:
+				games.append(g)
+				userids |= set(p['userid'] for p in g['players'])
+				break
+	userids = list(userids)
+	start_time = time.time() - 86400*14
+	return json_encoder.encode({
+		'games': [gameobj(g) for g in games],
+		'tracks': [trackobj(t) for t in db.tracks.find({'start_time': {'$gt': start_time},
+		                                                'userid':     {'$in': userids} }) ],
+		'users': [userobj(u) for u in db.users.find({'_id': {'$in': userids}})],
 	})
 
 @bottle.post('/saveUser')

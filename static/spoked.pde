@@ -53,6 +53,7 @@ class RideAnimation {
 		noFill();
 		stroke(color);
 		strokeWeight(3); 
+		//strokeWeight(9); // for printing
 		strokeJoin(ROUND);
 		vertex(longStart, latStart);
 		vertex(longStop, latStop);
@@ -71,13 +72,17 @@ class RideAnimation {
 		noStroke();
 		ellipse(longStop, latStop, 9, 9);
 		
+		
+// comment out for printing		
 		if (isLastRide) {// YANG, THIS IS THE STYLE FOR THE LAST RIDE THAT IS INTERACTIVE
 			//fill(255);
 			fill(color - 0x69000000); 
 			stroke(255);
 			strokeWeight(2);
 			ellipse(longStop, latStop, 15, 15);
-		}
+		} 
+		
+		
 	}
 }
 
@@ -88,6 +93,7 @@ ArrayList rideAnimations = new ArrayList();
 //SETUP
 void setup() {
   size(1680, 2750);
+  //size(5040, 8250); // for printing x3
   background(0, 0, 0, 0);
   noLoop();
   frameRate(animatedFrameRate);

@@ -49,13 +49,17 @@ function getRandomPjsColor() {
 
 function initInfo() {
 	var deferred = $.Deferred();
-	$.getJSON(SERVER + 'info', {'auth': auth}, function(data) {
+	$.getJSON(SERVER + 'gameinfo', {'auth': auth}, function(data) {
 		tracks = data.tracks;
 		users = data.users;
 		games = data.games;
+		games.sort(function(a, b) { return a.start - b.start; }); // earliest first
 		for (var i = 0; i < games.length; i++) {
 			var game = games[i];
 			gamesById[game.id] = game;
+			if      (getTime() < game.start) { game.state = 'before'; }
+			else if (getTime() < game.stop ) { game.state = 'during'; }
+			else                             { game.state = 'after' ; }
 		}
 		for (var i = 0; i < users.length; i++) {
 			var user = users[i];
@@ -85,9 +89,6 @@ function initInfo() {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-var gameState = ''
-var userGame = null;
-
 function initUser() {
 	console.log("initUser");
 	var authUser = usersById[authUserId];
@@ -98,14 +99,10 @@ function initUser() {
 			['user-color', 'color', '#' + authUser.color],
 			['user-bottomcolor', 'borderBottomColor', '#' + authUser.color],
 			['user-bgcolor', 'backgroundColor', '#' + authUser.color],
-			['user-dark-bgcolor', 'backgroundColor', '#' + darken(authUser.color)] ];
+			['user-dark-bgcolor', 'backgroundColor', '#' + darken(authUser.color)],
+			['user-lite-bgcolor', 'backgroundColor', '#' + lighten(authUser.color)] ];
 		updateStyles(getStyleSheetById('style'), filters);
 	});
-
-	userGame = usersById[authUserId].game;
-	if (userGame) {
-		initGame();
-	}
 
 	for (var i = 0; i < tracks.length; i++) {
 		var track = tracks[i];
@@ -133,77 +130,37 @@ function initUser() {
 			lastTrack.isLastTrack = true;
 		}
 	}
-
-	if (userGame) {
-		aggregateGameTrackData();
-	}
 }
 
-var gameDays = null;
 
-function initGame() {
-	console.log("initGame");
-	if      (getTime() < userGame.start) { gameState = 'before'; }
-	else if (getTime() < userGame.stop ) { gameState = 'during'; }
-	else                                 { gameState = 'after' ; }
-
-	gameDays = [];
-	var d = new Date(userGame.start * 1000); // let js Date handle all tz yuckiness
+function initGame(game) {
+	console.log("initGame " + game.id);
+	game.days = [];
+	var d = new Date(game.start * 1000); // let js Date handle all tz yuckiness
 	d.setHours(0);
 	d.setMinutes(0);
 	d.setSeconds(0);
 	while (true) {
 		var start = d.getTime() / 1000;
-		if (start >= userGame.stop) { break; }
+		if (start >= game.stop) { break; }
 		var day = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"][d.getDay()];
 		d.setDate(d.getDate() + 1);
-		gameDays.push({'start': start, 'stop': d.getTime() / 1000, 'day': day});
+		game.days.push({'start': start, 'stop': d.getTime() / 1000, 'day': day});
 	}
-	lastWeek = gameDays[0].start;
-	thisWeek = lastWeek + 7 * 86400;
+	game.week1 = game.days[0].start;
+	game.week2 = game.week1 + 7 * 86400;
+	game.week3 = game.week2 + 7 * 86400;
 
-	// filter out all non-game data from global users and tracks!
-	gameUsers = [];
-	for (var i = 0; i < users.length; i++) {
-		var user = users[i];
-		if (user.game == userGame) {
-			gameUsers.push(user);
-		}
+	var startDate = new Date(game.start * 1000);
+	var stopDate = new Date((game.stop - 3) * 1000);
+	var startFmt = formatDay(startDate);
+	if (startDate.getYear() != stopDate.getYear()) {
+		startFmt += " " + startDate.getFullYear();
 	}
-	users = gameUsers;
-	var gameTracks = [];
-	for (var i = 0; i < tracks.length; i++) {
-		var track = tracks[i];
-		if (userGame.start < track.time && track.time+track.duration < userGame.stop) {
-			gameTracks.push(track);
-		}
-	}
-	tracks = gameTracks;
-/*
-	for (var i = 0; i < users.length; i++) {
-		var user = users[i];
-		user.tracksByDate = [];
-		var k = 0;
-		for (var j = 0; j < gameDays.length; j++) {
-			var dateTracks = [];
-			user.tracksByDate.push(dateTracks);
-		}
-	}*/
-	$(function() {
-		$('.game-name').text(userGame.name);
-		var startDate = new Date(userGame.start * 1000);
-		var stopDate = new Date((userGame.stop - 3) * 1000);
-		var startFmt = formatDay(startDate);
-		if (startDate.getYear() != stopDate.getYear()) {
-			startFmt += " " + startDate.getFullYear();
-		}
-		$('.game-duration').text(startFmt + " - " + formatDay(stopDate) + " " + stopDate.getFullYear());
-		$('.col0').text("Week 1");
-		$('.col1').text("Week 2");
-	});
+	game.humanDuration = startFmt + " - " + formatDay(stopDate) + " " + stopDate.getFullYear();
 }
 
-function aggregateGameTrackData() {
+function aggregateGameTrackData(game) {
 	console.log("aggregateGameTrackData");
 	for (var i = 0; i < users.length; i++) {
 		var user = users[i];
@@ -211,8 +168,9 @@ function aggregateGameTrackData() {
 		user.smilesByWeek = [0, 0, 0];
 		user.gameDays = [];
 		var trackIndex = 0;
-		for (var j = 0; j < gameDays.length; j++) {
-			var gameDay = gameDays[j];
+		for (; trackIndex < user.tracks.length && user.tracks[trackIndex].time < game.days[0].start; trackIndex++);
+		for (var j = 0; j < game.days.length; j++) {
+			var gameDay = game.days[j];
 			var userGameDay = {'distance': 0, 'buildup': false, 'ss': false};
 			for (; trackIndex < user.tracks.length && user.tracks[trackIndex].time < gameDay.stop; trackIndex++) {
 				userGameDay.distance += user.tracks[trackIndex].distance;
@@ -238,6 +196,13 @@ function aggregateGameTrackData() {
 			user.gameDays.push(userGameDay);
 		}
 	}
+}
+
+function isUserInGame(user, game) {
+	for (var i = 0; i < game.players.length; i++) {
+		if (game.players[i].userid == user.id) { return true; }
+	}
+	return false;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
