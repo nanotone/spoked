@@ -83,7 +83,9 @@ h2 {
 .link { cursor: pointer; }
 .non-text { cursor: default; }
 
-a { text-decoration: none; }
+a { text-decoration: none;
+	color: $black;
+ }
 
 /* NAV TOP */	
 #nav, #bottom-nav {
@@ -177,16 +179,13 @@ a#logo {
 			margin: -3px 20px 0px 0px;
 			padding: 3px 3px 30px 0px;
 			
-			.game-name {
-				float:left;
-				position: relative;
-			}
 			.menu-link {
 				position: relative;
 				float: left;
 				padding: 0px;
 				color: $black;
 				line-height: 20px;
+				cursor: pointer;
 				&:hover { border-bottom: 2px solid $black; }
 			}
 			img.dropdown-arrow {
@@ -212,7 +211,7 @@ a#logo {
 					right: 10px;
 					margin-top: 10px;
 					width: 187px;
-					.menu-item {      /*.menu-item.user-bgcolor {*/
+					.menu-item {
 						clear: both;
 						cursor: pointer;
 						margin: 0px;
@@ -226,7 +225,7 @@ a#logo {
 						font-weight: normal;
 						font-family: $futura;
 					}
-					.menu-item:hover {       /*.menu-item.user-dark-bgcolor:hover {*/
+					.menu-item.user-lite-bgcolor:hover {
 						background-color: lighten($yourColor, 30%);
 					}
 					.menu-item.current-game {
@@ -268,7 +267,7 @@ a#logo {
 				line-height: 20px;
 				&:hover { border-bottom: 2px solid $black; }
 			}
-
+			
 			#login-form {
 				display: none;
 				clear: both;
@@ -373,6 +372,7 @@ a#logo {
 				color: #ffffff;
 				text-decoration: none;  
 			}
+			&.disabled a { cursor: default; }
 			.filter {
 				position: absolute; 
 				width: 45px; 
@@ -383,9 +383,7 @@ a#logo {
 			}
 			&:hover .filter { display: none; }
 			&:hover .pop { display: block; }
-			a.disabled {
-				cursor: default;
-			}
+			&.disabled:hover .pop { display: none; }
 		}
 		.portrait.selected .filter { display: none; }
 	}
@@ -692,11 +690,6 @@ content: url(../img/btn/play-animation-20x20.png);
 		}
 	}
 }
-.sidebar-content {
-	position: absolute;
-	top: 55px;
-	margin: 0 10px 50px 20px;
-	}
 #sidebar {
 	.title {
 		font-family: $vinyl;
@@ -755,6 +748,9 @@ content: url(../img/btn/play-animation-20x20.png);
 }
 
 .sidebar-content {
+	position: absolute;
+	top: 55px;
+	margin: 0 10px 50px 20px;
 	table {
 		border-spacing: 2px;
 		margin-top: 0px;
@@ -878,17 +874,14 @@ content: url(../img/btn/play-animation-20x20.png);
 			height: 30px;
 			}
 	} /*End table*/
+
+	&.hidden { visibility: hidden; }
 } /*End leaderboard*/
 
-#leaderboard.hidden {
-	visibility: hidden; 
-}
 
 /* TEAM LEADERBOARD */
 
 #team-leaderboard {
-	visibility: block; 
-	
 	.team {
 		width: 360px;
 		display: block;
@@ -1450,6 +1443,7 @@ body#page-inside {
 							}
 							.body-text {
 								font-family: $serif;
+								clear: both;
 							}
 						}	
 					}
