@@ -173,7 +173,7 @@ function loadGame(game) {
 		var makeGameHandler = function(g) { return function() { switchToState({game: g}); }; };
 		for (var i = 0; i < games.length; i++) {
 			var otherGame = games[i];
-			if (otherGame == game) { continue; }
+			if (otherGame == game || otherGame.stop < getTime()) { continue; }
 			var instance = template.clone().removeClass('template').attr('id', null).css({display: ''});
 			instance.text(otherGame.name);
 			instance.click(makeGameHandler(otherGame));
@@ -389,7 +389,7 @@ function showUserSmiles(user, $col) {
 
 function onClickPortrait(e) {
 	e.preventDefault();
-	if (activeGame && activeGame.state != 'during') { return; }
+	if (activeGame && activeGame.state == 'before') { return; }
 	var portrait = $(this).closest('.portrait');
 	switchToState({view: 'user', 'user': portrait.data('userId')});
 }
@@ -458,13 +458,5 @@ $(function() {
 function initMain() {
 	console.log("initMain");
 	History.Adapter.bind(window, 'statechange', loadState);
-	if (games.length && games[games.length - 1].stop > getTime()) {
-		for (var i = 0; i < games.length; i++) {
-			if (games[i].stop < getTime()) {
-				games.shift();
-				i--;
-			}
-		}
-	}
 	loadState();
 }
