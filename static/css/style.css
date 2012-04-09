@@ -1422,7 +1422,7 @@ body#page-inside {
 #page-inside #content #box .page-content #games {
   width: 550px;
   display: block;
-  float: left;
+  /*float:left;*/
   padding-bottom: 20px;
   margin-bottom: 0px;
 }
