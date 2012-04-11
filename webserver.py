@@ -127,8 +127,7 @@ def gameinfo():
 	start_time = time.time() - 86400*14
 	return json_encoder.encode({
 		'games': [gameobj(g) for g in games],
-		'tracks': [trackobj(t) for t in db.tracks.find({'start_time': {'$gt': start_time},
-		                                                'userid':     {'$in': userids} }) ],
+		'tracks': [trackobj(t) for t in db.tracks.find({'userid': {'$in': userids} }) ],
 		'users': [userobj(u) for u in db.users.find({'_id': {'$in': userids}})],
 	})
 

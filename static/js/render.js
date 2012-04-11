@@ -35,7 +35,7 @@ var rideCanvas = {
 			if (auth) {
 				for (var j = 0; j < userTracks.length; j++) {
 					var track = userTracks[j];
-					if (this.minTime < track.time && track.time < this.maxTime) {
+					if (this.minTime <= track.time && track.time < this.maxTime) {
 						this.tracks.push(track);
 					}
 				}
@@ -53,7 +53,7 @@ var rideCanvas = {
 			if (this.drawFrameTimeout) {
 				clearTimeout(this.drawFrameTimeout);
 			}
-			mapPde.animateRides(this.tracks, lastWeek);
+			mapPde.animateRides(this.tracks, this.minTime);
 		}
 		else {
 			var self = this;
