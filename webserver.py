@@ -128,7 +128,7 @@ def gameinfo():
 	tracks = db.tracks.find({'userid': {'$in': userids}})
 	return json_encoder.encode({
 		'games': [gameobj(g) for g in games],
-		'tracks': [trackobj(t) for t in tracks if t['_id'] == t.get('canonical')],
+		'tracks': [trackobj(t) for t in tracks if t.get('canonical') in (None, t['_id'])],
 		'users': [userobj(u) for u in db.users.find({'_id': {'$in': userids}})],
 	})
 
