@@ -49,11 +49,27 @@ class RideAnimation {
 		float latStart = map(points[n-1][latPos], Nlat, Slat, 0, height);
 		float longStop = map(points[n][longPos], Wlong, Elong, 0, width);
 		float latStop = map(points[n][latPos], Nlat, Slat, 0, height);
-		smooth();
+
+		float wpDistLong = (longStop - longStart); 
+	    float wpDistLat = (latStop - latStart); 
+    
+    	smooth();
 		noFill();
 		stroke(color);
-		strokeWeight(3); 
-		//strokeWeight(7); // for printing
+		
+		// GET FLYING RIDES AWAY. WORKS SOMEWHAT... CAN'T GET CHRIS'S AWAY WITHOUT GOING DOWN TO ABOUT 30...
+		
+    	//if((wpDistLong >= 40) || (wpDistLat >= 40)) {
+		//	strokeWeight(1); 
+		//}
+		
+		//else {
+			strokeWeight(3); 
+		//}
+		
+		// FOR PRINTING
+		
+		//strokeWeight(9); 
 		strokeJoin(ROUND);
 		vertex(longStart, latStart);
 		vertex(longStop, latStop);
