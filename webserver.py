@@ -125,9 +125,10 @@ def gameinfo():
 				break
 	userids = list(userids)
 	start_time = time.time() - 86400*14
+	tracks = db.tracks.find({'userid': {'$in': userids}})
 	return json_encoder.encode({
 		'games': [gameobj(g) for g in games],
-		'tracks': [trackobj(t) for t in db.tracks.find({'userid': {'$in': userids} }) ],
+		'tracks': [trackobj(t) for t in tracks if t['_id'] == t.get('canonical')],
 		'users': [userobj(u) for u in db.users.find({'_id': {'$in': userids}})],
 	})
 
