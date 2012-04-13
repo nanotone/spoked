@@ -51,6 +51,7 @@ function initInfo() {
 	var deferred = $.Deferred();
 	$.getJSON(SERVER + 'gameinfo', {'auth': auth}, function(data) {
 		tracks = data.tracks;
+		tracks.sort(function(a, b) { return a.time - b.time; });
 		users = data.users;
 		games = data.games;
 		games.sort(function(a, b) { return a.start - b.start; }); // earliest first
