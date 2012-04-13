@@ -53,7 +53,7 @@ class RideAnimation {
 		noFill();
 		stroke(color);
 		strokeWeight(3); 
-		//strokeWeight(9); // for printing
+		//strokeWeight(7); // for printing
 		strokeJoin(ROUND);
 		vertex(longStart, latStart);
 		vertex(longStop, latStop);
