@@ -69,7 +69,6 @@ function initInfo() {
 				user.game = gamesById[user.gameid];
 			}
 			user.lastWeekDist = user.thisWeekDist = 0;
-			user.fortnightDuration = 0;
 			user.slug = user.name.replace(' ', '').toLowerCase();
 			user.pjsColor = 0xFF000000 + parseInt(user.color, 16);
 			user.avatarSrc = 'img/avatar/' + user.slug + '.jpg';
@@ -118,9 +117,6 @@ function initUser() {
 			else if (thisWeek <= track.time) {
 				owner.thisWeekDist += track.distance;
 			}
-			if (lastWeek <= track.time) {
-				owner.fortnightDuration += track.duration;
-			}
 		}
 	}
 	for (var i = 0; i < users.length; i++) {
@@ -167,14 +163,17 @@ function aggregateGameTrackData(game) {
 		var user = users[i];
 		user.lastWeekSmiles = user.thisWeekSmiles = user.totalDist = user.totalSmiles = 0;
 		user.smilesByWeek = [0, 0, 0];
+		user.durationByWeek = [0, 0, 0];
 		user.gameDays = [];
 		var trackIndex = 0;
 		for (; trackIndex < user.tracks.length && user.tracks[trackIndex].time < game.days[0].start; trackIndex++);
 		for (var j = 0; j < game.days.length; j++) {
 			var gameDay = game.days[j];
 			var userGameDay = {'distance': 0, 'buildup': false, 'ss': false};
+			var dayDuration = 0;
 			for (; trackIndex < user.tracks.length && user.tracks[trackIndex].time < gameDay.stop; trackIndex++) {
 				userGameDay.distance += user.tracks[trackIndex].distance;
+				dayDuration += user.tracks[trackIndex].duration;
 			}
 			if (userGameDay.distance > 0) {
 				if (user.gameDays.length >= 2 && user.gameDays[user.gameDays.length - 2].buildup &&
@@ -191,6 +190,7 @@ function aggregateGameTrackData(game) {
 				user[field] += smiles;
 			}
 			user.smilesByWeek[Math.floor(j / 7)] += smiles;
+			user.durationByWeek[Math.floor(j / 7)] += dayDuration;
 			user.totalSmiles += smiles;
 			user.totalDist += userGameDay.distance;
 

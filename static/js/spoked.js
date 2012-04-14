@@ -330,13 +330,14 @@ function showUserStats(user, $col) {
 
 	var rides = 0;
 	for (var i = 0; i < user.tracks.length; i++) {
-		if (user.tracks[i].time >= lastWeek) {
+		if (activeGame.week1 <= user.tracks[i].time && user.tracks[i].time < activeGame.week3) {
 			rides += 1;
 		}
 	}
 	rides = humanUnits(rides, 'ride');
-	var hours = humanUnits(Math.floor(user.fortnightDuration / 3600), 'hour');
-	var minutes = humanUnits(Math.floor(user.fortnightDuration % 3600 / 60), 'minute');
+	var fortnightDuration = user.durationByWeek[0] + user.durationByWeek[1];
+	var hours = humanUnits(Math.floor(fortnightDuration / 3600), 'hour');
+	var minutes = humanUnits(Math.floor(fortnightDuration % 3600 / 60), 'minute');
 	var dur = hours + (hours && minutes ? ' and ' : '') + minutes;
 
 	$col.find('.stats-duration').text('Spent ' + dur + ' on two wheels (' + rides + ')');
