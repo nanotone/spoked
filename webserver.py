@@ -69,7 +69,13 @@ def auth():
 	print spec
 	user = db.users.find_one(spec)
 	if user:
-		return '{"auth":"%s"}' % (user['_id'])
+		result = {'auth': user['_id']}
+		for g in db.games.find({'stop': {'$gt': time.time()}}, sort=[('start', 1)]):
+			if user['_id'] in (p['userid'] for p in g.get('players', ())):
+				result['gameid'] = g['_id']
+				break
+			result['archive'] = True
+		return json_encoder.encode(result)
 	return '{"auth":""}'
 
 
