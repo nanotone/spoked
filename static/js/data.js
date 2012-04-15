@@ -238,3 +238,21 @@ function sessionLogout(e) {
 	window.location.replace('login.html');
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
+function setGamesMenu(activeGame, makeGameHandler) {
+	$('.game-name').text(activeGame ? activeGame.name : 'Game Archive');
+	$('.game-archive')[activeGame ? 'show' : 'hide']();
+
+	var template = $('#other-game-template');
+	$('.other-game:not(.template)').remove();
+	for (var i = 0; i < games.length; i++) {
+		var otherGame = games[i];
+		if (otherGame.stop < getTime()) { continue; }
+		if (otherGame == activeGame) { continue; }
+		var $instance = template.clone().removeClass('template').attr('id', null).css({display: ''});
+		$instance.text(otherGame.name);
+		$instance.click(makeGameHandler(otherGame));
+		$instance.insertAfter($('.other-game').last());
+	}
+}

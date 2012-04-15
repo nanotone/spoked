@@ -4,6 +4,12 @@ var initPromise = $.when(initData());
 function initMain() {
 	console.log("initMain");
 
+	setGamesMenu(null, function(g) { return function() {
+		var pathparts = window.location.href.split('/');
+		pathparts[pathparts.length - 1] = 'main.html?' + g.id;
+		window.location.href = pathparts.join('/');
+	}; });
+
 	$template = $('#game-template');
 	for (var i = 0; i < games.length; i++) {
 		var game = games[i];
