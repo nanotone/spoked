@@ -83,12 +83,15 @@ def auth():
 def index():
 	bottle.redirect('/static/main.html')
 
-@bottle.route('/tracks')
+@bottle.route('/tracks', method=['GET', 'POST'])
 def tracks():
 	crossorigin()
 	mimetype_json()
+	query = bottle.request.query
+	if bottle.request.method == 'POST':
+		query = bottle.request.forms
 	yield u'{' # first yield must be bytes or unicode, not str
-	for (i, t) in enumerate(bottle.request.query.ids.split(',')):
+	for (i, t) in enumerate(query.ids.split(',')):
 		if i: yield ','
 		yield '"%s":' % t
 		yield open('data/json-sparse/%s.json' % t).read()
