@@ -218,12 +218,12 @@ function fetchTracks(tracks) {
 	}
 	if (trackIdsToLoad.length) {
 		query = {'auth': auth, 'ids': trackIdsToLoad.join(',')};
-		$.getJSON(SERVER + 'tracks', query, function(data) {
+		$.post(SERVER + 'tracks', query, function(data) {
 			for (var trackId in data) {
 				tracksById[trackId].points = data[trackId];
 			}
 			deferred.resolve();
-		});
+		}, 'json');
 	}
 	else {
 		deferred.resolve();
