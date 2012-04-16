@@ -33,7 +33,19 @@ function pickleState(state) {
 	return title;
 }
 function unpickleState(title) {
-	if (title == '') { return {game: games[0], view: 'all'}; }
+	if (title == '') {
+		var defaultGame = null;
+		for (var i = 0; i < games.length; i++) {
+			if (getTime() < games[i].stop) {
+				defaultGame = games[i];
+				break;
+			}
+		}
+		if (!defaultGame) {
+			defaultGame = games[games.length - 1];
+		}
+		return {game: defaultGame, view: 'all'};
+	}
 	var parts = title.split('.');
 	state = {game: (parts[0] ? gamesById[parts[0]] : games[0]), view: 'all'};
 	if (parts[1] == 'autoreload') { // for unpickling only
@@ -167,18 +179,8 @@ function loadGame(game) {
 		}
 		aggregateGameTrackData(game);
 
-		$('.game-name').text(game.name);
-		var template = $('#other-game-template');
-		$('.other-game:not(.template)').remove();
-		var makeGameHandler = function(g) { return function() { switchToState({game: g}); }; };
-		for (var i = 0; i < games.length; i++) {
-			var otherGame = games[i];
-			if (otherGame == game || otherGame.stop < getTime()) { continue; }
-			var instance = template.clone().removeClass('template').attr('id', null).css({display: ''});
-			instance.text(otherGame.name);
-			instance.click(makeGameHandler(otherGame));
-			instance.insertAfter($('.other-game').last());
-		}
+		setGamesMenu(game, function(g) { return function() { switchToState({game: g}); }; });
+
 		$('.game-duration').text(game.humanDuration);
 		if (game.players[0].team) {
 			$('#team-leaderboard').show();

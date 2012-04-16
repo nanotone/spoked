@@ -69,7 +69,13 @@ def auth():
 	print spec
 	user = db.users.find_one(spec)
 	if user:
-		return '{"auth":"%s"}' % (user['_id'])
+		result = {'auth': user['_id']}
+		for g in db.games.find({'stop': {'$gt': time.time()}}, sort=[('start', 1)]):
+			if user['_id'] in (p['userid'] for p in g.get('players', ())):
+				result['gameid'] = g['_id']
+				break
+			result['archive'] = True
+		return json_encoder.encode(result)
 	return '{"auth":""}'
 
 
@@ -77,12 +83,15 @@ def auth():
 def index():
 	bottle.redirect('/static/main.html')
 
-@bottle.route('/tracks')
+@bottle.route('/tracks', method=['GET', 'POST'])
 def tracks():
 	crossorigin()
 	mimetype_json()
+	query = bottle.request.query
+	if bottle.request.method == 'POST':
+		query = bottle.request.forms
 	yield u'{' # first yield must be bytes or unicode, not str
-	for (i, t) in enumerate(bottle.request.query.ids.split(',')):
+	for (i, t) in enumerate(query.ids.split(',')):
 		if i: yield ','
 		yield '"%s":' % t
 		yield open('data/json-sparse/%s.json' % t).read()

@@ -5,44 +5,7 @@
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.cookie.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
-<script type="text/javascript" src="http://use.typekit.com/prg6crm.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<script type="text/javascript">
-function gotoMain() {
-	window.location.replace('main.html');
-}
-$(function() {
-	var auth = $.cookie('spokedAuth');
-	if (auth) {
-		$.getJSON(SERVER + 'auth', {'username': auth}, function(data) {
-			if (data.auth) {
-				gotoMain();
-			}
-			else {
-				$.cookie('spokedAuth', '');
-			}
-		});
-	}
-	$('#form').submit(function(e) {
-		e.preventDefault();
-		$.getJSON(SERVER + 'auth', $('#form').serialize(), function(data) {
-			if (data.auth) {
-				$.cookie('spokedAuth', data.auth);
-				gotoMain();
-			}
-			else {
-				$('.wrong').show();
-			}
-		});
-	});
-	$('#email-form').submit(function(e) {
-		e.preventDefault();
-		$.post(SERVER + 'emailbox', $('#email-form').serialize(), function(data) {});
-		$('#email-form').slideUp();
-		$('#email-submitted').slideDown();
-	});
-});
-</script>
+<script type="text/javascript" src="js/login.js"></script>
 <link rel="stylesheet" href="css/style.css" media="screen" id="style" />
 </head>
 <body id="page-login" class="login">
@@ -157,5 +120,7 @@ That’s it! </p>
 
 
 
+<script type="text/javascript" src="http://use.typekit.com/prg6crm.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </body>
 </html>
