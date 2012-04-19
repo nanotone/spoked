@@ -59,13 +59,15 @@ class RideAnimation {
 		
 		// GET FLYING RIDES AWAY. WORKS SOMEWHAT... CAN'T GET CHRIS'S AWAY WITHOUT GOING DOWN TO ABOUT 30...
 		
-    	//if((wpDistLong >= 40) || (wpDistLat >= 40)) {
-		//	strokeWeight(1); 
-		//}
+    	if(abs(wpDistLong) >= 250 || abs(wpDistLat) >= 250) {
+			noStroke(); 
+		}
 		
-		//else {
-			strokeWeight(3); 
-		//}
+		else {
+			strokeWeight(9); 
+		}
+		
+		
 		
 		// FOR PRINTING
 		
@@ -90,13 +92,13 @@ class RideAnimation {
 		
 		
 // comment out for printing		
-		if (isLastRide) {// YANG, THIS IS THE STYLE FOR THE LAST RIDE THAT IS INTERACTIVE
+	/*	if (isLastRide) {// YANG, THIS IS THE STYLE FOR THE LAST RIDE THAT IS INTERACTIVE
 			//fill(255);
 			fill(color - 0x69000000); 
 			stroke(255);
 			strokeWeight(2);
 			ellipse(longStop, latStop, 15, 15);
-		} 
+		} */
 		
 		
 	}
@@ -108,8 +110,8 @@ ArrayList rideAnimations = new ArrayList();
 
 //SETUP
 void setup() {
-  size(1680, 2750);
-  //size(5040, 8250); // for printing x3
+  //size(1680, 2750);
+  size(5040, 8250); // for printing x3
   background(0, 0, 0, 0);
   noLoop();
   frameRate(animatedFrameRate);
