@@ -8,9 +8,17 @@ function initData() {
 
 var auth;
 var authUserId;
+var demoMode = false;
 
 function initSession() {
 	var deferred = $.Deferred();
+	var state = unpickleState(getHistoryTitle());
+	if (state.mode == 'demo') {
+		demoMode = true;
+		auth = authUserId = state.guestId;
+		deferred.resolve();
+		return deferred.promise();
+	}
 	auth = $.cookie('spokedAuth');
 	if (auth) {
 		$.getJSON(SERVER + 'auth', {'username': auth}, function(data) {
@@ -49,7 +57,20 @@ function getRandomPjsColor() {
 
 function initInfo() {
 	var deferred = $.Deferred();
-	$.getJSON(SERVER + 'gameinfo', {'auth': auth}, function(data) {
+	var args = {'auth': auth};
+	if (demoMode) {
+		args = {'userid': authUserId, 'gameid': unpickleState(getHistoryTitle()).game};
+	}
+	$.getJSON(SERVER + 'gameinfo', args, function(data) {
+		if (demoMode) {
+			setRealTime(data.games[0].start + 7*86400);
+			for (var i = 0; i < data.tracks.length; i++) {
+				if (data.tracks[i].time + data.tracks[i].duration > demoTime) {
+					data.tracks.splice(i, 1);
+					i -= 1;
+				}
+			}
+		}
 		tracks = data.tracks;
 		tracks.sort(function(a, b) { return a.time - b.time; });
 		users = data.users;

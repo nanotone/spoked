@@ -21,11 +21,14 @@ function processingFinishedAnimating() {
 // history and the pickling and unpickling of state
 
 function pickleState(state) {
-	if (!('game' in state)) { state.game = activeGame; }
+	if (!('game' in state)) { state.game = activeGame.id; }
 	if (!('view' in state)) { state.view = 'all'; }
-	if (games.length && state.game.id == games[0].id && state.view == 'all') { return ''; }
+	//if (games.length && state.game == games[0].id && state.view == 'all') { return ''; }
 	if (state.view == 'user' && !('user' in state)) { state.user = authUserId; }
-	var title = state.game.id;
+	var title = state.game;
+	if (demoMode) {
+		title += '-demo-' + authUserId;
+	}
 	if (state.view != 'all') {
 		title += '.' + state.user;
 		if (state.view == 'compare') { title += '.' + state.user2; }
@@ -44,10 +47,24 @@ function unpickleState(title) {
 		if (!defaultGame) {
 			defaultGame = games[games.length - 1];
 		}
-		return {game: defaultGame, view: 'all'};
+		return {game: defaultGame.id, view: 'all'};
 	}
 	var parts = title.split('.');
-	state = {game: (parts[0] ? gamesById[parts[0]] : games[0]), view: 'all'};
+	state = {view: 'all'};
+	if (parts[0]) {
+		var demoParts = parts[0].split('-');
+		if (demoParts[1] == 'demo') {
+			state.game = demoParts[0];
+			state.mode = 'demo';
+			state.guestId = demoParts[2];
+		}
+		else {
+			state.game = parts[0];
+		}
+	}
+	else {
+		state.game = games[0].id;
+	}
 	if (parts[1] == 'autoreload') { // for unpickling only
 		state.autoreload = true;
 		return state;
@@ -120,8 +137,8 @@ function loadState() {
 			window.location = 'main.html?' + getHistoryTitle();
 		}, 60000);
 	}
-	if (state.game != activeGame) {
-		activeGame = state.game;
+	if (!activeGame || state.game != activeGame.id) {
+		activeGame = gamesById[state.game];
 		loadGame(activeGame);
 		loadUsers();
 	}

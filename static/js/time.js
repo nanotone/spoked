@@ -1,16 +1,26 @@
-(function() {
+
+var thisWeek, lastWeek;
+
+var demoTime;
+function newDate() {
+	return (demoTime ? new Date(demoTime*1000) : new Date());
+}
+
+function setRealTime(t) {
 	var day = 24 * 3600;
-	var d = new Date();
+	demoTime = t;
+	var d = newDate();
 	d.setHours(0);
 	d.setMinutes(0);
 	d.setSeconds(0);
 	var midnight = Math.floor(d.getTime() / 1000);
-	window.thisWeek = midnight - ((d.getDay() + 6) % 7) * day;
-	window.lastWeek = thisWeek - 7 * day;
-})();
+	thisWeek = midnight - ((d.getDay() + 6) % 7) * day;
+	lastWeek = thisWeek - 7 * day;
+}
+setRealTime();
 
 function getTime() {
-	return (new Date().getTime()) / 1000;
+	return (newDate().getTime()) / 1000;
 }
 
 function getDHMS(seconds) {
