@@ -121,24 +121,34 @@ def info():
 def gameinfo():
 	crossorigin()
 	mimetype_json()
-	userid = bottle.request.query.get('auth')
-	if not userid: return "no userid"
-	userid = bson.objectid.ObjectId(userid)
 	games = []
 	userids = set()
-	for g in db.games.find():
-		for player in g.get('players', ()):
-			if player['userid'] == userid:
-				games.append(g)
-				userids |= set(p['userid'] for p in g['players'])
-				break
+	userid = bottle.request.query.get('auth')
+	authid = userid
+	if userid:
+		userid = bson.objectid.ObjectId(userid)
+		gamespec = None
+	else:
+		gameid = bottle.request.query.get('gameid')
+		if not gameid:
+			return "no userid"
+		gamespec = {'_id': bson.objectid.ObjectId(gameid)}
+		userid = bson.objectid.ObjectId(bottle.request.query.get('userid'))
+	for g in db.games.find(gamespec):
+		playerids = set(p['userid'] for p in g.get('players', ()))
+		if userid in playerids:
+			games.append(g)
+			userids |= playerids
 	userids = list(userids)
-	start_time = time.time() - 86400*14
-	tracks = db.tracks.find({'userid': {'$in': userids}})
+	tracks = db.tracks.find({'userid': {'$in': userids}, 'gpx_complete': True})
+	userobjs = [userobj(u) for u in db.users.find({'_id': {'$in': userids}})]
+	if not authid:
+		for u in userobjs:
+			if u['id'] == userid: u['name'] = "Jane Doe"
 	return json_encoder.encode({
 		'games': [gameobj(g) for g in games],
 		'tracks': [trackobj(t) for t in tracks if t.get('canonical') in (None, t['_id'])],
-		'users': [userobj(u) for u in db.users.find({'_id': {'$in': userids}})],
+		'users': userobjs,
 	})
 
 @bottle.post('/saveUser')
