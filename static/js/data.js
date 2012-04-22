@@ -12,12 +12,14 @@ var demoMode = false;
 
 function initSession() {
 	var deferred = $.Deferred();
-	var state = unpickleState(getHistoryTitle());
-	if (state.mode == 'demo') {
-		demoMode = true;
-		auth = authUserId = state.guestId;
-		deferred.resolve();
-		return deferred.promise();
+	if (window.unpickleState && window.getHistoryTitle) {
+		var state = unpickleState(getHistoryTitle());
+		if (state.mode == 'demo') {
+			demoMode = true;
+			auth = authUserId = state.guestId;
+			deferred.resolve();
+			return deferred.promise();
+		}
 	}
 	auth = $.cookie('spokedAuth');
 	if (auth) {
