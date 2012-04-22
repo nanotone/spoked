@@ -37,6 +37,7 @@ function pickleState(state) {
 }
 function unpickleState(title) {
 	if (title == '') {
+		if (!games) { return {game: null, view: 'all'}; }
 		var defaultGame = null;
 		for (var i = 0; i < games.length; i++) {
 			if (getTime() < games[i].stop) {
