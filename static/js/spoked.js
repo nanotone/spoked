@@ -432,6 +432,8 @@ $(function() {
 		}, 0);
 	}
 
+	if (demoMode) { $('#game-nav .games').hide(); }
+
 	$('.your-profile').click(makeLinkHandler({view: 'user'}));
 	$('.game-archive').click(function() { window.location.href = 'game-archive.html'; });
 	$('.logout').click(sessionLogout);
