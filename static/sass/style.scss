@@ -1632,7 +1632,7 @@ body#page-login {
 					text-align: center;
 					}				
 				h2 {
-					font-size: 52px;
+					font-size: 41px;
 					text-align: center;
 				}
 				.intro {
@@ -1660,15 +1660,17 @@ body#page-login {
 				a.no-border {
 				 	border-bottom: 0px;
 				 }
+				.vimeo-video {
+					margin: 20px 0;
+				}
 				#features {
 					width: 550px;
 					display: block;
-					float:left;
 					padding-bottom: 20px;
-					margin-bottom: 10px;
+					margin-bottom: 30px;
 							
 					.feature {
-						margin-top: 40px;
+						margin-top: 30px;
 						height: 310px;
 		
 						img {
@@ -1687,6 +1689,7 @@ body#page-login {
 								font-size: 40px;
 								margin: 0;
 								font-weight: 400;
+								line-height: 42px;
 							}
 							.body-text {
 								font-family: $serif;
@@ -1720,21 +1723,25 @@ body#page-login {
 				}
 				#email-form {
 					width: 530px;
+					height: 200px;
 					display: block;
-					float: left;
 					background-color: lighten($yourColor, 30%);
 					padding: 10px;
-			
-					.email-field {
+					
+					h3.form {
+						 margin-top: 5px;
+					}
+					.email-field, .name-field, .city-field {
 						top: 0;
-						width: 200px;
+						width: 168px;
 						height: 25px;
 						float:left; 
 						position:relative;
 						margin: 0 10px 0 0;
-						border : 1px solid #ccc;
-
+						border : 0px solid #ccc;
 					}
+					.city-field { margin-right: 0px; }
+					
 					.dropdown-field {
 						top: 0;
 						display: block;
@@ -1758,11 +1765,12 @@ body#page-login {
 					}
 
 					.notes-field {
-						width: 190px;
+						width: 525px;
 						height: 25px;
+						margin-bottom: 10px;
 						float:left; 
 						position:relative;
-						border : 1px solid #ccc;
+						border : 0px solid #ccc;
 					}
 					.send-button {
 						width: 100px;
@@ -1770,6 +1778,7 @@ body#page-login {
 						margin: 1px;
 						height: 27px;
 						margin-left: 10px;
+						margin-top: 10px;
 						background-color: $yourColor;
 						color: #fff;
 						font-family: $vinyl;
