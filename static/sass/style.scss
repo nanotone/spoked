@@ -112,7 +112,7 @@ a { text-decoration: none;
 	float: left;
 	position: relative;
 	z-index: 300;
-	margin: 0px 0 0 0;
+	margin: 0px 17px 0 0;
 	padding: 0 0 0 0;
 	color: $black;
 	font-family: $vinyl;
@@ -133,7 +133,7 @@ a#logo {
 	width: 100%;
 	position: absolute;
 	z-index: 200;
-	margin: 0 0 0 20px;
+	margin: 0 0 0 6px;
 	padding: 0;
 
 	ul { 
@@ -244,7 +244,7 @@ a#logo {
 		text-transform: uppercase;
 		line-height: 20px;
 		position: absolute;
-		margin: -14px 10px 0 0;
+		margin: -14px 0px 0 0;
 		padding: 0;
 		right: 0px;	
 
@@ -1481,7 +1481,7 @@ body#page-login {
 			position: absolute;
 			z-index: 200;
 			margin: 0px;
-			padding: 0px 0px 0px 20px;
+			padding: 0px 0px 0px 6px;
 			box-sizing: border-box;
 			-moz-box-sizing: border-box;
 
@@ -1519,7 +1519,7 @@ body#page-login {
 				text-transform: uppercase;
 				line-height: 20px;
 				position: absolute;
-				margin: -14px 10px 0 0;
+				margin: -14px 0px 0 0;
 				padding: 0;
 				right: 0px;	
 				width: 400px;
@@ -1532,7 +1532,7 @@ body#page-login {
 			z-index: 2500;
 			right: 10px;
 			margin-top: 0px;
-			margin-right: 20px;
+			margin-right: 0px;
 					 
 		 	input {
 		 		float: left;
@@ -1648,29 +1648,6 @@ body#page-login {
 						margin-right: 0px;
 					}
 				}
-				#demo-button {
-					margin: 20px 0;
-					padding: 20px auto;
-					background-color: #F0B50C;
-					text-align: center;
-					color: #fff;
-					text-transform: uppercase;
-					font-family: $vinyl;
-					font-size: 26px;
-					font-weight: 400;
-					line-height: 2.5;
-   					-moz-border-radius: 15px;
-				    -webkit-border-radius: 15px;
-  					-khtml-border-radius: 15px;
-   					border-radius: 15px;
-   					.demo-button-text { 
-   						text-transform: none;
-   						margin-top: 0px;
-   					}
-				}
-				#demo-button:hover {
-					background-color: #ccc;
-				}
 				#features {
 					width: 550px;
 					display: block;
@@ -1701,6 +1678,28 @@ body#page-login {
 							}
 							.body-text {
 								font-family: $serif;
+							}
+							.feature-button {
+
+								color: $black;
+								text-transform: uppercase;
+								font-family: $vinyl;
+								font-weight: 400;
+								font-size: 15px;
+								line-height: 1.6;
+								
+								img {
+									width: 20px;
+									height: 20px;
+									margin-right: 8px;								
+									background-color: #F0B50C;
+								}
+								.feature-button-icon:hover {
+									background-color: $sidebar;
+								}
+								.feature-button:hover {
+									text-decoration: underline;
+								}
 							}
 						}	
 					}
