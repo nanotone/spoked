@@ -1450,8 +1450,8 @@ body#page-login {
 	/*background: url(../img/login/bg/bike-bk.jpg) top center; 
 	background-repeat:no-repeat;
 	background-attachment:fixed;*/	
-	background: url(../img/login/bg/lghtmesh.jpg) top left; 
 	background: url(../img/map/streets-login.png) top center;
+	background: url(../img/login/bg/map_tile.png) top left; 
 	}
 
 
@@ -1642,8 +1642,7 @@ body#page-login {
 						margin-right: 10px;
 						
 						img {
-						width: 175px;
-						height: 125px;
+
 						}
 						.step-text {
 							font-family: $serif;
