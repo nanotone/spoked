@@ -1447,9 +1447,11 @@ body#page-inside {
 
 /* PAGE BEFORE LOGIN */
 body#page-login { 
-	background: url(../img/login/bike-bk.jpg) top center; 
+	/*background: url(../img/login/bg/bike-bk.jpg) top center; 
 	background-repeat:no-repeat;
-	background-attachment:fixed;	
+	background-attachment:fixed;*/	
+	background: url(../img/login/bg/lghtmesh.jpg) top left; 
+	background: url(../img/map/streets-login.png) top center;
 	}
 
 
@@ -1593,6 +1595,7 @@ body#page-login {
 					}				
 				h2 {
 					font-size: 41px;
+					line-height: .5;
 					text-align: center;
 				}
 				.intro {
@@ -1613,7 +1616,7 @@ body#page-login {
 					font-family: $vinyl;
 					font-size: 22px;
 					font-weight: 400;
-					margin: 0px 0 0 0;
+					margin: 8px 0 0 0;
 					}
 				p {
 					font-family: $serif;
@@ -1631,17 +1634,23 @@ body#page-login {
 					margin: 20px 0;
 				}
 				#steps {
-					margin: 20px 0;
+					margin: 40px 0 20px;
 					height: 190px;
 					.step {
 						float: left;
 						text-align: center;
 						margin-right: 10px;
+						
+						img {
+						width: 175px;
+						height: 125px;
+						}
 						.step-text {
 							font-family: $serif;
-							font-size: 14px;
+							font-size: 16px;
 							margin: 0 0 0 0;
-							padding: 0;												
+							padding: 0;	
+							line-height: .9;				
 						}
 					}
 					.step-last {
@@ -1697,8 +1706,10 @@ body#page-login {
 								.feature-button-icon:hover {
 									background-color: $sidebar;
 								}
-								.feature-button:hover {
-									text-decoration: underline;
+							}
+							.feature-button:hover {
+								.feature-button-icon {
+									background-color: $sidebar;
 								}
 							}
 						}	
