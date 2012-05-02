@@ -67,12 +67,10 @@ class RideAnimation {
 		}
 		
 		else {
-			strokeWeight(3); 
+			strokeWeight(6); 
 		}
 
-		// FOR PRINTING
-		
-		//strokeWeight(9); 
+		 
 		strokeJoin(ROUND);
 		vertex(longStart, latStart);
 		vertex(longStop, latStop);
