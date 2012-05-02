@@ -49,7 +49,7 @@ def emailbox():
 	crossorigin()
 	forms = bottle.request.forms
 	doc = {}
-	for field in ('email', 'disposition', 'notes'):
+	for field in ('name', 'email', 'city', 'disposition', 'notes'):
 		doc[field] = getattr(forms, field, None)
 	db.emailbox.insert(doc)
 	return 'OK'
