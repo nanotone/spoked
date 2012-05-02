@@ -126,9 +126,12 @@ def gameinfo():
 	userid = bottle.request.query.get('auth')
 	authid = userid
 	if userid:
-		userid = bson.objectid.ObjectId(userid)
-		gamespec = None
-	else:
+		try:
+			userid = bson.objectid.ObjectId(userid)
+			gamespec = None
+		except bson.errors.InvalidId:
+			userid = None
+	if not userid:
 		gameid = bottle.request.query.get('gameid')
 		if not gameid:
 			return "no userid"
