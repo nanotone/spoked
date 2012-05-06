@@ -103,12 +103,12 @@ def info():
 	mimetype_json()
 	def gameobj(g):
 		obj = {'id': g['_id']}
-		for field in ('name', 'start', 'stop'):
+		for field in ('name', 'start', 'stop', 'players'):
 			obj[field] = g.get(field)
 		return obj
 	def userobj(u):
 		obj = {'id': u['_id']}
-		for field in ('name', 'color', 'email', 'twitterid', 'passwd', 'duration', 'gameid'):
+		for field in ('name', 'color', 'email', 'twitterid', 'passwd', 'duration'):
 			obj[field] = u.get(field)
 		return obj
 	return json_encoder.encode({
@@ -172,6 +172,29 @@ def saveUser():
 	user['email'] = user['email'].lower()
 	user['twitterid'] = user['twitterid'].lower()
 	db.users.save(user)
+	return '{}'
+
+@bottle.post('/saveGame')
+def saveGame():
+	crossorigin()
+	mimetype_json()
+	forms = bottle.request.forms
+	print dict(forms)
+	game = getattr(forms, 'id', None)
+	if game and len(game) == 24:
+		game = db.games.find_one({'_id': bson.objectid.ObjectId(game)})
+	if not game:
+		game = {}
+	game['name'] = getattr(forms, 'name', '')
+	game['start'] = int(getattr(forms, 'start', '0'))
+	game['stop'] = int(getattr(forms, 'stop', '0'))
+	players = json.loads(getattr(forms, 'players', '[]'))
+	for p in players:
+		p['userid'] = bson.objectid.ObjectId(p['userid'])
+		if p['team'] == '':
+			del p['team']
+	game['players'] = players
+	db.games.save(game)
 	return '{}'
 
 bottle.run(host='0.0.0.0', port=8081)
