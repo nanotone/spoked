@@ -171,13 +171,7 @@ function initGame(game) {
 	game.week2 = game.week1 + 7 * 86400;
 	game.week3 = game.week2 + 7 * 86400;
 
-	var startDate = new Date(game.start * 1000);
-	var stopDate = new Date((game.stop - 3) * 1000);
-	var startFmt = formatDay(startDate);
-	if (startDate.getYear() != stopDate.getYear()) {
-		startFmt += " " + startDate.getFullYear();
-	}
-	game.humanDuration = startFmt + " - " + formatDay(stopDate) + " " + stopDate.getFullYear();
+	game.humanDuration = formatDuration(game.start, game.stop - 3);
 }
 
 function aggregateGameTrackData(game) {

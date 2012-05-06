@@ -1,5 +1,7 @@
 var M_PER_MI = 1609.344;
 
+var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
 function darken(color) {
 	var intColor = 0;
 	for (var i = 0; i < 3; i++) {
@@ -16,11 +18,22 @@ function lighten(color) {
 	return (0xffffff - intColor).toString(16);
 }
 
+function ordinal(n) { return n + ["st", "nd", "rd", "th"][Math.min((n + 9) % 10, 3)]; }
+
 function formatDay(d) {
 	return (["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][d.getDay()] + " " +
-		["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][d.getMonth()] + " " +
-		d.getDate() + ["st", "nd", "rd", "th"][Math.min((d.getDate() + 9) % 10, 3)]
+		MONTHS[d.getMonth()] + " " + ordinal(d.getDate())
 	);
+}
+
+function formatDuration(startTime, stopTime) {
+	var startDate = new Date(startTime * 1000);
+	var stopDate = new Date(stopTime * 1000);
+	var startFmt = formatDay(startDate);
+	if (startDate.getYear() != stopDate.getYear()) {
+		startFmt += " " + startDate.getFullYear();
+	}
+	return startFmt + " - " + formatDay(stopDate) + " " + stopDate.getFullYear();
 }
 
 function humanUnits(num, unit, explicitZero) {

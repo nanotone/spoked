@@ -1,0 +1,36 @@
+<head>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="js/template.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('.template').hide();
+	$.get(SERVER + 'info', function(data) {
+		for (var i = 0; i < data.games.length; i++) {
+			var game = data.games[i];
+			var $inst = instantiate($('#game-template'));
+			$inst.find('.name').text(game.name);
+			$inst.find('.duration').text(formatDuration(game.start, game.stop - 3));
+			$inst.find('.players').text(game.players.length + " players");
+			$inst.find('.edit').attr('href', 'game.html?' + game.id);
+		}
+	});
+});
+</script>
+</head>
+<body>
+<h2>Games</h2>
+
+<a href="game.html">Add new game</a><br /><br />
+<div id="games">
+	<div id="game-template" class="template">
+		<div>Game: <span class="name"></span></div>
+		<div class="players"></div>
+		<div class="duration"></div>
+		<div><a class="edit">Edit</a></div>
+		<br />
+	</div>
+</div>
+
+</body>

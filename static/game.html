@@ -1,0 +1,114 @@
+<head>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript">
+var users;
+var usersById = {};
+$(function() {
+	var year = (new Date()).getFullYear();
+	$dates = $('.date');
+	for (var i = 0; i < $dates.length; i++) {
+		var $d = $dates.eq(i);
+		$d.append($('<select class="Month">'
+			+ $.map(MONTHS, function(x, i) { return '<option value="' + i + '">' + x + '</option>'; }).join('')
+			+ '</select>'));
+		$d.append($('<select class="Date">'
+			+ $.map(new Array(31), function(x, i) { return '<option value="'+(i+1)+'">'+(i+1)+'</option>'; }).join('')
+			+ '</select>'));
+		$d.append($('<select class="FullYear">'
+			+ $.map([year, year+1], function(x) { return '<option value="' + x + '">' + x + '</option>'; }).join('')
+			+ '</select>'));
+		$d.append($('<select class="Hours">'
+			+ $.map(new Array(24), function(x, i) { return '<option value="'+i+'">'+i+':00</option>'; }).join('')
+			+ '</select>'));
+	}
+	var dateFields = ['FullYear', 'Month', 'Date', 'Hours'];
+	var fields = ['id', 'name'];
+
+	var search = window.location.search || '';
+	if (search.length && search[0] == '?') { search = search.substr(1); }
+	$.get(SERVER + 'info', function(data) {
+		users = data.users;
+		$.map(users, function(u) { usersById[u.id] = u; });
+		for (var i = 0; i < data.games.length; i++) {
+			var game = data.games[i];
+			if (game.id == search) {
+				$.map(fields, function(x) { $('.' + x).val(game[x]); });
+				$.map(['start', 'stop'], function(x) {
+					var d = new Date(game[x] * 1000);
+					x = $('.' + x);
+					$.map(dateFields, function(y) { x.find('.' + y).val(String(d['get' + y]())); });
+				});
+				$.map(game.players, function(p) {
+					var u = usersById[p.userid];
+					u.playing = true;
+					addToGame(u).find('input').val(p.team);
+				});
+				break;
+			}
+		}
+		$.map(users, function(u) { if (!u.playing) { addToBench(u); } });
+	});
+
+	$('.save').click(function() {
+		var query = {};
+		$.map(fields, function(f) { query[f] = $('.' + f).val(); });
+		var tstampFromDateFields = function(cls) {
+			$d = $('.' + cls);
+			var d = new Date(86400*1000); // sane defaults all around (Jan 1st 1970)
+			$.map(dateFields, function(x) { d['set' + x](Number($d.find('.' + x).val())); });
+			return d.getTime() / 1000;
+		};
+		query.start = tstampFromDateFields('start');
+		query.stop = tstampFromDateFields('stop');
+		query.players = JSON.stringify($.map($('.players .player'), function(p) {
+			var $p = $(p);
+			return {userid: $p.data('userid'), team: $p.find('.team').val()};
+		}));
+		console.log(query);
+		$.post(SERVER + 'saveGame', query, function(data) {
+			window.location.href = 'games.html';
+		});
+	});
+});
+function onClickRemove() {
+	var $p = $(this).closest('.player');
+	addToBench(usersById[$p.data('userid')]);
+	$p.slideUp(function() { $(this).remove(); });
+}
+function onClickAdd() {
+	var $p = $(this).closest('.player');
+	addToGame(usersById[$p.data('userid')]);
+	$p.remove();
+}
+function addToBench(user) {
+	var $p = $('<div class="player">' + user.name + ' <button>Add</button></div>');
+	$p.find('button').click(onClickAdd);
+	$p.data('userid', user.id);
+	$('.bench').append($p);
+}
+function addToGame(user) {
+	var $p = $('<div class="player">' + user.name + ', Team <input class="team" /><button>remove player from game</button></div>');
+	$p.find('button').click(onClickRemove);
+	$p.data('userid', user.id);
+	$('.players').append($p);
+	$p.hide().slideDown();
+	return $p;
+}
+</script>
+</head>
+<body>
+<h2>Add/Edit game</h2>
+<input class="id" type="hidden" />
+<div>Name: <input class="name" /></div>
+<div class="start date">Start: </div>
+<div class="stop date">Stop: </div>
+<h3>On wheels</h3>
+Team names are case sensitive! Leave them blank for individual games.<br /><br />
+<div class="players"></div>
+<br />
+<button class="save" style="width:180px;height:36px">Save</button>
+<h3>Off wheels</h3>
+<div class="bench"></div>
+</body>
