@@ -67,7 +67,7 @@ class RideAnimation {
 		}
 		
 		else {
-			strokeWeight(6); 
+			strokeWeight(14); 
 		}
 
 		 
