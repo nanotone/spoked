@@ -1392,6 +1392,30 @@ body#page-inside {
   /*float:left;*/
   padding-bottom: 20px;
   margin-bottom: 0px;
+  /*		ATTEMPT TO STYLE PASSWORD CHANGE			
+  
+  					#settings {
+  						width: 550px;
+  						display: block;
+  						padding-bottom: 20px;
+  						margin-bottom: 0px;
+  						
+  						#change-password {
+  							width: 530px;
+  							height: 200px;
+  							display: block;
+  							background-color: lighten($yourColor, 30%);
+  							padding: 10px;
+  	
+  							.old-password {
+  								clear: both;
+  								color: red;
+  								width: 300px;
+  								
+  							}		
+  						}
+  					}
+  					*/
 }
 /* line 1280, ../sass/style.scss */
 #page-inside #content #box .page-content #games h4 {
@@ -1539,41 +1563,41 @@ body#page-inside {
   font-family: "ff-tisa-web-pro", Georgia, serif;
   clear: both;
 }
-/* line 1417, ../sass/style.scss */
+/* line 1443, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside {
   background-color: #3D3D3D;
   margin: 30px -45px 0 -45px;
   padding: 30px 45px 20px 45px;
   color: white;
 }
-/* line 1422, ../sass/style.scss */
+/* line 1448, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside a {
   color: #f0b50c;
 }
-/* line 1426, ../sass/style.scss */
+/* line 1452, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside img {
   width: 100px;
   position: relative;
   float: left;
   padding: 5px 20px 10px 0px;
 }
-/* line 1432, ../sass/style.scss */
+/* line 1458, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside #twitter-follow {
   font-family: "vinyl", "Arial Narrow", sans-serif;
   text-transform: uppercase;
   font-size: 18px;
 }
-/* line 1437, ../sass/style.scss */
+/* line 1463, ../sass/style.scss */
 #page-inside #content #box .page-content #footer-inside h3 {
   margin-top: 0px;
 }
-/* line 1442, ../sass/style.scss */
+/* line 1468, ../sass/style.scss */
 #page-inside #content #box .page-content #description {
   margin-top: 70px;
 }
 
 /* PAGE BEFORE LOGIN */
-/* line 1451, ../sass/style.scss */
+/* line 1477, ../sass/style.scss */
 body#page-login {
   /*background: url(../img/login/bg/bike-bk.jpg) top center; 
   background-repeat:no-repeat;
@@ -1582,13 +1606,13 @@ body#page-login {
   background: url(../img/login/bg/map_tile.png) top left;
 }
 
-/* line 1461, ../sass/style.scss */
+/* line 1487, ../sass/style.scss */
 #page-login #nav-login {
   position: absolute;
   width: 100%;
   margin: 0;
 }
-/* line 1466, ../sass/style.scss */
+/* line 1492, ../sass/style.scss */
 #page-login #nav-login #service-bar-login {
   -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
@@ -1602,7 +1626,7 @@ body#page-login {
   	/*-moz-box-shadow: 3px 3px 7px rgba(0,0,0, .3);
     	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0, .3);*/
 }
-/* line 1480, ../sass/style.scss */
+/* line 1506, ../sass/style.scss */
 #page-login #nav-login #service-nav-login {
   font-family: "futura-pt-condensed";
   font-weight: 400;
@@ -1615,42 +1639,42 @@ body#page-login {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-/* line 1493, ../sass/style.scss */
+/* line 1519, ../sass/style.scss */
 #page-login #nav-login #service-nav-login ul li {
   display: block;
   padding-top: 0;
   float: left;
 }
-/* line 1497, ../sass/style.scss */
+/* line 1523, ../sass/style.scss */
 #page-login #nav-login #service-nav-login ul li a {
   text-decoration: none;
 }
-/* line 1499, ../sass/style.scss */
+/* line 1525, ../sass/style.scss */
 #page-login #nav-login #service-nav-login ul li.user-bottomcolor.selectedLink {
   border-bottom: 2px solid;
   border-bottom-color: #414042;
 }
-/* line 1504, ../sass/style.scss */
+/* line 1530, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav {
   padding-top: 0px;
   margin-top: 4px;
   margin-left: 80px;
   position: relative;
 }
-/* line 1509, ../sass/style.scss */
+/* line 1535, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav li {
   margin: 0 25px 0 0;
 }
-/* line 1511, ../sass/style.scss */
+/* line 1537, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav li a.user-color {
   color: #414042;
 }
-/* line 1514, ../sass/style.scss */
+/* line 1540, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #menu-nav li a.user-bottomcolor:hover {
   border-bottom: 3px solid;
   border-bottom-color: #414042;
 }
-/* line 1520, ../sass/style.scss */
+/* line 1546, ../sass/style.scss */
 #page-login #nav-login #service-nav-login #user-nav {
   font-family: "vinyl", "Arial Narrow", sans-serif;
   font-size: 16px;
@@ -1662,7 +1686,7 @@ body#page-login {
   right: 0px;
   width: 400px;
 }
-/* line 1533, ../sass/style.scss */
+/* line 1559, ../sass/style.scss */
 #page-login #nav-login #form {
   padding-top: 0px;
   position: absolute;
@@ -1671,7 +1695,7 @@ body#page-login {
   margin-top: 0px;
   margin-right: 0px;
 }
-/* line 1541, ../sass/style.scss */
+/* line 1567, ../sass/style.scss */
 #page-login #nav-login #form input {
   float: left;
   position: relative;
@@ -1680,7 +1704,7 @@ body#page-login {
   border: 1px solid #ccc;
   margin-top: -5px;
 }
-/* line 1549, ../sass/style.scss */
+/* line 1575, ../sass/style.scss */
 #page-login #nav-login #form .login-button {
   margin-top: -4px;
   width: 60px;
@@ -1695,7 +1719,7 @@ body#page-login {
   border: none;
   cursor: pointer;
 }
-/* line 1565, ../sass/style.scss */
+/* line 1591, ../sass/style.scss */
 #page-login #nav-login .wrong {
   display: none;
   position: absolute;
@@ -1705,17 +1729,17 @@ body#page-login {
   background-color: white;
   color: red;
 }
-/* line 1575, ../sass/style.scss */
+/* line 1601, ../sass/style.scss */
 #page-login #content {
   width: 100%;
   padding: 0px 0 0;
   position: relative;
 }
-/* line 1580, ../sass/style.scss */
+/* line 1606, ../sass/style.scss */
 #page-login #content #box {
   margin: 0px auto 0px;
 }
-/* line 1583, ../sass/style.scss */
+/* line 1609, ../sass/style.scss */
 #page-login #content #box .page-content {
   margin: 0px auto 0px auto;
   padding: 55px 45px 0 45px;
@@ -1725,28 +1749,28 @@ body#page-login {
   position: relative;
   color: #414042;
 }
-/* line 1592, ../sass/style.scss */
+/* line 1618, ../sass/style.scss */
 #page-login #content #box .page-content h1 {
   font-size: 200px;
   margin-top: 50px;
   margin-bottom: 80px;
   text-align: center;
 }
-/* line 1598, ../sass/style.scss */
+/* line 1624, ../sass/style.scss */
 #page-login #content #box .page-content h2 {
   font-family: "vinyl", "Arial Narrow", sans-serif;
   font-size: 41px;
   line-height: .5;
   text-align: center;
 }
-/* line 1604, ../sass/style.scss */
+/* line 1630, ../sass/style.scss */
 #page-login #content #box .page-content .intro {
   font-family: "ff-tisa-web-pro", Georgia, serif;
   font-size: 18px;
   padding-top: 15px;
   padding-bottom: 5px;
 }
-/* line 1610, ../sass/style.scss */
+/* line 1636, ../sass/style.scss */
 #page-login #content #box .page-content h3 {
   font-family: "vinyl", "Arial Narrow", sans-serif;
   text-transform: uppercase;
@@ -1754,7 +1778,7 @@ body#page-login {
   font-weight: 400;
   margin: 32px 0 0 0;
 }
-/* line 1617, ../sass/style.scss */
+/* line 1643, ../sass/style.scss */
 #page-login #content #box .page-content h4 {
   font-family: "vinyl", "Arial Narrow", sans-serif;
   text-transform: uppercase;
@@ -1762,37 +1786,37 @@ body#page-login {
   font-weight: 400;
   margin: 8px 0 0 0;
 }
-/* line 1624, ../sass/style.scss */
+/* line 1650, ../sass/style.scss */
 #page-login #content #box .page-content p {
   font-family: "ff-tisa-web-pro", Georgia, serif;
   font-size: 13px;
   margin-top: 0px;
 }
-/* line 1629, ../sass/style.scss */
+/* line 1655, ../sass/style.scss */
 #page-login #content #box .page-content a {
   color: #414042;
   border-bottom: 1px solid #414042;
 }
-/* line 1633, ../sass/style.scss */
+/* line 1659, ../sass/style.scss */
 #page-login #content #box .page-content a.no-border {
   border-bottom: 0px;
 }
-/* line 1636, ../sass/style.scss */
+/* line 1662, ../sass/style.scss */
 #page-login #content #box .page-content .vimeo-video {
   margin: 20px 0;
 }
-/* line 1639, ../sass/style.scss */
+/* line 1665, ../sass/style.scss */
 #page-login #content #box .page-content #steps {
   margin: 40px 0 20px;
   height: 190px;
 }
-/* line 1642, ../sass/style.scss */
+/* line 1668, ../sass/style.scss */
 #page-login #content #box .page-content #steps .step {
   float: left;
   text-align: center;
   margin-right: 10px;
 }
-/* line 1650, ../sass/style.scss */
+/* line 1676, ../sass/style.scss */
 #page-login #content #box .page-content #steps .step .step-text {
   font-family: "ff-tisa-web-pro", Georgia, serif;
   font-size: 16px;
@@ -1800,34 +1824,34 @@ body#page-login {
   padding: 0;
   line-height: .9;
 }
-/* line 1658, ../sass/style.scss */
+/* line 1684, ../sass/style.scss */
 #page-login #content #box .page-content #steps .step-last {
   margin-right: 0px;
 }
-/* line 1662, ../sass/style.scss */
+/* line 1688, ../sass/style.scss */
 #page-login #content #box .page-content #features {
   width: 550px;
   display: block;
   padding-bottom: 20px;
   margin-bottom: 30px;
 }
-/* line 1668, ../sass/style.scss */
+/* line 1694, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature {
   margin-top: 30px;
   height: 310px;
 }
-/* line 1672, ../sass/style.scss */
+/* line 1698, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature img {
   width: 320px;
   float: left;
   margin-right: 20px;
 }
-/* line 1677, ../sass/style.scss */
+/* line 1703, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text {
   width: 210px;
   float: left;
 }
-/* line 1681, ../sass/style.scss */
+/* line 1707, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text .title {
   text-transform: uppercase;
   font-family: "vinyl", "Arial Narrow", sans-serif;
@@ -1837,11 +1861,11 @@ body#page-login {
   font-weight: 400;
   line-height: 42px;
 }
-/* line 1690, ../sass/style.scss */
+/* line 1716, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text .body-text {
   font-family: "ff-tisa-web-pro", Georgia, serif;
 }
-/* line 1693, ../sass/style.scss */
+/* line 1719, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text .feature-button {
   color: #414042;
   text-transform: uppercase;
@@ -1850,50 +1874,50 @@ body#page-login {
   font-size: 15px;
   line-height: 1.6;
 }
-/* line 1702, ../sass/style.scss */
+/* line 1728, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text .feature-button img {
   width: 20px;
   height: 20px;
   margin-right: 8px;
   background-color: #F0B50C;
 }
-/* line 1708, ../sass/style.scss */
+/* line 1734, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text .feature-button .feature-button-icon:hover {
   background-color: #e3e3da;
 }
-/* line 1713, ../sass/style.scss */
+/* line 1739, ../sass/style.scss */
 #page-login #content #box .page-content #features .feature .feature-text .feature-button:hover .feature-button-icon {
   background-color: #e3e3da;
 }
-/* line 1720, ../sass/style.scss */
+/* line 1746, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login {
   background-color: #3D3D3D;
   margin: 30px -45px 0 -45px;
   padding: 30px 45px 20px 45px;
   color: white;
 }
-/* line 1725, ../sass/style.scss */
+/* line 1751, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login a {
   color: #f0b50c;
 }
-/* line 1729, ../sass/style.scss */
+/* line 1755, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login img {
   width: 100px;
   position: relative;
   float: left;
   padding: 5px 20px 10px 0px;
 }
-/* line 1735, ../sass/style.scss */
+/* line 1761, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login #twitter-follow {
   font-family: "vinyl", "Arial Narrow", sans-serif;
   text-transform: uppercase;
   font-size: 18px;
 }
-/* line 1740, ../sass/style.scss */
+/* line 1766, ../sass/style.scss */
 #page-login #content #box .page-content #footer-login h3 {
   margin-top: 0px;
 }
-/* line 1744, ../sass/style.scss */
+/* line 1770, ../sass/style.scss */
 #page-login #content #box .page-content #email-form {
   width: 530px;
   height: 200px;
@@ -1901,11 +1925,11 @@ body#page-login {
   background-color: #fae19b;
   padding: 10px;
 }
-/* line 1751, ../sass/style.scss */
+/* line 1777, ../sass/style.scss */
 #page-login #content #box .page-content #email-form h3.form {
   margin-top: 5px;
 }
-/* line 1754, ../sass/style.scss */
+/* line 1780, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .email-field, #page-login #content #box .page-content #email-form .name-field, #page-login #content #box .page-content #email-form .city-field {
   top: 0;
   width: 168px;
@@ -1915,11 +1939,11 @@ body#page-login {
   margin: 0 10px 0 0;
   border: 0px solid #ccc;
 }
-/* line 1763, ../sass/style.scss */
+/* line 1789, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .city-field {
   margin-right: 0px;
 }
-/* line 1765, ../sass/style.scss */
+/* line 1791, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .dropdown-field {
   top: 0;
   display: block;
@@ -1929,7 +1953,7 @@ body#page-login {
   margin-right: 0px;
   height: 29px;
 }
-/* line 1774, ../sass/style.scss */
+/* line 1800, ../sass/style.scss */
 #page-login #content #box .page-content #email-form select {
   outline: 0;
   overflow: hidden;
@@ -1942,7 +1966,7 @@ body#page-login {
   -webkit-border-radius: 6px;
   border-radius: 10px;
 }
-/* line 1787, ../sass/style.scss */
+/* line 1813, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .notes-field {
   width: 525px;
   height: 25px;
@@ -1951,7 +1975,7 @@ body#page-login {
   position: relative;
   border: 0px solid #ccc;
 }
-/* line 1795, ../sass/style.scss */
+/* line 1821, ../sass/style.scss */
 #page-login #content #box .page-content #email-form .send-button {
   width: 100px;
   float: right;
@@ -1966,24 +1990,24 @@ body#page-login {
   border: none;
   cursor: pointer;
 }
-/* line 1811, ../sass/style.scss */
+/* line 1837, ../sass/style.scss */
 #page-login #content #box .page-content #description {
   margin-top: 70px;
 }
 
-/* line 1818, ../sass/style.scss */
+/* line 1844, ../sass/style.scss */
 .poster {
   width: 265px;
   border: 1px solid #eee;
   margin-right: 11px;
 }
 
-/* line 1824, ../sass/style.scss */
+/* line 1850, ../sass/style.scss */
 .poster-last {
   margin-right: 0px;
 }
 
-/* line 1827, ../sass/style.scss */
+/* line 1853, ../sass/style.scss */
 .wf-loading h2, .wf-loading h3, .wf-loading h4 {
   visibility: hidden;
 }

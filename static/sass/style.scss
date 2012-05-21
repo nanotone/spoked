@@ -1302,7 +1302,7 @@ body#page-inside {
 						}
 
 					}
-											
+										
 					.game {
 						margin-bottom: 20px;
 						height: 110px;
@@ -1413,7 +1413,33 @@ body#page-inside {
 							}
 						}	
 					}
+
+/*		ATTEMPT TO STYLE PASSWORD CHANGE			
+
+					#settings {
+						width: 550px;
+						display: block;
+						padding-bottom: 20px;
+						margin-bottom: 0px;
+						
+						#change-password {
+							width: 530px;
+							height: 200px;
+							display: block;
+							background-color: lighten($yourColor, 30%);
+							padding: 10px;
+	
+							.old-password {
+								clear: both;
+								color: red;
+								width: 300px;
+								
+							}		
+						}
+					}
+					*/
 				}
+
 				#footer-inside {
 					background-color: #3D3D3D;
 					margin: 30px -45px 0 -45px;
