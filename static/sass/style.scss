@@ -1413,32 +1413,50 @@ body#page-inside {
 							}
 						}	
 					}
-
-/*		ATTEMPT TO STYLE PASSWORD CHANGE			
-
-					#settings {
-						width: 550px;
-						display: block;
-						padding-bottom: 20px;
-						margin-bottom: 0px;
-						
-						#change-password {
-							width: 530px;
-							height: 200px;
-							display: block;
-							background-color: lighten($yourColor, 30%);
-							padding: 10px;
-	
-							.old-password {
-								clear: both;
-								color: red;
-								width: 300px;
-								
-							}		
-						}
-					}
-					*/
 				}
+				
+				/* PASSWORD CHANGE */		
+				#settings {
+					width: 550px;
+					display: block;
+					padding-bottom: 20px;
+					margin-bottom: 0px;
+					
+					form#change-password {
+						display: block;
+						overflow:auto;
+						label {
+							float:left;
+							clear: both;
+						}
+						.old-password, .new-password, .confirm-password {
+							float:left;
+							margin-bottom:10px;
+							clear: both;
+							width: 200px;
+							height: 25px;
+							border: 1px solid #ccc;
+						}	
+						.save-button {
+							float: left;
+							clear: both;
+							width: 100px;
+							margin: 1px;
+							height: 27px;
+							margin-top: 20px;
+							background-color: 
+							#F0B50C;
+							color: 
+							white;
+							font-family: "vinyl", sans-serif;
+							font-size: 18px;
+							border: none;
+							cursor: pointer;						
+						}	
+					}
+				}
+					
+				
 
 				#footer-inside {
 					background-color: #3D3D3D;
