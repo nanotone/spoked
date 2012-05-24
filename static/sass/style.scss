@@ -254,6 +254,7 @@ a#logo {
 			margin: -3px 20px 0px 10px;
 			padding: 3px 3px 30px 3px;
 			.user-avatar {
+				-webkit-filter: grayscale(1);
 				display: block;
 				float: left;
 				margin: 0px 8px 10px 0px;
@@ -411,7 +412,12 @@ img.avatar {
     -webkit-border-radius: .5em;*/
 	border-top: .5em solid #fff;
   	}
-  	
+img.grayscale {
+	-webkit-filter: grayscale(1);
+	border:none; 
+	margin-left: -45px; 
+	margin-top: 8px;
+}  	
 .pop {
 	display: none;
 	position: absolute;
@@ -703,8 +709,8 @@ content: url(../img/btn/play-animation-20x20.png);
 		font-size: 1em;
 		padding-bottom: 20px;
 	}
-	#stats-profile img.stats-avatar { width: 87px; height: 87px; margin-bottom: -5px; }
-	#stats-versus  img.stats-avatar { width: 87px; height: 87px; margin-bottom: -5px; }
+	#stats-profile img.stats-avatar { width: 87px; height: 87px; margin-bottom: -5px; -webkit-filter: grayscale(1);}
+	#stats-versus  img.stats-avatar { width: 87px; height: 87px; margin-bottom: -5px; -webkit-filter: grayscale(1);}
 	.stats-color {
 		height: 5px;
 		width: 368px;
@@ -874,6 +880,8 @@ content: url(../img/btn/play-animation-20x20.png);
 			margin-right: 5px;
 			width: 30px;
 			height: 30px;
+			-webkit-filter: grayscale(1);
+
 			}
 	} /*End table*/
 
@@ -1319,6 +1327,7 @@ body#page-inside {
 							width: 29px;
 							margin: 0 2px 0 0;
 							border: none;
+							-webkit-filter: grayscale(1);
 						}
 						img.individual-winner:before {
 							content:url(../img/icon/crown.png);
