@@ -45,8 +45,7 @@ canvas#processing {
 	width: 1680px;
 	height: 2750px;
 	display: block;
-	position: relative;
-	z-index: 10;
+	position: absolute;
 }
 canvas#line-chart { 
 	margin-top: 0px;
@@ -90,11 +89,14 @@ a { text-decoration: none;
  }
 
 /* NAV TOP */	
+#nav {
+	z-index: 1000;
+}
 #nav, #bottom-nav {
 	position: fixed;
 	width: 100%;
 	margin: 0;	
-	}
+}
 	
 /*SERVICE NAV (TOP)*/
 #service-bar {
