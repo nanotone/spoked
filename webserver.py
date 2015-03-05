@@ -197,4 +197,6 @@ def saveGame():
 	db.games.save(game)
 	return '{}'
 
-bottle.run(host='0.0.0.0', port=8081)
+if __name__ == '__main__':
+    import sys
+    bottle.run(host='0.0.0.0', port=int(sys.argv[1]))
